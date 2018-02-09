@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
 
     <!-- Responsive viewport scaling: -->
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <!-- Document author information: -->
@@ -27,9 +27,12 @@
     crossorigin="anonymous"></script>
 
 	<!-- Bootstrap 4.0 -->
-	<link rel="stylesheet" type="text/css" href="rsc/bootstrap/css/bootstrap-reboot.css">
-	<link rel="stylesheet" type="text/css" href="rsc/bootstrap/css/bootstrap-grid.css">
-	<link rel="stylesheet" type="text/css" href="rsc/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="rsc/bootstrap/css/bootstrap-reboot.css">
+<!--    <link rel="stylesheet" type="text/css" href="rsc/bootstrap/css/bootstrap-reboot.min.css">-->
+    <link rel="stylesheet" type="text/css" href="rsc/bootstrap/css/bootstrap-grid.css">
+<!--    <link rel="stylesheet" type="text/css" href="rsc/bootstrap/css/bootstrap-grid.min.css">-->
+    <link rel="stylesheet" type="text/css" href="rsc/bootstrap/css/bootstrap.css">
+<!--    <link rel="stylesheet" type="text/css" href="rsc/bootstrap/css/bootstrap.min.css">-->
 
     <!-- ProSys3 CSS -->
     <!-- Own CSS here... -->

@@ -63,7 +63,9 @@
 
     <!-- BOOTSTRAP, FASTER JS LOAD: -->
     <script type="text/javascript" src="rsc/bootstrap/js/bootstrap.bundle.js"></script>
+<!--    <script type="text/javascript" src="rsc/bootstrap/js/bootstrap.bundle.min.js"></script>-->
     <script type="text/javascript" src="rsc/bootstrap/js/bootstrap.js"></script>
+<!--    <script type="text/javascript" src="rsc/bootstrap/js/bootstrap.min.js"></script>-->
 
 <!--
 #########################################################
