@@ -24,8 +24,6 @@
 	<link rel="stylesheet" type="text/css" href="rsc/bootstrap/css/bootstrap-reboot.css">
 	<link rel="stylesheet" type="text/css" href="rsc/bootstrap/css/bootstrap-grid.css">
 	<link rel="stylesheet" type="text/css" href="rsc/bootstrap/css/bootstrap.css">
-	<script type="text/javascript" src="rsc/bootstrap/js/bootstrap.bundle.js"></script>
-	<script type="text/javascript" src="rsc/bootstrap/js/bootstrap.js"></script>
 
     <!-- ProSys3 CSS -->
     <!-- Own CSS here... -->
