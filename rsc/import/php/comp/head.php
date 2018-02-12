@@ -28,11 +28,8 @@
 
 	<!-- Bootstrap 4.0 -->
     <link rel="stylesheet" type="text/css" href="rsc/bootstrap/css/bootstrap-reboot.css">
-<!--    <link rel="stylesheet" type="text/css" href="rsc/bootstrap/css/bootstrap-reboot.min.css">-->
     <link rel="stylesheet" type="text/css" href="rsc/bootstrap/css/bootstrap-grid.css">
-<!--    <link rel="stylesheet" type="text/css" href="rsc/bootstrap/css/bootstrap-grid.min.css">-->
     <link rel="stylesheet" type="text/css" href="rsc/bootstrap/css/bootstrap.css">
-<!--    <link rel="stylesheet" type="text/css" href="rsc/bootstrap/css/bootstrap.min.css">-->
 
     <!-- ProSys3 CSS -->
     <!-- Own CSS here... -->
