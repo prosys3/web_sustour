@@ -7,7 +7,7 @@
 #########################################################
 -->
     <!-- DOCUMENT HEAD: -->
-    <?php include 'rsc/import/php/comp/head.php' ?>
+    <?php include 'rsc\import\php\comp/head.php' ?>
 
 <!--
 #########################################################
@@ -25,7 +25,7 @@
 
   <!-- Navbar start -->
   <!-- MÅ SKIFTE FARGE -->
-    <?php include 'rsc/import/php/comp/header.php' ?>
+    <?php include 'xampp/htdocs/dashboard/gruppemal/Gruppemal/rsc/import/php/comp/header.php' ?>
 
 <!-- MÅ SKIFTE FARGE -->
 <!-- Navbar start -->
@@ -33,12 +33,15 @@
 
 <div class="jumbotron jumbotron-fluid">
   <div class="container">
+
+
+
     <!-- logo navbar start -->
-<img src="rsc/img/carousel/greenwhite.png" class="img-thumbnail">
+    <a href="#" class=""><img src="rsc/img/carousel/wallpaper.jpg" width="300" height="250"></a>
     <!-- logo navbar stop -->
 
-    <h1 class="display-1"></h1>
-    <p class="lead"></p>
+    <h1 class="display-3">EGET INNHOLD</h1>
+    <p class="lead">EGET INNHOLD</p>
 
   </div>
 </div>
@@ -56,8 +59,8 @@
   <div class="row">
   <div class="col-sm">
 
-    <h2>Water, Society and Climate Change</h2>  
-    <p>Lorem Ipsum er rett og slett dummytekst fra og for trykkeindustrien. Lorem Ipsum har vært bransjens standard for dummytekst helt siden 1500-tallet, da en ukjent boktrykker stokket en mengde bokstaver for å lage et prøveeksemplar av en bok.</p> 
+    <h2>EGET INNHOLD</h2>  
+    <p>EGET INNHOLD</p> 
 
   <!-- quick fix, må gjøre noe annet css start -->
   </br>
@@ -71,8 +74,8 @@
 
   </div>
   <div class="col-sm">
-    <h2>Joint WaSo Asia and WaSo Africa Annual Meeting with Norad 1st – 4th July 2017</h2>  
-      <p>Lorem Ipsum er rett og slett dummytekst fra og for trykkeindustrien. Lorem Ipsum har vært bransjens standard for dummytekst helt siden 1500-tallet, da en ukjent boktrykker stokket en mengde bokstaver for å lage et prøveeksemplar av en bok.
+    <h2>EGET INNHOLD</h2>  
+      <p>EGET INNHOLD
       </p>
   </br>
   </br>
@@ -86,7 +89,7 @@
 
 
 <!-- Footer start -->
-  <?php include 'rsc/import/php/comp/footer.php' ?>
+  <?php include 'xampp/htdocs/dashboard/gruppemal/Gruppemal/rsc/import/php/comp/footer.php' ?>
 
 <!--Footer stop-->
 
