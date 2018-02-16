@@ -1,10 +1,13 @@
-/*!
+!
  * Bootstrap v4.0.0 (https://getbootstrap.com)
  * Copyright 2011-2018 The Bootstrap Authors
  * Copyright 2011-2018 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 :root {
+
+  /*Color variables start*/
+
   --blue: #007bff;
   --indigo: #6610f2;
   --purple: #6f42c1;
@@ -26,6 +29,9 @@
   --danger: #dc3545;
   --light: #f8f9fa;
   --dark: #343a40;
+
+    /*Color variables end*/
+
   --breakpoint-xs: 0;
   --breakpoint-sm: 576px;
   --breakpoint-md: 768px;
@@ -88,6 +94,13 @@ p {
   margin-top: 0;
   margin-bottom: 1rem;
 }
+/*Circle frame for pictures start*/
+.img-circle {
+    border-radius: 50%;
+    border:10px solid;
+    border-color:grey;
+}
+/*Circle frame for pictures end*/
 
 abbr[title],
 abbr[data-original-title] {
@@ -625,8 +638,6 @@ pre code {
   min-height: 1px;
   padding-right: 15px;
   padding-left: 15px;
-  margin-left: 20px;
-
 }
 
 .col {
@@ -903,7 +914,6 @@ pre code {
     -ms-flex: 0 0 33.333333%;
     flex: 0 0 33.333333%;
     max-width: 33.333333%;
-   
   }
   .col-sm-5 {
     -webkit-box-flex: 0;
@@ -8975,4 +8985,4 @@ a.text-dark:hover, a.text-dark:focus {
     border: 1px solid #ddd !important;
   }
 }
-/*# sourceMappingURL=bootstrap.css.map */
+/*# sourceMappingURL=bootstrap.css.map 

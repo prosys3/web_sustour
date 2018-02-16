@@ -46,11 +46,11 @@
 
             <!--Second column-->
             <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-r dark-grey-text">
-                <h6 class="title font-bold"><strong>Services we offer</strong></h6>
+                <h6 class="title font-bold"><strong>Partner Universities</strong></h6>
                 <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-                <p><a href="#!" class="dark-grey-text">asd</a></p>
-                <p><a href="#!" class="dark-grey-text">asd</a></p>
-                <p><a href="#!" class="dark-grey-text">asd</a></p>
+                <p><a href="#!" class="dark-grey-text">USN</a></p>
+                <p><a href="#!" class="dark-grey-text">Kyrgyzstan</a></p>
+                <p><a href="#!" class="dark-grey-text">Georgia</a></p>
                 <p><a href="#!" class="dark-grey-text">asd</a></p>
             </div>
             <!--/.Second column-->
@@ -83,7 +83,7 @@
 
     <!-- Copyright-->
     <div class="footer-copyright">
-        <div class="container">
+        <div class="container-fluid">
             © 2017 Copyright: <a href="https://www.MDBootstrap.com"><strong> MDBootstrap.com</strong></a>
         </div>
     </div>
