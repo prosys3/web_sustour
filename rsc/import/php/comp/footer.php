@@ -83,7 +83,7 @@
 
     <!-- Copyright-->
     <div class="footer-copyright">
-        <div class="container-fluid">
+        <div class="container">
             © 2017 Copyright: <a href="https://www.MDBootstrap.com"><strong> MDBootstrap.com</strong></a>
         </div>
     </div>

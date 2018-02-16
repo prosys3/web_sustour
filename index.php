@@ -23,27 +23,28 @@
 </head>
 <body>
 
-  <!-- Navbar start -->
-  <!-- MÅ SKIFTE FARGE -->
-    <?php include 'rsc/import/php/comp/header.php' ?>
+    <!-- Navbar start -->
+    <!-- MÅ SKIFTE FARGE -->
+        <?php include 'rsc/import/php/comp/header.php' ?>
+    <!-- MÅ SKIFTE FARGE -->
+    <!-- Navbar slutt -->
 
-<!-- MÅ SKIFTE FARGE -->
-<!-- Navbar start -->
+
+<!-- Header stop -->
+<!-- ############################################################################## -->
+
 
 
 <div class="jumbotron jumbotron-fluid">
   <div class="container">
-    <!-- logo navbar start -->
+
 <img src="rsc/img/carousel/greenwhite.png" class="img-thumbnail">
-    <!-- logo navbar stop -->
 
     <h1 class="display-1"></h1>
     <p class="lead"></p>
 
   </div>
 </div>
-<!-- Header stop -->
-<!-- ############################################################################## -->
 
 
 
@@ -85,12 +86,10 @@
 <!-- ############################################################################## -->
 
 
+
 <!-- Footer start -->
   <?php include 'rsc/import/php/comp/footer.php' ?>
-
 <!--Footer stop-->
-
-<!--/.Footer-->
                 
 
 
