@@ -7,7 +7,7 @@
 #########################################################
 -->
     <!-- DOCUMENT HEAD: -->
-    <?php include 'rsc\import\php\comp/head.php' ?>
+    <?php include 'rsc/import/php/comp/head.php' ?>
 
 <!--
 #########################################################
@@ -25,7 +25,7 @@
 
   <!-- Navbar start -->
   <!-- MÅ SKIFTE FARGE -->
-    <?php include 'xampp/htdocs/dashboard/gruppemal/Gruppemal/rsc/import/php/comp/header.php' ?>
+    <?php include 'rsc/import/php/comp/header.php' ?>
 
 <!-- MÅ SKIFTE FARGE -->
 <!-- Navbar start -->
@@ -89,11 +89,8 @@
 
 
 <!-- Footer start -->
-  <?php include 'xampp/htdocs/dashboard/gruppemal/Gruppemal/rsc/import/php/comp/footer.php' ?>
-
+  <?php include 'rsc/import/php/comp/footer.php' ?>
 <!--Footer stop-->
-
-<!--/.Footer-->
                 
 
 

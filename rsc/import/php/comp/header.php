@@ -6,7 +6,7 @@
         </button>
         <div class="collapse navbar-collapse" id="exCollapsingNavbar">
             <ul class="nav navbar-nav">
-                <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="about.php" class="nav-link">About</a></li>
                 <li class="nav-item"><a href="#" class="nav-link">Link</a></li>
                 <li class="nav-item"><a href="#" class="nav-link">Service</a></li>
                 <li class="nav-item"><a href="#" class="nav-link">More</a></li>
