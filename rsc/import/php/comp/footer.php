@@ -46,19 +46,12 @@
 
             <!--Second column-->
             <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-r dark-grey-text">
-                <h6 class="title font-bold"><strong>Services we offer</strong></h6>
+                <h6 class="title font-bold"><strong>Partner Universities</strong></h6>
                 <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-<<<<<<< HEAD
-                <p><a href="#!" class="dark-grey-text">asd</a></p>
-                <p><a href="#!" class="dark-grey-text">asd</a></p>
-                <p><a href="#!" class="dark-grey-text">asd</a></p>
-                <p><a href="#!" class="dark-grey-text">asd</a></p>
-=======
                 <p><a href="#!" class="dark-grey-text">USN</a></p>
                 <p><a href="#!" class="dark-grey-text">Kyrgyzstan</a></p>
                 <p><a href="#!" class="dark-grey-text">Georgia</a></p>
                 <!-- <p><a href="#!" class="dark-grey-text">asd</a></p> -->
->>>>>>> 35b5cdb044453042fa5c191e6258b8d600f3587e
             </div>
             <!--/.Second column-->
 
@@ -66,9 +59,9 @@
             <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-r dark-grey-text">
                 <h6 class="title font-bold"><strong>Visit us on</strong></h6>
                 <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-                <p><a href="#!" class="dark-grey-text">Your Account</a></p>
-                <!-- <p><a href="#!" class="dark-grey-text">asd</a></p> -->
-                <!-- <p><a href="#!" class="dark-grey-text">asd</a></p> -->
+                <p><a href="#!" class="dark-grey-text">Facebook</a></p>
+                <p><a href="#!" class="dark-grey-text">Twitter</a></p>
+                <p><a href="#!" class="dark-grey-text">Instagram</a></p>
                 <!-- <p><a href="#!" class="dark-grey-text">asd</a></p> -->
             </div>
             <!--/.Third column-->
@@ -77,7 +70,7 @@
             <div class="col-md-4 col-lg-3 col-xl-3 dark-grey-text">
                 <h6 class="title font-bold"><strong>Contact us on</strong></h6>
                 <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-                <p><i class="fa fa-home mr-3"></i> address</p>
+                <p><i class="fa fa-home mr-3"></i> Address</p>
                 <p><i class="fa fa-envelope mr-3"></i> info@example.com</p>
                 <p><i class="fa fa-phone mr-3"></i> + 01 234 567 88</p>
                 <p><i class="fa fa-print mr-3"></i> + 01 234 567 89</p>

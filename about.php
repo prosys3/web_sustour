@@ -81,6 +81,7 @@
     <h2>Our sponsor</h2>  
       <p>EGET INNHOLD
       </p>
+      <a href="#" class=""><img src="rsc/img/carousel/SIUlogo-for-web_imagelarge.png" width="150" height="106"></a>
   </br>
   </br>
   <button type="button" class="btn btn-success">Read more</button></div>
