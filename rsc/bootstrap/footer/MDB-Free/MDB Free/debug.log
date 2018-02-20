@@ -1,3 +1,0 @@
-[0215/203354.755:ERROR:file_io_win.cc(179)] CreateFile C:\Program Files (x86)\settings.dat: Ingen tilgang. (0x5)
-[0215/203354.758:ERROR:registration_protocol_win.cc(84)] TransactNamedPipe: Datakanalen er avsluttet. (0x6D)
-[0215/203354.759:ERROR:file_io_win.cc(179)] CreateFile C:\Program Files (x86)\settings.dat: Ingen tilgang. (0x5)
