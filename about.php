@@ -42,7 +42,7 @@
 
 
     <!-- logo navbar start -->
-    <a href="#" class=""><img src="rsc/img/carousel/dark_logo_transparent_background_small.png" width="275" height="128"></a>
+    <a href="#" class=""><img src="rsc/img/logo/sustour/dark_logo_transparent_background_small.png" width="275" height="128"></a>
     <!-- logo navbar stop -->
 
     <h1 class="display-3">About Sustainable Tourism</h1>
