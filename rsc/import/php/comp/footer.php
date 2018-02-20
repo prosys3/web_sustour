@@ -51,7 +51,7 @@
                 <p><a href="#!" class="dark-grey-text">USN</a></p>
                 <p><a href="#!" class="dark-grey-text">Kyrgyzstan</a></p>
                 <p><a href="#!" class="dark-grey-text">Georgia</a></p>
-                <p><a href="#!" class="dark-grey-text">asd</a></p>
+                <!-- <p><a href="#!" class="dark-grey-text">asd</a></p> -->
             </div>
             <!--/.Second column-->
 
@@ -60,9 +60,9 @@
                 <h6 class="title font-bold"><strong>Visit us on</strong></h6>
                 <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
                 <p><a href="#!" class="dark-grey-text">Your Account</a></p>
-                <p><a href="#!" class="dark-grey-text">asd</a></p>
-                <p><a href="#!" class="dark-grey-text">asd</a></p>
-                <p><a href="#!" class="dark-grey-text">asd</a></p>
+                <!-- <p><a href="#!" class="dark-grey-text">asd</a></p> -->
+                <!-- <p><a href="#!" class="dark-grey-text">asd</a></p> -->
+                <!-- <p><a href="#!" class="dark-grey-text">asd</a></p> -->
             </div>
             <!--/.Third column-->
 
