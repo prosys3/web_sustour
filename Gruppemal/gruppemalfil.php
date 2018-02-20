@@ -89,7 +89,7 @@
 
 
 <!-- Footer start -->
-  <?php include 'rsc/mport/php/comp/footer.php' ?>
+  <?php include 'rsc/import/php/comp/footer.php' ?>
 
 <!--Footer stop-->
 

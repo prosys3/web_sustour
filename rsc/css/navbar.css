@@ -1,0 +1,10 @@
+/*Navbar pos start*/
+
+button:focus {
+    outline: 0;
+}
+
+.navbar .dropdown-menu .form-control {
+    width: 200px;
+}
+/*Navbar pos stop*/
