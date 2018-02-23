@@ -3,6 +3,115 @@
   <component name="ChangeListManager">
     <list default="true" id="32dd0c9d-6bbb-4bee-87c1-114870a27642" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml___jb_old___" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
+      <change beforePath="$PROJECT_DIR$/navbar.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/bootstrap/bootstrap-4.0.0-dist/bootstrap-4.0.0-dist.zip" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/bootstrap/bootstrap-4.0.0-dist/css/bootstrap-grid.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/bootstrap/bootstrap-4.0.0-dist/css/bootstrap-grid.css.map" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/bootstrap/bootstrap-4.0.0-dist/css/bootstrap-grid.min.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/bootstrap/bootstrap-4.0.0-dist/css/bootstrap-grid.min.css.map" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/bootstrap/bootstrap-4.0.0-dist/css/bootstrap-reboot.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/bootstrap/bootstrap-4.0.0-dist/css/bootstrap-reboot.css.map" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/bootstrap/bootstrap-4.0.0-dist/css/bootstrap-reboot.min.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/bootstrap/bootstrap-4.0.0-dist/css/bootstrap-reboot.min.css.map" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/bootstrap/bootstrap-4.0.0-dist/css/bootstrap.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/bootstrap/bootstrap-4.0.0-dist/css/bootstrap.css.map" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/bootstrap/bootstrap-4.0.0-dist/css/bootstrap.min.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/bootstrap/bootstrap-4.0.0-dist/css/bootstrap.min.css.map" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/bootstrap/bootstrap-4.0.0-dist/js/bootstrap.bundle.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/bootstrap/bootstrap-4.0.0-dist/js/bootstrap.bundle.js.map" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/bootstrap/bootstrap-4.0.0-dist/js/bootstrap.bundle.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/bootstrap/bootstrap-4.0.0-dist/js/bootstrap.bundle.min.js.map" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/bootstrap/bootstrap-4.0.0-dist/js/bootstrap.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/bootstrap/bootstrap-4.0.0-dist/js/bootstrap.js.map" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/bootstrap/bootstrap-4.0.0-dist/js/bootstrap.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/bootstrap/bootstrap-4.0.0-dist/js/bootstrap.min.js.map" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/bootstrap/footer/MDB-Free/MDB Free/License.pdf" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/bootstrap/footer/MDB-Free/MDB Free/README.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/bootstrap/footer/MDB-Free/MDB Free/css/bootstrap.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/bootstrap/footer/MDB-Free/MDB Free/css/bootstrap.min.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/bootstrap/footer/MDB-Free/MDB Free/css/mdb.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/bootstrap/footer/MDB-Free/MDB Free/css/mdb.min.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/bootstrap/footer/MDB-Free/MDB Free/css/style.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/bootstrap/footer/MDB-Free/MDB Free/debug.log" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/bootstrap/footer/MDB-Free/MDB Free/font/roboto/Roboto-Bold.eot" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/bootstrap/footer/MDB-Free/MDB Free/font/roboto/Roboto-Bold.ttf" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/bootstrap/footer/MDB-Free/MDB Free/font/roboto/Roboto-Bold.woff" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/bootstrap/footer/MDB-Free/MDB Free/font/roboto/Roboto-Bold.woff2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/bootstrap/footer/MDB-Free/MDB Free/font/roboto/Roboto-Light.eot" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/bootstrap/footer/MDB-Free/MDB Free/font/roboto/Roboto-Light.ttf" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/bootstrap/footer/MDB-Free/MDB Free/font/roboto/Roboto-Light.woff" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/bootstrap/footer/MDB-Free/MDB Free/font/roboto/Roboto-Light.woff2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/bootstrap/footer/MDB-Free/MDB Free/font/roboto/Roboto-Medium.eot" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/bootstrap/footer/MDB-Free/MDB Free/font/roboto/Roboto-Medium.ttf" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/bootstrap/footer/MDB-Free/MDB Free/font/roboto/Roboto-Medium.woff" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/bootstrap/footer/MDB-Free/MDB Free/font/roboto/Roboto-Medium.woff2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/bootstrap/footer/MDB-Free/MDB Free/font/roboto/Roboto-Regular.eot" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/bootstrap/footer/MDB-Free/MDB Free/font/roboto/Roboto-Regular.ttf" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/bootstrap/footer/MDB-Free/MDB Free/font/roboto/Roboto-Regular.woff" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/bootstrap/footer/MDB-Free/MDB Free/font/roboto/Roboto-Regular.woff2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/bootstrap/footer/MDB-Free/MDB Free/font/roboto/Roboto-Thin.eot" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/bootstrap/footer/MDB-Free/MDB Free/font/roboto/Roboto-Thin.ttf" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/bootstrap/footer/MDB-Free/MDB Free/font/roboto/Roboto-Thin.woff" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/bootstrap/footer/MDB-Free/MDB Free/font/roboto/Roboto-Thin.woff2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/bootstrap/footer/MDB-Free/MDB Free/img/lightbox/default-skin.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/bootstrap/footer/MDB-Free/MDB Free/img/lightbox/default-skin.svg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/bootstrap/footer/MDB-Free/MDB Free/img/lightbox/preloader.gif" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/bootstrap/footer/MDB-Free/MDB Free/img/overlays/01.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/bootstrap/footer/MDB-Free/MDB Free/img/overlays/02.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/bootstrap/footer/MDB-Free/MDB Free/img/overlays/03.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/bootstrap/footer/MDB-Free/MDB Free/img/overlays/04.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/bootstrap/footer/MDB-Free/MDB Free/img/overlays/05.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/bootstrap/footer/MDB-Free/MDB Free/img/overlays/06.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/bootstrap/footer/MDB-Free/MDB Free/img/overlays/07.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/bootstrap/footer/MDB-Free/MDB Free/img/overlays/08.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/bootstrap/footer/MDB-Free/MDB Free/img/overlays/09.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/bootstrap/footer/MDB-Free/MDB Free/img/svg/arrow_left.svg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/bootstrap/footer/MDB-Free/MDB Free/img/svg/arrow_right.svg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/bootstrap/footer/MDB-Free/MDB Free/index.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/bootstrap/footer/MDB-Free/MDB Free/js/bootstrap.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/bootstrap/footer/MDB-Free/MDB Free/js/bootstrap.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/bootstrap/footer/MDB-Free/MDB Free/js/jquery-3.2.1.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/bootstrap/footer/MDB-Free/MDB Free/js/mdb.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/bootstrap/footer/MDB-Free/MDB Free/js/mdb.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/bootstrap/footer/MDB-Free/MDB Free/js/popper.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/bootstrap/footer/MDB-Free/MDB Free/license.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/bootstrap/footer/MDB-Free/MDB Free/sass/mdb.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/bootstrap/footer/MDB-Free/MDB Free/sass/mdb/_custom.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/bootstrap/footer/MDB-Free/MDB Free/sass/mdb/free/_animations.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/bootstrap/footer/MDB-Free/MDB Free/sass/mdb/free/_badge.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/bootstrap/footer/MDB-Free/MDB Free/sass/mdb/free/_breadcrumb.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/bootstrap/footer/MDB-Free/MDB Free/sass/mdb/free/_buttons.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/bootstrap/footer/MDB-Free/MDB Free/sass/mdb/free/_cards-basic.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/bootstrap/footer/MDB-Free/MDB Free/sass/mdb/free/_carousel-basic.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/bootstrap/footer/MDB-Free/MDB Free/sass/mdb/free/_collapse.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/bootstrap/footer/MDB-Free/MDB Free/sass/mdb/free/_deprecated.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/bootstrap/footer/MDB-Free/MDB Free/sass/mdb/free/_dropdowns.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/bootstrap/footer/MDB-Free/MDB Free/sass/mdb/free/_footer.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/bootstrap/footer/MDB-Free/MDB Free/sass/mdb/free/_forms-basic.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/bootstrap/footer/MDB-Free/MDB Free/sass/mdb/free/_global.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/bootstrap/footer/MDB-Free/MDB Free/sass/mdb/free/_helpers.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/bootstrap/footer/MDB-Free/MDB Free/sass/mdb/free/_jumbotron.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/bootstrap/footer/MDB-Free/MDB Free/sass/mdb/free/_list-group.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/bootstrap/footer/MDB-Free/MDB Free/sass/mdb/free/_masks.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/bootstrap/footer/MDB-Free/MDB Free/sass/mdb/free/_modals.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/bootstrap/footer/MDB-Free/MDB Free/sass/mdb/free/_msc.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/bootstrap/footer/MDB-Free/MDB Free/sass/mdb/free/_navbar.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/bootstrap/footer/MDB-Free/MDB Free/sass/mdb/free/_pagination.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/bootstrap/footer/MDB-Free/MDB Free/sass/mdb/free/_progress.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/bootstrap/footer/MDB-Free/MDB Free/sass/mdb/free/_tables.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/bootstrap/footer/MDB-Free/MDB Free/sass/mdb/free/_typography.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/bootstrap/footer/MDB-Free/MDB Free/sass/mdb/free/_waves.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/bootstrap/footer/MDB-Free/MDB Free/sass/mdb/free/data/_colors.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/bootstrap/footer/MDB-Free/MDB Free/sass/mdb/free/data/_functions.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/bootstrap/footer/MDB-Free/MDB Free/sass/mdb/free/data/_mixins.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/bootstrap/footer/MDB-Free/MDB Free/sass/mdb/free/data/_prefixer.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/bootstrap/footer/MDB-Free/MDB Free/sass/mdb/free/data/_variables-b4.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/bootstrap/footer/MDB-Free/MDB Free/sass/mdb/free/data/_variables.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/bootstrap/footer/MDB-Free/MDB-Free.zip" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/import/php/footer.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/import/php/head.php" afterPath="" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -13,21 +122,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="head.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/rsc/import/php/comp/head.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="70" lean-forward="true" selection-start-line="5" selection-start-column="70" selection-end-line="5" selection-end-column="70" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="gruppemalfil.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="gruppemalfil.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/gruppemalfil.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1305">
-              <caret line="87" column="87" lean-forward="false" selection-start-line="87" selection-start-column="87" selection-end-line="87" selection-end-column="87" />
+            <state relative-caret-position="990">
+              <caret line="66" column="0" lean-forward="false" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -44,10 +143,10 @@
         <option value="$PROJECT_DIR$/rsc/import/php/head.php" />
         <option value="$PROJECT_DIR$/mal.php" />
         <option value="$PROJECT_DIR$/rsc/import/php/comp/head.php" />
-        <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/rsc/import/php/comp/header.php" />
         <option value="$PROJECT_DIR$/rsc/import/php/comp/footer.php" />
         <option value="$PROJECT_DIR$/gruppemalfil.php" />
+        <option value="$PROJECT_DIR$/index.php" />
       </list>
     </option>
   </component>
@@ -62,8 +161,8 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="150" />
-    <option name="y" value="32" />
+    <option name="x" value="114" />
+    <option name="y" value="23" />
     <option name="width" value="1921" />
     <option name="height" value="1088" />
   </component>
@@ -82,7 +181,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -95,32 +193,12 @@
               <item name="dashboard" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="rsc" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
-            <path>
-              <item name="dashboard" type="b2602c69:ProjectViewProjectNode" />
-              <item name="dashboard" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="rsc" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="import" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="dashboard" type="b2602c69:ProjectViewProjectNode" />
-              <item name="dashboard" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="rsc" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="import" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="php" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="dashboard" type="b2602c69:ProjectViewProjectNode" />
-              <item name="dashboard" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="rsc" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="import" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="php" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="comp" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -170,20 +248,31 @@
       <workItem from="1518781316664" duration="1466000" />
       <workItem from="1519057339767" duration="18000" />
       <workItem from="1519057437262" duration="219000" />
+      <workItem from="1519377281549" duration="515000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11655000" />
+    <option name="totallyTimeSpent" value="12170000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1920" height="1092" extended-state="6" />
+    <frame x="0" y="23" width="1920" height="1091" extended-state="6" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1578125" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22571148" sideWeight="0.49791667" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22571148" sideWeight="0.50208336" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -195,7 +284,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -210,7 +298,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/.gitignore" />
     <entry file="file://$PROJECT_DIR$/rsc/import/php/head.php" />
     <entry file="file://$PROJECT_DIR$/rsc/import/php/comp/footer.php" />
     <entry file="file://$PROJECT_DIR$/rsc/import/php/comp/header.php" />
@@ -262,13 +349,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="44" column="0" lean-forward="false" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/rsc/import/php/comp/header.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -277,18 +357,34 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mal.php" />
-    <entry file="file://$PROJECT_DIR$/gruppemalfil.php">
+    <entry file="file://$PROJECT_DIR$/rsc/import/php/comp/head.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1305">
-          <caret line="87" column="87" lean-forward="false" selection-start-line="87" selection-start-column="87" selection-end-line="87" selection-end-column="87" />
+        <state relative-caret-position="75">
+          <caret line="5" column="70" lean-forward="false" selection-start-line="5" selection-start-column="70" selection-end-line="5" selection-end-column="70" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/rsc/import/php/comp/head.php">
+    <entry file="file://$PROJECT_DIR$/contact.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="70" lean-forward="true" selection-start-line="5" selection-start-column="70" selection-end-line="5" selection-end-column="70" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="26" column="9" lean-forward="false" selection-start-line="26" selection-start-column="9" selection-end-line="26" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gruppemalfil.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="990">
+          <caret line="66" column="0" lean-forward="false" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
           <folding />
         </state>
       </provider>

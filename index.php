@@ -24,9 +24,8 @@
 <body>
 
     <!-- Navbar start -->
-    <!-- MÅ SKIFTE FARGE -->
+    <!-- TODO: MÅ SKIFTE FARGE -->
         <?php include 'rsc/import/php/comp/header.php' ?>
-    <!-- MÅ SKIFTE FARGE -->
     <!-- Navbar slutt -->
 
 
