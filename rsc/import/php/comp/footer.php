@@ -83,8 +83,8 @@
 
     <!-- Copyright-->
     <div class="footer-copyright">
-        <div class="container-fluid">
-            © 2017 Copyright: <a href="https://www.MDBootstrap.com"><strong> MDBootstrap.com</strong></a>
+        <div class="container">
+            Made by ProSys3
         </div>
     </div>
     <!--/.Copyright -->
