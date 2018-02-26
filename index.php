@@ -15,7 +15,7 @@
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
 
-            <img src="rsc/img/carousel/greenwhite.png" class="img-thumbnail">
+            <img src="rsc/img/logo/sustour/greenwhite.png" class="img-thumbnail">
 
             <h1 class="display-1"></h1>
             <p class="lead"></p>
@@ -29,7 +29,7 @@
             <div class="col-sm">
 
                 <h2>Water, Society and Climate Change</h2>
-                <p>Lorem Ipsum er rett og slett dummytekst fra og for trykkeindustrien. Lorem Ipsum har vært bransjens standard for dummytekst helt siden 1500-tallet, da en ukjent boktrykker stokket en mengde bokstaver for å lage et prøveeksemplar av en bok.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
                 <!-- quick fix, må gjøre noe annet css start -->
                 </br>
@@ -44,7 +44,7 @@
             </div>
             <div class="col-sm">
                 <h2>Joint WaSo Asia and WaSo Africa Annual Meeting with Norad 1st – 4th July 2017</h2>
-                <p>Lorem Ipsum er rett og slett dummytekst fra og for trykkeindustrien. Lorem Ipsum har vært bransjens standard for dummytekst helt siden 1500-tallet, da en ukjent boktrykker stokket en mengde bokstaver for å lage et prøveeksemplar av en bok.
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                 </p>
                 </br>
                 </br>
