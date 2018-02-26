@@ -57,7 +57,7 @@
 
                 </br>
                 </br>
-                <button type="button" class="btn btn-success">Read more</button></div>
+                <!-- <button type="button" class="btn btn-success">Read more</button></div> -->
 
         </div>
 
