@@ -17,11 +17,11 @@
 
 
             <!-- logo navbar start -->
-            <a href="#" class=""><img src="rsc/img/carousel/wallpaper.jpg" width="300" height="250"></a>
+           <img src="rsc/img/logo/sustour/greenwhite.png" class="img-thumbnail">
             <!-- logo navbar stop -->
 
-            <h1 class="display-3">EGET INNHOLD</h1>
-            <p class="lead">EGET INNHOLD</p>
+            <h1 class="display-3">Kontakt oss</h1>
+            <p class="lead">Fyll ut kontaktskjema under</p>
 
         </div>
     </div>
@@ -39,8 +39,8 @@
         <div class="row">
             <div class="col-sm">
 
-                <h2>EGET INNHOLD</h2>
-                <p>EGET INNHOLD</p>
+                <h2>Nyheter</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
                 <!-- quick fix, må gjøre noe annet css start -->
                 </br>
@@ -54,9 +54,8 @@
 
             </div>
             <div class="col-sm">
-                <h2>EGET INNHOLD</h2>
-                <p>EGET INNHOLD
-                </p>
+                <h2>Nyheter</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                 </br>
                 </br>
                 <button type="button" class="btn btn-success">Read more</button></div>

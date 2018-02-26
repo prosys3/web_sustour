@@ -102,7 +102,7 @@
 
     /* Adjustment of header logo */
     .img-thumbnail {
-    width: 300px;
+    width: 350px;
     height: 200px;
     margin-left: -200px;
     }

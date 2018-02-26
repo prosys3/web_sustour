@@ -36,7 +36,7 @@
             <div class="col-sm">
 
                 <h2>Our goals</h2>
-                <p>EGET INNHOLD</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
                 <!-- quick fix, må gjøre noe annet css start -->
                 </br>
@@ -51,9 +51,9 @@
             </div>
             <div class="col-sm">
                 <h2>Our sponsor</h2>
-                <p>EGET INNHOLD
-                </p>
-                <a href="#" class=""><img src="rsc/img/carousel/SIUlogo-for-web_imagelarge.png" width="150" height="106"></a>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+                
                 </br>
                 </br>
                 <button type="button" class="btn btn-success">Read more</button></div>
