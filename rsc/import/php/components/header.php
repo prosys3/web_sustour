@@ -100,5 +100,12 @@
 
     }
 
+    /* Adjustment of header logo */
+    .img-thumbnail {
+    width: 300px;
+    height: 200px;
+    margin-left: -200px;
+    }
+
 
 </style>
