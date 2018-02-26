@@ -107,5 +107,12 @@
     margin-left: -200px;
     }
 
+     /* Adjustment of sponsor logo in "about.php" */
+    .siu-logo {
+    width: 140px;
+    height: 100px;
+    margin-left: 45px;
+    }
+
 
 </style>
