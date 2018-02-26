@@ -1,34 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<!--
-#########################################################
-#### DO NOT EDIT THE HEAD IMPORT BELOW
-#########################################################
--->
-    <!-- DOCUMENT HEAD: -->
-    <?php include 'rsc/import/php/comp/head.php' ?>
+<?php include 'rsc/import/php/components/head.php' ?>
+<?php include 'rsc/import/php/components/header.php' ?>
 
 <!--
-#########################################################
-#### DO NOT EDIT THE HEAD IMPORT ABOVE
-#########################################################
+##################################################################################
+######################## ! DO NOT EDIT ABOVE THIS POINT ! ########################
+##################################################################################
 -->
 
-<!-- ############################################################################## -->
-    <!-- DOCUMENT TITLE: -->
-    <!-- Header start -->
-    <title>Hovedside</title>
 
-</head>
-<body>
 
-  <!-- Navbar start -->
-  <!-- MÅ SKIFTE FARGE -->
-    <?php include 'rsc/import/php/comp/header.php' ?>
-
-<!-- MÅ SKIFTE FARGE -->
-<!-- Navbar start -->
 
 
 <div class="jumbotron jumbotron-fluid">
@@ -84,15 +64,12 @@
 </div>
 
 
-<!-- Avnitt stop -->
-<!-- ############################################################################## -->
 
 
-<!-- Footer start -->
-  <?php include 'rsc/import/php/comp/footer.php' ?>
-<!--Footer stop-->
-                
+<!--
+##################################################################################
+######################## ! DO NOT EDIT BELOW THIS POINT ! ########################
+##################################################################################
+-->
 
-
-</body>
-</html>
+<?php include 'rsc/import/php/components/footer.php' ?>

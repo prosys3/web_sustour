@@ -2,7 +2,38 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="32dd0c9d-6bbb-4bee-87c1-114870a27642" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/rsc/import/php/comp/footer.php" afterPath="$PROJECT_DIR$/rsc/import/php/comp/footer.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/rsc/import/php/components/head.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/rsc/import/php/components/header.php" />
+      <change beforePath="$PROJECT_DIR$/about.php" afterPath="$PROJECT_DIR$/about.php" />
+      <change beforePath="$PROJECT_DIR$/contact.php" afterPath="$PROJECT_DIR$/contact.php" />
+      <change beforePath="$PROJECT_DIR$/gruppemalfil.php" afterPath="$PROJECT_DIR$/gruppemalfil.php" />
+      <change beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
+      <change beforePath="$PROJECT_DIR$/mal.php" afterPath="$PROJECT_DIR$/mal.php" />
+      <change beforePath="$PROJECT_DIR$/rsc/bootstrap/css/bootstrap-grid.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/bootstrap/css/bootstrap-grid.css.map" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/bootstrap/css/bootstrap-grid.min.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/bootstrap/css/bootstrap-grid.min.css.map" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/bootstrap/css/bootstrap-reboot.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/bootstrap/css/bootstrap-reboot.css.map" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/bootstrap/css/bootstrap-reboot.min.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/bootstrap/css/bootstrap-reboot.min.css.map" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/bootstrap/css/bootstrap.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/bootstrap/css/bootstrap.css.map" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/bootstrap/css/bootstrap.min.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/bootstrap/css/bootstrap.min.css.map" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/bootstrap/js/bootstrap.bundle.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/bootstrap/js/bootstrap.bundle.js.map" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/bootstrap/js/bootstrap.bundle.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/bootstrap/js/bootstrap.bundle.min.js.map" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/bootstrap/js/bootstrap.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/bootstrap/js/bootstrap.js.map" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/bootstrap/js/bootstrap.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/bootstrap/js/bootstrap.min.js.map" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/css/bootstrap.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/css/navbar.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/import/php/comp/footer.php" afterPath="$PROJECT_DIR$/rsc/import/php/components/footer.php" />
+      <change beforePath="$PROJECT_DIR$/rsc/import/php/comp/head.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/rsc/import/php/comp/header.php" afterPath="" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -14,10 +45,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="footer.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/rsc/import/php/comp/footer.php">
+        <entry file="file://$PROJECT_DIR$/rsc/import/php/components/footer.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-383">
-              <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+            <state relative-caret-position="394">
+              <caret line="91" column="0" lean-forward="true" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -32,12 +63,16 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/rsc/import/php/head.php" />
-        <option value="$PROJECT_DIR$/mal.php" />
-        <option value="$PROJECT_DIR$/rsc/import/php/comp/head.php" />
         <option value="$PROJECT_DIR$/rsc/import/php/comp/header.php" />
-        <option value="$PROJECT_DIR$/gruppemalfil.php" />
-        <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/rsc/import/php/comp/footer.php" />
+        <option value="$PROJECT_DIR$/rsc/import/php/comp/head.php" />
+        <option value="$PROJECT_DIR$/rsc/import/php/components/head.php" />
+        <option value="$PROJECT_DIR$/rsc/import/php/components/footer.php" />
+        <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/gruppemalfil.php" />
+        <option value="$PROJECT_DIR$/contact.php" />
+        <option value="$PROJECT_DIR$/about.php" />
+        <option value="$PROJECT_DIR$/mal.php" />
       </list>
     </option>
   </component>
@@ -51,11 +86,10 @@
     <servers />
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="114" />
+  <component name="ProjectFrameBounds">
     <option name="y" value="23" />
-    <option name="width" value="1921" />
-    <option name="height" value="1088" />
+    <option name="width" value="1920" />
+    <option name="height" value="1092" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -76,25 +110,47 @@
         <subPane>
           <expand>
             <path>
-              <item name="dashboard" type="b2602c69:ProjectViewProjectNode" />
-              <item name="dashboard" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="ProSys3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProSys3" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
-              <item name="dashboard" type="b2602c69:ProjectViewProjectNode" />
-              <item name="dashboard" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="ProSys3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProSys3" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="rsc" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="ProSys3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProSys3" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="rsc" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="import" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="ProSys3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProSys3" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="rsc" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="import" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="php" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="ProSys3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProSys3" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="rsc" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="import" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="php" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="components" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -140,11 +196,12 @@
       <workItem from="1519057339767" duration="18000" />
       <workItem from="1519057437262" duration="219000" />
       <workItem from="1519377281549" duration="1017000" />
+      <workItem from="1519654465422" duration="3585000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12672000" />
+    <option name="totallyTimeSpent" value="16257000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -156,10 +213,11 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1920" height="1091" extended-state="6" />
+    <frame x="0" y="23" width="1920" height="1092" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1578125" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22571148" sideWeight="0.49791667" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1578125" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2254902" sideWeight="0.49791667" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22571148" sideWeight="0.50208336" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -189,22 +247,21 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/rsc/import/php/head.php" />
-    <entry file="file://$PROJECT_DIR$/rsc/import/php/comp/footer.php" />
-    <entry file="file://$PROJECT_DIR$/rsc/import/php/comp/header.php" />
-    <entry file="file://$PROJECT_DIR$/rsc/import/php/comp/head.php" />
+    <entry file="file://$PROJECT_DIR$/rsc/import/php/components/footer.php" />
+    <entry file="file://$PROJECT_DIR$/rsc/import/php/components/header.php" />
+    <entry file="file://$PROJECT_DIR$/rsc/import/php/components/head.php" />
     <entry file="file://$PROJECT_DIR$/dir.txt" />
     <entry file="file://$PROJECT_DIR$/rsc/img/carousel/wallpaper.jpg" />
     <entry file="file://$PROJECT_DIR$/index.php" />
     <entry file="file://$PROJECT_DIR$/index.php" />
-    <entry file="file://$PROJECT_DIR$/rsc/import/php/comp/head.php" />
-    <entry file="file://$PROJECT_DIR$/rsc/import/php/comp/footer.php" />
+    <entry file="file://$PROJECT_DIR$/rsc/import/php/components/head.php" />
+    <entry file="file://$PROJECT_DIR$/rsc/import/php/components/footer.php" />
     <entry file="file://$PROJECT_DIR$/index.php" />
-    <entry file="file://$PROJECT_DIR$/rsc/import/php/comp/head.php" />
-    <entry file="file://$PROJECT_DIR$/rsc/import/php/comp/footer.php" />
+    <entry file="file://$PROJECT_DIR$/rsc/import/php/components/head.php" />
+    <entry file="file://$PROJECT_DIR$/rsc/import/php/components/footer.php" />
     <entry file="file://$PROJECT_DIR$/index.php" />
-    <entry file="file://$PROJECT_DIR$/rsc/import/php/comp/footer.php" />
-    <entry file="file://$PROJECT_DIR$/rsc/import/php/comp/head.php" />
+    <entry file="file://$PROJECT_DIR$/rsc/import/php/components/footer.php" />
+    <entry file="file://$PROJECT_DIR$/rsc/import/php/components/head.php" />
     <entry file="file://$PROJECT_DIR$/index.php" />
     <entry file="file://$PROJECT_DIR$/rsc/import/php/head.php" />
     <entry file="file://$PROJECT_DIR$/index.php" />
@@ -215,9 +272,9 @@
     <entry file="file://$PROJECT_DIR$/rsc/import/php/head.php" />
     <entry file="file://$PROJECT_DIR$/.gitignore" />
     <entry file="file://$PROJECT_DIR$/rsc/import/php/head.php" />
-    <entry file="file://$PROJECT_DIR$/rsc/import/php/comp/footer.php" />
-    <entry file="file://$PROJECT_DIR$/rsc/import/php/comp/header.php" />
-    <entry file="file://$PROJECT_DIR$/rsc/import/php/comp/head.php" />
+    <entry file="file://$PROJECT_DIR$/rsc/import/php/components/footer.php" />
+    <entry file="file://$PROJECT_DIR$/rsc/import/php/components/header.php" />
+    <entry file="file://$PROJECT_DIR$/rsc/import/php/components/head.php" />
     <entry file="file://$PROJECT_DIR$/dir.txt" />
     <entry file="file://$PROJECT_DIR$/rsc/img/carousel/wallpaper.jpg" />
     <entry file="file://$PROJECT_DIR$/index.php" />
@@ -233,50 +290,66 @@
     <entry file="file://$PROJECT_DIR$/rsc/import/php/head.php" />
     <entry file="file://$PROJECT_DIR$/dir.txt" />
     <entry file="file://$PROJECT_DIR$/rsc/img/carousel/wallpaper.jpg" />
-    <entry file="file://$PROJECT_DIR$/rsc/import/php/comp/header.php">
+    <entry file="file://$PROJECT_DIR$/rsc/import/php/components/head.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="55" lean-forward="false" selection-start-line="8" selection-start-column="55" selection-end-line="8" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mal.php" />
-    <entry file="file://$PROJECT_DIR$/rsc/import/php/comp/head.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="70" lean-forward="false" selection-start-line="5" selection-start-column="70" selection-end-line="5" selection-end-column="70" />
+        <state relative-caret-position="398">
+          <caret line="39" column="29" lean-forward="true" selection-start-line="39" selection-start-column="29" selection-end-line="39" selection-end-column="29" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/contact.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="1020">
+          <caret line="68" column="0" lean-forward="false" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
+    <entry file="file://$PROJECT_DIR$/about.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="9" lean-forward="false" selection-start-line="26" selection-start-column="9" selection-end-line="26" selection-end-column="9" />
+        <state relative-caret-position="-232">
+          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/gruppemalfil.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="990">
-          <caret line="66" column="0" lean-forward="false" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
+        <state relative-caret-position="225">
+          <caret line="15" column="34" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/rsc/import/php/comp/footer.php">
+    <entry file="file://$PROJECT_DIR$/rsc/import/php/components/header.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-383">
-          <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+        <state relative-caret-position="345">
+          <caret line="23" column="14" lean-forward="false" selection-start-line="23" selection-start-column="14" selection-end-line="23" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="930">
+          <caret line="62" column="0" lean-forward="false" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mal.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="30" column="0" lean-forward="true" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rsc/import/php/components/footer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="394">
+          <caret line="91" column="0" lean-forward="true" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
           <folding />
         </state>
       </provider>
