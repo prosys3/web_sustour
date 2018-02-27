@@ -20,8 +20,8 @@
            <img src="rsc/img/logo/sustour/greenwhite.png" class="img-thumbnail">
             <!-- logo navbar stop -->
 
-            <h1 class="display-3">Kontakt oss</h1>
-            <p class="lead">Fyll ut kontaktskjema under</p>
+            <h1 class="display-3">Contact us</h1>
+            <p class="lead"><br>Would you like to get in touch with us?</br><br>Do you have any questions,</br><br>or maybe you would like to make a donation?</br><br> You can find all our contact information on this page.</br></p>
 
         </div>
     </div>
@@ -39,7 +39,7 @@
         <div class="row">
             <div class="col-sm">
 
-                <h2>Nyheter</h2>
+                <h2>News</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
                 <!-- quick fix, må gjøre noe annet css start -->
@@ -54,7 +54,7 @@
 
             </div>
             <div class="col-sm">
-                <h2>Nyheter</h2>
+                <h2>Achievments</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                 </br>
                 </br>
