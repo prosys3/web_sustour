@@ -13,28 +13,24 @@
 <main>
 
     <div class="jumbotron jumbotron-fluid">
-        <div class="container">
+      <div class="container text-center">
 
+        <!-- logo navbar start -->
+        <a href="#" class=""><img src="rsc/img/logo/sustour/logo_symbol_black.svg" width="150"></a>
+        <!-- logo navbar stop -->
 
+        <h1 class="display-3">About Sustainable Tourism</h1>
+        <p class="lead">Educational project between Kyrgyzstan, Georgia and Norway 2016– 2019</p>
 
-            <!-- logo navbar start -->
-            <a href="#" class=""><img src="rsc/img/logo/sustour/dark_logo_transparent_background_small.png" width="275" height="128"></a>
-            <!-- logo navbar stop -->
+      </div>
+    </div>      
 
-            <h1 class="display-3">About Sustainable Tourism</h1>
-            <p class="lead">Educational project between Kyrgyzstan, Georgia and Norway 2016– 2019</p>
-
-        </div>
-    </div>
-
-
-
-
-    <div class="container">
+    <div class="container-fluid">
 
         <div class="row">
             <div class="col-sm">
 
+                <br></br>
                 <h2>PROJECT RATIONALE:</h2>
                 <p>Tourism is promoted as a strategy for achieving sustainable development by global development agencies as well as nations. Tourism has the potential of creating sustainable livelihoods in rural areas challenged by unemployment and poverty, by creating job opportunities through local scale entrepreneurship. Entrepreneurship in tourism is often a matter of finding a niche product based on the natural or cultural features of a particular area. How to develop rural tourism in an economic, social and environmental sustainable way, however, calls for knowledge in a range of different disciplines.</p>
 
@@ -56,6 +52,7 @@
         <div class="row">
             <div class="col-sm">
 
+                <br></br>
                 <h2>PROJECT GOALS:</h2>
                 <ul>
                   <li>Increased student and staff mobility between all three countries for the exchange of knowledge,competence and practical skills.</li>
@@ -76,6 +73,8 @@
 
             </div>
             <div class="col-sm">
+
+                <br></br>
                 <h2>OUR SPONSOR</h2>
                 <p>The Norwegian Centre for International Cooperation in Education (SIU) is a Norwegian public sector agency that promotes international cooperation at all levels of education. SIU is located in the city of Bergen, Norway.</p>
 

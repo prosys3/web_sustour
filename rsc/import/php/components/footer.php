@@ -89,6 +89,12 @@
                 <p><i class="fa fa-phone mr-3"></i><b>Call:</b></p>
                 <p><i class="fa fa-phone mr-3"></i> + 01 234 567 88</p>
                 <p><i class="fa fa-print mr-3"></i> + 01 234 567 89</p>
+                <br></br>
+                <br></br>
+                <br></br>
+                <a href="https://www.siu.no/eng">
+                    <img src="rsc/img/logo/siu/siu.png" alt="SIU" class="siu-logo">
+                </a>
             </div>
             <!--/.Fourth column-->
 
