@@ -62,7 +62,8 @@
                   <li>Enhance student's and staff's in-depth knowledge on topics related to sustainable tourism, ruralentrepreneurship and heritage.</li>
                   <li>Facilitate exchange of teaching methods and teaching material for teaching sustainable tourism, ruralentrepreneurship and heritage.</li>
                   <li>Contribute to more practice and research based education by joint cooperation between academicinstitutions and private sector (local businesses and entrepreneurs)</li>
-
+                </ul>
+                
                 <!-- quick fix, må gjøre noe annet css start -->
                 </br>
                 </br>

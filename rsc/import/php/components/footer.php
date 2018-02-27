@@ -37,10 +37,12 @@
 
             <!--First column-->
             <div class="col-md-3 col-lg-4 col-xl-3 mb-r dark-grey-text">
-                <h6 class="title font-bold"><strong>SUSTAINABLE TOURISM</strong></h6>
+                <h6 class="title font-bold"><strong>PROJECT RATIONALE</strong></h6>
                 <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                <p>Tourism is promoted as a strategy for achieving sustainable development by global development agencies as well as nations. Tourism has the potential of creating sustainable livelihoods in rural areas challenged by unemployment and poverty, by creating job opportunities through local scale entrepreneurship. Entrepreneurship in tourism is often a matter of finding a niche product based on the natural or cultural features of a particular area. How to develop rural tourism in an economic, social and environmental sustainable way, however, calls for knowledge in a range of different disciplines.
                 </p>
+                <p>By joining several academic disciplines, it is the overall project goal to equip students of tourism, as well as staff teaching tourism, with the skills, knowledge and competence necessary to develop sustainable tourism based on local rural entrepreneurship and heritage in Kyrgyzstan, Georgia and Norway.</p>
+
             </div>
             <!--/.First column-->
 
@@ -48,9 +50,14 @@
             <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-r dark-grey-text">
                 <h6 class="title font-bold"><strong>Partner Universities</strong></h6>
                 <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-                <p><a href="#!" class="dark-grey-text">USN</a></p>
-                <p><a href="#!" class="dark-grey-text">Kyrgyzstan</a></p>
-                <p><a href="#!" class="dark-grey-text">Georgia</a></p>
+                <p><a href="#!" class="dark-grey-text">Bishkek Academy of Finance and Economics</a></p>
+                <p><a href="#!" class="dark-grey-text">Issyk Kul State University</a></p>
+                <p><a href="#!" class="dark-grey-text">Issyk Kul State University</a></p>
+                <p><a href="#!" class="dark-grey-text">Kyrgyz Economic University</a></p>
+                <p><a href="#!" class="dark-grey-text">Batumi State University</a></p>
+                <p><a href="#!" class="dark-grey-text">Akaki Tsereteli State University</a></p>
+                <p><a href="#!" class="dark-grey-text">Batumi State Maritime Academy</a></p>
+                <p><a href="#!" class="dark-grey-text">University College of South East Norway</a></p>
                 <!-- <p><a href="#!" class="dark-grey-text">asd</a></p> -->
             </div>
             <!--/.Second column-->
@@ -70,8 +77,10 @@
             <div class="col-md-4 col-lg-3 col-xl-3 dark-grey-text">
                 <h6 class="title font-bold"><strong>Contact us on</strong></h6>
                 <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-                <p><i class="fa fa-home mr-3"></i> Address</p>
-                <p><i class="fa fa-envelope mr-3"></i> info@example.com</p>
+                <p><i class="fa fa-home mr-3"></i>E-mail:</p>
+                <p><i class="fa fa-envelope mr-3"></i>anne.g.sturod@usn.no</p>
+                <p><i class="fa fa-envelope mr-3"></i>tim.t.abessadze@usn.no</p>
+                <p><i class="fa fa-phone mr-3"></i>Call:</p>
                 <p><i class="fa fa-phone mr-3"></i> + 01 234 567 88</p>
                 <p><i class="fa fa-print mr-3"></i> + 01 234 567 89</p>
             </div>
