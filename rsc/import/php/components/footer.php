@@ -36,18 +36,7 @@
         <div class="row mt-3">
 
             <!--First column-->
-            <div class="col-md-3 col-lg-4 col-xl-3 mb-r dark-grey-text">
-                <h6 class="title font-bold"><strong>PROJECT RATIONALE</strong></h6>
-                <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-                <p>Tourism is promoted as a strategy for achieving sustainable development by global development agencies as well as nations. Tourism has the potential of creating sustainable livelihoods in rural areas challenged by unemployment and poverty, by creating job opportunities through local scale entrepreneurship. Entrepreneurship in tourism is often a matter of finding a niche product based on the natural or cultural features of a particular area. How to develop rural tourism in an economic, social and environmental sustainable way, however, calls for knowledge in a range of different disciplines.
-                </p>
-                <p>By joining several academic disciplines, it is the overall project goal to equip students of tourism, as well as staff teaching tourism, with the skills, knowledge and competence necessary to develop sustainable tourism based on local rural entrepreneurship and heritage in Kyrgyzstan, Georgia and Norway.</p>
-
-            </div>
-            <!--/.First column-->
-
-            <!--Second column-->
-            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-r dark-grey-text">
+            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-r dark-grey-text">
                 <h6 class="title font-bold"><strong>Partner Universities</strong></h6>
                 <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
                 <p><a href="http://www.bolognakg.net/kg2/bfea.htm" 
@@ -64,22 +53,20 @@
                     class="dark-grey-text">Batumi State Maritime Academy</a></p>
                 <p><a href="https://www.usn.no/english/?lang=en_GB" 
                     class="dark-grey-text">University College of South East Norway</a></p>
-                <!-- <p><a href="#!" class="dark-grey-text">asd</a></p> -->
             </div>
-            <!--/.Second column-->
+            <!--/.First column-->
 
-            <!--Third column-->
+            <!--Second column-->
             <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-r dark-grey-text">
                 <h6 class="title font-bold"><strong>Visit us on</strong></h6>
                 <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
                 <p><a href="#!" class="dark-grey-text">Facebook</a></p>
                 <p><a href="#!" class="dark-grey-text">Twitter</a></p>
                 <p><a href="#!" class="dark-grey-text">Instagram</a></p>
-                <!-- <p><a href="#!" class="dark-grey-text">asd</a></p> -->
             </div>
-            <!--/.Third column-->
+            <!--/.Second column-->
 
-            <!--Fourth column-->
+            <!--Third column-->
             <div class="col-md-4 col-lg-3 col-xl-3 dark-grey-text">
                 <h6 class="title font-bold"><strong>Contact us on</strong></h6>
                 <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
@@ -96,6 +83,10 @@
                     <img src="rsc/img/logo/siu/siu.png" alt="SIU" class="siu-logo">
                 </a>
             </div>
+            <!--/.Third column-->
+
+            <!--Fourth column-->
+
             <!--/.Fourth column-->
 
         </div>
