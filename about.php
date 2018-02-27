@@ -22,7 +22,7 @@
             <!-- logo navbar stop -->
 
             <h1 class="display-3">About Sustainable Tourism</h1>
-            <p class="lead">Rural entrepreneurship and heritage</p>
+            <p class="lead">Educational project between Kyrgyzstan, Georgia and Norway 2016– 2019</p>
 
         </div>
     </div>

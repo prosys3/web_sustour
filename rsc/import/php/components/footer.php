@@ -50,14 +50,20 @@
             <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-r dark-grey-text">
                 <h6 class="title font-bold"><strong>Partner Universities</strong></h6>
                 <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-                <p><a href="#!" class="dark-grey-text">Bishkek Academy of Finance and Economics</a></p>
-                <p><a href="#!" class="dark-grey-text">Issyk Kul State University</a></p>
-                <p><a href="#!" class="dark-grey-text">Issyk Kul State University</a></p>
-                <p><a href="#!" class="dark-grey-text">Kyrgyz Economic University</a></p>
-                <p><a href="#!" class="dark-grey-text">Batumi State University</a></p>
-                <p><a href="#!" class="dark-grey-text">Akaki Tsereteli State University</a></p>
-                <p><a href="#!" class="dark-grey-text">Batumi State Maritime Academy</a></p>
-                <p><a href="#!" class="dark-grey-text">University College of South East Norway</a></p>
+                <p><a href="http://www.bolognakg.net/kg2/bfea.htm" 
+                    class="dark-grey-text">Bishkek Academy of Finance and Economics</a></p>
+                <p><a href="http://www.istc.int/en/institute/8814" 
+                    class="dark-grey-text">Issyk Kul State University</a></p>
+                <p><a href="http://www.keu.kg/"
+                    class="dark-grey-text">Kyrgyz Economic University</a></p>
+                <p><a href="https://www.bsu.edu.ge/?lang=en" 
+                    class="dark-grey-text">Batumi State University</a></p>
+                <p><a href="http://www.studyingeorgia.com.ng/preferred-universities-georgia/akaki-tsereteli-state-university.html" 
+                    class="dark-grey-text">Akaki Tsereteli State University</a></p>
+                <p><a href="http://www.bsma.edu.ge/index.html?lang=en" 
+                    class="dark-grey-text">Batumi State Maritime Academy</a></p>
+                <p><a href="https://www.usn.no/english/?lang=en_GB" 
+                    class="dark-grey-text">University College of South East Norway</a></p>
                 <!-- <p><a href="#!" class="dark-grey-text">asd</a></p> -->
             </div>
             <!--/.Second column-->
