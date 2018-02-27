@@ -78,8 +78,6 @@
                 <h2>OUR SPONSOR</h2>
                 <p>The Norwegian Centre for International Cooperation in Education (SIU) is a Norwegian public sector agency that promotes international cooperation at all levels of education. SIU is located in the city of Bergen, Norway.</p>
 
-                <img src="rsc/img/logo/siu/siu.png" class="siu-logo">
-
                 </br>
                 </br>
                 <!-- <button type="button" class="btn btn-success">Read more</button></div> -->
