@@ -15,7 +15,7 @@
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
 
-            <img src="rsc/img/logo/sustour/greenwhite.png" class="img-thumbnail">
+            <a href="#" class=""><img src="rsc/img/logo/sustour/dark_logo_transparent_background_small.png" width="275" height="128"></a>
 
             <h1 class="display-1"></h1>
             <p class="lead"></p>
