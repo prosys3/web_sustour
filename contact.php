@@ -20,8 +20,8 @@
            <img src="rsc/img/logo/sustour/greenwhite.png" class="img-thumbnail">
             <!-- logo navbar stop -->
 
-            <h1 class="display-3">Contact us</h1>
-            <p class="lead">Fill in contact form</p>
+            <h1 class="display-3">Contact Information</h1>
+            <p class="lead">anne.g.sturod@usn.no<br>tim.t.abessadze@usn.no</p>
 
         </div>
     </div>
