@@ -17,7 +17,7 @@
 
 
             <!-- logo navbar start -->
-           <img src="rsc/img/logo/sustour/greenwhite.png" class="img-thumbnail">
+            <a href="#" class=""><img src="rsc/img/logo/sustour/dark_logo_transparent_background_small.png" width="275" height="128"></a>
             <!-- logo navbar stop -->
 
             <h1 class="display-3">Contact Information</h1>
