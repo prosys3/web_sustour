@@ -21,7 +21,7 @@
             <!-- logo navbar stop -->
 
             <h1 class="display-3">Contact us</h1>
-            <p class="lead"><br>Would you like to get in touch with us?</br><br>Do you have any questions,</br><br>or maybe you would like to make a donation?</br><br> You can find all our contact information on this page.</br></p>
+            <p class="lead">Fill in contact form</p>
 
         </div>
     </div>
@@ -54,7 +54,7 @@
 
             </div>
             <div class="col-sm">
-                <h2>Achievments</h2>
+                <h2>Achievements</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                 </br>
                 </br>
