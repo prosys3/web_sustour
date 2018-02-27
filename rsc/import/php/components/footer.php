@@ -77,10 +77,10 @@
             <div class="col-md-4 col-lg-3 col-xl-3 dark-grey-text">
                 <h6 class="title font-bold"><strong>Contact us on</strong></h6>
                 <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-                <p><i class="fa fa-home mr-3"></i>E-mail:</p>
+                <p><i class="fa fa-home mr-3"></i><b>E-mail:</b></p>
                 <p><i class="fa fa-envelope mr-3"></i>anne.g.sturod@usn.no</p>
                 <p><i class="fa fa-envelope mr-3"></i>tim.t.abessadze@usn.no</p>
-                <p><i class="fa fa-phone mr-3"></i>Call:</p>
+                <p><i class="fa fa-phone mr-3"></i><b>Call:</b></p>
                 <p><i class="fa fa-phone mr-3"></i> + 01 234 567 88</p>
                 <p><i class="fa fa-print mr-3"></i> + 01 234 567 89</p>
             </div>
