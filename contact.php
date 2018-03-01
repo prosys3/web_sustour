@@ -20,9 +20,6 @@
             <a href="#" class=""><img src="rsc/img/logo/sustour/dark_logo_transparent_background_small.png" width="275" height="128"></a>
             <!-- logo navbar stop -->
 
-            <h1 class="display-3">Contact Information</h1>
-            <p class="lead">anne.g.sturod@usn.no<br>tim.t.abessadze@usn.no</p>
-
         </div>
     </div>
     <!-- Header stop -->
@@ -34,13 +31,23 @@
     <!-- ############################################################################## -->
     <!-- Avsnittene start -->
 
-    <div class="container">
+            </br>
 
+    <div class="container">
+        <!-- First row -->
         <div class="row">
+            <!-- First column -->
             <div class="col-sm">
 
-                <h2>News</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <h2>E-mail</h2>
+                </br>
+                <p><b>Anne Gry Sturød:</b>
+                </br>
+                anne.g.sturod@usn.no
+                </br></br>
+                <b>Tim T. Abessadze</b>
+                </br>
+                tim.t.abessadze@usn.no</p>
 
                 <!-- quick fix, må gjøre noe annet css start -->
                 </br>
@@ -48,17 +55,22 @@
                 <!-- quick fix, må gjøre noe annet css stop -->
 
 
-                <!-- Button start -->
-                <button type="button" class="btn btn-success">Read more</button>
-                <!-- Button stop -->
+            </div>
+            <!--/.First column-->
+
+            <!-- Second column -->
+            <div class="col-sm">
+
+                <h2>Call</h2>
+                </br>
+                <p><b>Monday-Friday 10-16</b></p>
+                <p>+ 01 234 567 88</br>+ 01 234 567 88</p>
+
+                </br>
+                </br>
 
             </div>
-            <div class="col-sm">
-                <h2>Achievements</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                </br>
-                </br>
-                <button type="button" class="btn btn-success">Read more</button></div>
+            <!--/.Second column-->
 
         </div>
 
