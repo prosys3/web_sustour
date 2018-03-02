@@ -25,13 +25,13 @@
       </div>
     </div>      
 
-    <div class="container-fluid">
+    <div class="container">
 
         <div class="row">
             <div class="col-sm">
 
                 <br></br>
-                <h2>PROJECT RATIONALE:</h2>
+                <h2>PROJECT RATIONALE</h2>
                 <p>Tourism is promoted as a strategy for achieving sustainable development by global development agencies as well as nations. Tourism has the potential of creating sustainable livelihoods in rural areas challenged by unemployment and poverty, by creating job opportunities through local scale entrepreneurship. Entrepreneurship in tourism is often a matter of finding a niche product based on the natural or cultural features of a particular area. How to develop rural tourism in an economic, social and environmental sustainable way, however, calls for knowledge in a range of different disciplines.</p>
 
                 <p>By joining several academic disciplines, it is the overall project goal to equip students of tourism, as well as staff teaching tourism, with the skills, knowledge and competence necessary to develop sustainable tourism based on local rural entrepreneurship and heritage in Kyrgyzstan, Georgia and Norway.</p>
@@ -49,7 +49,7 @@
             <div class="col-sm">
 
                 <br></br>
-                <h2>PROJECT GOALS:</h2>
+                <h2>PROJECT GOALS</h2>
                 <ul>
                   <li>Increased student and staff mobility between all three countries for the exchange of knowledge,competence and practical skills.</li>
                   <li>Enhance student's and staff's in-depth knowledge on topics related to sustainable tourism, ruralentrepreneurship and heritage.</li>
