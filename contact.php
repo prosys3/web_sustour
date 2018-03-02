@@ -12,12 +12,12 @@
 <main>
 
     <div class="jumbotron jumbotron-fluid">
-        <div class="container">
+        <div class="container text-center">
 
 
 
             <!-- logo navbar start -->
-            <a href="#" class=""><img src="rsc/img/logo/sustour/dark_logo_transparent_background_small.png" width="275" height="128"></a>
+            <a href="#" class=""><img src="rsc/img/logo/sustour/dark_logo_transparent_background.svg" width="500"></a>
             <!-- logo navbar stop -->
 
         </div>
