@@ -42,10 +42,6 @@
                 <!-- quick fix, må gjøre noe annet css stop -->
 
 
-                <!-- Button start -->
-                <button type="button" class="btn btn-success">Read more</button>
-                <!-- Button stop -->
-
             </div>
             <div class="col-sm">
 
@@ -66,10 +62,6 @@
                 </br>
                 <!-- quick fix, må gjøre noe annet css stop -->
 
-
-                <!-- Button start -->
-                <button type="button" class="btn btn-success">Read more</button>
-                <!-- Button stop -->
 
             </div>
             <div class="col-sm">

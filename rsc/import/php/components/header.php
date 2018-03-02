@@ -12,7 +12,8 @@
             <ul class="navbar-nav">
                 <li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
                 <li class="nav-item"><a class="nav-link" href="about.php">About us</a></li>
-                <li class="nav-item"><a class="nav-link" href="contact.php">Contact</a></li>
+                <li class="nav-item"><a class="nav-link" href="activities.php">Activities</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.php">Contact us</a></li>
             </ul>
 
             <div class="dropdown">
