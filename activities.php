@@ -22,10 +22,10 @@
         <!-- logo navbar start -->
         <a href="#" class=""><img src="rsc/img/logo/sustour/logo_symbol_black.svg" width="150"></a>
         <!-- logo navbar stop -->
-
+        
         <!-- logo tekst start -->
-        <h1 class="display-3">About Sustainable Tourism</h1>
-        <p class="lead">Educational project between Kyrgyzstan, Georgia and Norway 2016– 2019</p>
+        <h1 class="display-3">Project activities</h1>
+        <!-- <p class="lead">Educational project between Kyrgyzstan, Georgia and Norway 2016– 2019</p> -->
         <!-- logo tekst stopp -->
 
       </div>
