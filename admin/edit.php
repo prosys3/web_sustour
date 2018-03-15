@@ -31,21 +31,7 @@
                     <a href="posts.php" class="list-group-item "><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Posts <span class="badge">41</span></a>
                     <a href="users.php" class="list-group-item"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Users <span class="badge">59</span></a>
                 </div>
-                <div class="well ">
-                    <h4>Disk Space Used</h4>
-                    <div class="progress">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-                            60%
-                        </div>
-                    </div>
-                    <h4>Band Width Used</h4>
-                    <div class="progress">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 40%;">
-                            60%
-                        </div>
-                    </div>
-
-                </div>
+                
             </div>
             <div class="col-md-9">
                 <!-- Website Overview -->
