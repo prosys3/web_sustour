@@ -24,7 +24,7 @@
             <div class="col-md-3">
 
                 <div class="list-group">
-                    <a href="dashboard.php" class="list-group-item active main-color-bg">
+                    <a href="index.php" class="list-group-item active main-color-bg">
                         <span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Dashboard
                     </a>
 
@@ -37,9 +37,8 @@
                     <a href="users.php" class="list-group-item "><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Users <span class="badge">41</span></a>
                     <!-- Overview for users stopp -->
 
-
                     <!-- Overview for files start -->
-                    <a href="files.php" class="list-group-item  active main-color-bg"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Files <span class="badge">59</span></a>
+                    <a href="files.php" class="list-group-item"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Files <span class="badge">59</span></a>
                     <!-- Overview for files stopp -->
 
                 </div>

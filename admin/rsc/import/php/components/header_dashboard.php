@@ -30,29 +30,6 @@
                 <h1><a class="navbar-brand"> <img src="../rsc/img/logo/sustour/logo_symbol_white.svg" width="45" height="30" alt="Logo symbol"></a> Dashboard <small></small></h1>
             </div>
 
-            <!-- Create post button start -->
-
-            <div class="col-md-2">
-                <div class="dropdown create">
-                    <button class="btn btn-success" type="button" id="" data-toggle="" aria-haspopup="true" aria-expanded="true">
-                        Create post
-                    </button>
-                </div>
-
-            </div>
-            <!-- Create post button stopp -->
-
-
-            <!-- Create Files button start -->
-            <div class="col-md-1">
-                <div class="dropdown create">
-                    <button class="btn btn-success" type="button" id="" data-toggle="" aria-haspopup="true" aria-expanded="true">
-                        Files
-                    </button>
-                </div>
-
-            </div>
-            <!-- Create Files button stopp -->
 
         </div>
 
