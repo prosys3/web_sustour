@@ -45,8 +45,8 @@ if(isset($_POST['submit'])) {
     }
     if (mysqli_query($con, $sqql)) {
 
-        echo "<div style='text-align: center;'><h1 style='color: black'>Bruker opprettet!</h1></div>";
-        header('Refresh: 3; URL=http://localhost/dashboard/Loginpage.html');
+        echo "<div style='text-align: center;'><h1 style='color: black'>User Created!</h1></div>";
+        header("Refresh:3; url=index.php");
     } else {
         die("Error: " . mysqli_sqlstate($con));
     }
