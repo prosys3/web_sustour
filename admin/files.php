@@ -6,7 +6,20 @@
 ######################## ! DO NOT EDIT ABOVE THIS POINT ! ########################
 ##################################################################################
 -->
+ <?php require ('rsc\import\php\functions\functions.php');  ?>
 
+
+<?php
+
+$host = "localhost";
+$user = "root";
+$password = "";
+$db = "Prosys3";
+
+$con = mysqli_connect($host, $user, $password, $db) or die ("Cant Connect to database");
+
+
+?>
 
 <section id="breadcrumb">
     <div class="container">
@@ -25,22 +38,23 @@
 
                 <div class="list-group">
                     <a href="index.php" class="list-group-item active main-color-bg">
-			    		<span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Dashboard
-                    </a>
+                        <span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Dashboard</a>
 
 
                     <!-- Overview for posts start -->
-                    <a href="posts.php" class="list-group-item"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Posts <span class="badge">31</span></a>
+                    <a href="posts.php" class="list-group-item"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Posts <span class="badge">
+                    <?php echo postCount($con);?></span></a>
                     <!-- Overview for posts stop -->
 
-                    <!-- Overview for users stop -->
-                    <a href="users.php" class="list-group-item"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Users <span class="badge">41</span></a>
-                    <!-- Overview for users stop -->
+                    <!-- Overview for users start -->
+                    <a href="users.php" class="list-group-item"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Users <span class="badge">
+                    <?php echo registredMemberCount($con);?></span></a>
+                    <!-- Overview for users stopp -->
 
-                    <!-- Overview for files stop -->
-                    <a href="files.php" class="list-group-item"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Files <span class="badge">59</span></a>
-                    <!-- Overview for files stop -->
-
+                    <!-- Overview for files start -->
+                    <a href="files.php" class="list-group-item"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Files <span class="badge"> 
+                    <?php echo fileCount($con);?> </span></a>
+                    <!-- Overview for files stopp -->
 
                 </div>
 
