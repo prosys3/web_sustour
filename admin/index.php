@@ -7,6 +7,19 @@
 ##################################################################################
 -->
 
+<?php
+
+$host = "localhost";
+$user = "root";
+$password = "";
+$db = "Prosys3";
+
+$con = mysqli_connect($host, $user, $password, $db) or die ("Cant Connect to database");
+
+
+?>
+
+
 
 <section id="breadcrumb">
     <div class="container">
@@ -42,6 +55,27 @@
                 </div>
 
 
+    <?php function registredMemberCount ($con) 
+{
+    $sql = "SELECT COUNT(User_ID) FROM user_data";
+    $result = mysqli_query($con,$sql);
+    $rows = mysqli_fetch_row($result);
+    return $rows[0];
+}
+?>
+
+
+
+
+
+    <?php function registredMemberCount ($con) 
+{
+    $sql = "SELECT COUNT(User_ID) FROM user_data";
+    $result = mysqli_query($con,$sql);
+    $rows = mysqli_fetch_row($result);
+    return $rows[0];
+}
+?>
 
             </div>
             <div class="col-md-9">
@@ -53,14 +87,26 @@
                     <div class="panel-body">
                         <div class="col-md-3">
                             <div class="well dash-box">
-                                <h2><span class="glyphicon glyphicon-user" aria-hidden="true"></span>10</h2>
+                                <h2><span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                                    <?php echo registredMemberCount($con);?>
+                                </h2>
                                 <h4>Users</h4>
+
                             </div>
                         </div>
-
+    <?php function postCount ($con) 
+{
+    $sql = "SELECT COUNT(Post_ID) FROM post";
+    $result = mysqli_query($con,$sql);
+    $rows = mysqli_fetch_row($result);
+    return $rows[0];
+}
+?>
                         <div class="col-md-3">
                             <div class="well dash-box">
-                                <h2><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>4</h2>
+                                <h2><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                                     <?php echo postCount($con);?>
+                                </h2>
                                 <h4>Posts</h4>
                             </div>
                         </div>
