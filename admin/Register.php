@@ -2,18 +2,17 @@
 
 if(isset($_POST['submit'])) {
 
-    require_once ("dbconfig.php");
+    require_once ("rsc/import/php/dbconfig.php");
 
     $fname = mysqli_real_escape_string($con, $_POST['fname']);
     $lname = mysqli_real_escape_string($con, $_POST['lname']);
-    $usern = mysqli_real_escape_string($con, $_POST['useracc']);
+    $email = mysqli_real_escape_string($con, $_POST['email']);
     $passw = mysqli_real_escape_string($con, $_POST['pass']);
     $usertype = mysqli_real_escape_string($con, $_POST['usertype']);
-    $email = mysqli_real_escape_string($con, $_POST['email']);
     $phone = mysqli_real_escape_string($con, $_POST['phone']);
     $comp = mysqli_real_escape_string($con, $_POST['company']);
 
-    if (empty($fname) || empty($lname) || empty($usern) || empty($passw) || empty($usertype) || empty($email) || empty($phone) || empty($comp)) {
+    if (empty($fname) || empty($lname) ||  empty($email) || empty($passw) || empty($usertype) || empty($phone) || empty($comp)) {
         header("Location: RegisterPage.php");
         exit();
 
@@ -27,7 +26,7 @@ if(isset($_POST['submit'])) {
 
     } else {
 
-        $sql = "SELECT * FROM userdat WHERE User_Name_Account ='$usern'";
+        $sql = "SELECT * FROM user_data WHERE User_Email ='$email'";
         $result = mysqli_query($con, $sql);
         $resultCheck = mysqli_num_rows($result);
 
@@ -40,8 +39,8 @@ if(isset($_POST['submit'])) {
             // password hash
             $pwhash = password_hash($_POST['pass'], PASSWORD_DEFAULT);
 
-            $sqql = "INSERT INTO `userdat`(User_Name_First, User_Name_Last, User_Name_Account, User_Password, User_Type, User_Email, User_Phone, User_Company) 
-                     VALUES ('$fname', '$lname', '$usern', '$pwhash', '$usertype', '$email', '$phone', '$comp');";
+            $sqql = "INSERT INTO `user_data`(User_Name_First, User_Name_Last, User_Email, User_Password, User_Type, User_Phone, User_Company) 
+                     VALUES ('$fname', '$lname', '$email', '$pwhash', '$usertype', '$phone', '$comp');";
         }
     }
     if (mysqli_query($con, $sqql)) {

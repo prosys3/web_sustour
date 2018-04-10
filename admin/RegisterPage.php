@@ -17,13 +17,11 @@
                 <br /><br />
                 <label>Last name  :</label><input type="text" name="lname" class = "box" required>
                 <br /><br />
-                <label>Username  :</label><input type="text" name="useracc" class = "box" required>
+                <label>Email  :</label><br><input type="text" name="email" class = "box" required>
                 <br /><br />
                 <label>Password  :</label><br><input type="Password" name="pass" class = "box" required>
                 <br /><br />
                 <label>UserType  :</label><input type="text" name="usertype" class = "box" required>
-                <br /><br />
-                <label>Email  :</label><br><input type="text" name="email" class = "box" required>
                 <br /><br />
                 <label>Phone    :<br /></label><input type="text" name="phone" class = "box" required>
                 <br /><br />
