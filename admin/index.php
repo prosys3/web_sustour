@@ -6,6 +6,9 @@
 ######################## ! DO NOT EDIT ABOVE THIS POINT ! ########################
 ##################################################################################
 -->
+ 
+ <?php require ('rsc\import\php\functions\functions.php');  ?>
+
 
 <?php
 
@@ -18,7 +21,6 @@ $con = mysqli_connect($host, $user, $password, $db) or die ("Cant Connect to dat
 
 
 ?>
-
 
 
 <section id="breadcrumb">
@@ -41,28 +43,24 @@ $con = mysqli_connect($host, $user, $password, $db) or die ("Cant Connect to dat
 
 
                     <!-- Overview for posts start -->
-                    <a href="posts.php" class="list-group-item"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Posts <span class="badge">4</span></a>
+                    <a href="posts.php" class="list-group-item"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Posts <span class="badge">
+                    <?php echo postCount($con);?></span></a>
                     <!-- Overview for posts stop -->
 
                     <!-- Overview for users start -->
-                    <a href="users.php" class="list-group-item"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Users <span class="badge">10</span></a>
+                    <a href="users.php" class="list-group-item"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Users <span class="badge">
+                    <?php echo registredMemberCount($con);?></span></a>
                     <!-- Overview for users stopp -->
 
                     <!-- Overview for files start -->
-                    <a href="users.php" class="list-group-item"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Files <span class="badge">35</span></a>
+                    <a href="files.php" class="list-group-item"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Files <span class="badge"> 
+                    <?php echo fileCount($con);?> </span></a>
                     <!-- Overview for files stopp -->
 
                 </div>
 
 
-    <?php function registredMemberCount ($con) 
-{
-    $sql = "SELECT COUNT(User_ID) FROM user_data";
-    $result = mysqli_query($con,$sql);
-    $rows = mysqli_fetch_row($result);
-    return $rows[0];
-}
-?>
+
 
             </div>
             <div class="col-md-9">
@@ -81,14 +79,7 @@ $con = mysqli_connect($host, $user, $password, $db) or die ("Cant Connect to dat
 
                             </div>
                         </div>
-    <?php function postCount ($con) 
-{
-    $sql = "SELECT COUNT(Post_ID) FROM post";
-    $result = mysqli_query($con,$sql);
-    $rows = mysqli_fetch_row($result);
-    return $rows[0];
-}
-?>
+
                         <div class="col-md-3">
                             <div class="well dash-box">
                                 <h2><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
