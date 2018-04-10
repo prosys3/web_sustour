@@ -64,19 +64,6 @@ $con = mysqli_connect($host, $user, $password, $db) or die ("Cant Connect to dat
 }
 ?>
 
-
-
-
-
-    <?php function registredMemberCount ($con) 
-{
-    $sql = "SELECT COUNT(User_ID) FROM user_data";
-    $result = mysqli_query($con,$sql);
-    $rows = mysqli_fetch_row($result);
-    return $rows[0];
-}
-?>
-
             </div>
             <div class="col-md-9">
                 <!-- Website Overview -->
