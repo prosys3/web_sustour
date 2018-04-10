@@ -1,7 +1,7 @@
 <?php
 
-require_once("dbconfig.php");
-require ("functions.php");
+require_once ("rsc/import/php/dbconfig.php");
+require ("rsc/import/php/functions/functions.php");
 
 
 if($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -14,7 +14,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($pwverify == true) {
 
-        $sql = "SELECT User_ID FROM userdat WHERE User_Email = '$myemail'";
+        $sql = "SELECT User_ID FROM user_data WHERE User_Email = '$myemail'";
         $result = mysqli_query($con, $sql);
         $row = mysqli_fetch_assoc($result);
         $count = mysqli_num_rows($result);
@@ -27,16 +27,16 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['login_email'] = $myemail;
 
 
-            print("<META HTTP-EQUIV='Refresh'CONTENT='0;URL=innlogget.php'>");
+            print("<META HTTP-EQUIV='Refresh'CONTENT='0;URL=index.php'>");
         } else {
             $error = "Your Login Name or Password is invalid!";
             echo "<div style='text-align: center;'><h1 style='color: black'>{$error}</h1></div>";
-            header('Refresh: 3; URL=http://localhost/dashboard/Loginpage.html');
+            header('Refresh: 3; URL=login.html');
         }
     } else {
         $error = "Your Login Name or Password is invalid!";
         echo "<div style='text-align: center;'><h1 style='color: black'>{$error}</h1></div>";
-        header('Refresh: 3; URL=http://localhost/dashboard/Loginpage.html');
+        header('Refresh: 3; URL=login.html');
     }
 }
 

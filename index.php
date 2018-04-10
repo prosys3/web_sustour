@@ -1,6 +1,15 @@
 <?php include 'rsc/import/php/components/head.php' ?>
 <?php include 'rsc/import/php/components/header.php' ?>
 
+<?php
+session_start();
+@$myusername = $_SESSION ["login_user"];
+if (!$myusername)
+{
+    print("<META HTTP-EQUIV='Refresh'CONTENT='0;URL=Loginpage.html'>");
+}
+?>
+
 <!--
 ##################################################################################
 ######################## ! DO NOT EDIT ABOVE THIS POINT ! ########################
