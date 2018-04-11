@@ -17,9 +17,7 @@
             </ul>
 
             <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Login
-                </button>
+                <button type="button" class="btn btn-secondary">Login</button>
                 <div id="prosys3-dropdown-login" class="dropdown-menu text-center" aria-labelledby="dropdownMenuButton">
                     <form class="form-signin" action="../../../../../web_sustour/admin/Login.php" method="post">
                         <img class="mb-4" src="https://getbootstrap.com/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">

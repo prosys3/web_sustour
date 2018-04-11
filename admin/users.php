@@ -58,7 +58,7 @@
                     <div class="panel-body">
                         <div class="row">
                             <div class="col-md-12">
-                                <input type="text" class="form-control" placeholder="Filter Users">
+                                <button class=".btn-primary" type="submit">Create User</button>
                             </div>
                         </div>
                         <br>

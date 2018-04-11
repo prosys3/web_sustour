@@ -15,6 +15,7 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li class="active"><a href="index.html">Welcome, Ms. Arora</a></li>
                     <li><a href="login.html">Logout</a></li>
+                    <li><a class="btn-primary" href="index.php" role="button">Homepage</a></li>
                 </ul>
         </div><!--/.nav-collapse -->
     </div>
