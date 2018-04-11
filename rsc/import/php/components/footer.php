@@ -1,4 +1,4 @@
-<footer class="page-footer center-on-small-only blue-grey lighten-5 pt-0">
+<footer id="prosys3-footer" class="page-footer center-on-small-only pt-0">
 
     <!-- <div style="background-color: #21d192;"> -->
         <!--  <div class="container"> -->
@@ -32,53 +32,52 @@
     </div>
 
     <!--Footer Links-->
-    <div class="container mt-5 mb-4 text-center text-md-left">
+    <div class="container mt-5 mb-4 text-md-left">
         <div class="row mt-3">
 
             <!--First column-->
-            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-r dark-grey-text">
+            <div class="col-sm">
                 <h6 class="title font-bold"><strong>Partner Universities</strong></h6>
                 <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
                 <p><a href="http://www.bolognakg.net/kg2/bfea.htm" 
-                    class="dark-grey-text">Bishkek Academy of Finance and Economics</a></p>
+                    class="text-light">Bishkek Academy of Finance and Economics</a></p>
                 <p><a href="http://www.istc.int/en/institute/8814" 
-                    class="dark-grey-text">Issyk Kul State University</a></p>
+                    class="text-light">Issyk Kul State University</a></p>
                 <p><a href="http://www.keu.kg/"
-                    class="dark-grey-text">Kyrgyz Economic University</a></p>
+                    class="text-light">Kyrgyz Economic University</a></p>
                 <p><a href="https://www.bsu.edu.ge/?lang=en" 
-                    class="dark-grey-text">Batumi State University</a></p>
+                    class="text-light">Batumi State University</a></p>
                 <p><a href="http://www.studyingeorgia.com.ng/preferred-universities-georgia/akaki-tsereteli-state-university.html" 
-                    class="dark-grey-text">Akaki Tsereteli State University</a></p>
+                    class="text-light">Akaki Tsereteli State University</a></p>
                 <p><a href="http://www.bsma.edu.ge/index.html?lang=en" 
-                    class="dark-grey-text">Batumi State Maritime Academy</a></p>
+                    class="text-light">Batumi State Maritime Academy</a></p>
                 <p><a href="https://www.usn.no/english/?lang=en_GB" 
-                    class="dark-grey-text">University College of South East Norway</a></p>
+                    class="text-light">University College of South East Norway</a></p>
             </div>
             <!--/.First column-->
 
             <!--Second column-->
-            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-r dark-grey-text">
+            <div class="col-sm">
                 <h6 class="title font-bold"><strong>Visit us on</strong></h6>
                 <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-                <p><a href="#!" class="dark-grey-text">Facebook</a></p>
-                <p><a href="#!" class="dark-grey-text">Twitter</a></p>
-                <p><a href="#!" class="dark-grey-text">Instagram</a></p>
+                <p><a href="#!" class="text-light">Facebook</a></p>
+                <p><a href="#!" class="text-light">Twitter</a></p>
+                <p><a href="#!" class="text-light">Instagram</a></p>
             </div>
             <!--/.Second column-->
 
             <!--Third column-->
-            <div class="col-md-4 col-lg-3 col-xl-3 dark-grey-text">
+            <div class="col-sm">
                 <h6 class="title font-bold"><strong>Contact us on</strong></h6>
                 <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-                <p><i class="fa fa-home mr-3"></i><b>E-mail:</b></p>
-                <p><i class="fa fa-envelope mr-3"></i>anne.g.sturod@usn.no</p>
-                <p><i class="fa fa-envelope mr-3"></i>tim.t.abessadze@usn.no</p>
-                <p><i class="fa fa-phone mr-3"></i><b>Call:</b></p>
-                <p><i class="fa fa-phone mr-3"></i> + 01 234 567 88</p>
-                <p><i class="fa fa-print mr-3"></i> + 01 234 567 89</p>
-                <br></br>
-                <br></br>
-                <br></br>
+                <p>E-mail:</p>
+                <p>anne.g.sturod@usn.no<br>
+                tim.t.abessadze@usn.no</p>
+                <br>
+                <p>Call:</p>
+                <p>+ 01 234 567 88<br>
+                + 01 234 567 89</p>
+
                 <a href="https://www.siu.no/eng">
                     <img src="rsc/img/logo/siu/siu.png" alt="SIU" class="siu-logo">
                 </a>
@@ -95,8 +94,8 @@
 
     <!-- Copyright-->
     <div class="footer-copyright">
-        <div class="container">
-            Made by ProSys3
+        <div class="container text-center">
+            Created by ProSys3
         </div>
     </div>
     <!--/.Copyright -->

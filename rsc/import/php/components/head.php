@@ -30,7 +30,7 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
         <!-- Custom CSS for felles elementer start -->
-        <link rel="stylesheet" href="rsc/css/custom.css">
+        <link rel="stylesheet" href="rsc/import/css/theme.css">
         <!-- Custom CSS felles elementer stop -->
 
     <!-- CSS: END -->

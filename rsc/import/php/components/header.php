@@ -1,4 +1,4 @@
-<nav id="prosys3-navbar" class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+<nav id="prosys3-navbar" class="navbar navbar-expand-md navbar-dark fixed-top">
     <div class="container">
 
         <a class="navbar-brand" href="index.php"><img src="rsc/img/logo/sustour/logo_symbol_white.svg" width="30" height="30" alt="Logo symbol"></a>
@@ -18,7 +18,7 @@
 
             </ul>
 
-            <a class="btn btn-secondary" href="login.php" role="button">Login</a>
+            <a class="btn btn-light" href="login.php" role="button">Login</a>
 
 
         </div>

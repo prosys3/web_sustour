@@ -1,0 +1,19 @@
+:root{
+    --theme-color: #7d8a2e;
+}
+
+/* Navigation bar: */
+nav#prosys3-navbar {
+    background-color: var(--theme-color);
+}
+
+/* Footer: */
+footer#prosys3-footer{
+    background-color: var(--theme-color);
+    color: white;
+}
+
+.footer-copyright{
+    background-color: rgba(0,0,0,0.25);
+    padding: 20px 0;
+}
