@@ -26,24 +26,24 @@
   </head>
 
   <body class="text-center">
-    <form class="form-signin">
+    <form class="form-signin" action="admin/loginscript.php" method="post">
       <img class="mb-2" src="rsc/img/logo/sustour/logo_symbol_green.svg" alt="" width="120" height="120">
       <br>
       <br>
       <h1 class="h3 mb-3 font-weight-normal">Login to Sustainable Tourism</h1>
       <br>
       <label for="inputEmail" class="sr-only">Username</label>
-	  <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+	  <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
       <label for="inputPassword" class="sr-only">Password</label>
       <br>
-      <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+      <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
       <div class="checkbox mb-3">
         <label>
           <input type="checkbox" value="remember-me">Remember me
         </label>
       </div>
 
-      <button type="button" class="btn btn-success btn-lg">Login</button>
+      <button type="submit" class="btn btn-success btn-lg">Login</button>
       <p class="mt-5 mb-3 text-muted"> &copy; 2017-2018 Sustainable Tourism</p>
     </form>
   </body>
