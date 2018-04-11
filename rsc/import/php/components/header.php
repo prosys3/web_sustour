@@ -16,7 +16,7 @@
                 <li class="nav-item"><a class="nav-link" href="contact.php">Contact us</a></li>
             </ul>
 
-            <button type="button" class="btn btn-secondary">Login</button>
+            <a class="btn btn-secondary" href="login.php" role="button">Login</a>
 
 
         </div>
