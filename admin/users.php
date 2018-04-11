@@ -6,7 +6,7 @@
     ######################## ! DO NOT EDIT ABOVE THIS POINT ! ########################
     ##################################################################################
     -->
-<?php require ('rsc\import\php\functions\functions.php');  ?>
+<?php require ('rsc/import/php/functions/functions.php');  ?>
 <?php require_once ("rsc/import/php/dbconfig.php"); ?>
 
 
@@ -69,30 +69,7 @@
                                 <th>Type</th>
                                 <th></th>
                             </tr>
-                            <tr>
-                                <td>User 1</td>
-                                <td>john@doe.com</td>
-                                <td>user</td>
-                                <td><a class="btn btn-default" href="edit.php">Edit</a> <a class="btn btn-danger" href="#">Delete</a></td>
-                            </tr>
-                            <tr>
-                                <td>User 2</td>
-                                <td>john@doe.com</td>
-                                <td>admin</td>
-                                <td><a class="btn btn-default" href="edit.php">Edit</a> <a class="btn btn-danger" href="#">Delete</a></td>
-                            </tr>
-                            <tr>
-                                <td>User 3</td>
-                                <td>john@doe.com</td>
-                                <td>moderator</td>
-                                <td><a class="btn btn-default" href="edit.php">Edit</a> <a class="btn btn-danger" href="#">Delete</a></td>
-                            </tr>
-                            <tr>
-                                <td>User 4</td>
-                                <td>john@doe.com</td>
-                                <td>user</td>
-                                <td><a class="btn btn-default" href="edit.php">Edit</a> <a class="btn btn-danger" href="#">Delete</a></td>
-                            </tr>
+                            <?php fillUserList() ?>
                         </table>
 
                     </div>

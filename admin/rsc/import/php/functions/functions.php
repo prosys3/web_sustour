@@ -44,4 +44,27 @@ function fileCount ($con)
 
 
 
+function fillUserList()
+{
+
+    global $con;
+
+    $query = "SELECT * FROM user_data";
+    $result = mysqli_query($con, $query);
+
+    while ($row = mysqli_fetch_array($result)) {
+
+        echo "<tr >";
+        echo "<td >" . $row['User_Name_First'] . " " . $row['User_Name_Last'] . "</td >";
+        echo "<td >" . $row['User_Email'] . "</td >";
+        $tempQuery = "SELECT * FROM user_type where " . $row['User_Type'] . " = User_Type_ID";
+        $tempRes = mysqli_query($con, $tempQuery);
+        $tempRow = mysqli_fetch_array($tempRes);
+        echo "<td >" . $tempRow['User_Type_Name'] . "</td >";
+        echo '<td ><a class="btn btn-default" href = "edit.php" > Edit</a > <a class="btn btn-danger" href = "#" > Delete</a ></td >';
+        echo "</tr>";
+    }
+
+}
+
 ?>
