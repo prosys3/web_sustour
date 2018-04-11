@@ -68,7 +68,7 @@ $con = mysqli_connect($host, $user, $password, $db) or die ("Cant Connect to dat
                     <div class="panel-body">
                         <div class="row">
                             <div class="col-md-12">
-                                <input type="text" class="form-control" placeholder="Filter Pages">
+                                <button class=".btn-primary" type="submit">Create Post</button>
                             </div>
                         </div>
                         <br>
@@ -79,6 +79,27 @@ $con = mysqli_connect($host, $user, $password, $db) or die ("Cant Connect to dat
                                 <th>Created</th>
                                 <th></th>
                             </tr>
+
+                            <?php
+
+                            $query = "SELECT * FROM post";
+                            $result = mysqli_query($con, $query);
+
+                            while ($row = mysqli_fetch_array($result)) {
+
+                             echo "<tr >";
+                             echo "<td >" . $row['Post_Title'] . "</td >";
+                             $tempQuery = "SELECT * FROM user_data where " . $row['Post_Author'] . " = User_ID";
+                             $tempRes = mysqli_query($con, $tempQuery);
+                             $tempRow = mysqli_fetch_array($tempRes);
+                             echo "<td >" . $tempRow['User_Name_First'] . " " . $tempRow['User_Name_Last']  . "</td >";
+                             echo "<td >" . $row['Post_Date_Created'] . "</td >";
+                             echo '<td ><a class="btn btn-default" href = "edit.php" > Edit</a > <a class="btn btn-danger" href = "#" > Delete</a ></td >';
+                             echo "</tr>";
+                            }
+                          ?>
+                          </table>
+<!--  
                             <tr>
                                 <td>DN Network Prototype</td>
                                 <td>Anne Gry Størud</td>
@@ -103,8 +124,10 @@ $con = mysqli_connect($host, $user, $password, $db) or die ("Cant Connect to dat
                                 <td>May, 7th 2016</td>
                                 <td><a class="btn btn-default" href="edit.php">Edit</a> <a class="btn btn-danger" href="#">Delete</a></td>
                             </tr>
-                        </table>
 
+
+                        
+-->
                     </div>
                 </div>
 

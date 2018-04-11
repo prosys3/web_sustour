@@ -1,7 +1,7 @@
 <?php
 
 require_once ("rsc/import/php/dbconfig.php");
-require ("rsc/import/php/functions/functions.php");
+require("rsc/import/php/functions/functions.php");
 
 
 if($_SERVER["REQUEST_METHOD"] == "POST") {

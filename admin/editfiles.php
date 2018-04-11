@@ -6,26 +6,15 @@
 ######################## ! DO NOT EDIT ABOVE THIS POINT ! ########################
 ##################################################################################
 -->
- <?php require ('rsc\import\php\functions\functions.php');  ?>
+<?php require ('rsc\import\php\functions\functions.php');  ?>
+<?php require_once ("rsc/import/php/dbconfig.php"); ?>
 
-
-<?php
-
-$host = "localhost";
-$user = "root";
-$password = "";
-$db = "Prosys3";
-
-$con = mysqli_connect($host, $user, $password, $db) or die ("Cant Connect to database");
-
-
-?>
-
-<section id="breadcrumb">
+    <section id="breadcrumb">
     <div class="container">
         <ol class="breadcrumb">
             <li><a href="index.php">Dashboard</a></li>
-            <li class="active">Files</li>
+            <li><a href="files.php">Files</a></li>
+            <li class="active">Edit File</li>
 
         </ol>
     </div>
@@ -35,7 +24,7 @@ $con = mysqli_connect($host, $user, $password, $db) or die ("Cant Connect to dat
     <div class="container">
         <div class="row">
             <div class="col-md-3">
-
+                
                 <div class="list-group">
                     <a href="index.php" class="list-group-item active main-color-bg">
                         <span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Dashboard</a>
@@ -57,53 +46,37 @@ $con = mysqli_connect($host, $user, $password, $db) or die ("Cant Connect to dat
                     <!-- Overview for files stopp -->
 
                 </div>
-
+                
             </div>
             <div class="col-md-9">
                 <!-- Website Overview -->
                 <div class="panel panel-default">
                     <div class="panel-heading main-color-bg">
-                        <h3 class="panel-title">List of recent files</h3>
+                        <h3 class="panel-title">Edit File</h3>
                     </div>
                     <div class="panel-body">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <button class=".btn-primary" type="submit">Create File</button>
+                        <form>
+                            <div class="form-group">
+                                <label>File Title</label>
+                                <input type="text" class="form-control" placeholder="File Title" value="About">
+                                <div class="form-group">
+                                    <label>File Body</label>
+                                    <textarea name="editor1" class="form-control" placeholder="File Body">Adobe XD or Experience Design allows you to go from wireframe to interactive prototype, from desktop to mobile. I am going to upload a series of prototypes I’ve worked on as well as some tutorials to how to work with Adobe XD.</textarea>
+                                </div>
+                                <div class="checkbox">
+                                    <label><input type="checkbox" checked>Published</label>
+                                </div>
+                                <div class="form-group">
+                                    <label>Meta Tags</label>
+                                    <input type="text" class="form-control" placeholder="Add some tags" value="tag1, tag2">
+                                </div>
+                                <div class="form-group">
+                                    <label>Meta Description</label>
+                                    <input type="text" class="form-control" placeholder="Add Meta description" value="Adobe XD or Experience Design allows you to go from wireframe to interactive prototype, from desktop to mobile.">
+                                </div>
+                                <input type="submit" class="btn btn-default" value="Submit">
                             </div>
-                        </div>
-                        <br>
-                        <table class="table table-striped table-hover">
-                            <tr>
-                                <th>Title</th>
-                                <th>Uploaded by</th>
-                                <th>Created</th>
-                                <th></th>
-                            </tr>
-                            <tr>
-                                <td>Summer School 2018</td>
-                                <td>Anne Gry Størud</td>
-                                <td>December, 19th 2016</td>
-                                <td><a class="btn btn-default" href="editfiles.php">Edit</a> <a class="btn btn-danger" href="#">Delete</a></td>
-                            </tr>
-                            <tr>
-                                <td>Project Planner</td>
-                                <td>Ola Nordmann</span></td>
-                                <td>December, 19th 2016</td>
-                                <td><a class="btn btn-default" href="editfiles.php">Edit</a> <a class="btn btn-danger" href="#">Delete</a></td>
-                            </tr>
-                            <tr>
-                                <td>Partner information</td>
-                                <td>Erna Solberg</td>
-                                <td>December, 19th 2016</td>
-                                <td><a class="btn btn-default" href="editfiles.php">Edit</a> <a class="btn btn-danger" href="#">Delete</a></td>
-                            </tr>
-                            <tr>
-                                <td>Review</td>
-                                <td>Anne Gry Størud</td>
-                                <td>December, 19th 2016</td>
-                                <td><a class="btn btn-default" href="editfiles.php">Edit</a> <a class="btn btn-danger" href="#">Delete</a></td>
-                            </tr>
-                        </table>
+                        </form>
 
                     </div>
                 </div>
@@ -117,7 +90,7 @@ $con = mysqli_connect($host, $user, $password, $db) or die ("Cant Connect to dat
 
 </section>
 
-<footer id="footer"><p>Copyright Sutainable Tourism, &copy; 2018</p></footer>
+<footer id="footer"><p>Copyright DN, &copy; 2017</p></footer>
 
 <!-- Modals -->
 
