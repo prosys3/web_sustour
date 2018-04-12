@@ -43,7 +43,7 @@
                 </div>
 
                 <div class="col text-center">
-                    <img src="rsc/img/icons/university.svg" width="100" alt="">
+                    <img src="rsc/img/icons/university_white.svg" width="100" alt="">
                 </div>
 
             </div>
@@ -59,7 +59,7 @@
             <div class="row">
 
                 <div class="col text-center">
-                    <img src="rsc/img/icons/analysis.svg" width="100" alt="">
+                    <img src="rsc/img/icons/analysis_white.svg" width="100" alt="">
                 </div>
 
                 <div class="col">
@@ -85,7 +85,7 @@
                 </div>
 
                 <div class="col text-center">
-                    <img src="rsc/img/icons/discussion.svg" width="100" alt="">
+                    <img src="rsc/img/icons/collaboration_white.svg" width="100" alt="">
                 </div>
 
             </div>
@@ -167,7 +167,10 @@
 
         <div class="container text-light py-5">
 
-            <h1 class="text-center">Our university partners</h1>
+            <h1 class="text-center">
+                <img class="mb-3" src="rsc/img/icons/mortarboard_white.svg" width="64" alt=""><br>
+                Our university partners
+            </h1>
 
             <div class="row mt-5">
 
