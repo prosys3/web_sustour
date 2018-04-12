@@ -13,16 +13,16 @@
             <ul class="nav navbar-nav">
 
                 <ul class="nav navbar-nav navbar-right">
-<<<<<<< HEAD
+
                     <li class="active"><a href="index.html">Welcome, Ms. Arora</a></li>
                     <li><a href="../login.php">Logout</a></li>
                     <li><a class="btn-primary" href="../index.php" role="button">Homepage</a></li>
-=======
+
                     <li class="active"><a href="index.php">Welcome, Ms. Arora</a></li>
                     <li><a href="../../../../../index.php">Homepage</a></li>
                     <li><a href="../../../../../login.php">Logout</a></li>
->>>>>>> 25cb061dc3abf723f90ccaee0db2e355ef7f8e69
                 </ul>
+
         </div><!--/.nav-collapse -->
     </div>
 </nav>

@@ -136,17 +136,14 @@
 
         </div>
 
-<<<<<<< HEAD
     </section>
-=======
+
 <div class="container">
->>>>>>> 25cb061dc3abf723f90ccaee0db2e355ef7f8e69
 
     <section class="pb-5">
 
-<<<<<<< HEAD
         <div class="container py-5">
-=======
+
                 <br></br>
                 <h2>Lorem Ipsum </h2>
                 <p>Lorem ipsum dolor sit amet, turpis nulla nibh, magna sunt mi tortor ante varius et, aliquam dictumst maecenas tellus. Lorem molestie nunc, a nunc urna pede dolor, vitae arcu ligula, suspendisse nullam ac quis nisl pulvinar viverra, metus enim nullam hendrerit imperdiet nec est. Nulla etiam est phasellus viverra, beatae tellus voluptatibus dignissim scelerisque tincidunt. Nulla per quis cras molestie phasellus nonummy. Erat lacus ac, vel pede vel ante, nonummy sed quis, elit ut neque felis voluptatibus eget, nisl eget in in amet et..</p>
@@ -155,7 +152,6 @@
 
                 <h2>Lorem Ipsum </h2>
                 <p>Lorem ipsum dolor sit amet, turpis nulla nibh, magna sunt mi tortor ante varius et, aliquam dictumst maecenas tellus. Lorem molestie nunc, a nunc urna pede dolor, vitae arcu ligula, suspendisse nullam ac quis nisl pulvinar viverra, metus enim nullam hendrerit imperdiet nec est. Nulla etiam est phasellus viverra, beatae tellus voluptatibus dignissim scelerisque tincidunt. Nulla per quis cras molestie phasellus nonummy. Erat lacus ac, vel pede vel ante, nonummy sed quis, elit ut neque felis voluptatibus eget, nisl eget in in amet et.</p>
->>>>>>> 25cb061dc3abf723f90ccaee0db2e355ef7f8e69
 
             <div class="row">
 
@@ -163,7 +159,6 @@
                     <img src="rsc/img/icons/eco-bulb.svg" width="100" alt="">
                 </div>
 
-<<<<<<< HEAD
                 <div class="col">
                     <h3>Enriching students</h3>
                     <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
@@ -172,9 +167,8 @@
             </div>
 
         </div>
-=======
+
             </div>
->>>>>>> 25cb061dc3abf723f90ccaee0db2e355ef7f8e69
 
     </section>
 
