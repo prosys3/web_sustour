@@ -9,29 +9,29 @@
             <h1>Register to Sustainable Tourism</h1>
             
             <fieldset>
-                <legend><span class="number">1</span>Your basic info</legend>
+                <legend><span class="number">1</span>User basic info</legend>
                 <label for="name">First name:</label>
                 <div class="input-group input-group-md">
                     <span class="input-group-addon" id="sizing-addon1"><span class="glyphicon glyphicon-user"></span></span>
-                    <input type="text" class="form-control" placeholder="Enter your first name here..." aria-describedby="sizing-addon1">
+                    <input type="text" class="form-control" placeholder="Enter user first name here..." aria-describedby="sizing-addon1">
                 </div>
                 <br />
                 <label for="mail">Last name:</label>
                 <div class="input-group input-group-md">
                     <span class="input-group-addon" id="sizing-addon2"><span class="glyphicon glyphicon-envelope"></span></span>
-                    <input type="text" class="form-control" placeholder="Enter your last name here..." aria-describedby="sizing-addon2">
+                    <input type="text" class="form-control" placeholder="Enter user last name here..." aria-describedby="sizing-addon2">
                 </div>
                 <br />
                 <label for="pass">Email</label>
                 <div class="input-group input-group-md">
                     <span class="input-group-addon" id="sizing-addon3"><span class="glyphicon glyphicon-cog"></span></span>
-                    <input type="password" class="form-control" placeholder="Enter your Email here..." aria-describedby="sizing-addon3" id="pass">
+                    <input type="password" class="form-control" placeholder="Enter user Email here..." aria-describedby="sizing-addon3" id="pass">
                 </div>
                 <br />
                    <label for="pass">Password</label>
                 <div class="input-group input-group-md">
                     <span class="input-group-addon" id="sizing-addon3"><span class="glyphicon glyphicon-cog"></span></span>
-                    <input type="password" class="form-control" placeholder="Password..." aria-describedby="sizing-addon3" id="pass">
+                    <input type="password" class="form-control" placeholder="Enter user password here..." aria-describedby="sizing-addon3" id="pass">
                 </div>
                 <br />
 
@@ -41,7 +41,7 @@
                 <label for="pass_confirm">Confirm password:</label>
                 <div class="input-group input-group-md">
                     <span class="input-group-addon" id="sizing-addon4"><span class="glyphicon glyphicon-envelope"></span></span>
-                    <input type="password" class="form-control" placeholder="Confirm password" aria-describedby="sizing-addon4" id="confirmPass">
+                    <input type="password" class="form-control" placeholder="Confirm user password" aria-describedby="sizing-addon4" id="confirmPass">
                 </div>
                 <p id="passwordMatch"></p>
                 <!-- Skal backend ha en confirm funksjon på passord? -->
@@ -92,7 +92,7 @@
 
             <input id="b1" type="button" value="Sign Up" />
             <footer>
-                <p id="footer">Desing provided by <a href="">Anders Koo</a></p>
+                <p id="footer">Desing provided by <a href="">ProSys3</a></p>
             </footer>
         </div>
     </div>
@@ -186,6 +186,7 @@
         border: none;
         width: 30%;
         margin-left:600px;
+        s
     }
 
     legend
