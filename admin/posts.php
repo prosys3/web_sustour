@@ -68,7 +68,7 @@ $con = mysqli_connect($host, $user, $password, $db) or die ("Cant Connect to dat
                     <div class="panel-body">
                         <div class="row">
                             <div class="col-md-12">
-                                <button class=".btn-primary" type="submit">Create Post</button>
+                                <a class="btn btn-default" href="edit.php" role="button">Create Post</a>
                             </div>
                         </div>
                         <br>

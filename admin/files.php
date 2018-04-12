@@ -68,7 +68,7 @@ $con = mysqli_connect($host, $user, $password, $db) or die ("Cant Connect to dat
                     <div class="panel-body">
                         <div class="row">
                             <div class="col-md-12">
-                                <button class=".btn-primary" type="submit">Upload File</button>
+                                <a class="btn btn-default" href="#" role="button">Upload File</a>
                             </div>
                         </div>
                         <br>
