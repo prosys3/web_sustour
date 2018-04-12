@@ -21,6 +21,10 @@
 
     <main role="main">
 
+           <!-- logo navbar start -->
+            <a href="#" class=""><img src="rsc/img/logo/sustour/logo_symbol_black.svg" width="150"></a>
+            <!-- logo navbar stop -->
+
       <section class="jumbotron text-center">
         <div class="container">
           <h1 class="jumbotron-heading">News for Sustainable Tourism</h1>
