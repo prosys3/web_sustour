@@ -68,7 +68,7 @@ $con = mysqli_connect($host, $user, $password, $db) or die ("Cant Connect to dat
                     <div class="panel-body">
                         <div class="row">
                             <div class="col-md-12">
-                                <button class=".btn-primary" type="submit">Create File</button>
+                                <a class="btn btn-default" href="#" role="button">Upload File</a>
                             </div>
                         </div>
                         <br>
@@ -83,25 +83,25 @@ $con = mysqli_connect($host, $user, $password, $db) or die ("Cant Connect to dat
                                 <td>Summer School 2018</td>
                                 <td>Anne Gry Størud</td>
                                 <td>December, 19th 2016</td>
-                                <td><a class="btn btn-default" href="editfiles.php">Edit</a> <a class="btn btn-danger" href="#">Delete</a></td>
+                                <td><a class="btn btn-default" href="#">Download</a> <a class="btn btn-danger" href="#">Delete</a></td>
                             </tr>
                             <tr>
                                 <td>Project Planner</td>
                                 <td>Ola Nordmann</span></td>
                                 <td>December, 19th 2016</td>
-                                <td><a class="btn btn-default" href="editfiles.php">Edit</a> <a class="btn btn-danger" href="#">Delete</a></td>
+                                <td><a class="btn btn-default" href="#">Download</a> <a class="btn btn-danger" href="#">Delete</a></td>
                             </tr>
                             <tr>
                                 <td>Partner information</td>
                                 <td>Erna Solberg</td>
                                 <td>December, 19th 2016</td>
-                                <td><a class="btn btn-default" href="editfiles.php">Edit</a> <a class="btn btn-danger" href="#">Delete</a></td>
+                                <td><a class="btn btn-default" href="#">Download</a> <a class="btn btn-danger" href="#">Delete</a></td>
                             </tr>
                             <tr>
                                 <td>Review</td>
                                 <td>Anne Gry Størud</td>
                                 <td>December, 19th 2016</td>
-                                <td><a class="btn btn-default" href="editfiles.php">Edit</a> <a class="btn btn-danger" href="#">Delete</a></td>
+                                <td><a class="btn btn-default" href="#">Download</a> <a class="btn btn-danger" href="#">Delete</a></td>
                             </tr>
                         </table>
 

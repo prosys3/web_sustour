@@ -37,17 +37,21 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['user_type'] = $myusertype;
             $_SESSION['user_company'] = $mycompany;
 
+            if ( $_SESSION['user_type'] < 4 ) {
+                header('Refresh: 0; URL=index.php');
+            } else {
+                header('Refresh: 0; URL=../index.php');
+            }
 
-            print("<META HTTP-EQUIV='Refresh'CONTENT='0;URL=index.php'>");
         } else {
             $error = "Your Login Name or Password is invalid!";
             echo "<div style='text-align: center;'><h1 style='color: black'>{$error}</h1></div>";
-            header('Refresh: 3; URL=login.html');
+            header('Refresh: 3; URL=login.php');
         }
     } else {
         $error = "Your Login Name or Password is invalid!";
         echo "<div style='text-align: center;'><h1 style='color: black'>{$error}</h1></div>";
-        header('Refresh: 3; URL=login.html');
+        header('Refresh: 3; URL=login.php');
     }
 }
 

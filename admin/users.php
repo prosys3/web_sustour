@@ -58,7 +58,7 @@
                     <div class="panel-body">
                         <div class="row">
                             <div class="col-md-12">
-                                <button class=".btn-primary" type="submit">Create User</button>
+                                <a class="btn btn-default" href="register.php" role="button">Create User</a>
                             </div>
                         </div>
                         <br>

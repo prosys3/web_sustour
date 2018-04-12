@@ -17,8 +17,9 @@
 
 
             <!-- logo navbar start -->
-            <a href="#" class=""><img src="rsc/img/logo/sustour/dark_logo_transparent_background.svg" width="500"></a>
+            <a href="#" class=""><img src="rsc/img/logo/sustour/logo_symbol_black.svg" width="150"></a>
             <!-- logo navbar stop -->
+            <h1 class="display-3">Contact us</h1>
 
         </div>
     </div>

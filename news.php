@@ -12,68 +12,186 @@
 
 
 
-
 <main>
 
-        <div class="container text-center">
-    
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container text-center">
 
-            <h1 class="display-1"></h1>
-            <br></br>  
-            <br></br>
-            <h1>News</h1>
-            <h2 class="display-1"></h2>
-            <p class="lead"></p>
+        <!-- logo navbar start -->
+        <a href="#" class=""><img src="rsc/img/logo/sustour/logo_symbol_black.svg" width="150"></a>
+        <!-- logo navbar stop -->
 
-         
-    
+        <!-- logo tekst start -->
+        <h1 class="display-3">Project News</h1>
+        <p class="lead text-muted">Articles for Sustainable Tourism will be available here</p>
+        <!-- logo tekst stopp -->
 
-    <div class="container">
+      </div>
+    </div>
+  
+    <div class="album py-5 bg-light">
+      <div class="container">
 
         <div class="row">
-            <div class="col-sm">
-                
-                <br>
-                </br>
-                 <br>
-                </br>
-                <br>
-            </br>
-                 
-                <h3>Water, Society and Climate Change</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-                <!-- quick fix, må gjøre noe annet css start -->
-                </br>
-                </br>
-                
-                <!-- quick fix, må gjøre noe annet css stop -->
-
-
-                <!-- Button start -->
-                <button type="button" class="btn btn-success">Read more</button>
-                <!-- Button stop -->
-
-
+          <div class="col-md-4">
+            <div class="card mb-4 box-shadow">
+              <img class="card-img-top" data-src="web_sustour/rsc/img/Thumbnail/card.svg" alt="Card image cap">
+              <div class="card-body">
+                <p class="card-text">This is an article....</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                    <!-- <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button> -->
+                  </div>
+                  <!-- <small class="text-muted">9 mins</small> -->
+                </div>
+              </div>
             </div>
-            <div class="col-sm">
+          </div>
+          <div class="col-md-4">
+            <div class="card mb-4 box-shadow">
+              <img class="card-img-top" data-src="web_sustour/rsc/img/Thumbnail/card.svg" alt="Card image cap">
+              <div class="card-body">
+                <p class="card-text">This is an article....</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                    <!-- <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button> -->
+                  </div>
+                  <!-- <small class="text-muted">9 mins</small> -->
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card mb-4 box-shadow">
+              <img class="card-img-top" data-src="web_sustour/rsc/img/Thumbnail/card.svg" alt="Card image cap">
+              <div class="card-body">
+                <p class="card-text">This is an article....</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                    <!-- <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button> -->
+                  </div>
+                  <!-- <small class="text-muted">9 mins</small> -->
+                </div>
+              </div>
+            </div>
+          </div>
 
-                <br>
-                </br>
-                <br>
-            </br>
-                <h2>Joint WaSo Asia and WaSo Africa Annual Meeting with Norad 1st – 4th July 2017</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                </p>
-                </br>
-                </br>
-                <button type="button" class="btn btn-success">Read more</button></div>
+          <div class="col-md-4">
+            <div class="card mb-4 box-shadow">
+              <img class="card-img-top" data-src="web_sustour/rsc/img/Thumbnail/card.svg" alt="Card image cap">
+              <div class="card-body">
+                <p class="card-text">This is an article...</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                    <!-- <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button> -->
+                  </div>
+                  <!-- <small class="text-muted">9 mins</small> -->
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card mb-4 box-shadow">
+              <img class="card-img-top" data-src="web_sustour/rsc/img/Thumbnail/card.svg" alt="Card image cap">
+              <div class="card-body">
+                <p class="card-text">This is an article...</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                    <!-- <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button> -->
+                  </div>
+                  <!-- <small class="text-muted">9 mins</small> -->
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card mb-4 box-shadow">
+              <img class="card-img-top" data-src="web_sustour/rsc/img/Thumbnail/card.svg" alt="Card image cap">
+              <div class="card-body">
+                <p class="card-text">This is an article...</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                    <!-- <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button> -->
+                  </div>
+                  <!-- <small class="text-muted">9 mins</small> -->
+                </div>
+              </div>
+             </div>
+          </div>
 
+          <div class="col-md-4">
+            <div class="card mb-4 box-shadow">
+              <img class="card-img-top" data-src="web_sustour/rsc/img/Thumbnail/card.svg" alt="Card image cap">
+              <div class="card-body">
+                 <p class="card-text">This is an article...</p>
+                 <div class="d-flex justify-content-between align-items-center">
+                   <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                     <!-- <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button> -->
+                  </div>
+                  <!-- <small class="text-muted">9 mins</small> -->
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card mb-4 box-shadow">
+              <img class="card-img-top" data-src="web_sustour/rsc/img/Thumbnail/card.svg" alt="Card image cap">
+              <div class="card-body">
+                 <p class="card-text">This is an article...</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                    <!-- <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button> -->
+                  </div>
+                  <!-- <small class="text-muted">9 mins</small> -->
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card mb-4 box-shadow">
+              <img class="card-img-top" data-src="web_sustour/rsc/img/Thumbnail/card.svg" alt="Card image cap">
+              <div class="card-body">
+                <p class="card-text">This is an article...</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                    <!-- <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button> -->
+                  </div>
+                 <!-- <small class="text-muted">9 mins</small> -->
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
+    </div>
+
+    <footer class="text-muted">
+      <div class="container">
+        <p class="float-right">
+          <a href="#">Back to top</a>
+        </p>
+      </div>
+    </footer>
 
 </main>
 
-
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="../../../../assets/js/vendor/popper.min.js"></script>
+    <script src="../../../../dist/js/bootstrap.min.js"></script>
+    <script src="../../../../assets/js/vendor/holder.min.js"></script> -->
 
 
 
