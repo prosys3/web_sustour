@@ -1,0 +1,68 @@
+:root{
+    --theme-color: #7d8a2e;
+}
+
+/* Navigation bar: */
+nav#prosys3-navbar {
+    background-color: var(--theme-color);
+    box-shadow: 0 2px 2px rgba(0,0,0,0.2);
+    overflow: visible;
+}
+
+/* Footer: */
+footer#prosys3-footer{
+    background-color: var(--theme-color);
+    color: white;
+}
+
+.footer-copyright{
+    background-color: rgba(0,0,0,0.25);
+    padding: 20px 0;
+}
+
+.bg-theme-1{
+    background-color: var(--theme-color);
+}
+
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 1.2em;
+    display: inline-block;
+    line-height: 1em;
+    vertical-align: text-top;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+
+    /* Support for all WebKit browsers. */
+    -webkit-font-smoothing: antialiased;
+    /* Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility;
+
+    /* Support for Firefox. */
+    -moz-osx-font-smoothing: grayscale;
+
+    /* Support for IE. */
+    font-feature-settings: 'liga';
+}
+
+[txt="s-8"]{font-size: 8px;}
+[txt="s-10"]{font-size: 10px;}
+[txt="s-11"]{font-size: 11px;}
+[txt="s-12"]{font-size: 12px;}
+[txt="s-14"]{font-size: 14px;}
+[txt="s-16"]{font-size: 16px;}
+[txt="s-18"]{font-size: 18px;}
+[txt="s-20"]{font-size: 20px;}
+[txt="s-22"]{font-size: 22px;}
+[txt="s-24"]{font-size: 24px;}
+[txt="s-25"]{font-size: 25px;}
+[txt="s-28"]{font-size: 28px;}
+[txt="s-30"]{font-size: 30px;}
+[txt="s-40"]{font-size: 40px;}
+[txt="s-50"]{font-size: 50px;}
+[txt="s-60"]{font-size: 60px;}

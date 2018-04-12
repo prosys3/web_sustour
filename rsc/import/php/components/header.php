@@ -18,7 +18,10 @@
 
             </ul>
 
-            <a class="btn btn-light" href="login.php" role="button">Login</a>
+            <div>
+                <?php include 'rsc/import/php/components/btn_admin.php' ?>
+                <a class="btn btn-light" href="login.php" role="button"><i class="material-icons">lock</i> Login</a>
+            </div>
 
 
         </div>
@@ -42,46 +45,8 @@
 
     }
 
-    /*  */
-    #prosys3-dropdown-login.dropdown-menu{
-
-        position: fixed;
-
-        top: calc( 50vh - ( var(--prosys3-dropdown-signin-height) / 1.5 ) );
-        left: calc( 50% - ( var(--prosys3-dropdown-signin-width) / 2 ) );
-
-        box-shadow: 0 2px 60px rgba(0,0,0,0.2);
-
-    }
-    #prosys3-dropdown-login.dropdown-menu > form.form-signin {
-
-        padding: 30px;
-
-        width: var(--prosys3-dropdown-signin-width);
-        height: var(--prosys3-dropdown-signin-height);
-
-    }
-    #prosys3-dropdown-login.dropdown-menu > form.form-signin > input[type="email"] {
-        border-bottom-left-radius: 0;
-        border-bottom-right-radius: 0;
-    }
-    #prosys3-dropdown-login.dropdown-menu > form.form-signin > input[type="password"] {
-        margin-top: -1px;
-        border-top-left-radius: 0;
-        border-top-right-radius: 0;
-    }
-
-
-    /* Setting the navbar height in order to compensate for content overlap */
-    #prosys3-navbar {
-
-        height: var(--prosys3-navbar-height);
-
-    }
     #prosys3-navbar ~ main {
-
         margin-top: var(--prosys3-navbar-height);
-
     }
 
     /* Adjustment of header logo */

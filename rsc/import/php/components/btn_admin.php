@@ -1,0 +1,1 @@
+<a class="btn btn-dark" href="admin/index.php"><i class="material-icons">account_circle</i>&nbsp;Admin</a>

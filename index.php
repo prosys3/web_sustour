@@ -15,45 +15,187 @@
 
 <main>
 
-    <div class="jumbotron jumbotron-fluid">
-        <div class="container text-center">
 
-            <a href="#" class=""><img src="rsc/img/logo/sustour/dark_logo_transparent_background.svg" width="500"></a>
+    <section class="bg-light py-5">
 
-            <h1 class="display-1"></h1>
-            <p class="lead"></p>
+        <div class="container py-5">
+
+            <h1>We care about sustainable tourism</h1>
+            <h2>Support our project</h2>
+
+            <a href="#" class="btn btn-dark my-3">Learn more</a>
 
         </div>
-    </div>
 
-    <div class="container">
+    </section>
 
-        <div class="row">
-            <div class="col-sm">
+    <section class="bg-theme-1 pt-5">
 
-                <h2>Water, Society and Climate Change</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <div class="container py-5 text-light">
 
-                <!-- quick fix, må gjøre noe annet css start -->
-                </br>
-                </br>
-                <!-- quick fix, må gjøre noe annet css stop -->
+            <h1 class="mb-5 text-center">What we do</h1>
 
+            <div class="row align-items-center">
 
-                <!-- Button start -->
-                <button type="button" class="btn btn-success">Read more</button>
-                <!-- Button stop -->
+                <div class="col">
+                    <h3>Education</h3>
+                    <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+                </div>
+
+                <div class="col text-center">
+                    <img src="rsc/img/icons/university.svg" width="100" alt="">
+                </div>
 
             </div>
-            <div class="col-sm">
-                <h2>Joint WaSo Asia and WaSo Africa Annual Meeting with Norad 1st – 4th July 2017</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                </p>
-                </br>
-                </br>
-                <button type="button" class="btn btn-success">Read more</button></div>
 
         </div>
+
+    </section>
+
+    <section class="bg-theme-1">
+
+        <div class="container py-5 text-light">
+
+            <div class="row">
+
+                <div class="col text-center">
+                    <img src="rsc/img/icons/analysis.svg" width="100" alt="">
+                </div>
+
+                <div class="col">
+                    <h3>Research</h3>
+                    <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="bg-theme-1 pb-5">
+
+        <div class="container py-5 text-light">
+
+            <div class="row">
+
+                <div class="col">
+                    <h3>Seminars</h3>
+                    <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+                </div>
+
+                <div class="col text-center">
+                    <img src="rsc/img/icons/discussion.svg" width="100" alt="">
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="pt-5">
+
+        <div class="container py-5">
+
+            <h1 class="text-center mb-5">Why we do it</h1>
+
+            <div class="row">
+
+                <div class="col text-center">
+                    <img src="rsc/img/icons/speaker.svg" width="100" alt="">
+                </div>
+
+                <div class="col">
+                    <h3>Awareness</h3>
+                    <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section>
+
+        <div class="container py-5">
+
+            <div class="row">
+
+                <div class="col">
+                    <h3>Collaboration</h3>
+                    <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+                </div>
+
+                <div class="col text-center">
+                    <img src="rsc/img/icons/connection.svg" width="100" alt="">
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="pb-5">
+
+        <div class="container py-5">
+
+            <div class="row">
+
+                <div class="col text-center">
+                    <img src="rsc/img/icons/eco-bulb.svg" width="100" alt="">
+                </div>
+
+                <div class="col">
+                    <h3>Enriching students</h3>
+                    <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="bg-dark py-5">
+
+        <div class="container text-light py-5">
+
+            <h1 class="text-center">Our university partners</h1>
+
+            <div class="row mt-5">
+
+                <div class="col">
+                    <h3>Norway</h3>
+                    <p>University College of Southeast Norway</p>
+                </div>
+
+                <div class="col">
+                    <h3>Kyrgyzstan</h3>
+                    <p>
+                        Bishkek Academy of Finance and Economics<br>
+                        Issyk Kul State University<br>
+                        Kyrgyz Economic University
+                    </p>
+                </div>
+
+                <div class="col">
+                    <h3>Georgia</h3>
+                    <p>
+                        Batumi State University<br>
+                        Akaki Tsereteli State University<br>
+                        Batumi State Maritime Academy
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
 
 </main>
 
