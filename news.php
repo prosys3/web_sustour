@@ -33,7 +33,7 @@
   </head>
 
   <body>
-    
+
     <main role="main">
 
       <section class="jumbotron text-center">
@@ -54,7 +54,7 @@
           <div class="row">
             <div class="col-md-4">
               <div class="card mb-4 box-shadow">
-                <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail" alt="Card image cap">
+                <img class="card-img-top" data-src="web_sustour/rsc/img/Thumbnail/card.svg" alt="Card image cap">
                 <div class="card-body">
                   <p class="card-text">This is an article....</p>
                   <div class="d-flex justify-content-between align-items-center">
@@ -69,7 +69,7 @@
             </div>
             <div class="col-md-4">
               <div class="card mb-4 box-shadow">
-                <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail" alt="Card image cap">
+                <img class="card-img-top" data-src="web_sustour/rsc/img/Thumbnail/card.svg" alt="Card image cap">
                 <div class="card-body">
                   <p class="card-text">This is an article....</p>
                   <div class="d-flex justify-content-between align-items-center">
@@ -84,7 +84,7 @@
             </div>
             <div class="col-md-4">
               <div class="card mb-4 box-shadow">
-                <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail" alt="Card image cap">
+                <img class="card-img-top" data-src="web_sustour/rsc/img/Thumbnail/card.svg" alt="Card image cap">
                 <div class="card-body">
                   <p class="card-text">This is an article....</p>
                   <div class="d-flex justify-content-between align-items-center">
@@ -100,7 +100,7 @@
 
             <div class="col-md-4">
               <div class="card mb-4 box-shadow">
-                <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail" alt="Card image cap">
+                <img class="card-img-top" data-src="web_sustour/rsc/img/Thumbnail/card.svg" alt="Card image cap">
                 <div class="card-body">
                   <p class="card-text">This is an article...</p>
                   <div class="d-flex justify-content-between align-items-center">
@@ -115,7 +115,7 @@
             </div>
             <div class="col-md-4">
               <div class="card mb-4 box-shadow">
-                <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail" alt="Card image cap">
+                <img class="card-img-top" data-src="web_sustour/rsc/img/Thumbnail/card.svg" alt="Card image cap">
                 <div class="card-body">
                   <p class="card-text">This is an article...</p>
                   <div class="d-flex justify-content-between align-items-center">
@@ -130,7 +130,7 @@
             </div>
             <div class="col-md-4">
               <div class="card mb-4 box-shadow">
-                <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail" alt="Card image cap">
+                <img class="card-img-top" data-src="web_sustour/rsc/img/Thumbnail/card.svg" alt="Card image cap">
                 <div class="card-body">
                   <p class="card-text">This is an article...</p>
                   <div class="d-flex justify-content-between align-items-center">
@@ -146,7 +146,7 @@
 
             <div class="col-md-4">
               <div class="card mb-4 box-shadow">
-                <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail" alt="Card image cap">
+                <img class="card-img-top" data-src="web_sustour/rsc/img/Thumbnail/card.svg" alt="Card image cap">
                 <div class="card-body">
                   <p class="card-text">This is an article...</p>
                   <div class="d-flex justify-content-between align-items-center">
@@ -161,7 +161,7 @@
             </div>
             <div class="col-md-4">
               <div class="card mb-4 box-shadow">
-                <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail" alt="Card image cap">
+                <img class="card-img-top" data-src="web_sustour/rsc/img/Thumbnail/card.svg" alt="Card image cap">
                 <div class="card-body">
                   <p class="card-text">This is an article...</p>
                   <div class="d-flex justify-content-between align-items-center">
@@ -176,7 +176,7 @@
             </div>
             <div class="col-md-4">
               <div class="card mb-4 box-shadow">
-                <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail" alt="Card image cap">
+                <img class="card-img-top" data-src="web_sustour/rsc/img/Thumbnail/card.svg" alt="Card image cap">
                 <div class="card-body">
                   <p class="card-text">This is an article...</p>
                   <div class="d-flex justify-content-between align-items-center">
