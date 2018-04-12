@@ -92,7 +92,7 @@
 
             <input id="b1" type="button" value="Sign Up" />
             <footer>
-                <p id="footer">Desing provided by <a href="">ProSys3</a></p>
+                <p id="footer">Created by <a href="">ProSys3</a></p>
             </footer>
         </div>
     </div>
