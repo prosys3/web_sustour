@@ -144,15 +144,6 @@
 
         <div class="container py-5">
 
-                <br></br>
-                <h2>Lorem Ipsum </h2>
-                <p>Lorem ipsum dolor sit amet, turpis nulla nibh, magna sunt mi tortor ante varius et, aliquam dictumst maecenas tellus. Lorem molestie nunc, a nunc urna pede dolor, vitae arcu ligula, suspendisse nullam ac quis nisl pulvinar viverra, metus enim nullam hendrerit imperdiet nec est. Nulla etiam est phasellus viverra, beatae tellus voluptatibus dignissim scelerisque tincidunt. Nulla per quis cras molestie phasellus nonummy. Erat lacus ac, vel pede vel ante, nonummy sed quis, elit ut neque felis voluptatibus eget, nisl eget in in amet et..</p>
-                </br>
-                </br>
-
-                <h2>Lorem Ipsum </h2>
-                <p>Lorem ipsum dolor sit amet, turpis nulla nibh, magna sunt mi tortor ante varius et, aliquam dictumst maecenas tellus. Lorem molestie nunc, a nunc urna pede dolor, vitae arcu ligula, suspendisse nullam ac quis nisl pulvinar viverra, metus enim nullam hendrerit imperdiet nec est. Nulla etiam est phasellus viverra, beatae tellus voluptatibus dignissim scelerisque tincidunt. Nulla per quis cras molestie phasellus nonummy. Erat lacus ac, vel pede vel ante, nonummy sed quis, elit ut neque felis voluptatibus eget, nisl eget in in amet et.</p>
-
             <div class="row">
 
                 <div class="col text-center">
