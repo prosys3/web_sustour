@@ -356,10 +356,10 @@ INSERT INTO Company (Company_Name, Company_Acronym, Company_Country, Company_Web
 
 -- INSERT DEFAULT USERS:
 INSERT INTO User_Data (User_Name_First, User_Name_Last, User_Password, User_Type, User_Email, User_Phone, User_Company) VALUES
-('Lord', 'Root',        MD5('prosys3'), 1, 'test@usn.no', '10000666', 1),
-('Prince', 'Admin',     MD5('prosys3'), 2, 'test@usn.no', '20000666', 1),
-('Sir', 'Moderator',    MD5('prosys3'), 3, 'test@usn.no', '30000666', 1),
-('Peasant', 'User',     MD5('prosys3'), 4, 'test@usn.no', '40000666', 1);
+('Lord', 'Root',        MD5('prosys3'), 1, 'root@usn.no',   '10000666', 1),
+('Prince', 'Admin',     MD5('prosys3'), 2, 'admin@usn.no',  '20000666', 1),
+('Sir', 'Moderator',    MD5('prosys3'), 3, 'mod@usn.no',    '30000666', 1),
+('Peasant', 'User',     MD5('prosys3'), 4, 'user@usn.no',   '40000666', 1);
 
 
 
