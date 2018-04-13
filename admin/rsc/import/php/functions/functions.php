@@ -35,7 +35,7 @@ function counter ($con, $whatToCount) {
         case "posts": $input = "Post_ID) FROM post";
         break;
 
-        case "files": $input = "File_ID FROM file";
+        case "files": $input = "File_ID) FROM file";
         break;
 
         default: die;

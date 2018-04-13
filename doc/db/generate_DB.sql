@@ -116,10 +116,9 @@ CREATE TABLE User_Data (
     User_ID 				TINYINT(3) 		AUTO_INCREMENT NOT NULL,
     User_Name_First			VARCHAR(60) 	NOT NULL,
     User_Name_Last			VARCHAR(60) 	NOT NULL,
-    User_Name_Account   	VARCHAR(60) 	NOT NULL,
     User_Password			VARCHAR(100) 	NOT NULL,
     User_Type				TINYINT(3) 		NOT NULL,
-    User_Email				VARCHAR(60) 	NOT NULL,
+    User_Email				VARCHAR(60) 	UNIQUE NOT NULL,
     User_Phone				VARCHAR(8) 		NOT NULL,
     User_Company			TINYINT(2) 		NOT NULL,
 
