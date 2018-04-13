@@ -1,25 +1,14 @@
 <?php include 'rsc/import/php/components/head_dashboard.php' ?>
 <?php include 'rsc/import/php/components/header_dashboard.php' ?>
 
+<?php require ('rsc/import/php/functions/functions.php');  ?>
+<?php include '../dbconfig.php' ?>
+
 <!--
 ##################################################################################
 ######################## ! DO NOT EDIT ABOVE THIS POINT ! ########################
 ##################################################################################
 -->
- <?php require ('rsc\import\php\functions\functions.php');  ?>
-
-
-<?php
-
-$host = "localhost";
-$user = "root";
-$password = "";
-$db = "Prosys3";
-
-$con = mysqli_connect($host, $user, $password, $db) or die ("Cant Connect to database");
-
-
-?>
 
 <section id="breadcrumb">
     <div class="container">
@@ -82,21 +71,23 @@ $con = mysqli_connect($host, $user, $password, $db) or die ("Cant Connect to dat
 
                             <?php
 
-                            $query = "SELECT * FROM post";
+                            $query = "SELECT * FROM Post";
                             $result = mysqli_query($con, $query);
 
-                            while ($row = mysqli_fetch_array($result)) {
+                            while ( $row = mysqli_fetch_array($result) ) {
 
-                             echo "<tr >";
-                             echo "<td >" . $row['Post_Title'] . "</td >";
-                             $tempQuery = "SELECT * FROM user_data where " . $row['Post_Author'] . " = User_ID";
-                             $tempRes = mysqli_query($con, $tempQuery);
-                             $tempRow = mysqli_fetch_array($tempRes);
-                             echo "<td >" . $tempRow['User_Name_First'] . " " . $tempRow['User_Name_Last']  . "</td >";
-                             echo "<td >" . $row['Post_Date_Created'] . "</td >";
-                             echo '<td ><a class="btn btn-default" href = "edit.php" > Edit</a > <a class="btn btn-danger" href = "#" > Delete</a ></td >';
-                             echo "</tr>";
+                                echo "<tr >";
+                                echo "<td >" . $row['Post_Title'] . "</td >";
+                                $tempQuery = "SELECT * FROM User_Data where " . $row['Post_Author'] . " = User_ID";
+                                $tempRes = mysqli_query($con, $tempQuery);
+                                $tempRow = mysqli_fetch_array($tempRes);
+                                echo "<td >" . $tempRow['User_Name_First'] . " " . $tempRow['User_Name_Last']  . "</td >";
+                                echo "<td >" . $row['Post_Date_Created'] . "</td >";
+                                echo '<td ><a class="btn btn-default" href = "edit.php" > Edit</a > <a class="btn btn-danger" href = "#" > Delete</a ></td >';
+                                echo "</tr>";
+
                             }
+
                           ?>
                           </table>
 <!--  

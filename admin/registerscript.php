@@ -2,7 +2,7 @@
 
 if(isset($_POST['submit'])) {
 
-    require_once ("rsc/import/php/dbconfig.php");
+    require_once ("../dbconfig.php");
 
     $fname = mysqli_real_escape_string($con, $_POST['fname']);
     $lname = mysqli_real_escape_string($con, $_POST['lname']);

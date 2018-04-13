@@ -1,25 +1,14 @@
 <?php include 'rsc/import/php/components/head_dashboard.php' ?>
 <?php include 'rsc/import/php/components/header_dashboard.php' ?>
 
+<?php require ('rsc/import/php/functions/functions.php');  ?>
+<?php include '../dbconfig.php' ?>
+
 <!--
 ##################################################################################
 ######################## ! DO NOT EDIT ABOVE THIS POINT ! ########################
 ##################################################################################
 -->
- <?php require ('rsc\import\php\functions\functions.php');  ?>
-
-
-<?php
-
-$host = "localhost";
-$user = "root";
-$password = "";
-$db = "Prosys3";
-
-$con = mysqli_connect($host, $user, $password, $db) or die ("Cant Connect to database");
-
-
-?>
 
 <section id="breadcrumb">
     <div class="container">

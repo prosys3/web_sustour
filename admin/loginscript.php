@@ -1,6 +1,6 @@
 <?php
 
-require_once ("rsc/import/php/dbconfig.php");
+require_once ("../dbconfig.php");
 require("rsc/import/php/functions/functions.php");
 
 

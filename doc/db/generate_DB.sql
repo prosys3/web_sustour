@@ -2,7 +2,7 @@
 
 --
 NAME:       PROSYS3 DATABASE GENERATOR
-VERSION:    1.0
+VERSION:    2.0
 CREATED BY: PROSYS3
 --
 
@@ -10,6 +10,26 @@ NOTE: This script will delete and recreate alle tables below.
 Some of the affected tables will aslo be populated with preliminary data.
 
 */
+
+
+-- ###########################################################################
+-- CREATE DEFAULT DATABASE
+-- ###########################################################################
+
+-- DROP DATABASE IF IT EXISTS:
+DROP DATABASE IF EXISTS prosys3;
+
+
+
+
+-- CREATE DATABASE:
+CREATE DATABASE prosys3 CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+
+
+
+
+
 
 
 -- ###########################################################################
@@ -69,7 +89,7 @@ CREATE TABLE User_Type (
 
     CONSTRAINT UserType_PK PRIMARY KEY (User_Type_ID)
 
-) 	ENGINE = InnoDB DEFAULT CHARSET = utf8;
+) 	ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 
 
@@ -80,12 +100,12 @@ CREATE TABLE Company (
     Company_ID              TINYINT(3)      AUTO_INCREMENT NOT NULL,
     Company_Name            VARCHAR(60)     NOT NULL,
     Company_Acronym         VARCHAR(60)     NOT NULL,
-    Company_Country         VARCHAR(60)     NOT NULL,           
+    Company_Country         VARCHAR(60)     NOT NULL,
     Company_Website         VARCHAR(100)    NOT NULL,
 
     CONSTRAINT CompanyID_PK PRIMARY KEY (Company_ID)
-    
-)   ENGINE = InnoDB DEFAULT CHARSET = utf8;
+
+)   ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 
 
@@ -96,17 +116,18 @@ CREATE TABLE User_Data (
     User_ID 				TINYINT(3) 		AUTO_INCREMENT NOT NULL,
     User_Name_First			VARCHAR(60) 	NOT NULL,
     User_Name_Last			VARCHAR(60) 	NOT NULL,
-    User_Email				VARCHAR(60) 	NOT NULL,
+    User_Name_Account   	VARCHAR(60) 	NOT NULL,
     User_Password			VARCHAR(100) 	NOT NULL,
     User_Type				TINYINT(3) 		NOT NULL,
+    User_Email				VARCHAR(60) 	NOT NULL,
     User_Phone				VARCHAR(8) 		NOT NULL,
     User_Company			TINYINT(2) 		NOT NULL,
 
     CONSTRAINT UserID_PK PRIMARY KEY (User_ID),
     CONSTRAINT User_Data_UserType_FK FOREIGN KEY (User_Type) REFERENCES User_Type(User_Type_ID),
     CONSTRAINT User_Data_UserCompany_FK FOREIGN KEY (User_Company) REFERENCES Company(Company_ID)
-    
-)	ENGINE = InnoDB DEFAULT CHARSET = utf8;
+
+)	ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 
 
@@ -120,7 +141,7 @@ CREATE TABLE File_Type (
 
 	CONSTRAINT FileType_PK PRIMARY KEY (File_Type_ID)
 
-)	ENGINE= InnoDB DEFAULT CHARSET=utf8;
+)	ENGINE= InnoDB DEFAULT CHARSET=utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 
 
@@ -130,10 +151,10 @@ CREATE TABLE Categories (
 
     Category_ID				TINYINT(3) 		AUTO_INCREMENT NOT NULL,
     Category_Name			VARCHAR(60) 	NOT NULL,
- 
+
     CONSTRAINT CategoryID_PK PRIMARY KEY (Category_ID)
-    
-)	ENGINE = InnoDB DEFAULT CHARSET = utf8;
+
+)	ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 
 
@@ -141,12 +162,12 @@ CREATE TABLE Categories (
 -- TAGS:
 CREATE TABLE Tags (
 
-	Tag_ID					TINYINT(3) 		NOT NULL,
+	Tag_ID					TINYINT(3) 		AUTO_INCREMENT NOT NULL,
 	Tag_Name				VARCHAR(20) 	NOT NULL,
 
-	CONSTRAINT TagID_PK PRIMARY KEY (Tag_ID)	
+	CONSTRAINT TagID_PK PRIMARY KEY (Tag_ID)
 
-)	ENGINE = InnoDB DEFAULT CHARSET = utf8;
+)	ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 
 
@@ -154,13 +175,11 @@ CREATE TABLE Tags (
 -- POST:
 CREATE TABLE Post (
 
-	Post_ID 				TINYINT(4) 		AUTO_INCREMENT NOT NULL, 
+	Post_ID 				TINYINT(4) 		AUTO_INCREMENT NOT NULL,
 	Post_Title 				VARCHAR(60) 	NOT NULL,
-	Post_Subtitle 			VARCHAR(100),
 	Post_Image_Featured 	VARCHAR(100),
 	Post_Text 				TEXT 			NOT NULL,
 	Post_Date_Created 		DATE 			NOT NULL,
-	Post_Date_Edited 		DATE 			NOT NULL,
 	Post_Author 			TINYINT(3) 		NOT NULL,
 	Post_Category 			TINYINT(3) 		DEFAULT 1,
 	Post_Tag 				TINYINT(3) 		,
@@ -171,7 +190,7 @@ CREATE TABLE Post (
 	CONSTRAINT Post_CategoryID_FK FOREIGN KEY(Post_Category) REFERENCES Categories(Category_ID),
 	CONSTRAINT Post_TagID_FK FOREIGN KEY(Post_Tag) REFERENCES Tags(Tag_ID)
 
-)	ENGINE = InnoDB DEFAULT CHARSET = utf8;
+)	ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 
 
@@ -195,7 +214,7 @@ CREATE TABLE File (
 	CONSTRAINT File_TagID_FK FOREIGN KEY (File_Tags) REFERENCES Tags(Tag_ID),
     CONSTRAINT File_UserID_FK FOREIGN KEY (File_Author) REFERENCES User_Data(User_ID)
 
-)	ENGINE = InnoDB DEFAULT CHARSET = utf8;
+)	ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 
 
@@ -327,3 +346,34 @@ INSERT INTO File_Type ( File_Type_Extension, File_Type_Name ) VALUES
 
 
 
+
+-- INSERT DEFAULT COMPANIES:
+INSERT INTO Company (Company_Name, Company_Acronym, Company_Country, Company_Website) VALUES
+('University College of Southeast Norway', 'USN', 'Norway', 'https://usn.no');
+
+
+
+
+-- INSERT DEFAULT USERS:
+INSERT INTO User_Data (User_Name_First, User_Name_Last, User_Password, User_Type, User_Email, User_Phone, User_Company) VALUES
+('Lord', 'Root',        MD5('prosys3'), 1, 'test@usn.no', '10000666', 1),
+('Prince', 'Admin',     MD5('prosys3'), 2, 'test@usn.no', '20000666', 1),
+('Sir', 'Moderator',    MD5('prosys3'), 3, 'test@usn.no', '30000666', 1),
+('Peasant', 'User',     MD5('prosys3'), 4, 'test@usn.no', '40000666', 1);
+
+
+
+
+-- INSERT DEFAULT POSTS:
+INSERT INTO Post (Post_Title, Post_Image_Featured, Post_Text, Post_Date_Created, Post_Author, Post_Category, Post_Tag, Post_Private) VALUES
+('Example post 1', 'https://zcode.io/sites/default/files/news/boostrap_img.png', '<h1>Main title</h1><h2>Subtitle</h2><p>This is an example paragraph</p>', CURDATE(),          1, 1, 1, 1),
+('Example post 2', 'https://zcode.io/sites/default/files/news/boostrap_img.png', '<h1>Main title</h1><h2>Subtitle</h2><p>This is an example paragraph</p>', (CURDATE() + 1),    2, 1, 1, 1),
+('Example post 3', 'https://zcode.io/sites/default/files/news/boostrap_img.png', '<h1>Main title</h1><h2>Subtitle</h2><p>This is an example paragraph</p>', (CURDATE() + 2),    3, 1, 1, 0),
+('Example post 4', 'https://zcode.io/sites/default/files/news/boostrap_img.png', '<h1>Main title</h1><h2>Subtitle</h2><p>This is an example paragraph</p>', (CURDATE() + 3),    4, 1, 1, 0);
+
+
+
+
+-- INSERT EXAMPLE FILE:
+INSERT INTO File (File_Name, File_Type, File_Author, File_Uploaded, File_URL, File_Category, File_Tags, File_Private) VALUES
+('Green Logo', 37, 2, CURDATE(), '/uploads/st_logo.png', 1, 1, 1);
