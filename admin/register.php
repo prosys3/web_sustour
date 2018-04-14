@@ -1,6 +1,5 @@
-<?php  session_start(); ?>
-<?php include 'rsc/import/php/components/head.php' ?>
-<?php include 'rsc/import/php/components/header.php' ?>
+<?php include 'rsc/import/php/components/head_dashboard.php' ?>
+<?php include 'rsc/import/php/components/header_dashboard.php' ?>
 
 <!--
 ##################################################################################
@@ -17,32 +16,65 @@
     <meta name="author" content="">
     <link rel="icon" href="../../../../favicon.ico">
 
-    <title>Signin Template for Bootstrap</title>
+    <title>Register account</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../../../../dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="login.css" rel="stylesheet">
+    <link href="register.css" rel="stylesheet">
   </head>
 
   <body class="text-center">
-    <form class="form-signin" action="admin/loginscript.php" method="post">
-      <img class="mb-2" src="rsc/img/logo/sustour/logo_symbol_green.svg" alt="" width="120" height="120">
+    <form class="form-signin" action="admin/registerscript.php" method="post">
+    <img class="mb-2" src="rsc/img/logo/sustour/logo_symbol_green.svg" alt="" width="120" height="120">
       <br>
       <br>
-      <h1 class="h3 mb-3 font-weight-normal">Login to Sustainable Tourism</h1>
+      <h1 class="h3 mb-3 font-weight-normal">Register account</h1>
       <br>
-      <label for="inputEmail" class="sr-only">Username</label>
+       <!-- First name start -->
+      <label for="inputEmail" class="sr-only">First name</label>
 	    <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+       <!-- First name start -->
+
+      <!-- Last name start -->
+      <label for="inputEmail" class="sr-only">Last name</label>
+      <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+      <!-- Last name stop -->
+
+      <!-- Password start -->
       <label for="inputPassword" class="sr-only">Password</label>
       <br>
       <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
       <div class="checkbox mb-3">
+       <!-- Password stop -->
+      
+      <!--UserType start -->
+      <div class="form-row align-items-center">
+    <div class="col-auto my-1">
+      <label class="mr-sm-2" for="inlineFormCustomSelect">UserType</label>
+      <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+        <option selected>Choose...</option>
+        <option value="1">One</option>
+        <option value="2">Two</option>
+        <option value="3">Three</option>
+      </select>
+    </div>
+     <!--UserType stop -->
+
+
+      <!-- Email start -->
+      <label for="inputEmail" class="sr-only">Email</label>
+      <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+      <!-- Email stop -->
+
+
+    <!-- Remember me start -->
         <label>
           <input type="checkbox" value="remember-me">Remember me
         </label>
       </div>
+    <!-- Remember me stop -->
 
       <button type="submit" class="btn btn-success btn-lg">Login</button>
       <p class="mt-5 mb-3 text-muted"> &copy; 2017-2018 Sustainable Tourism</p>
@@ -57,11 +89,6 @@
 
 
 <!-- ... Your code goes here ... -->
-
-
-
-
-
 
 
 <!--

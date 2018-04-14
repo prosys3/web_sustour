@@ -34,6 +34,7 @@
 
         <!-- Custom CSS for felles elementer start -->
         <link rel="stylesheet" href="rsc/import/css/custom.css">
+        <link rel="stylesheet" href="rsc/import/css/login.css">
         <!-- Custom CSS felles elementer stop -->
 
     <!-- CSS: END -->
