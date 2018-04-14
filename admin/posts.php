@@ -182,4 +182,4 @@
 ##################################################################################
 -->
 
-<?php include 'rsc/import/php/components/footer_dashborad.php' ?>
+<?php include 'rsc/import/php/components/footer_dashboard.php' ?>
