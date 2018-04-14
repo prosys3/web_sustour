@@ -1,4 +1,10 @@
-<?php  session_start(); ?>
+<?php
+session_start();
+if(!isset($_SESSION['login'])){
+    header("Location:../login.php");
+    exit();
+}
+?>>
 <?php include 'rsc/import/php/components/head_dashboard.php' ?>
 <?php include 'rsc/import/php/components/header_dashboard.php' ?>
 
