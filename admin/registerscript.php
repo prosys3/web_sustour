@@ -1,8 +1,9 @@
+<?php  session_start(); ?>
 <?php
 
 if(isset($_POST['submit'])) {
 
-    require_once ("rsc/import/php/dbconfig.php");
+    require_once ("../dbconfig.php");
 
     $fname = mysqli_real_escape_string($con, $_POST['fname']);
     $lname = mysqli_real_escape_string($con, $_POST['lname']);
@@ -37,7 +38,7 @@ if(isset($_POST['submit'])) {
         } else {
 
             // password hash
-            $pwhash = password_hash($_POST['pass'], PASSWORD_DEFAULT);
+            $pwhash = md5($_POST['pass']);
 
             $sqql = "INSERT INTO `user_data`(User_Name_First, User_Name_Last, User_Email, User_Password, User_Type, User_Phone, User_Company) 
                      VALUES ('$fname', '$lname', '$email', '$pwhash', '$usertype', '$phone', '$comp');";

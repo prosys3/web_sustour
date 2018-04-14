@@ -1,3 +1,4 @@
+<?php  session_start(); ?>
 <?php include 'rsc/import/php/components/head.php' ?>
 <?php include 'rsc/import/php/components/header.php' ?>
 
@@ -33,7 +34,7 @@
       <h1 class="h3 mb-3 font-weight-normal">Login to Sustainable Tourism</h1>
       <br>
       <label for="inputEmail" class="sr-only">Username</label>
-	  <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+	    <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
       <label for="inputPassword" class="sr-only">Password</label>
       <br>
       <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>

@@ -1,16 +1,18 @@
+<?php  session_start(); ?>
 <?php include 'rsc/import/php/components/head_dashboard.php' ?>
 <?php include 'rsc/import/php/components/header_dashboard.php' ?>
 
-    <!--
-    ##################################################################################
-    ######################## ! DO NOT EDIT ABOVE THIS POINT ! ########################
-    ##################################################################################
-    -->
 <?php require ('rsc/import/php/functions/functions.php');  ?>
-<?php require_once ("rsc/import/php/dbconfig.php"); ?>
+<?php include '../dbconfig.php' ?>
+
+<!--
+##################################################################################
+######################## ! DO NOT EDIT ABOVE THIS POINT ! ########################
+##################################################################################
+-->
 
 
-    <section id="breadcrumb">
+<section id="breadcrumb">
     <div class="container">
         <ol class="breadcrumb">
             <li><a href="index.php">Dashboard</a></li>

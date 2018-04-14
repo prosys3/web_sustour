@@ -14,7 +14,7 @@
 
                 <ul class="nav navbar-nav navbar-right">>
 
-                    <li class="active"><a href="index.php">Welcome, Ms. Arora</a></li>
+                    <li class="active"><a href="index.php">Welcome, <?php echo $_SESSION['login_name'] ?></a></li>
                     <li><a href="../index.php">Homepage</a></li>
                     <li><a href="../login.php">Logout</a></li>
                 </ul>

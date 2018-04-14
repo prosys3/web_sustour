@@ -1,11 +1,10 @@
 <?php
 
-$host = "localhost";
-$user = "root";
-$password = "";
-$db = "Prosys3";
+    $host = "localhost";
+    $user = "root";
+    $password = "";
+    $db = "prosys3";
 
-$con = mysqli_connect($host, $user, $password, $db) or die ("Cant Connect to database");
-
+    $con = mysqli_connect($host, $user, $password, $db) or die ("Cant Connect to database");
 
 ?>
