@@ -1,3 +1,4 @@
+<?php  session_start(); ?>
 <?php include 'rsc/import/php/components/head_dashboard.php' ?>
 <?php include 'rsc/import/php/components/header_dashboard.php' ?>
 
