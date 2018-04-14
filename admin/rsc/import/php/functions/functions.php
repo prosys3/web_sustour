@@ -8,8 +8,11 @@ function PwCheck ($myemail, $pwhash)
     $sql = "SELECT User_Password FROM user_data WHERE User_Email = '$myemail'";
     $result = mysqli_query($con,$sql);
     $row = mysqli_fetch_assoc($result);
-    $pwverify = md5($pwhash, $row['User_Password']);
-    return $pwverify;
+    if ($pwhash == $row['User_Password']) {
+        return true;
+    } else {
+        return false;
+    }
 }
 
 

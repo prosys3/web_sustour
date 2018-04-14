@@ -9,8 +9,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     // username and password sent from form
 
     $myemail = mysqli_real_escape_string($con,$_POST['email']);
-    $pwhash = mysqli_real_escape_string($con,$_POST['password']);
+    $pw = mysqli_real_escape_string($con,$_POST['password']);
 
+    $pwhash = md5($pw);
     $pwverify = PwCheck($myemail, $pwhash);
 
     if ($pwverify == true) {
@@ -47,12 +48,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         } else {
             $error = "Your Login Name or Password is invalid!";
             echo "<div style='text-align: center;'><h1 style='color: black'>{$error}</h1></div>";
-            header('Refresh: 3; URL=login.php');
+            header('Refresh: 3; URL=../login.php');
         }
-    } else {
+    }
+    else {
         $error = "Your Login Name or Password is invalid!";
         echo "<div style='text-align: center;'><h1 style='color: black'>{$error}</h1></div>";
-        header('Refresh: 3; URL=login.php');
+        header('Refresh: 3; URL=../login.php');
     }
 }
 
