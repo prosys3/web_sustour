@@ -38,7 +38,7 @@ if(isset($_POST['submit'])) {
         } else {
 
             // password hash
-            $pwhash = password_hash($_POST['pass'], PASSWORD_DEFAULT);
+            $pwhash = md5($_POST['pass']);
 
             $sqql = "INSERT INTO `user_data`(User_Name_First, User_Name_Last, User_Email, User_Password, User_Type, User_Phone, User_Company) 
                      VALUES ('$fname', '$lname', '$email', '$pwhash', '$usertype', '$phone', '$comp');";
