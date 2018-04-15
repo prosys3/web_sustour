@@ -40,8 +40,8 @@ if(!isset($_SESSION['login'])){
     <!-- Register account stop -->
 
        <!-- First name start -->
-      <div class="form-group row">
-        <div class="col-xs-3 text-center">
+      <div class="form-group justify-content-center">
+        <div class="col-xs-3 ">
           <label for="inputEmail" class="sr-only">First name</label>
     	    <input type="text" name="text" id="inputEmail" class="form-control" placeholder="Enter first name" required autofocus>
            <!-- First name start -->
