@@ -12,14 +12,14 @@
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
 
-                <ul class="nav navbar-nav navbar-right">>
+                <ul class="nav navbar-nav navbar-right">
 
                     <li class="active"><a href="index.php">Welcome, <?php echo $_SESSION['login_name'] ?></a></li>
                     <li><a href="../index.php">Homepage</a></li>
                     <li><a href="../login.php">Logout</a></li>
                 </ul>
 
-        </div><!--/.nav-collapse -->
+        </div>
     </div>
 </nav>
 
@@ -28,18 +28,11 @@
         <div class="row">
             <div class="col-md-10">
 
+                <h1><a class="navbar-brand"> <img src="../rsc/img/logo/sustour/logo_symbol_white.svg" width="45" height="30" alt="Logo symbol"></a> Dashboard</h1>
 
-                <!-- C:/Users/Anders Koo/Desktop/prosjektarbeid/userpanel/bootstrap/img/logo_symbol_white.svg -->
-                <h1><a class="navbar-brand"> <img src="../rsc/img/logo/sustour/logo_symbol_white.svg" width="45" height="30" alt="Logo symbol"></a> Dashboard <small></small></h1>
             </div>
 
 
         </div>
-
-
     </div>
-
-
-
-
 </header>

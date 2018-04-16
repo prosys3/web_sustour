@@ -1,3 +1,18 @@
+<hr>
+<footer>
+
+    <section>
+
+        <div class="container text-center">
+
+            <p>Created by ProSys3</p>
+
+        </div>
+
+    </section>
+
+</footer>
+
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->

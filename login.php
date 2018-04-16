@@ -7,60 +7,46 @@
 ##################################################################################
 -->
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="../../../../favicon.ico">
 
-    <title>Signin Template for Bootstrap</title>
+<main>
 
-    <!-- Bootstrap core CSS -->
-    <link href="../../../../dist/css/bootstrap.min.css" rel="stylesheet">
+    <section class="bg-light py-5 border-bottom">
 
-    <!-- Custom styles for this template -->
-    <link href="login.css" rel="stylesheet">
-  </head>
+        <div class="container text-center">
 
-  <body class="text-center">
-    <form class="form-signin" action="admin/loginscript.php" method="post">
-      <img class="mb-2" src="rsc/img/logo/sustour/logo_symbol_green.svg" alt="" width="120" height="120">
-      <br>
-      <br>
-      <h1 class="h3 mb-3 font-weight-normal">Login to Sustainable Tourism</h1>
-      <br>
-      <label for="inputEmail" class="sr-only">Username</label>
-	    <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-      <label for="inputPassword" class="sr-only">Password</label>
-      <br>
-      <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
-      <div class="checkbox mb-3">
-        <label>
-          <input type="checkbox" value="remember-me">Remember me
-        </label>
-      </div>
+            <img src="rsc/img/logo/sustour/logo_symbol_green.svg" width="100" alt="Logo">
 
-      <button type="submit" class="btn btn-success btn-lg">Login</button>
-      <p class="mt-5 mb-3 text-muted"> &copy; 2017-2018 Sustainable Tourism</p>
-    </form>
-  </body>
-</html>
+        </div>
 
+    </section>
+    
+    <section class="py-5">
+        
+        <div class="container">
 
+            <form action="admin/loginscript.php" method="post">
 
+                <!-- Email address: -->
+                <div class="form-group">
+                    <label for="inputEmail">Email address</label>
+                    <input id="inputEmail" class="form-control" type="email" placeholder="Enter email address" autofocus required>
+                </div>
 
+                <!-- Password: -->
+                <div class="form-group">
+                    <label for="inputPassword">Password:</label>
+                    <input id="inputPassword" class="form-control" type="password" placeholder="Enter password" required>
+                </div>
 
+                <button type="submit" class="btn btn-dark">Submit</button>
 
-
-<!-- ... Your code goes here ... -->
-
-
-
-
-
+            </form>
+            
+        </div>
+        
+    </section>
+    
+</main>
 
 
 <!--
@@ -68,3 +54,5 @@
 ######################## ! DO NOT EDIT BELOW THIS POINT ! ########################
 ##################################################################################
 -->
+
+<?php include 'rsc/import/php/components/footer.php' ?>

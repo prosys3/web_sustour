@@ -126,8 +126,6 @@ if(!isset($_SESSION['login'])){
 
 </section>
 
-<footer id="footer"><p>Copyright Sustainable Tourism, &copy; 2018</p></footer>
-
 <!-- Modals -->
 
 <!-- Add Page -->

@@ -139,8 +139,6 @@
 
     </section>
 
-<div class="container">
-
     <section class="pb-5">
 
         <div class="container py-5">
@@ -159,8 +157,6 @@
             </div>
 
         </div>
-
-            </div>
 
     </section>
 

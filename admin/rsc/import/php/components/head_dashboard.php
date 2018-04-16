@@ -31,7 +31,6 @@
 
         <!-- Custom CSS for felles elementer start -->
         <link rel="stylesheet" href="rsc/import/css/dashboard.css">
-        <link rel="stylesheet" href="admin/rsc/import/css/register.css">
         <!-- Custom CSS for felles elementer stop -->
 
     <!-- CSS: END -->
