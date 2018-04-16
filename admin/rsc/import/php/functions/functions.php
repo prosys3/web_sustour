@@ -84,6 +84,50 @@ function fileCount ($con)
 }
 
 
+function postTitle ($con)
+{
+	$id = $_GET["id"];
+    $sql = "SELECT Post_Title FROM post Where Post_ID = $id ";
+    $result = mysqli_query($con,$sql);
+    $rows = mysqli_fetch_row($result);
+    return $rows[0];
+}
+
+function postText ($con)
+{
+	$id = $_GET["id"];
+    $sql = "SELECT Post_Text FROM post Where Post_ID = $id ";
+    $result = mysqli_query($con,$sql);
+    $rows = mysqli_fetch_row($result);
+    return $rows[0];
+}
+
+
+function postTag ($con)
+{
+
+	global $con;
+	$id = $_GET["id"];
+
+    $tempQuery = "SELECT * FROM post where Post_ID = $id";
+    $tempRes = mysqli_query($con, $tempQuery);
+
+	while ($row = mysqli_fetch_array($tempRes)) {
+
+    $sql = "SELECT * FROM tags WHERE " . $row['Post_Tag'] . " = Tag_ID ";
+    $result = mysqli_query($con,$sql);
+    $rows = mysqli_fetch_array($result);
+    if (!$result) {
+    printf("Error: %s\n", mysqli_error($con));
+    exit();
+}
+ 
+ }
+    return $rows['Tag_Name'];   
+}
+
+
+
 
 function fillUserList()
 {
