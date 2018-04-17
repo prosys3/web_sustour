@@ -19,6 +19,7 @@ if(!isset($_SESSION['login'])){
 
 <?php $_SESSION['id']=$_GET['id']; ?>
 
+
 <section id="breadcrumb">
     <div class="container">
         <ol class="breadcrumb">
@@ -66,12 +67,14 @@ if(!isset($_SESSION['login'])){
                     </div>
                     <div class="panel-body">
 
-                        <form>
+
+                        
+                        <form method="POST" action= "updatepostscript.php">
                             <div class="form-group">
                                 <label>Post Title</label>
-                                <input type="text" class="form-control" placeholder="Page Title" value= <?php echo postTitle($con);?>>
+                                <input type="text" name= "pTitle" class="form-control" placeholder="Page Title" value= <?php echo postTitle($con);?>>
                                 <div class="form-group">
-                                    <label>Post Body</label>
+                                    <label>Post Body</label> 
                                     <textarea name="editor1" class="form-control" placeholder="Page Body"><?php echo postText($con);?></textarea>
                                 </div>
                                 <div class="checkbox">
@@ -85,10 +88,11 @@ if(!isset($_SESSION['login'])){
                                     <label>Meta Description</label>
                                     <input type="text" class="form-control" placeholder="Add Meta description" value="Adobe XD or Experience Design allows you to go from wireframe to interactive prototype, from desktop to mobile.">
                                 </div>
-                                <input type="submit" class="btn btn-default" value="Submit">
+
+                                <input type="submit" class="btn btn-default" value="Submit" name="submit">
+    
                             </div>
                         </form>
-
                     </div>
                 </div>
 
