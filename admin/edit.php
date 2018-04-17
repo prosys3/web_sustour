@@ -17,6 +17,8 @@ if(!isset($_SESSION['login'])){
 ##################################################################################
 -->
 
+<?php $_SESSION['id']=$_GET['id']; ?>
+
 <section id="breadcrumb">
     <div class="container">
         <ol class="breadcrumb">
@@ -63,20 +65,21 @@ if(!isset($_SESSION['login'])){
                         <h3 class="panel-title">Edit Post</h3>
                     </div>
                     <div class="panel-body">
+
                         <form>
                             <div class="form-group">
                                 <label>Post Title</label>
-                                <input type="text" class="form-control" placeholder="Page Title" value="About">
+                                <input type="text" class="form-control" placeholder="Page Title" value= <?php echo postTitle($con);?>>
                                 <div class="form-group">
                                     <label>Post Body</label>
-                                    <textarea name="editor1" class="form-control" placeholder="Page Body">Adobe XD or Experience Design allows you to go from wireframe to interactive prototype, from desktop to mobile. I am going to upload a series of prototypes I’ve worked on as well as some tutorials to how to work with Adobe XD.</textarea>
+                                    <textarea name="editor1" class="form-control" placeholder="Page Body"><?php echo postText($con);?></textarea>
                                 </div>
                                 <div class="checkbox">
                                     <label><input type="checkbox" checked>Published</label>
                                 </div>
                                 <div class="form-group">
                                     <label>Meta Tags</label>
-                                    <input type="text" class="form-control" placeholder="Add some tags" value="tag1, tag2">
+                                    <input type="text" class="form-control" placeholder="Add some tags" value= <?php echo postTag($con);?>>
                                 </div>
                                 <div class="form-group">
                                     <label>Meta Description</label>

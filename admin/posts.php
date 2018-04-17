@@ -90,7 +90,10 @@ if(!isset($_SESSION['login'])){
                                 $tempRow = mysqli_fetch_array($tempRes);
                                 echo "<td >" . $tempRow['User_Name_First'] . " " . $tempRow['User_Name_Last']  . "</td >";
                                 echo "<td >" . $row['Post_Date_Created'] . "</td >";
-                                echo '<td ><a class="btn btn-default" href = "edit.php" > Edit</a > <a class="btn btn-danger" href = "#" > Delete</a ></td >';
+                                echo '<td >
+                                <a class="btn btn-default" href = "edit.php?id=' . $row['Post_ID'] . '"' . '> Edit </a >
+
+                                <a class="btn btn-danger" href = "#" > Delete</a ></td >';
                                 echo "</tr>";
 
                             }
