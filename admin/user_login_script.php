@@ -33,11 +33,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             $myfullname = $row['User_Name_First'] . " " . $row['User_Name_Last'] ;
             $myusertype = $row['User_Type'];
             $mycompany = $row['User_Company'];
+            $myphone = $row['User_Phone'];
+
             session_start();
             $_SESSION['login'] = true;
             $_SESSION['login_email'] = $myemail;
             $_SESSION['login_name'] = $myfullname;
             $_SESSION['user_type'] = $myusertype;
+            $_SESSION['user_phone'] = $myphone;
             $_SESSION['user_company'] = $mycompany;
 
             if ( $_SESSION['user_type'] < 4 ) {

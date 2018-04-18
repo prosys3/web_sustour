@@ -42,17 +42,17 @@ if(!isset($_SESSION['login'])){
 
 
                     <!-- Overview for posts start -->
-                    <a href="posts.php" class="list-group-item"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Posts <span class="badge">
+                    <a href="post_list.php" class="list-group-item"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Posts <span class="badge">
                     <?php echo postCount($con);?></span></a>
                     <!-- Overview for posts stop -->
 
                     <!-- Overview for users start -->
-                    <a href="users.php" class="list-group-item"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Users <span class="badge">
+                    <a href="user_list.php" class="list-group-item"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Users <span class="badge">
                     <?php echo registredMemberCount($con);?></span></a>
                     <!-- Overview for users stopp -->
 
                     <!-- Overview for files start -->
-                    <a href="files.php" class="list-group-item"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Files <span class="badge"> 
+                    <a href="file_list.php" class="list-group-item"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Files <span class="badge">
                     <?php echo fileCount($con);?> </span></a>
                     <!-- Overview for files stopp -->
 
@@ -69,7 +69,7 @@ if(!isset($_SESSION['login'])){
 
 
                         
-                        <form method="POST" action="updatepostscript.php">
+                        <form method="POST" action="post_update_script.php">
                             <div class="form-group">
                                 <label>Post Title</label>
                                 <input type="text" name="pTitle" class="form-control" placeholder="Page Title" value="<?php echo postTitle($con);?>">

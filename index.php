@@ -23,6 +23,13 @@
 
             <h1>We care about sustainable tourism</h1>
             <h2>Support our project</h2>
+            <?php
+
+            echo "<p>$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]</p>";
+            echo "<p>$_SERVER[REQUEST_URI]<p>";
+            echo "<p>$_SERVER[HTTP_HOST]<p>";
+
+            ?>
 
             <a href="#" class="btn btn-dark my-3">Learn more</a>
 

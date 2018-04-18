@@ -42,6 +42,19 @@
 
     <!-- JS: END -->
 
+
+
+
+    <!-- PHP: START -->
+
+        <?php include_once '../dbconfig.php' ?>
+
+    <!-- PHP: END -->
+
+
+
+
+
 <!-- DOCUMENT IMPORT: END -->
 
 

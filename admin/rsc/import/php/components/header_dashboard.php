@@ -16,7 +16,8 @@
 
                     <li class="active"><a href="index.php">Welcome, <?php echo $_SESSION['login_name'] ?></a></li>
                     <li><a href="../index.php">Homepage</a></li>
-                    <li><a href="../login.php">Logout</a></li>
+                    <li><?php include 'rsc/import/php/components/buttons/btn_login_logout.php'?></li>
+
                 </ul>
 
         </div>

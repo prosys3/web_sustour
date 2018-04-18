@@ -12,8 +12,44 @@
 
 
 
+<!-- Main er obligatorisk -->
+<main>
 
-<!-- ... Your code goes here ... -->
+    <section class="bg-dark py-5">
+        <div class="container-fluid text-center">
+
+            <img src="rsc/img/logo/sustour/logo_symbol_green.svg" width="100" alt="">
+
+        </div>
+    </section>
+
+
+    <section class="py-5">
+        <div class="container text-center">
+
+            <h1>Tittel</h1>
+
+        </div>
+    </section>
+
+
+    <section class="py-5">
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col">Kolonne 1</div>
+                <div class="col">Kolonne 2</div>
+                <div class="col">Kolonne 3</div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+
+</main>
 
 
 

@@ -1,7 +1,7 @@
 <?php  session_start(); ?>
 <?php
 
-if(isset($_POST['submit'])) {
+if(isset($_POST['submit_user'])) {
 
     require_once ("../dbconfig.php");
 
@@ -27,7 +27,7 @@ if(isset($_POST['submit'])) {
 
     } else {
 
-        $sql = "SELECT * FROM user_data WHERE User_Email ='$email'";
+        $sql = "SELECT * FROM User_Data WHERE User_Email ='$email'";
         $result = mysqli_query($con, $sql);
         $resultCheck = mysqli_num_rows($result);
 
@@ -40,7 +40,7 @@ if(isset($_POST['submit'])) {
             // password hash
             $pwhash = md5($_POST['pass']);
 
-            $sqql = "INSERT INTO `user_data`(User_Name_First, User_Name_Last, User_Email, User_Password, User_Type, User_Phone, User_Company) 
+            $sqql = "INSERT INTO `User_Data`(User_Name_First, User_Name_Last, User_Email, User_Password, User_Type, User_Phone, User_Company) 
                      VALUES ('$fname', '$lname', '$email', '$pwhash', '$usertype', '$phone', '$comp');";
         }
     }

@@ -4,7 +4,7 @@ if(!isset($_SESSION['login'])){
     header("Location:../login.php");
     exit();
 }
-?>>
+?>
 <?php include 'rsc/import/php/components/head_dashboard.php' ?>
 <?php include 'rsc/import/php/components/header_dashboard.php' ?>
 
@@ -17,12 +17,11 @@ if(!isset($_SESSION['login'])){
 ##################################################################################
 -->
 
-
 <section id="breadcrumb">
     <div class="container">
         <ol class="breadcrumb">
             <li><a href="index.php">Dashboard</a></li>
-            <li class="active">Users</li>
+            <li class="active">Files</li>
 
         </ol>
     </div>
@@ -33,51 +32,73 @@ if(!isset($_SESSION['login'])){
         <div class="row">
             <div class="col-md-3">
 
-                 <div class="list-group">
+                <div class="list-group">
                     <a href="index.php" class="list-group-item active main-color-bg">
                         <span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Dashboard</a>
 
 
                     <!-- Overview for posts start -->
-                    <a href="posts.php" class="list-group-item"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Posts <span class="badge">
+                    <a href="post_list.php" class="list-group-item"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Posts <span class="badge">
                     <?php echo postCount($con);?></span></a>
                     <!-- Overview for posts stop -->
 
                     <!-- Overview for users start -->
-                    <a href="users.php" class="list-group-item"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Users <span class="badge">
+                    <a href="user_list.php" class="list-group-item"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Users <span class="badge">
                     <?php echo registredMemberCount($con);?></span></a>
                     <!-- Overview for users stopp -->
 
                     <!-- Overview for files start -->
-                    <a href="files.php" class="list-group-item"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Files <span class="badge"> 
+                    <a href="file_list.php" class="list-group-item"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Files <span class="badge">
                     <?php echo fileCount($con);?> </span></a>
                     <!-- Overview for files stopp -->
 
                 </div>
-
 
             </div>
             <div class="col-md-9">
                 <!-- Website Overview -->
                 <div class="panel panel-default">
                     <div class="panel-heading main-color-bg">
-                        <h3 class="panel-title">Users</h3>
+                        <h3 class="panel-title">List of recent files</h3>
                     </div>
                     <div class="panel-body">
                         <div class="row">
                             <div class="col-md-12">
-                                <a class="btn btn-default" href="register.php" role="button">Create User</a>
+                                <a class="btn btn-default" href="#" role="button">Upload File</a>
                             </div>
                         </div>
                         <br>
                         <table class="table table-striped table-hover">
                             <tr>
-                                <th>Name</th>
-                                <th>Email</th>
-                                <th>Type</th>
+                                <th>Title</th>
+                                <th>Uploaded by</th>
+                                <th>Created</th>
                                 <th></th>
                             </tr>
-                            <?php fillUserList() ?>
+                            <tr>
+                                <td>Summer School 2018</td>
+                                <td>Anne Gry Størud</td>
+                                <td>December, 19th 2016</td>
+                                <td><a class="btn btn-default" href="#">Download</a> <a class="btn btn-danger" href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>Project Planner</td>
+                                <td>Ola Nordmann</span></td>
+                                <td>December, 19th 2016</td>
+                                <td><a class="btn btn-default" href="#">Download</a> <a class="btn btn-danger" href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>Partner information</td>
+                                <td>Erna Solberg</td>
+                                <td>December, 19th 2016</td>
+                                <td><a class="btn btn-default" href="#">Download</a> <a class="btn btn-danger" href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>Review</td>
+                                <td>Anne Gry Størud</td>
+                                <td>December, 19th 2016</td>
+                                <td><a class="btn btn-default" href="#">Download</a> <a class="btn btn-danger" href="#">Delete</a></td>
+                            </tr>
                         </table>
 
                     </div>

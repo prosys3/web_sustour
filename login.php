@@ -24,7 +24,7 @@
         
         <div class="container">
 
-            <form action="admin/loginscript.php" method="post">
+            <form action="admin/user_login_script.php" method="post">
 
                 <!-- Email address: -->
                 <div class="form-group">

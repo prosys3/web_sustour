@@ -20,8 +20,8 @@
             </ul>
 
             <div>
-                <?php include 'rsc/import/php/components/btn_admin.php' ?>
-                <a class="btn btn-light" href="login.php" role="button"><i class="material-icons">lock</i> Login</a>
+                <?php include 'rsc/import/php/components/buttons/btn_admin.php'?>
+                <?php include 'rsc/import/php/components/buttons/btn_login_logout.php'?>
             </div>
 
 

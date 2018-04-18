@@ -139,14 +139,14 @@ function fillUserList()
 
     while ($row = mysqli_fetch_array($result)) {
 
-        echo "<tr >";
-        echo "<td >" . $row['User_Name_First'] . " " . $row['User_Name_Last'] . "</td >";
-        echo "<td >" . $row['User_Email'] . "</td >";
+        echo "<tr>";
+        echo "<td>" . $row['User_Name_First'] . " " . $row['User_Name_Last'] . "</td >";
+        echo "<td>" . $row['User_Email'] . "</td >";
         $tempQuery = "SELECT * FROM User_Type where " . $row['User_Type'] . " = User_Type_ID";
         $tempRes = mysqli_query($con, $tempQuery);
         $tempRow = mysqli_fetch_array($tempRes);
         echo "<td >" . $tempRow['User_Type_Name'] . "</td >";
-        echo '<td ><a class="btn btn-default" href = "edit.php" > Edit</a > <a class="btn btn-danger" href = "#" > Delete</a ></td >';
+        echo '<td ><a class="btn btn-default" href = "user_edit.php?id=' . $row['User_ID'] . '"' . '> Edit </a ><a class="btn btn-danger" href = "#" > Delete</a ></td >';
         echo "</tr>";
 
     }
