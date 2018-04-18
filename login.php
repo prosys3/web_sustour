@@ -29,13 +29,13 @@
                 <!-- Email address: -->
                 <div class="form-group">
                     <label for="inputEmail">Email address</label>
-                    <input id="inputEmail" class="form-control" type="email" placeholder="Enter email address" autofocus required>
+                    <input id="inputEmail" name="email" class="form-control" type="email" placeholder="Enter email address" autofocus required>
                 </div>
 
                 <!-- Password: -->
                 <div class="form-group">
                     <label for="inputPassword">Password:</label>
-                    <input id="inputPassword" class="form-control" type="password" placeholder="Enter password" required>
+                    <input id="inputPassword" name="password" class="form-control" type="password" placeholder="Enter password" required>
                 </div>
 
                 <button type="submit" class="btn btn-dark">Submit</button>

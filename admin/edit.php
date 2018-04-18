@@ -69,10 +69,10 @@ if(!isset($_SESSION['login'])){
 
 
                         
-                        <form method="POST" action= "updatepostscript.php">
+                        <form method="POST" action="updatepostscript.php">
                             <div class="form-group">
                                 <label>Post Title</label>
-                                <input type="text" name= "pTitle" class="form-control" placeholder="Page Title" value= <?php echo postTitle($con);?>>
+                                <input type="text" name="pTitle" class="form-control" placeholder="Page Title" value="<?php echo postTitle($con);?>">
                                 <div class="form-group">
                                     <label>Post Body</label> 
                                     <textarea name="editor1" class="form-control" placeholder="Page Body"><?php echo postText($con);?></textarea>
@@ -82,7 +82,7 @@ if(!isset($_SESSION['login'])){
                                 </div>
                                 <div class="form-group">
                                     <label>Meta Tags</label>
-                                    <input type="text" class="form-control" placeholder="Add some tags" value= <?php echo postTag($con);?>>
+                                    <input type="text" class="form-control" placeholder="Add some tags" value="<?php echo postTag($con);?>">
                                 </div>
                                 <div class="form-group">
                                     <label>Meta Description</label>
@@ -105,54 +105,10 @@ if(!isset($_SESSION['login'])){
 
 </section>
 
-<footer id="footer"><p>Copyright DN, &copy; 2017</p></footer>
-
-<!-- Modals -->
-
-<!-- Add Page -->
-<div class="modal fade" id="addPage" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <form>
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel">Add Page</h4>
-                </div>
-                <div class="modal-body">
-                    <div class="form-group">
-                        <label>Page Title</label>
-                        <input type="text" class="form-control" placeholder="Page Title">
-                        <div class="form-group">
-                            <label>Page Body</label>
-                            <textarea name="editor1" class="form-control" placeholder="Page Body"></textarea>
-                        </div>
-                        <div class="checkbox">
-                            <label><input type="checkbox">Published</label>
-                        </div>
-                        <div class="form-group">
-                            <label>Meta Tags</label>
-                            <input type="text" class="form-control" placeholder="Add some tags">
-                        </div>
-                        <div class="form-group">
-                            <label>Meta Description</label>
-                            <input type="text" class="form-control" placeholder="Add Meta description">
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">Save changes</button>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
-
-
 <!--
 ##################################################################################
 ######################## ! DO NOT EDIT BELOW THIS POINT ! ########################
 ##################################################################################
 -->
 
-<?php include 'rsc/import/php/components/footer_dashborad.php' ?>
+<?php include 'rsc/import/php/components/footer_dashboard.php' ?>

@@ -16,7 +16,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($pwverify == true) {
 
-        $sql = "SELECT User_ID FROM user_data WHERE User_Email = '$myemail'";
+        $sql = "SELECT User_ID FROM User_Data WHERE User_Email = '$myemail'";
         $result = mysqli_query($con, $sql);
         $row = mysqli_fetch_assoc($result);
         $count = mysqli_num_rows($result);
@@ -26,7 +26,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if ($count == 1) {
 
-            $sql = "SELECT * FROM user_data WHERE User_Email = '$myemail'";
+            $sql = "SELECT * FROM User_Data WHERE User_Email = '$myemail'";
             $result = mysqli_query($con, $sql);
             $row = mysqli_fetch_array($result);
 
