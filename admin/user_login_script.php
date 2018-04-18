@@ -34,9 +34,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             $myusertype = $row['User_Type'];
             $mycompany = $row['User_Company'];
             $myphone = $row['User_Phone'];
+            $user_id = $row['User_ID'];
 
             session_start();
             $_SESSION['login'] = true;
+            $_SESSION['user_id'] = $user_id;
             $_SESSION['login_email'] = $myemail;
             $_SESSION['login_name'] = $myfullname;
             $_SESSION['user_type'] = $myusertype;

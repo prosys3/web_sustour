@@ -29,22 +29,14 @@
         <!-- Bootstrap 4.0 -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-        <!-- Feather icons CDN: -->
+        <!-- Google Material icons CDN: -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
         <!-- Custom CSS for felles elementer start -->
         <link rel="stylesheet" href="rsc/import/css/custom.css">
-        <link rel="stylesheet" href="rsc/import/css/login.css">
         <!-- Custom CSS felles elementer stop -->
 
     <!-- CSS: END -->
-	
-
-	<!-- JS: START -->
-
-        <!-- ... place JavaScript imports here ... -->
-
-    <!-- JS: END -->
 
 <!-- DOCUMENT IMPORT: END -->
 

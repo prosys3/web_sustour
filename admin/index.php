@@ -18,154 +18,73 @@ if(!isset($_SESSION['login'])){
 -->
 
 
-<section id="breadcrumb">
-    <div class="container">
-        <ol class="breadcrumb">
-            <li class="active">Dashboard</li>
+<main>
 
-        </ol>
-    </div>
-</section>
+    <section class="bg-dark py-5">
 
-<section id="main">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-3">
+        <div class="container text-center text-light">
 
-                <div class="list-group">
-                    <a href="index.php" class="list-group-item active main-color-bg">
-                        <span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Dashboard</a>
+            <h1>Admin dashboard</h1>
 
-
-                    <!-- Overview for posts start -->
-                    <a href="post_list.php" class="list-group-item"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Posts <span class="badge">
-                    <?php echo postCount($con);?></span></a>
-                    <!-- Overview for posts stop -->
-
-                    <!-- Overview for users start -->
-                    <a href="user_list.php" class="list-group-item"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Users <span class="badge">
-                    <?php echo registredMemberCount($con);?></span></a>
-                    <!-- Overview for users stopp -->
-
-                    <!-- Overview for files start -->
-                    <a href="file_list.php" class="list-group-item"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Files <span class="badge">
-                    <?php echo fileCount($con);?> </span></a>
-                    <!-- Overview for files stopp -->
-
-                </div>
-
-
-
-
-            </div>
-            <div class="col-md-9">
-                <!-- Website Overview -->
-                <div class="panel panel-default">
-                    <div class="panel-heading main-color-bg">
-                        <h3 class="panel-title">Website Overview</h3>
-                    </div>
-                    <div class="panel-body">
-                        <div class="col-md-3">
-                            <div class="well dash-box">
-                                <h2><span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-                                    <?php echo registredMemberCount($con);?>
-                                </h2>
-                                <h4>Users</h4>
-
-                            </div>
-                        </div>
-
-                        <div class="col-md-3">
-                            <div class="well dash-box">
-                                <h2><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
-                                     <?php echo postCount($con);?>
-                                </h2>
-                                <h4>Posts</h4>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-                <!-- Latest Users -->
-
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Latest Users</h3>
-                    </div>
-                    <div class="panel-body">
-                        <table class="table table-striped table-hover">
-                            <tr>
-                                <th>Name</th>
-                                <th>Email</th>
-                                <th>Joined</th>
-                            </tr>
-                            <tr>
-                                <td>Andreas Knutsen</td>
-                                <td>eks@eks.no</td>
-                                <td>MM, DD, YYYY</td>
-                            </tr>
-                            <tr>
-                                <td>Homa M Atashgahi</td>
-                                <td>eks@eks.no</td>
-                                <td>MM, DD, YYYY</td>
-                            </tr>
-                            <tr>
-                                <td>Anders Koo</th>
-                                <td>eks@eks.no</td>
-                                <td>MM, DD, YYYY</td>
-                            </tr>
-                        </table>
-                    </div>
-                </div>
-            </div>
         </div>
 
-    </div>
+    </section>
 
+    <section class="bg-light py-5">
+        <div class="container">
 
-</section>
-
-<!-- Modals -->
-
-<!-- Add Page -->
-<div class="modal fade" id="addPage" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <form>
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel">Add Page</h4>
+            <div class="row">
+                <div class="col-3">
+                   <?php include 'rsc/import/php/components/dashboard/dashboard_nav.php' ?>
                 </div>
-                <div class="modal-body">
-                    <div class="form-group">
-                        <label>Page Title</label>
-                        <input type="text" class="form-control" placeholder="Page Title">
-                        <div class="form-group">
-                            <label>Page Body</label>
-                            <textarea name="editor1" class="form-control" placeholder="Page Body"></textarea>
-                        </div>
-                        <div class="checkbox">
-                            <label><input type="checkbox">Published</label>
-                        </div>
-                        <div class="form-group">
-                            <label>Meta Tags</label>
-                            <input type="text" class="form-control" placeholder="Add some tags">
-                        </div>
-                        <div class="form-group">
-                            <label>Meta Description</label>
-                            <input type="text" class="form-control" placeholder="Add Meta description">
-                        </div>
-                    </div>
+
+
+                <div class="col-9">
+
+                    <ul class="list-group">
+                        <li class="list-group-item text-light bg-dark">Express panel</li>
+                        <li class="list-group-item">
+
+                            <div class="row">
+
+                                <div class="col">test</div>
+                                <div class="col">test</div>
+
+                            </div>
+
+                        </li>
+                    </ul>
+
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">Save changes</button>
-                </div>
-            </form>
+            </div>
+
+            <ul class="list-group mt-5">
+                <li class="list-group-item text-light bg-dark">Latest users</li>
+                <li class="list-group-item">
+
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th scope="col">Name</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">User type</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+
+                        <?php fillUserList(); ?>
+
+                        </tbody>
+                    </table>
+
+                </li>
+            </ul>
+
         </div>
-    </div>
-</div>
+    </section>
+
+</main>
 
 
 <!--

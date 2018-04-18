@@ -1,7 +1,7 @@
 <?php
 
 $login = '<a class="btn btn-light ml-2" href="login.php" role="button"><i class="material-icons">lock</i> Login</a>';
-$logout = '<button class="btn btn-light ml-2" type="submit" name="logout" role="button"><i class="material-icons">face</i> Logout</button>';
+$logout = '<button class="btn btn-light ml-2" type="submit" name="logout" role="button"><i class="material-icons">exit_to_app</i> Logout</button>';
 
 $form = '<div style="display: inline-block;">
             <form method="post">

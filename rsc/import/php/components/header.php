@@ -1,4 +1,19 @@
-<nav id="prosys3-navbar" class="navbar navbar-expand-md navbar-dark fixed-top">
+<!-- Do not delete or edit this style element: -->
+<style>
+    :root{ --prosys3-navbar-height: 58px; }
+    nav#prosys3-navbar ~ main {margin-top: var(--prosys3-navbar-height);}
+</style>
+<!-- Do not delete or edit this style element: -->
+
+
+
+
+
+
+
+
+
+<nav id="prosys3-navbar" class="navbar navbar-expand-lg navbar-dark fixed-top">
     <div class="container">
 
         <a class="navbar-brand" href="index.php"><img src="rsc/img/logo/sustour/logo_symbol_white.svg" width="30" height="30" alt="Logo symbol"></a>
@@ -29,40 +44,3 @@
 
     </div>
 </nav>
-
-
-
-
-
-<!-- CUSTOM NAVBAR LOGIN SCREEN: -->
-<style>
-
-    /* Setting some useful variables: */
-    :root{
-
-        --prosys3-dropdown-signin-width: 250px;
-        --prosys3-dropdown-signin-height: 400px;
-        --prosys3-navbar-height: 58px;
-
-    }
-
-    #prosys3-navbar ~ main {
-        margin-top: var(--prosys3-navbar-height);
-    }
-
-    /* Adjustment of header logo */
-    .img-thumbnail {
-    width: 350px;
-    height: 200px;
-    margin-left: -200px;
-    }
-
-     /* Adjustment of sponsor logo in "about.php" */
-    .siu-logo {
-    width: 140px;
-    height: 100px;
-    margin-left: 45px;
-    }
-
-
-</style>

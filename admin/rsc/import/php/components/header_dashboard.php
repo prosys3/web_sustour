@@ -1,39 +1,43 @@
-<nav class="navbar navbar-default">
+<!-- Do not delete or edit this style element: -->
+<style>
+    :root{ --prosys3-navbar-height: 58px; }
+    nav#prosys3-navbar ~ main {margin-top: var(--prosys3-navbar-height);}
+</style>
+<!-- Do not delete or edit this style element: -->
+
+
+
+
+
+
+
+
+
+
+
+
+<nav id="prosys3-navbar" class="navbar navbar-expand-md navbar-dark fixed-top">
     <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">Sustainable Tourism </a>
-        </div>
-        <div id="navbar" class="collapse navbar-collapse">
-            <ul class="nav navbar-nav">
 
-                <ul class="nav navbar-nav navbar-right">
+        <a class="navbar-brand" href="index.php"><img src="../rsc/img/logo/sustour/logo_symbol_white.svg" width="30" height="30" alt="Logo symbol"></a>
 
-                    <li class="active"><a href="index.php">Welcome, <?php echo $_SESSION['login_name'] ?></a></li>
-                    <li><a href="../index.php">Homepage</a></li>
-                    <li><?php include 'rsc/import/php/components/buttons/btn_login_logout.php'?></li>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-                </ul>
+        <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
 
-        </div>
-    </div>
-</nav>
+            <div class="text-light">
+                Welcome, <?php echo $_SESSION['login_name'] ?>
+            </div>
 
-<header id="header">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-10">
-
-                <h1><a class="navbar-brand"> <img src="../rsc/img/logo/sustour/logo_symbol_white.svg" width="45" height="30" alt="Logo symbol"></a> Dashboard</h1>
-
+            <div>
+                <?php include '../rsc/import/php/components/buttons/btn_public.php'?>
+                <?php include 'rsc/import/php/components/buttons/btn_login_logout.php'?>
             </div>
 
 
         </div>
+
     </div>
-</header>
+</nav>
