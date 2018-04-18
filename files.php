@@ -46,19 +46,19 @@
 		      <td>Test</td>
 		    </tr>
 		    <tr>
-		      <th scope="row">1</th>
+		      <th scope="row">4</th>
 		      <td>Projectmeeting</td>
 		      <td>.docx</td>
 		      <td>Ola Nordmann</td>
 		    </tr>
 		    <tr>
-		      <th scope="row">1</th>
+		      <th scope="row">5</th>
 		      <td>Projectmeeting</td>
 		      <td>.docx</td>
 		      <td>Ola Nordmann</td>
 		    </tr>
 		    <tr>
-		      <th scope="row">1</th>
+		      <th scope="row">6</th>
 		      <td>Projectmeeting</td>
 		      <td>.docx</td>
 		      <td>Ola Nordmann</td>
