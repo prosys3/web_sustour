@@ -10,67 +10,58 @@
 
 <!-- ... Your code goes here ... -->
 <main>
-
-  </br>
-
-  </br>
-
-  <div class="container text-center">
-	<table class="table table-bordered table-hover">
-	  <thead class="thead-dark">
-	    <tr>
-	      <th scope="col">#</th>
-	      <th scope="col">Filename</th>
-	      <th scope="col">Filetype</th>
-	      <th scope="col">Author</th>
-	    </tr>
-	  </thead>
-	  <tbody>
-	    <tr>
-	      <th scope="row">1</th>
-	      <td>Test</td>
-	      <td>.docx</td>
-	      <td>Test</td>
-	    </tr>
-	    <tr>
-	      <th scope="row">2</th>
-	      <td>Greentext</td>
-	      <td>.parchment</td>
-	      <td>Plague Doctor</td>
-	    </tr>
-	    <tr>
-	      <th scope="row">3</th>
-	      <td>Test</td>
-	      <td>.pdf</td>
-	      <td>Test</td>
-	    </tr>
-	    <tr>
-	      <th scope="row">4</th>
-	      <td>Projectmeeting</td>
-	      <td>.docx</td>
-	      <td>Ola Nordmann</td>
-	    </tr>
-	    <tr>
-	      <th scope="row">5</th>
-	      <td>Projectmeeting</td>
-	      <td>.docx</td>
-	      <td>Ola Nordmann</td>
-	    </tr>
-	    <tr>
-	      <th scope="row">6</th>
-	      <td>Projectmeeting</td>
-	      <td>.docx</td>
-	      <td>Ola Nordmann</td>
-	    </tr>
-	  </tbody>
-	</table>
-  </div>
-
-
-  </br>
-
-  </br>
-
+  	<section class="p-5">
+	  <div class="container text-center">
+		<table class="table table-bordered table-hover">
+		  <thead class="thead-dark">
+		    <tr>
+		      <th scope="col">Filename</th>
+		      <th scope="col">Filetype</th>
+		      <th scope="col">Author</th>
+		      <th scope="col">Download</th>
+		    </tr>
+		  </thead>
+		  <tbody>
+		    <tr>
+		      <td>Test</td>
+		      <td>.docx</td>
+		      <td>Test</td>
+		      <td><button type="button" class="btn btn-primary">Download</button></td>
+		    </tr>
+		    <tr>
+		      <td>Greentext</td>
+		      <td>.parchment</td>
+		      <td>Plague Doctor</td>
+		      <td><button type="button" class="btn btn-primary">Download</button></td>
+		    </tr>
+		    <tr>
+		      <td>Test</td>
+		      <td>.pdf</td>
+		      <td>Test</td>
+		      <td><button type="button" class="btn btn-primary">Download</button></td>
+		    </tr>
+		    <tr>
+		      <td>Projectmeeting</td>
+		      <td>.docx</td>
+		      <td>Ola Nordmann</td>
+		      <td><button type="button" class="btn btn-primary">Download</button></td>
+		    </tr>
+		    <tr>
+		      <td>Projectmeeting</td>
+		      <td>.docx</td>
+		      <td>Ola Nordmann</td>
+		      <td><button type="button" class="btn btn-primary">Download</button></td>
+		    </tr>
+		    <tr>
+		      <td>Projectmeeting</td>
+		      <td>.docx</td>
+		      <td>Ola Nordmann</td>
+		      <td><button type="button" class="btn btn-primary">Download</button></td>
+		    </tr>
+		  </tbody>
+		</table>
+	  </div>
+	</section>
 </main>
 
 
