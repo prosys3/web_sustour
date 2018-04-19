@@ -24,12 +24,12 @@ $sql = "SELECT * FROM User_Data WHERE User_ID =" . $id;
 $result = mysqli_query($con, $sql);
 $row = mysqli_fetch_array($result);
 
-$fname = $row['User_Name_First'];
-$lname = $row['User_Name_Last'];
-$email = $row['User_Email'];
-$type = $row['User_Type'];
-$phone = $row['User_Phone'];
-$company = $row['User_Company'];
+$fname      = $row['User_Name_First'];
+$lname      = $row['User_Name_Last'];
+$email      = $row['User_Email'];
+$type       = $row['User_Type'];
+$phone      = $row['User_Phone'];
+$company    = $row['User_Company'];
 
 ?>
 

@@ -17,7 +17,16 @@ if(!isset($_SESSION['login'])){
 ##################################################################################
 -->
 
-<?php $_SESSION['id']=$_GET['id']; ?>
+<?php
+    $_SESSION['id'] = $_GET['id'];
+
+    $post_id = $_GET['id'];
+    $sql = "SELECT * FROM Post WHERE Post_ID = " . $post_id;
+    $result = mysqli_query($con, $sql);
+    $post_category_row = mysqli_fetch_array($result);
+    $post_category_id = $post_category_row['Post_Category'];
+
+?>
 
 <main>
 
@@ -66,7 +75,13 @@ if(!isset($_SESSION['login'])){
                                         $result = mysqli_query($con, $sql);
 
                                         while ( $row = mysqli_fetch_array($result) ){
-                                            echo '<option value="' . $row['Category_ID'] . '">' . $row['Category_Name'] . '</option>';
+
+                                            if ( $row['Category_ID'] == $post_category_id ) {
+                                                echo '<option value="' . $row['Category_ID'] . '" selected>' . $row['Category_Name'] . '</option>';
+                                            } else {
+                                                echo '<option value="' . $row['Category_ID'] . '">' . $row['Category_Name'] . '</option>';
+                                            }
+
                                         }
                                         ?>
                                     </select>
