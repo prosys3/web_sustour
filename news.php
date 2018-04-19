@@ -13,56 +13,23 @@
 -->
 
 
-<main>
-
-    <section class="bg-light py-5">
-
-        <div class="container">
-
-            <h1>News</h1>
-
-        </div>
-
-    </section>
 
 
-    <section class="py-5">
+<?php
 
-        <div class="container d-flex flex-row">
+    if ( isset($_GET['post']) ){
 
-            <?php
+        include 'rsc/import/php/components/page_content/news_post_single.php';
 
-                $sql = 'SELECT * FROM Post ORDER BY Post_Date_Created DESC';
-                $result = mysqli_query($con, $sql);
+    } else {
 
-                while ( $row = mysqli_fetch_array( $result ) ){
+        include 'rsc/import/php/components/page_content/news_grid.php';
 
-                    echo '<div class="card" style="width: calc(33.33% - 10px); margin: 5px;">';
-                    if ($row['Post_Image_Featured'] != null){
-                        echo '<img class="card-img-top" src="'.$row['Post_Image_Featured'].'" alt="Card image cap">';
-                    }
-                    echo '<div class="card-body d-flex flex-column justify-content-between" style="flex-wrap: wrap; ">';
-                    echo '<h5 class="card-title">';
-                    echo $row['Post_Title'];
-                    echo '</h5>';
-                    echo '<div class="d-flex flex-column">';
-                    echo '<a href="news.php?post='.$row['Post_ID'].'" class="btn btn-primary">Read post</a>';
-                    if ( $row['Post_Private'] == 1 ) {
-                        echo '<span class="badge badge-secondary mt-3">Private</span>';
-                    }
-                    echo '</div>';
-                    echo '</div>';
-                    echo '</div>';
+    }
 
-                }
+?>
 
-            ?>
 
-        </div>
-
-    </section>
-
-</main>
 
 
 <!--
