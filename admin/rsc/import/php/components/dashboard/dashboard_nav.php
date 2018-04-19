@@ -2,11 +2,14 @@
 
 function activeItem( $number ) {
 
-    $id_dashboard = $_GET['dashboard'];
+    if ( isset($_GET['dashboard']) ) {
 
-    if ( $id_dashboard == $number ) {
-
-        return 'text-light bg-secondary';
+        $id_dashboard = $_GET['dashboard'];
+        if ( isset($number) && $id_dashboard == $number ) {
+            return 'text-light bg-secondary';
+        } else {
+            return 'text-secondary';
+        }
 
     } else {
 
@@ -18,11 +21,14 @@ function activeItem( $number ) {
 
 function activeBadge( $number ) {
 
-    $id_dashboard = $_GET['dashboard'];
+    if ( isset($_GET['dashboard']) ) {
 
-    if ( $id_dashboard == $number ) {
-
-        return 'badge badge-light';
+        $id_dashboard = $_GET['dashboard'];
+        if ( isset($number) && $id_dashboard == $number ) {
+            return 'badge badge-light';
+        }   else {
+            return 'badge badge-secondary';
+        }
 
     } else {
 

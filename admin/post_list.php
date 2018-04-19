@@ -57,10 +57,10 @@ if(!isset($_SESSION['login'])){
             </div>
 
             <ul class="list-group mt-5">
-                <li class="list-group-item text-light bg-dark">Latest posts</li>
+                <li class="list-group-item text-light bg-dark">All posts</li>
                 <li class="list-group-item">
 
-                    <?php populate_post_table(); ?>
+                    <?php populate_post_table(0, "Post_Date_Created", "DESC"); ?>
 
                 </li>
             </ul>

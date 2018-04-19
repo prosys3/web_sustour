@@ -45,8 +45,8 @@ if(!isset($_SESSION['login'])){
 
                             <div class="row">
 
-                                <div class="col">test</div>
-                                <div class="col">test</div>
+                                <div class="col">Edit your own user</div>
+                                <div class="col">Create new user</div>
 
                             </div>
 
@@ -57,10 +57,10 @@ if(!isset($_SESSION['login'])){
             </div>
 
             <ul class="list-group mt-5">
-                <li class="list-group-item text-light bg-dark">Latest posts</li>
+                <li class="list-group-item text-light bg-dark">All users</li>
                 <li class="list-group-item">
 
-                    <?php populate_user_table(); ?>
+                    <?php populate_user_table(0, "User_ID", "DESC"); ?>
 
                 </li>
             </ul>

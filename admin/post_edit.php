@@ -19,91 +19,81 @@ if(!isset($_SESSION['login'])){
 
 <?php $_SESSION['id']=$_GET['id']; ?>
 
+<main>
 
-<section id="breadcrumb">
-    <div class="container">
-        <ol class="breadcrumb">
-            <li><a href="index.php">Dashboard</a></li>
-            <li><a href="page.php">Posts</a></li>
-            <li class="active">Edit Post</li>
+    <section class="bg-dark py-5">
 
-        </ol>
-    </div>
-</section>
+        <div class="container text-center text-light">
 
-<section id="main">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-3">
+            <h1>Admin dashboard</h1>
 
-                <div class="list-group">
-                    <a href="index.php" class="list-group-item active main-color-bg">
-                        <span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Dashboard</a>
+        </div>
 
+    </section>
 
-                    <!-- Overview for posts start -->
-                    <a href="post_list.php" class="list-group-item"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Posts <span class="badge">
-                    <?php echo postCount($con);?></span></a>
-                    <!-- Overview for posts stop -->
+    <section class="bg-light py-5">
+        <div class="container">
 
-                    <!-- Overview for users start -->
-                    <a href="user_list.php" class="list-group-item"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Users <span class="badge">
-                    <?php echo registredMemberCount($con);?></span></a>
-                    <!-- Overview for users stopp -->
-
-                    <!-- Overview for files start -->
-                    <a href="file_list.php" class="list-group-item"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Files <span class="badge">
-                    <?php echo fileCount($con);?> </span></a>
-                    <!-- Overview for files stopp -->
-
+            <div class="row">
+                <div class="col-3">
+                    <?php include 'rsc/import/php/components/dashboard/dashboard_nav.php' ?>
                 </div>
-                
-            </div>
-            <div class="col-md-9">
-                <!-- Website Overview -->
-                <div class="panel panel-default">
-                    <div class="panel-heading main-color-bg">
-                        <h3 class="panel-title">Edit Post</h3>
-                    </div>
-                    <div class="panel-body">
 
+                <div class="col-9">
+                    <ul class="list-group">
+                        <li class="list-group-item text-light bg-dark">Post editor</li>
+                        <li class="list-group-item">
 
-                        
-                        <form method="POST" action="post_update_script.php">
-                            <div class="form-group">
+                            <form method="POST" action="post_update_script.php">
+
                                 <label>Post Title</label>
                                 <input type="text" name="pTitle" class="form-control" placeholder="Page Title" value="<?php echo postTitle($con);?>">
-                                <div class="form-group">
-                                    <label>Post Body</label> 
+
+                                <div class="form-group mt-4">
                                     <textarea name="editor1" class="form-control" placeholder="Page Body"><?php echo postText($con);?></textarea>
                                 </div>
-                                <div class="checkbox">
-                                    <label><input type="checkbox" checked>Published</label>
-                                </div>
-                                <div class="form-group">
-                                    <label>Meta Tags</label>
-                                    <input type="text" class="form-control" placeholder="Add some tags" value="<?php echo postTag($con);?>">
-                                </div>
-                                <div class="form-group">
-                                    <label>Meta Description</label>
-                                    <input type="text" class="form-control" placeholder="Add Meta description" value="Adobe XD or Experience Design allows you to go from wireframe to interactive prototype, from desktop to mobile.">
+
+                                <div class="form-group mt-4">
+                                    <label class="mb-3"><input type="checkbox"> Private post</label>
+                                    <?php alert("A private post will only be seen by registered users.", "secondary") ?>
                                 </div>
 
-                                <input type="submit" class="btn btn-default" value="Submit" name="submit">
-    
-                            </div>
-                        </form>
-                    </div>
+                                <div class="form-group mt-4">
+                                    <label>Category</label>
+                                    <select id="inputUserType" name="type" class="form-control">
+                                        <?php
+                                        $sql = "SELECT * FROM Categories ORDER BY Category_ID DESC";
+                                        $result = mysqli_query($con, $sql);
+
+                                        while ( $row = mysqli_fetch_array($result) ){
+                                            echo '<option value="' . $row['Category_ID'] . '">' . $row['Category_Name'] . '</option>';
+                                        }
+                                        ?>
+                                    </select>
+                                </div>
+
+                                <div class="form-group mt-4">
+                                    <label for="featured_img">Choose a featured image</label><br>
+                                    <input id="featured_img" class="mb-3" type="file">
+                                    <?php alert("The image must be either JPG, JPEG, or PNG, and be no more than 5 mb.", "primary") ?>
+                                </div>
+
+                                <div class="form-group my-5">
+                                    <button type="submit" class="btn btn-success" name="submit">Publish post</button>
+                                </div>
+
+
+                            </form>
+
+                        </li>
+                    </ul>
                 </div>
-
-                <!-- Latest Users -->
-
-
-
             </div>
 
+        </div>
+    </section>
 
-</section>
+</main>
 
 <!--
 ##################################################################################

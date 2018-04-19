@@ -4,7 +4,7 @@
 
         <div class="container text-center text-light">
 
-            <p>Created by ProSys3</p>
+            Created by ProSys3
 
         </div>
 

@@ -62,21 +62,7 @@ if(!isset($_SESSION['login'])){
                 <li class="list-group-item text-light bg-dark">Latest users</li>
                 <li class="list-group-item">
 
-                    <table class="table table-striped">
-                        <thead>
-                        <tr>
-                            <th scope="col">Name</th>
-                            <th scope="col">Email</th>
-                            <th scope="col">User type</th>
-                            <th scope="col">Action</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-
-                        <?php fillUserList(); ?>
-
-                        </tbody>
-                    </table>
+                    <?php populate_user_table(10, "User_ID", "DESC"); ?>
 
                 </li>
             </ul>

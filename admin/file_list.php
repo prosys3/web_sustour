@@ -45,8 +45,8 @@ if(!isset($_SESSION['login'])){
 
                             <div class="row">
 
-                                <div class="col">test</div>
-                                <div class="col">test</div>
+                                <div class="col">See all files</div>
+                                <div class="col">Upload new file</div>
 
                             </div>
 
@@ -57,10 +57,10 @@ if(!isset($_SESSION['login'])){
             </div>
 
             <ul class="list-group mt-5">
-                <li class="list-group-item text-light bg-dark">Latest posts</li>
+                <li class="list-group-item text-light bg-dark">All files</li>
                 <li class="list-group-item">
 
-                    <?php populate_post_table(); ?>
+                    <?php populate_file_table(0, "File_Uploaded", "DESC"); ?>
 
                 </li>
             </ul>
