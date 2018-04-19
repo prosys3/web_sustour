@@ -5,13 +5,13 @@ if(isset($_POST['submit_user'])) {
 
     require_once ("../dbconfig.php");
 
-    $fname = mysqli_real_escape_string($con, $_POST['fname']);
-    $lname = mysqli_real_escape_string($con, $_POST['lname']);
-    $email = mysqli_real_escape_string($con, $_POST['email']);
-    $passw = mysqli_real_escape_string($con, $_POST['pass']);
-    $usertype = mysqli_real_escape_string($con, $_POST['usertype']);
-    $phone = mysqli_real_escape_string($con, $_POST['phone']);
-    $comp = mysqli_real_escape_string($con, $_POST['company']);
+    $fname      = mysqli_real_escape_string($con, $_POST['fname'    ]);
+    $lname      = mysqli_real_escape_string($con, $_POST['lname'    ]);
+    $email      = mysqli_real_escape_string($con, $_POST['email'    ]);
+    $passw      = mysqli_real_escape_string($con, $_POST['pass'     ]);
+    $usertype   = mysqli_real_escape_string($con, $_POST['type'     ]);
+    $phone      = mysqli_real_escape_string($con, $_POST['phone'    ]);
+    $comp       = mysqli_real_escape_string($con, $_POST['company'  ]);
 
     if (empty($fname) || empty($lname) ||  empty($email) || empty($passw) || empty($usertype) || empty($phone) || empty($comp)) {
         header("Location: RegisterPage.php");

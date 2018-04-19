@@ -17,80 +17,57 @@ if(!isset($_SESSION['login'])){
 ##################################################################################
 -->
 
+<main>
+    <section class="bg-dark py-5">
 
-<section id="breadcrumb">
-    <div class="container">
-        <ol class="breadcrumb">
-            <li><a href="index.php">Dashboard</a></li>
-            <li class="active">Users</li>
+        <div class="container text-center text-light">
 
-        </ol>
-    </div>
-</section>
+            <h1>Admin dashboard</h1>
 
-<section id="main">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-3">
+        </div>
 
-                 <div class="list-group">
-                    <a href="index.php" class="list-group-item active main-color-bg">
-                        <span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Dashboard</a>
+    </section>
 
+    <section class="bg-light py-5">
+        <div class="container">
 
-                    <!-- Overview for posts start -->
-                    <a href="post_list.php" class="list-group-item"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Posts <span class="badge">
-                    <?php echo postCount($con);?></span></a>
-                    <!-- Overview for posts stop -->
-
-                    <!-- Overview for users start -->
-                    <a href="user_list.php" class="list-group-item"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Users <span class="badge">
-                    <?php echo registredMemberCount($con);?></span></a>
-                    <!-- Overview for users stopp -->
-
-                    <!-- Overview for files start -->
-                    <a href="file_list.php" class="list-group-item"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Files <span class="badge">
-                    <?php echo fileCount($con);?> </span></a>
-                    <!-- Overview for files stopp -->
-
+            <div class="row">
+                <div class="col-3">
+                    <?php include 'rsc/import/php/components/dashboard/dashboard_nav.php' ?>
                 </div>
 
 
-            </div>
-            <div class="col-md-9">
-                <!-- Website Overview -->
-                <div class="panel panel-default">
-                    <div class="panel-heading main-color-bg">
-                        <h3 class="panel-title">Users</h3>
-                    </div>
-                    <div class="panel-body">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <a class="btn btn-default" href="user_register.php" role="button">Create User</a>
+                <div class="col-9">
+
+                    <ul class="list-group">
+                        <li class="list-group-item text-light bg-dark">Express panel</li>
+                        <li class="list-group-item">
+
+                            <div class="row">
+
+                                <div class="col">test</div>
+                                <div class="col">test</div>
+
                             </div>
-                        </div>
-                        <br>
-                        <table class="table table-striped table-hover">
-                            <tr>
-                                <th>Name</th>
-                                <th>Email</th>
-                                <th>Type</th>
-                                <th></th>
-                            </tr>
-                            <?php fillUserList() ?>
-                        </table>
 
-                    </div>
+                        </li>
+                    </ul>
+
                 </div>
-
-                <!-- Latest Users -->
-
-
-
             </div>
 
+            <ul class="list-group mt-5">
+                <li class="list-group-item text-light bg-dark">Latest posts</li>
+                <li class="list-group-item">
 
-</section>
+                    <?php populate_user_table(); ?>
+
+                </li>
+            </ul>
+
+        </div>
+    </section>
+</main>
 
 <!--
 ##################################################################################

@@ -64,7 +64,7 @@ if(!isset($_SESSION['login'])){
                 <!-- User type: -->
                 <div class="form-group">
                     <label for="inputUserType">User type:</label>
-                    <select id="inputUserType" name="usertype" class="form-control">
+                    <select id="inputUserType" name="type" class="form-control">
                     <?php
                         $sql = "SELECT * FROM User_Type ORDER BY User_Type_ID DESC";
                         $result = mysqli_query($con, $sql);

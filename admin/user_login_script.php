@@ -46,7 +46,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['user_company'] = $mycompany;
 
             if ( $_SESSION['user_type'] < 4 ) {
-                header('Refresh: 0; URL=index.php');
+                header('Refresh: 0; URL=index.php?dashboard=1');
             } else {
                 header('Refresh: 0; URL=../index.php');
             }
