@@ -18,6 +18,7 @@ if(!isset($_SESSION['login'])){
 <?php
 
 $id = $_GET['id'];
+$_SESSION['tempID'] = $id;
 
 $sql = "SELECT * FROM User_Data WHERE User_ID =" . $id;
 
@@ -54,7 +55,7 @@ $company    = $row['User_Company'];
 
         <div class="container">
 
-            <form action="user_login_script.php" method="post">
+            <form action="user_update_script.php" method="post">
 
                 <!-- First name: -->
                 <div class="form-group">
@@ -77,13 +78,13 @@ $company    = $row['User_Company'];
                 <!-- Password: -->
                 <div class="form-group">
                     <label for="inputPassword">Password:</label>
-                    <input id="inputPassword" name="pass" class="form-control" type="password" placeholder="Enter new password" required>
+                    <input id="inputPassword" name="pass" class="form-control" type="password" placeholder="Enter new password">
                 </div>
 
                 <!-- User type: -->
                 <div class="form-group">
                     <label for="inputUserType">User type:</label>
-                    <select id="inputUserType" name="usertype" class="form-control" selected="">
+                    <select id="inputUserType" name="type" class="form-control" selected="">
                         <?php
                         $sql = "SELECT * FROM User_Type ORDER BY User_Type_ID DESC";
                         $result = mysqli_query($con, $sql);
@@ -138,7 +139,7 @@ $company    = $row['User_Company'];
                     </select>
                 </div>
 
-                <button type="submit" name="submit_user" class="btn btn-primary">Submit</button>
+                <button type="submit" name="submit_user_update" class="btn btn-primary">Submit</button>
 
             </form>
 
