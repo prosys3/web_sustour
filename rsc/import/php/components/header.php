@@ -35,8 +35,10 @@
             </ul>
 
             <div>
-                <?php include 'rsc/import/php/components/buttons/btn_admin.php'?>
-                <?php include 'rsc/import/php/components/buttons/btn_login_logout.php'?>
+                <?php
+                    include 'rsc/import/php/components/buttons/btn_admin.php';
+                    include 'rsc/import/php/components/buttons/btn_login_logout.php';
+                ?>
             </div>
 
 

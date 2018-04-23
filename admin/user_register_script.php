@@ -1,9 +1,8 @@
-<?php  session_start(); ?>
 <?php
 
-if(isset($_POST['submit_user'])) {
+include '../dbconfig.php';
 
-    require_once ("../dbconfig.php");
+if(isset($_POST['submit_user'])) {
 
     $fname      = mysqli_real_escape_string($con, $_POST['fname'    ]);
     $lname      = mysqli_real_escape_string($con, $_POST['lname'    ]);

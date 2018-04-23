@@ -183,7 +183,13 @@ function populate_post_table($number_of_rows, $order_by, $asc_desc){
 
     // Preliminary data:
     $user_id = $_SESSION['user_id'];
-    $user_type = $_SESSION['user_type'];
+    $current_user = $_SESSION['user_type'];
+
+    // Access level:
+    $root = 1;
+    $admin = 2;
+    $mod = 3;
+    $user = 4;
 
     // HTML template:
     $table_start = '
@@ -210,7 +216,7 @@ function populate_post_table($number_of_rows, $order_by, $asc_desc){
 
 
     // Create SQL query i accordance with user type:
-    if ( $user_type <= 2 ) {
+    if ( $current_user == $root || $current_user == $admin || $current_user == $mod ) {
 
         if ( isset($number_of_rows) && $number_of_rows > 0 ) {
             $sql = "SELECT * FROM Post ORDER BY ".$order_by." ".$asc_desc." LIMIT 0,".$number_of_rows;
@@ -229,10 +235,10 @@ function populate_post_table($number_of_rows, $order_by, $asc_desc){
     }
 
     // Get user data:
-    $data_user = mysqli_query($con, $sql);
+    $result = mysqli_query($con, $sql);
 
     // Check if any posts were received:
-    if ( $data_user == null ){
+    if ( $result == null ){
         alert("You have no posts", "warning");
         exit();
     }
@@ -240,19 +246,19 @@ function populate_post_table($number_of_rows, $order_by, $asc_desc){
     // Populate table:
     echo $table_start;
 
-    while ( $row = mysqli_fetch_array($data_user) ) {
+    while ( $row = mysqli_fetch_array($result) ) {
 
         $post_id = $row['Post_ID'];
         $post_title = $row['Post_Title'];
         $post_author_id = $row['Post_Author'];
 
-        $post_author_query = mysqli_query($con, "SELECT CONCAT(User_Name_First, ' ', User_Name_Last) AS User_Name FROM User_Data WHERE User_ID = " . $post_author_id);
+        $post_author_query = mysqli_query($con, "SELECT CONCAT(User_Name_First, ' ', User_Name_Last) AS User_Name FROM User_Data WHERE User_ID = ".$post_author_id);
         while ( $row_author = mysqli_fetch_array( $post_author_query ) ){
             $post_author = $row_author['User_Name'];
         }
         $post_created = $row['Post_Date_Created'];
         $post_category_id = $row['Post_Category'];
-        $row_category_id = mysqli_query($con, "SELECT Category_Name FROM Categories WHERE Category_ID = " . $post_category_id);
+        $row_category_id = mysqli_query($con, "SELECT Category_Name FROM Category WHERE Category_ID = ".$post_category_id);
         while ( $row_category = mysqli_fetch_array( $row_category_id ) ){
             $post_category = $row_category['Category_Name'];
         }
@@ -291,7 +297,6 @@ function populate_post_table($number_of_rows, $order_by, $asc_desc){
     echo $table_end;
 
 }
-
 
 
 
@@ -480,8 +485,12 @@ function populate_file_table($number_of_rows, $order_by, $asc_desc){
 
 
     // Preliminary data:
-    $session_user_id = $_SESSION['user_id'];
-    $session_user_type = $_SESSION['user_type'];
+    $session_user_id    = $_SESSION['user_id'];
+    $session_user_level = $_SESSION['user_type'];
+    $root   = 1;
+    $admin  = 2;
+    $mod    = 3;
+    $user   = 4;
 
 
 
@@ -511,47 +520,48 @@ function populate_file_table($number_of_rows, $order_by, $asc_desc){
 
 
 
+    // Check whether there is anything to show:
+    $sql = 'SELECT COUNT(*) AS Row_Count FROM File';
+    $result = mysqli_query($con,$sql);
+    $row = mysqli_fetch_array($result);
+    $count = $row['Row_Count'];
+
+
+
+
     // Create SQL query in accordance with user type:
-    if ( $session_user_type < 4 ) {
-        // Only moderators and above can see this table.
-        if ( isset($number_of_rows) && $number_of_rows > 0 ){
-            $sql = "SELECT * FROM File ORDER BY ".$order_by." ".$asc_desc." LIMIT 0,".$number_of_rows;
+    if ( $count > 0 ){
+
+        if ( $session_user_level == $root || $session_user_level == $admin || $session_user_level == $mod ) {
+            // Only moderators and above can see this table.
+            if ( isset($number_of_rows) && $number_of_rows > 0 ){
+                $sql = "SELECT * FROM File ORDER BY ".$order_by." ".$asc_desc." LIMIT 0,".$number_of_rows;
+            } else {
+                $sql = "SELECT * FROM File ORDER BY ".$order_by." ".$asc_desc;
+            }
         } else {
-            $sql = "SELECT * FROM File ORDER BY ".$order_by." ".$asc_desc;
+            // Users cannot see this table.
+            alert("There are no files suited for you to see.", "warning");
+
         }
-    } else {
-        // Users cannot see this table.
-        alert("There are no files for you to see.", "warning");
-        exit();
-    }
+
+
+
+        // Get file data:
+        $data_files = mysqli_query($con, $sql);
 
 
 
 
-    // Get file data:
-    $data_files = mysqli_query($con, $sql);
+        // Start table:
+        echo $table_start;
 
 
 
 
-    // Check if any files exist:
-    if ( $data_files == null ){
-        alert("There are no files for you to see.", "warning");
-        exit();
-    }
+        while ( $row = mysqli_fetch_array($data_files) ) {
 
-
-
-
-    // Start table:
-    echo $table_start;
-
-
-
-
-    while ( $row = mysqli_fetch_array($data_files) ) {
-
-        // === Getting the data from DB ===
+            // === Getting the data from DB ===
 
             // The listed file's ID:
             $file_id = $row['File_ID'];
@@ -579,7 +589,7 @@ function populate_file_table($number_of_rows, $order_by, $asc_desc){
 
             // The listed file's category:
             $file_category_id = $row['File_Category'];
-            $file_category_query = mysqli_query($con, 'SELECT Category_Name FROM Categories WHERE Category_ID = ' . $file_category_id);
+            $file_category_query = mysqli_query($con, 'SELECT Category_Name FROM Category WHERE Category_ID = ' . $file_category_id);
             while ( $file_category_row = mysqli_fetch_array( $file_category_query ) ){
                 $file_category = $file_category_row['Category_Name'];
             }
@@ -587,15 +597,19 @@ function populate_file_table($number_of_rows, $order_by, $asc_desc){
 
             // The listed file's file type:
             $file_type_id = $row['File_Type'];
-            $file_type_query = mysqli_query($con, 'SELECT File_Type_Name FROM File_Type WHERE File_Type_ID = ' . $file_type_id);
+            $file_type_query = mysqli_query($con, 'SELECT File_Type_Extension FROM File_Type WHERE File_Type_ID = ' . $file_type_id);
             while ( $file_type_row = mysqli_fetch_array( $file_type_query ) ){
-                $file_type = $file_type_row['File_Type_Name'];
+                $file_type = strtoupper($file_type_row['File_Type_Extension']);
             }
 
 
+            // Predefined action buttons:
+            $btn_download = '<a class="dropdown-item" href="'.$file_URL.'"><i class="material-icons">file_download</i> Download</a>';
+            $btn_delete = '<a class="dropdown-item" href="delete.php?file='.$file_id.'"><i class="material-icons">delete</i>Delete</a>';
 
 
-        // === Populating the table rows ===
+
+            // === Populating the table rows ===
 
             // Table row start:
             echo $table_row_start;
@@ -634,25 +648,50 @@ function populate_file_table($number_of_rows, $order_by, $asc_desc){
             // Operation:
             echo $table_col_start;
             // Root and Administrator can CRUD all files:
-            if ( $session_user_type < 3 ) {
+            if ( $session_user_level == $root || $session_user_level == $admin ) {
 
-                echo '<a class="btn btn-primary" href="'.$file_URL.'">Download</a>';
-                echo '<a class="btn btn-danger ml-2" href="#">Delete</a>';
+                echo '
+                <div class="dropdown">
+                  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Manage
+                  </button>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    '.$btn_download.'<div class="dropdown-divider"></div>'.$btn_delete.'
+                  </div>
+                </div>
+                ';
 
             }
             // Moderators can CRUD own files only:
-            if ( $session_user_type == 3 && $session_user_id == $file_author_id ) {
+            if ( $session_user_level == $mod && $session_user_id == $file_author_id ) {
 
-                echo '<a class="btn btn-primary" href="'.$file_URL.'">Download</a>';
-                echo '<a class="btn btn-danger ml-2" href="#">Delete</a>';
+                echo '
+                <div class="dropdown">
+                  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Manage
+                  </button>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    '.$btn_download.'<div class="dropdown-divider"></div>'.$btn_delete.'
+                  </div>
+                </div>
+                ';
 
-            } elseif ( $session_user_type == 3 && $session_user_id !== $file_author_id ) {
+            } elseif ( $session_user_level == $mod && $session_user_id !== $file_author_id ) {
 
-                echo '<span class="badge badge-secondary">Restricted</span>';
+                echo '
+                <div class="dropdown">
+                  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Manage
+                  </button>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    '.$btn_download.'
+                  </div>
+                </div>
+                ';
 
             }
             // Users can edit own user only:
-            if ( $session_user_type == 4 ) {
+            if ( $session_user_level == $user ) {
                 echo '<span class="badge badge-secondary">Restricted</span>';
             }
             echo $table_col_end;
@@ -661,12 +700,691 @@ function populate_file_table($number_of_rows, $order_by, $asc_desc){
             // Table row end:
             echo $table_row_end;
 
+        }
+
+
+
+
+        // End table:
+        echo $table_end;
+
+
+
+
+    // There are no files in the database:
+    } else {
+
+        alert('There are no files in the database.', 'info');
+
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+function uploader($fileref, $dir){
+
+    global $con;
+
+    if (isset($_POST['submit'])){
+
+        // Initialize all file data aspects:
+        $file_name          = $_FILES[$fileref]['name'];
+        $file_name_temp     = $_FILES[$fileref]['tmp_name'];
+        $file_size          = $_FILES[$fileref]['size'];
+        $file_error         = $_FILES[$fileref]['error'];
+        $file_type          = $_FILES[$fileref]['type'];
+
+
+        // Get data from HTML form:
+        $file_alias     = $_POST['alias'];
+        $file_category  = $_POST['category'];
+        if ( isset($_POST['private']) ){
+            $file_private   = 1;
+        } else {
+            $file_private   = 0;
+        }
+
+
+        // Allowed file types:
+        $sql = 'SELECT File_Type_Extension FROM File_Type';
+        $result = mysqli_query($con, $sql);
+        $temp_list = '';
+        while ( $row = mysqli_fetch_array($result) ){
+            $temp_list .= $row['File_Type_Extension'].',';
+        }
+        $file_extensions_allowed = explode(',', $temp_list);
+
+
+        // Get file extension from file:
+        $file_name_exploded = explode('.', $file_name);
+        $file_extension = strtolower( end($file_name_exploded) );
+
+
+        // Check if file extension is legal:
+        if ( in_array( $file_extension, $file_extensions_allowed ) ) {
+
+            // Check for file error:
+            if ( $file_error === 0 ) {
+
+                // Check file size:
+                if ( $file_size < 67108864 ) {
+
+                    // Generate random file name:
+                    $prefix = random_int(10,99);
+                    $file_name_new = uniqid($prefix, true).'.'.$file_extension;
+
+                    // Initialize file destination:
+                    $file_destination = '../'.$dir.'/'.$file_name_new;
+                    $file_db_url = 'http://'.$_SERVER['HTTP_HOST'].dirname($_SERVER['REQUEST_URI'], 2).'/'.$dir.'/'.$file_name_new;
+
+                    // Get file extension ID from DB:
+                    $sql = 'SELECT File_Type_ID FROM File_Type WHERE File_Type_Extension = "'.$file_extension.'"';
+                    $result = mysqli_query($con, $sql);
+                    while ( $row = mysqli_fetch_array($result) ){
+                        $file_extension_id = $row['File_Type_ID'];
+                    }
+
+                    // Try to upload the file:
+                    move_uploaded_file($file_name_temp, $file_destination);
+                    chmod($file_destination, 0777);
+
+                    // Insert file data into DB:
+                    $sql =  'INSERT INTO File (File_Name, File_Type, File_Size, File_Author, File_Uploaded, File_URL, File_Category, File_Private) VALUES';
+                    $sql .= ' ("'.$file_alias.'",'.$file_extension_id.','.$file_size.','.$_SESSION['user_id'].',CURDATE(),"'.$file_db_url.'",'.$file_category.','.$file_private.');';
+                    mysqli_query($con, $sql);
+
+                    // Page redirect:
+                    alert('File uploaded', 'success');
+
+                    // File is too big.
+                } else {
+
+                    echo 'Your file is too big.';
+
+                }
+
+                // File error occurred:
+            } else {
+
+                echo 'There was an error uploading your file.';
+
+            }
+
+            // File is illegal:
+        } else {
+
+            echo 'Illegal file type: ' . $file_extension;
+
+        }
+
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+function publish_post($name_attribute, $fileref = 0, $dir = 0){
+
+
+    // Set DB connection global;
+    global $con;
+
+
+
+
+    // Check if a post has been submitted:
+    if (isset($_POST[$name_attribute])){
+
+        // Assign post variables:
+        $post_title = $_POST['title'];
+        $post_text = $_POST['editor1'];
+        $post_date = 'CURDATE()';
+        $post_author = $_SESSION['user_id'];
+        $post_category = $_POST['category'];
+        if (isset($_POST['privacy'])){
+            $post_privacy = 1;
+        } else {
+            $post_privacy = 0;
+        }
+
+
+        // Check if post has featured image:
+        if ( $_FILES[$fileref]['error'] == UPLOAD_ERR_OK ){
+
+
+            // Assign file variables:
+            $file_name          = $_FILES[$fileref]['name'];
+            $file_name_temp     = $_FILES[$fileref]['tmp_name'];
+            $file_size          = $_FILES[$fileref]['size'];
+            $file_error         = $_FILES[$fileref]['error'];
+            $file_type          = $_FILES[$fileref]['type'];
+
+
+            // Create an array of allowed file types:
+            $allowed_files = array('jpg','jpeg','png');
+
+
+            // Check if file is allowed:
+            $file_name_exploded = explode('.', strtolower($file_name));
+            $file_extension = end($file_name_exploded);
+            if ( in_array( $file_extension, $allowed_files) ){
+
+
+                // Check if file size is allowed:
+                if ($file_size < 5242880){
+
+
+                    // Check if image file is actually an image:
+                    $img_check = exif_imagetype($file_name_temp);
+                    if ($img_check !== false){
+
+
+                        // Create new file name:
+                        $prefix = random_int(10,99);
+                        $file_name_new = uniqid($prefix, true).'.'.$file_extension;
+
+
+                        // Create file URL for database:
+                        $file_url = 'http://'.$_SERVER['HTTP_HOST'].dirname($_SERVER['REQUEST_URI'],2).'/'.$dir.'/'.$file_name_new;
+
+
+                        // Assign new file name with a file destination:
+                        $file_destination = '../'.$dir.'/'.$file_name_new;
+
+
+                        // Upload the file:
+                        move_uploaded_file($file_name_temp, $file_destination);
+
+
+                        // CHMOD the file:
+                        chmod($file_destination, 0777);
+
+
+                        // Check if file was successfully uploaded:
+                        if (is_file($file_destination)){
+                            $status_file = 1;
+                        } else {
+                            $status_file = 0;
+                        }
+
+
+                    // Supposedly a fake image (malicious):
+                    } else {
+
+                        $status_file = 'fake';
+
+                    }
+
+
+                // File is too big:
+                } else {
+
+                    $status_file = 'big';
+
+                }
+
+
+            // File is illegal:
+            } else {
+
+                $status_file = 'illegal';
+
+            }
+
+
+        // Post does not have featured image:
+        } else {
+
+            $status_file = 'n';
+
+        } // End of featured image section:
+
+
+
+
+        // Generate SQL in accordance with featured image existence:
+        if ($status_file === 1){
+
+            // Has featured image:
+            $sql =  'INSERT INTO Post (Post_Title,Post_Image_Featured,Post_Text,Post_Date_Created,Post_Author,Post_Category,Post_Private) VALUES ';
+            $sql .= '("'.$post_title.'","'.$file_url.'","'.$post_text.'",'.$post_date.','.$post_author.','.$post_category.','.$post_privacy.');';
+
+        } elseif ($status_file === 'n'){
+
+            // Has not featured image:
+            $sql =  'INSERT INTO Post (Post_Title,Post_Text,Post_Date_Created,Post_Author,Post_Category,Post_Private) VALUES ';
+            $sql .= '("'.$post_title.'","'.$post_text.'",'.$post_date.','.$post_author.','.$post_category.','.$post_privacy.');';
+
+        }
+
+
+
+
+        // Execute SQL script, only if file status is 1 or n:
+        if ($status_file === 1 || $status_file === 'n'){
+
+            mysqli_query($con,$sql);
+
+        }
+
+
+
+
+        // Check if post was created in DB:
+        $sql_exist =    'SELECT COUNT(*) AS Existence FROM Post WHERE ';
+        $sql_exist .=   'Post_Title = "'.$post_title.'" AND ';
+        $sql_exist .=   'Post_Text = "'.$post_text.'" AND ';
+        $sql_exist .=   'Post_Author = '.$post_author.' AND ';
+        $sql_exist .=   'Post_Category = '.$post_category.' AND ';
+        $sql_exist .=   'Post_Private = '.$post_privacy.';';
+        $result = mysqli_query($con,$sql_exist);
+        $row = mysqli_fetch_array($result);
+        if ( $row['Existence'] == 1 ){
+
+            // Post was created in DB:
+            $status_db = 1;
+
+        } elseif ( $row['Existence'] == 0 || $row['Existence'] == null ){
+
+            // Post was not created in DB:
+            $status_db = 0;
+
+        }
+
+
+
+
+        // Redirect with status codes:
+        header('Refresh: 0; URL=post_list.php?created=post&status='.$status_file.$status_db);
+
+
+    }
+
+}
+
+
+
+
+
+
+
+
+
+function post_update($post_id, $submit_name, $fileref, $dir){
+
+    // Set DB connection global;
+    global $con;
+
+
+
+
+    // Check if a post has been submitted:
+    if (isset($_POST[$submit_name])){
+
+        // Assign post variables:
+        $post_title = $_POST['title'];
+        $post_text = $_POST['editor1'];
+        $post_date = 'CURDATE()';
+        $post_author = $_SESSION['user_id'];
+        $post_category = $_POST['category'];
+        if (isset($_POST['privacy'])){
+            $post_privacy = 1;
+        } else {
+            $post_privacy = 0;
+        }
+
+
+        // Check if post already has featured image:
+        $hasimg_query = 'SELECT Post_Image_Featured FROM Post WHERE Post_ID = '.$post_id;
+        $hasimg_result = mysqli_query($con,$hasimg_query);
+        $hasimg_row = mysqli_fetch_array($hasimg_result);
+        if ( strlen($hasimg_row['Post_Image_Featured']) > 2 ){
+            $hasimg = true;
+            $oldimg = $hasimg_row['Post_Image_Featured'];
+        } else {
+            $hasimg = false;
+        }
+
+
+        // Check if featured image has been requested:
+        if ( $_FILES[$fileref]['error'] == UPLOAD_ERR_OK ){
+
+
+            // Delete old featured image:
+            if ($hasimg){
+
+                // Convert url to real path:
+                $oldfile = realpath($oldimg);
+
+                // Check if file exists:
+                if ( file_exists($oldfile) ){
+
+                    unlink($oldfile);
+
+                }
+
+            }
+
+
+            // Assign file variables:
+            $file_name          = $_FILES[$fileref]['name'];
+            $file_name_temp     = $_FILES[$fileref]['tmp_name'];
+            $file_size          = $_FILES[$fileref]['size'];
+            $file_error         = $_FILES[$fileref]['error'];
+            $file_type          = $_FILES[$fileref]['type'];
+
+
+            // Create an array of allowed file types:
+            $allowed_files = array('jpg','jpeg','png');
+
+
+            // Check if file is allowed:
+            $file_name_exploded = explode('.', strtolower($file_name));
+            $file_extension = end($file_name_exploded);
+            if ( in_array( $file_extension, $allowed_files) ){
+
+
+                // Check if file size is allowed:
+                if ($file_size < 5242880){
+
+
+                    // Check if image file is actually an image:
+                    $img_check = exif_imagetype($file_name_temp);
+                    if ($img_check !== false){
+
+
+                        // Create new file name:
+                        $prefix = random_int(10,99);
+                        $file_name_new = uniqid($prefix, true).'.'.$file_extension;
+
+
+                        // Create file URL for database:
+                        $file_url = 'http://'.$_SERVER['HTTP_HOST'].dirname($_SERVER['REQUEST_URI'],2).'/'.$dir.'/'.$file_name_new;
+
+
+                        // Assign new file name with a file destination:
+                        $file_destination = '../'.$dir.'/'.$file_name_new;
+
+
+                        // Upload the file:
+                        move_uploaded_file($file_name_temp, $file_destination);
+
+
+                        // CHMOD the file:
+                        chmod($file_destination, 0777);
+
+
+                        // Check if file was successfully uploaded:
+                        if (is_file($file_destination)){
+                            $status_file = 1;
+                        } else {
+                            $status_file = 0;
+                        }
+
+
+                        // Supposedly a fake image (malicious):
+                    } else {
+
+                        $status_file = 'fake';
+
+                    }
+
+
+                    // File is too big:
+                } else {
+
+                    $status_file = 'big';
+
+                }
+
+
+                // File is illegal:
+            } else {
+
+                $status_file = 'illegal';
+
+            }
+
+
+            // Post does not have featured image:
+        } else {
+
+            $status_file = 'n';
+
+        } // End of featured image section:
+
+
+
+
+        // Generate SQL in accordance with featured image existence:
+        if ($status_file === 1){
+
+            // Has featured image:
+            $sql =      'UPDATE Post SET ';
+            $sql .=     'Post_Title = "'.$post_title.'", ';
+            $sql .=     'Post_Image_Featured = "'.$file_url.'", ';
+            $sql .=     'Post_Text = "'.$post_text.'", ';
+            $sql .=     'Post_Author = '.$post_author.', ';
+            $sql .=     'Post_Category = '.$post_category.', ';
+            $sql .=     'Post_Private = '.$post_privacy.' ';
+            $sql .=     'WHERE Post_ID = '.$post_id.';';
+
+            echo htmlspecialchars($sql).'<hr>';
+
+        } elseif ($status_file === 'n'){
+
+            // Has featured image:
+            $sql =      'UPDATE Post SET ';
+            $sql .=     'Post_Title = "'.$post_title.'", ';
+            $sql .=     'Post_Text = "'.$post_text.'", ';
+            $sql .=     'Post_Author = '.$post_author.', ';
+            $sql .=     'Post_Category = '.$post_category.', ';
+            $sql .=     'Post_Private = '.$post_privacy.' ';
+            $sql .=     'WHERE Post_ID = '.$post_id.';';
+
+            echo htmlspecialchars($sql).'<hr>';
+
+        }
+
+
+
+
+        // Execute SQL script, only if file status is 1 or n:
+        if ($status_file === 1 || $status_file === 'n'){
+
+            mysqli_query($con,$sql);
+
+        }
+
+
+
+
+        // Check if post was created in DB:
+        $sql_exist =    'SELECT COUNT(*) AS Existence FROM Post WHERE ';
+        $sql_exist .=   'Post_Title = "'.$post_title.'" AND ';
+        $sql_exist .=   'Post_Text = "'.$post_text.'" AND ';
+        $sql_exist .=   'Post_Author = '.$post_author.' AND ';
+        $sql_exist .=   'Post_Category = '.$post_category.' AND ';
+        $sql_exist .=   'Post_Private = '.$post_privacy.';';
+        $result = mysqli_query($con,$sql_exist);
+        $row = mysqli_fetch_array($result);
+        if ( $row['Existence'] == 1 ){
+
+            // Post was created in DB:
+            $status_db = 1;
+
+        } elseif ( $row['Existence'] == 0 || $row['Existence'] == null ){
+
+            // Post was not created in DB:
+            $status_db = 0;
+
+        }
+
+
+        // Debug:
+        $line = '<hr>';
+        echo '<h1>Receipt</h1><hr>';
+        echo $post_id.$line;
+        echo $post_title.$line;
+        echo htmlspecialchars($post_text).$line;
+        if ($hasimg) { echo 'True'.$line.$oldimg.$line.$oldfile.$line; } else { echo 'False'.$line; }
+        echo htmlspecialchars($sql_exist).$line;
+
+
+        // Redirect with status codes:
+        header('Refresh: 3; URL=post_list.php?updated=post&status='.$status_file.$status_db);
+
+
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+function populate_category_selection($name, $post_id = 0){
+
+    global $con;
+
+    // Echo the start of the HTML string:
+    echo '<label>Category</label><select id="'.$name.'" name="'.$name.'" class="form-control">';
+
+    // Generate SQL for getting all categories:
+    $sql = "SELECT * FROM Category ORDER BY Category_ID DESC";
+
+    // Run SQL:
+    $result = mysqli_query($con, $sql);
+
+    // Check if post id is defined:
+    if ($post_id > 0){
+        $catecory_query = 'SELECT Post_Category FROM Post WHERE Post_ID = '.$post_id;
+        $dategory_data = mysqli_query($con,$catecory_query);
+        $category_row = mysqli_fetch_array($dategory_data);
+        $category_id = $category_row['Post_Category'];
+    }
+
+    // Output all rows:
+    while ( $row = mysqli_fetch_array($result) ){
+
+        if ( $row['Category_ID'] == $category_id ){
+            echo '<option value="' . $row['Category_ID'] . '" selected>' . $row['Category_Name'] . '</option>';
+        } else {
+            echo '<option value="' . $row['Category_ID'] . '">' . $row['Category_Name'] . '</option>';
+        }
+
+    }
+
+    // Echo the end of the HTML string:
+    echo '</select>';
+
+}
+
+
+
+
+
+
+
+
+function populate_privacy_checkbox($name, $post_id = 0){
+
+    global $con;
+
+
+    // Empty variable in case of post not being private:
+    $checked = '';
+
+
+    // Check whether the post_id variable has been used:
+    if (isset($post_id) > 0){
+
+        // Get the post private value:
+        $sql = 'SELECT Post_Private FROM Post WHERE Post_ID = '.$post_id;
+        $result = mysqli_query($con,$sql);
+        $row = mysqli_fetch_array($result);
+
+        if ($row['Post_Private'] == 1){
+
+            // The post is checked as private:
+            $checked = 'checked';
+
+        }
+
     }
 
 
+    // Echoing the HTML code for the checkbox:
+    echo '
+    <label class="mb-3" for="'.$name.'">
+        <input id="'.$name.'" name="'.$name.'" type="checkbox" '.$checked.'>&nbsp;&nbsp;Private post
+    </label>
+    ';
+
+}
 
 
-    // End table:
-    echo $table_end;
+
+
+
+
+
+
+
+
+function populate_featured_image($post_id){
+
+    global $con;
+
+    // Check whether post has a featured image:
+    $img_query = 'SELECT Post_Image_Featured FROM Post WHERE Post_ID = '.$post_id;
+    $img_result = mysqli_query($con,$img_query);
+    $img_row = mysqli_fetch_array($img_result);
+
+    if ( strlen($img_row['Post_Image_Featured']) > 1 ){
+
+        // Post has featured image:
+        $img_url = $img_row['Post_Image_Featured'];
+
+        // Echo the label:
+        echo '<label>Current featured image</label><br>';
+
+        // Start:
+        $html = "
+            <div class=\"w-100\">
+                <div class=\"border rounded\" 
+                    style=\"
+                        width:200px;
+                        height:150px;
+                        background-image:url('".$img_url."');
+                        background-size:cover;\">
+                </div>
+            </div>
+        ";
+
+        // Echo the featured image:
+        echo $html;
+
+    }
 
 }

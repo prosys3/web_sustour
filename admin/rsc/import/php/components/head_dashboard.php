@@ -35,6 +35,7 @@
 
         <!-- Custom CSS for felles elementer start -->
         <link rel="stylesheet" href="../rsc/import/css/custom.css">
+        <link rel="stylesheet" href="../rsc/lib/fine-uploader/fine-uploader.css">
         <!-- Custom CSS for felles elementer stop -->
 
     <!-- CSS: END -->
@@ -45,19 +46,6 @@
         <!-- ... place JavaScript imports here ... -->
 
     <!-- JS: END -->
-
-
-
-
-    <!-- PHP: START -->
-
-        <?php include_once '../dbconfig.php' ?>
-
-    <!-- PHP: END -->
-
-
-
-
 
 <!-- DOCUMENT IMPORT: END -->
 

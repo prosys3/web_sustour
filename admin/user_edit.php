@@ -1,12 +1,20 @@
 <?php
-session_start();
-if(!isset($_SESSION['login'])){
-    header("Location:../login.php");
-    exit();
-}
+
+    // Preliminary PHP code:
+    include '../dbconfig.php';
+    include 'rsc/import/php/functions/functions.php';
+
+    // Security - Check whether user is logged in:
+    if( !isset($_SESSION['login']) ){
+        header("Location:../login.php")
+        ;exit();
+    }
+
+    // HTML - Head and header:
+    include 'rsc/import/php/components/head_dashboard.php';
+    include 'rsc/import/php/components/header_dashboard.php';
+
 ?>
-<?php include 'rsc/import/php/components/head_dashboard.php' ?>
-<?php include 'rsc/import/php/components/header_dashboard.php' ?>
 
 <!--
 ##################################################################################
@@ -155,3 +163,5 @@ $company    = $row['User_Company'];
 ######################## ! DO NOT EDIT BELOW THIS POINT ! ########################
 ##################################################################################
 -->
+
+<?php include 'rsc/import/php/components/footer_dashboard.php' ?>

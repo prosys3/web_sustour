@@ -1,15 +1,20 @@
 <?php
-session_start();
-if(!isset($_SESSION['login'])){
-    header("Location:../login.php");
-    exit();
-}
-?>
-<?php include 'rsc/import/php/components/head_dashboard.php' ?>
-<?php include 'rsc/import/php/components/header_dashboard.php' ?>
 
-<?php require ('rsc/import/php/functions/functions.php');  ?>
-<?php include '../dbconfig.php' ?>
+    // Preliminary PHP code:
+    include '../dbconfig.php';
+    include 'rsc/import/php/functions/functions.php';
+
+    // Security - Check whether user is logged in:
+    if( !isset($_SESSION['login']) ){
+        header("Location:../login.php")
+        ;exit();
+    }
+
+    // HTML - Head and header:
+    include 'rsc/import/php/components/head_dashboard.php';
+    include 'rsc/import/php/components/header_dashboard.php';
+
+?>
 
 <!--
 ##################################################################################
@@ -18,13 +23,15 @@ if(!isset($_SESSION['login'])){
 -->
 
 <?php
-    $_SESSION['id'] = $_GET['id'];
 
+    // Preliminary data:
     $post_id = $_GET['id'];
-    $sql = "SELECT * FROM Post WHERE Post_ID = " . $post_id;
+    $sql = "SELECT * FROM Post WHERE Post_ID = ".$post_id;
     $result = mysqli_query($con, $sql);
-    $post_category_row = mysqli_fetch_array($result);
-    $post_category_id = $post_category_row['Post_Category'];
+    $post_row = mysqli_fetch_array($result);
+
+    $post_title = $post_row['Post_Title'];
+    $post_text  = $post_row['Post_Text'];
 
 ?>
 
@@ -53,48 +60,53 @@ if(!isset($_SESSION['login'])){
                         <li class="list-group-item text-light bg-dark">Post editor</li>
                         <li class="list-group-item">
 
-                            <form method="POST" action="post_update_script.php">
+                            <form method="POST" action="update_handler.php?object=post&id=<?php echo $post_id?>&name=submit&fileref=img&dir=uploads" enctype="multipart/form-data">
 
-                                <label>Post Title</label>
-                                <input type="text" name="pTitle" class="form-control" placeholder="Page Title" value="<?php echo postTitle($con);?>">
-
-                                <div class="form-group mt-4">
-                                    <textarea name="editor1" class="form-control" placeholder="Page Body"><?php echo postText($con);?></textarea>
+                                <!-- Post title: -->
+                                <div class="form-group">
+                                    <label>Post title</label>
+                                    <input type="text" name="title" class="form-control form-text" placeholder="Page Title" value="<?php echo $post_title;?>">
                                 </div>
 
+
+                                <!-- Post text: -->
                                 <div class="form-group mt-4">
-                                    <label class="mb-3"><input type="checkbox"> Private post</label>
-                                    <?php alert("A private post will only be seen by registered users.", "secondary") ?>
+                                    <textarea name="editor1" class="form-control" placeholder="Page Body"><?php echo $post_text;?></textarea>
                                 </div>
 
+
+                                <!-- Post privacy: -->
                                 <div class="form-group mt-4">
-                                    <label>Category</label>
-                                    <select id="inputUserType" name="type" class="form-control">
-                                        <?php
-                                        $sql = "SELECT * FROM Categories ORDER BY Category_ID DESC";
-                                        $result = mysqli_query($con, $sql);
-
-                                        while ( $row = mysqli_fetch_array($result) ){
-
-                                            if ( $row['Category_ID'] == $post_category_id ) {
-                                                echo '<option value="' . $row['Category_ID'] . '" selected>' . $row['Category_Name'] . '</option>';
-                                            } else {
-                                                echo '<option value="' . $row['Category_ID'] . '">' . $row['Category_Name'] . '</option>';
-                                            }
-
-                                        }
-                                        ?>
-                                    </select>
+                                    <?php
+                                    populate_privacy_checkbox('privacy', $post_id);
+                                    alert('<i class="material-icons">lock</i> A private post will only be seen by registered users.', 'secondary')
+                                    ?>
                                 </div>
 
+
+                                <!-- Post category: -->
                                 <div class="form-group mt-4">
-                                    <label for="featured_img">Choose a featured image</label><br>
-                                    <input id="featured_img" class="mb-3" type="file">
+                                    <?php populate_category_selection('category', $post_id) ?>
+                                </div>
+
+
+                                <!-- Post featured image: -->
+                                <div class="form-group mt-4">
+                                    <?php populate_featured_image($post_id) ?>
+                                </div>
+
+
+                                <!-- Upload featured image: -->
+                                <div class="form-group mt-4">
+                                    <label for="img">Choose a featured image</label><br>
+                                    <input id="img" name="img" class="mb-3" type="file">
                                     <?php alert("The image must be either JPG, JPEG, or PNG, and be no more than 5 mb.", "primary") ?>
                                 </div>
 
-                                <div class="form-group my-5">
-                                    <button type="submit" class="btn btn-success" name="submit">Publish post</button>
+
+                                <!-- Post title: -->
+                                <div class="form-group mt-5">
+                                    <button type="submit" class="btn btn-success" name="submit">Update post</button>
                                 </div>
 
 

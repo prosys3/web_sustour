@@ -1,5 +1,14 @@
-<?php include 'rsc/import/php/components/head.php' ?>
-<?php include 'rsc/import/php/components/header.php' ?>
+<?php
+
+    // Preliminary code:
+    include 'dbconfig.php';
+    include 'admin/rsc/import/php/functions/functions.php';
+
+    // Regular template:
+    include 'rsc/import/php/components/head.php';
+    include 'rsc/import/php/components/header.php';
+
+?>
 
 <!--
 ##################################################################################

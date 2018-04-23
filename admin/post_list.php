@@ -1,15 +1,20 @@
 <?php
-session_start();
-if(!isset($_SESSION['login'])){
-    header("Location:../login.php");
-    exit();
-}
-?>
-<?php include 'rsc/import/php/components/head_dashboard.php' ?>
-<?php include 'rsc/import/php/components/header_dashboard.php' ?>
 
-<?php require ('rsc/import/php/functions/functions.php');  ?>
-<?php include '../dbconfig.php' ?>
+    // Preliminary PHP code:
+    include '../dbconfig.php';
+    include 'rsc/import/php/functions/functions.php';
+
+    // Security - Check whether user is logged in:
+    if( !isset($_SESSION['login']) ){
+        header("Location:../login.php")
+        ;exit();
+    }
+
+    // HTML - Head and header:
+    include 'rsc/import/php/components/head_dashboard.php';
+    include 'rsc/import/php/components/header_dashboard.php';
+
+?>
 
 <!--
 ##################################################################################
@@ -45,7 +50,7 @@ if(!isset($_SESSION['login'])){
 
                             <div class="row">
 
-                                <div class="col">test</div>
+                                <div class="col"><a href="post_create.php" class="btn btn-primary"><i class="material-icons">create</i> Create new post</a></div>
                                 <div class="col">test</div>
 
                             </div>
@@ -77,3 +82,10 @@ if(!isset($_SESSION['login'])){
 -->
 
 <?php include 'rsc/import/php/components/footer_dashboard.php' ?>
+<?php
+
+    include 'rsc/import/php/components/modals/dialog_updated.php';
+    include 'rsc/import/php/components/modals/dialog_created.php';
+    include 'rsc/import/php/components/modals/dialog_deleted.php';
+
+?>
