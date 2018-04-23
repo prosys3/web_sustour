@@ -19,8 +19,6 @@ function PwCheck ($myemail, $pwhash)
 
 
 /*
- * A BETTER COUNTER!
- *
  * Usage:
  * --
  * Count users: counter("users");
@@ -159,6 +157,16 @@ function fillUserList()
 
 }
 
+
+
+
+
+
+
+
+
+
+
 function alert($message, $category){
 
     $html = '<div class="alert alert-'.$category.'" role="alert">'.$message.'</div>';
@@ -222,14 +230,6 @@ function populate_post_table($number_of_rows, $order_by, $asc_desc){
             $sql = "SELECT * FROM Post ORDER BY ".$order_by." ".$asc_desc." LIMIT 0,".$number_of_rows;
         } else {
             $sql = "SELECT * FROM Post ORDER BY ".$order_by." ".$asc_desc;
-        }
-
-    } else {
-
-        if ( isset($number_of_rows) && $number_of_rows > 0 ) {
-            $sql = "SELECT * FROM Post WHERE Post_Author = " . $user_id . "AND Post_Private = 0 ORDER BY ".$order_by." ".$asc_desc." LIMIT 0,".$number_of_rows;
-        } else {
-            $sql = "SELECT * FROM Post WHERE Post_Author = " . $user_id . "AND Post_Private = 0 ORDER BY ".$order_by." ".$asc_desc;
         }
 
     }
