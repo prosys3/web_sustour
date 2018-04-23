@@ -1,12 +1,12 @@
 <?php
-session_start();
+require_once("../dbconfig.php");
 
 
 if(isset($_POST['submit_user_update'])) {
 
     $id = $_SESSION['tempID'];
 
-    require_once("../dbconfig.php");
+
 
     $fname = mysqli_real_escape_string($con, $_POST['fname']);
     $lname = mysqli_real_escape_string($con, $_POST['lname']);
