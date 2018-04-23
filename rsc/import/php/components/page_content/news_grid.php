@@ -1,10 +1,16 @@
 <main>
 
-    <section class="bg-light py-5">
+    <section class="jumbotron jumbotron-fluid">
 
-        <div class="container">
+        <div class="container text-center">
+          <!-- logo start -->
+          <a href="#" class=""><img src="rsc/img/logo/sustour/logo_symbol_black.svg" width="150"></a>
+          <!-- logo stopp -->
 
-            <h1>News</h1>
+          <!-- logo tekst start -->
+          <h1 class="display-3">Project news</h1>
+          <!-- logo tekst stopp -->
+
 
         </div>
 
