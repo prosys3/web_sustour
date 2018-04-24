@@ -43,6 +43,7 @@ DROP TABLE IF EXISTS File;
 DROP TABLE IF EXISTS File_Type;
 DROP TABLE IF EXISTS Post;
 DROP TABLE IF EXISTS User_Data;
+DROP TABLE IF EXISTS Event;
 DROP TABLE IF EXISTS Company;
 DROP TABLE IF EXISTS User_Type;
 DROP TABLE IF EXISTS Category;
@@ -126,6 +127,27 @@ CREATE TABLE User_Data (
     CONSTRAINT User_Data_UserCompany_FK FOREIGN KEY (User_Company) REFERENCES Company(Company_ID)
 
 )	ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+
+
+
+-- EVENT
+CREATE TABLE Event (
+
+Event_ID		TINYINT(3) 			AUTO_INCREMENT NOT NULL,
+Event_Name		VARCHAR(30) 		NOT NULL,
+Event_Location 	VARCHAR(50) 		NOT NULL,
+Event_Start		Time				NOT NULL,
+Event_End 		Time				NOT NULL,
+Event_Date 		DATE 				NOT NULL,
+Event_Company   TINYINT(3) 			NOT NULL,
+Event_Author    TINYINT(3) 			NOT NULL,
+
+CONSTRAINT EventID_PK 				PRIMARY KEY (Event_ID),
+CONSTRAINT Event_EventCompany_FK 	FOREIGN KEY (Event_Company) REFERENCES Company(Company_ID),
+CONSTRAINT Event_EventAuthor_FK 	FOREIGN KEY (Event_Author) REFERENCES User_Data(User_ID)
+
+) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 
 
