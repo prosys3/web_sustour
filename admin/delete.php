@@ -52,17 +52,13 @@ include 'rsc/import/php/components/header_dashboard.php';
             // Get the user id:
             $user_id = $_GET['id'];
 
-        } elseif ($_GET['object'] == 'event'){
+        } elseif ($_GET['object'] == 'activities') {
+            // it's an activity
+            $object = 'activities';
 
-            // It is an event:
-            $object = 'event';
-
-            // Get the event id:
-            $event_id = $_GET['id'];
-
+            // get the activity id
+            $activities_id = $_GET['id'];
         }
-
-
 
     }
 
@@ -242,36 +238,32 @@ include 'rsc/import/php/components/header_dashboard.php';
 
     }
 
-
-
-
-    // If object is event:
-    if ($object === 'event'){
+    if ($object === 'activities') {
 
         // Get post data from DB:
-        $event_data_query = 'SELECT * FROM Event WHERE Event_ID = '.$event_id;
-        $event_data_result = mysqli_query($con,$event_data_query);
-        $event_data_array = mysqli_fetch_array($event_data_result);
+        $activities_data_query = 'SELECT * FROM Activities WHERE Activities_ID = '.$activities_id;
+        $activities_data_result = mysqli_query($con,$activities_data_query);
+        $activities_data_array = mysqli_fetch_array($activities_data_result);
 
         // Assign primary data to variables:
-        $event_title = $event_data_array['Event_Name'];
-        $event_location = $event_data_array['Event_Location'];
-        $event_text = $event_data_array['Event_Text'];
-        $event_date = $event_data_array['Event_Date'];
-        $event_author_id = $event_data_array['Event_Author'];
-        $event_company_id = $event_data_array['Event_Company'];
+        $activities_title = $activities_data_array['Activities_Title'];
+        $activities_text = $activities_data_array['Activities_Text'];
+        $activities_date = $activities_data_array['Activities_Created'];
+        $activities_author_id = $activities_data_array['Activities_Author'];
+
+
 
         // Get secondary data from DB:
-        $event_author_query = 'SELECT CONCAT(User_Name_First, " ", User_Name_Last) AS Name FROM User_Data WHERE User_ID = '.$event_author_id;
-        $event_company_query = 'SELECT Company_Name FROM Company WHERE Company_ID = '.$event_company_id;
-        $event_author_result = mysqli_query($con,$event_author_query);
-        $event_company_result = mysqli_query($con,$event_company_query);
-        $event_author_array = mysqli_fetch_array($event_author_result);
-        $event_company_array = mysqli_fetch_array($event_company_result);
+        $activities_author_query = 'SELECT CONCAT(User_Name_First, " ", User_Name_Last) AS Name FROM User_Data WHERE User_ID = '.$activities_author_id;
+        $activities_author_result = mysqli_query($con,$activities_author_query);
+        $activities_author_array = mysqli_fetch_array($activities_author_result);
+
 
         // Assign secondary data to variables:
-        $event_author = $event_author_array['Name'];
-        $event_company = $event_company_array['Company_Name'];
+        $activities_author = $activities_author_array['Name'];
+
+
+
 
         // Create HTML template:
         $html_object_info = '
@@ -286,31 +278,22 @@ include 'rsc/import/php/components/header_dashboard.php';
                     </thead>
                     <tbody>
                     <tr>
-                        <td>Event name</td>
-                        <td>'.$event_title.'</td>
+                        <td>Post title</td>
+                        <td>'.$activities_title.'</td>
                     </tr>
                     <tr>
                         <td>Author:</td>
-                        <td>'.$event_author.'</td>
+                        <td>'.$activities_author.'</td>
                     </tr>
                     <tr>
-                        <td>Date</td>
-                        <td>'.$event_date.'</td>
-                    </tr>
-                    <tr>
-                        <td>Company</td>
-                        <td>'.$event_company.'</td>
-                    </tr>
-                    <tr>
-                        <td>Event location</td>
-                        <td>'.$event_location.'</td>
+                        <td>Created</td>
+                        <td>'.$activities_date.'</td>
                     </tr>
                 </tbody>
             </table>
         </div>
         
         ';
-
     }
 
 ?>
