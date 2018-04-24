@@ -58,6 +58,15 @@ include 'rsc/import/php/components/header_dashboard.php';
 
             // get the activity id
             $activities_id = $_GET['id'];
+
+        } elseif ($_GET['object'] == 'event'){
+
+            // It is an event:
+            $object = 'event';
+
+            // Get the event id:
+            $event_id = $_GET['id'];
+
         }
 
     }
@@ -294,6 +303,74 @@ include 'rsc/import/php/components/header_dashboard.php';
         </div>
         
         ';
+    }
+
+    // If object is event:
+    if ($object === 'event'){
+
+    // Get event data from DB:
+        $event_data_query = 'SELECT * FROM Event WHERE Event_ID = '.$event_id;
+        $event_data_result = mysqli_query($con,$event_data_query);
+        $event_data_array = mysqli_fetch_array($event_data_result);
+
+        // Assign primary data to variables:
+        $event_title = $event_data_array['Event_Name'];
+        $event_location = $event_data_array['Event_Location'];
+        $event_text = $event_data_array['Event_Text'];
+        $event_date = $event_data_array['Event_Date'];
+        $event_author_id = $event_data_array['Event_Author'];
+        $event_company_id = $event_data_array['Event_Company'];
+
+         // Get secondary data from DB:
+        $event_author_query = 'SELECT CONCAT(User_Name_First, " ", User_Name_Last) AS Name FROM User_Data WHERE User_ID = '.$event_author_id;
+        $event_company_query = 'SELECT Company_Name FROM Company WHERE Company_ID = '.$event_company_id;
+        $event_author_result = mysqli_query($con,$event_author_query);
+        $event_company_result = mysqli_query($con,$event_company_query);
+        $event_author_array = mysqli_fetch_array($event_author_result);
+        $event_company_array = mysqli_fetch_array($event_company_result);
+
+        // Assign secondary data to variables:
+        $event_author = $event_author_array['Name'];
+        $event_company = $event_company_array['Company_Name'];
+
+        // Create HTML template:
+        $html_object_info = '
+
+            <div class="table-responsive">
+                <table class="table table-sm table-striped small text-muted table-bordered">
+                <thead>
+                    <tr>
+                        <th scope="col">Description</th>
+                        <th scope="col">Data</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>Event name</td>
+                        <td>'.$event_title.'</td>
+                    </tr>
+                    <tr>
+                        <td>Author:</td>
+                        <td>'.$event_author.'</td>
+                    </tr>
+                    <tr>
+                        <td>Date</td>
+                        <td>'.$event_date.'</td>
+                    </tr>
+                    <tr>
+                        <td>Company</td>
+                        <td>'.$event_company.'</td>
+                    </tr>
+                    <tr>
+                        <td>Event location</td>
+                        <td>'.$event_location.'</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        ';
+
     }
 
 ?>
