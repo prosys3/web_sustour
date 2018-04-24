@@ -22,6 +22,7 @@
             $query = "SELECT * FROM Activities;";
             $result = mysqli_query($con, $query);
             $count = 1;
+            $numrow = mysqli_num_rows($result);
 
             while ($row = mysqli_fetch_array($result)) {
 
@@ -39,9 +40,14 @@
 
 
 
-                if ($count % 2 == 0 ) {
+                if ($count % 2 == 0) {
                     echo '</div>';
-                    echo '<div class="row">';
+                    if ($count == $numrow) {
+
+                    } else {
+                        echo '<div class="row">';
+                    }
+
 
 
                 }
