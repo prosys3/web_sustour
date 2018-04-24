@@ -52,8 +52,8 @@
 
                             <div class="row">
 
-                                <div class="col">test</div>
-                                <div class="col">test</div>
+                                <div class="col">Something coming here soon</div>
+                                <div class="col">Something coming here soon</div>
 
                             </div>
 

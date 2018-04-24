@@ -6,8 +6,8 @@ include 'rsc/import/php/functions/functions.php';
 
 // Security - Check whether user is logged in:
 if( !isset($_SESSION['login']) ){
-    header("Location:../login.php")
-    ;exit();
+    header("Location:../login.php");
+    exit();
 }
 
 // HTML - Head and header:
@@ -23,13 +23,215 @@ include 'rsc/import/php/components/header_dashboard.php';
 -->
 
 <?php
-    if ( isset($_GET['file']) ){
-        $object = "file";
-    } elseif ( isset($_GET['user']) ){
-        $object = "user";
-    } elseif ( isset($_GET['post']) ){
-        $object = "post";
+
+    // Check incoming object is defined:
+    if (isset($_GET['object'], $_GET['id'])){
+
+        // Check the nature of the incoming object:
+        if ($_GET['object'] == 'file'){
+
+            // It is a file!
+            $object = 'file';
+
+            // Get the file id:
+            $file_id = $_GET['id'];
+
+        } elseif ($_GET['object'] == 'post'){
+
+            // It is a post:
+            $object = 'post';
+
+            // Get the post id:
+            $post_id = $_GET['id'];
+
+        } elseif ($_GET['object'] == 'user'){
+
+            // It is a user:
+            $object = 'user';
+
+            // Get the user id:
+            $user_id = $_GET['id'];
+
+        }
+
     }
+
+
+
+
+    // If object is file:
+    if ($object === 'file'){
+
+        // Get file data from DB:
+        $file_data_query        = 'SELECT * FROM File WHERE File_ID = '.$file_id;
+        $file_data_result       = mysqli_query($con,$file_data_query);
+        $file_data_array        = mysqli_fetch_array($file_data_result);
+
+        // Assign primary data to variables:
+        $file_name              = $file_data_array['File_Name'];
+        $file_type_id           = $file_data_array['File_Type'];
+        $file_size              = $file_data_array['File_Size'];
+        $file_author_id         = $file_data_array['File_Author'];
+        $file_date              = $file_data_array['File_Uploaded'];
+        $file_url               = $file_data_array['File_Name'];
+        $file_category_id       = $file_data_array['File_Category'];
+        $file_private           = $file_data_array['File_Private'];
+
+        // Get secondary data:
+        $file_type_query        = 'SELECT * FROM File_Type WHERE File_Type_ID = '.$file_type_id;
+        $file_author_query      = 'SELECT CONCAT(User_Name_First, " ", User_Name_Last) AS Name FROM User_Data WHERE User_ID = '.$file_author_id;
+        $file_category_query    = 'SELECT Category_Name FROM Category WHERE Category_ID = '.$file_category_id;
+        $file_type_result       = mysqli_query($con,$file_type_query);
+        $file_author_result     = mysqli_query($con,$file_author_query);
+        $file_category_result   = mysqli_query($con,$file_category_query);
+        $file_type_array        = mysqli_fetch_array($file_type_result);
+        $file_author_array      = mysqli_fetch_array($file_author_result);
+        $file_category_array    = mysqli_fetch_array($file_category_result);
+
+        // Assign secondary data to variables:
+        $file_type              = '('.strtoupper($file_type_array['File_Type_Extension']).') '.$file_type_array['File_Type_Name'];
+        $file_author            = $file_author_array['Name'];
+        $file_category          = $file_category_array['Category_Name'];
+
+        // Fix file privacy badge:
+        if ($file_private == 1){
+            $file_privacy = '<span class="badge badge-secondary"><i class="material-icons">lock</i> Private</span>';
+        } elseif ($file_private == 0){
+            $file_privacy = '<span class="badge badge-success">Public</span>';
+        }
+
+        // Create HTML template:
+        $html_object_info = '
+        
+            <div class="table-responsive">
+                <table class="table table-sm table-striped small text-muted table-bordered">
+                <thead>
+                    <tr>
+                        <th scope="col">Description</th>
+                        <th scope="col">Data</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>File name</td>
+                        <td>'.$file_name.'</td>
+                    </tr>
+                    <tr>
+                        <td>File type:</td>
+                        <td>'.$file_type.'</td>
+                    </tr>
+                    <tr>
+                        <td>File category</td>
+                        <td>'.$file_category.'</td>
+                    </tr>
+                    <tr>
+                        <td>Uploaded by</td>
+                        <td>'.$file_author.'</td>
+                    </tr>
+                    <tr>
+                        <td>Uploaded</td>
+                        <td>'.$file_date.'</td>
+                    </tr>
+                    <tr>
+                        <td>File size</td>
+                        <td>'.format_bytes($file_size,2).'</td>
+                    </tr>
+                    <tr>
+                        <td>File privacy</td>
+                        <td>'.$file_privacy.'</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        ';
+
+    }
+
+
+
+
+    // If object is user:
+    if ($object === 'user'){}
+
+
+
+
+    // If object is post:
+    if ($object === 'post'){
+
+        // Get post data from DB:
+        $post_data_query = 'SELECT * FROM Post WHERE Post_ID = '.$post_id;
+        $post_data_result = mysqli_query($con,$post_data_query);
+        $post_data_array = mysqli_fetch_array($post_data_result);
+
+        // Assign primary data to variables:
+        $post_title = $post_data_array['Post_Title'];
+        $post_text = $post_data_array['Post_Text'];
+        $post_date = $post_data_array['Post_Date_Created'];
+        $post_author_id = $post_data_array['Post_Author'];
+        $post_category_id = $post_data_array['Post_Category'];
+        $post_private = $post_data_array['Post_Private'];
+
+        // Get secondary data from DB:
+        $post_author_query = 'SELECT CONCAT(User_Name_First, " ", User_Name_Last) AS Name FROM User_Data WHERE User_ID = '.$post_author_id;
+        $post_category_query = 'SELECT Category_Name FROM Category WHERE Category_ID = '.$post_category_id;
+        $post_author_result = mysqli_query($con,$post_author_query);
+        $post_category_result = mysqli_query($con,$post_category_query);
+        $post_author_array = mysqli_fetch_array($post_author_result);
+        $post_category_array = mysqli_fetch_array($post_category_result);
+
+        // Assign secondary data to variables:
+        $post_author = $post_author_array['Name'];
+        $post_category = $post_category_array['Category_Name'];
+
+        // Fix post privacy badge:
+        if ($post_private == 1){
+            $post_privacy = '<span class="badge badge-secondary"><i class="material-icons">lock</i> Private</span>';
+        } elseif ($post_private == 0){
+            $post_privacy = '<span class="badge badge-success">Public</span>';
+        }
+
+        // Create HTML template:
+        $html_object_info = '
+        
+            <div class="table-responsive">
+                <table class="table table-sm table-striped small text-muted table-bordered">
+                <thead>
+                    <tr>
+                        <th scope="col">Description</th>
+                        <th scope="col">Data</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>Post title</td>
+                        <td>'.$post_title.'</td>
+                    </tr>
+                    <tr>
+                        <td>Author:</td>
+                        <td>'.$post_author.'</td>
+                    </tr>
+                    <tr>
+                        <td>Created</td>
+                        <td>'.$post_date.'</td>
+                    </tr>
+                    <tr>
+                        <td>Category</td>
+                        <td>'.$post_category.'</td>
+                    </tr>
+                    <tr>
+                        <td>Post privacy</td>
+                        <td>'.$post_privacy.'</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        ';
+
+    }
+
 ?>
 
 <main>
@@ -58,120 +260,13 @@ include 'rsc/import/php/components/header_dashboard.php';
                         <li class="list-group-item text-light bg-dark"><?php echo ucfirst($object) ?> information</li>
                         <li class="list-group-item">
 
-                            <?php
-
-                                // Get all data from selected file:
-                                $sql = 'SELECT * FROM File WHERE File_ID = '.$_GET['file'];
-                                $result = mysqli_query($con,$sql);
-                                $row = mysqli_fetch_array($result);
-
-                                // Get file's primary data:
-                                $file_id = $row['File_ID'];
-                                $file_name = $row['File_Name'];
-                                $file_date = $row['File_Uploaded'];
-                                $file_author_id = $row['File_Author'];
-                                $file_type_id = $row['File_Type'];
-                                $file_size = $row['File_Size'];
-                                $file_category_id = $row['File_Category'];
-                                $file_url = $row['File_URL'];
-                                if ( $row['File_Private'] == 1 ){
-                                    $file_privacy = '<span class="badge badge-secondary">Private</span>';
-                                } else {
-                                    $file_privacy = '<span class="badge badge-success">Public</span>';
-                                }
-                                if ( $file_size < 1024000000 && $file_size >= 1024000 ){
-                                    $file_size /= 1024000;
-                                    $file_size = round($file_size,2);
-                                    $file_size_measure = 'MB';
-                                } elseif ( $file_size >= 1024000000 ){
-                                    $file_size /= 1024000000;
-                                    $file_size = round($file_size,2);
-                                    $file_size_measure = 'GB';
-                                } elseif ( $file_size < 1024000 ){
-                                    $file_size /= 1024;
-                                    $file_size = round($file_size,2);
-                                    $file_size_measure = 'KB';
-                                }
-
-                                // Get file author name:
-                                $sql = 'SELECT CONCAT(User_Name_First, " ", User_Name_Last) AS User_Name FROM User_Data WHERE User_ID = '.$file_author_id;
-                                $result = mysqli_query($con,$sql);
-                                $row = mysqli_fetch_array($result);
-                                $file_author = $row['User_Name'];
-
-                                // Get file type:
-                                $sql = 'SELECT * FROM File_Type WHERE File_Type_ID = '.$file_type_id;
-                                $result = mysqli_query($con,$sql);
-                                $row = mysqli_fetch_array($result);
-                                $file_type = strtoupper($row['File_Type_Extension']).' ('.$row['File_Type_Name'].')';
-
-                                // Get file category:
-                                $sql = 'SELECT Category_Name FROM Category WHERE Category_ID = '.$file_category_id;
-                                $result = mysqli_query($con,$sql);
-                                $row = mysqli_fetch_array($result);
-                                $file_category = $row['Category_Name'];
-
-                                // Session persistence:
-                                $_SESSION['delete_file_id'] = $file_id;
-                                $_SESSION['delete_file_url'] = $file_url;
-
-
-                            ?>
-
-                            <div class="input-group mb-1">
-                                <div class="input-group-prepend w-25 d-block">
-                                    <span class="input-group-text"">File name</span>
-                                </div>
-                                <div class="form-control" aria-label="Username" aria-describedby="basic-addon1"><?php echo $file_name ?></div>
-                            </div>
-
-                            <div class="input-group mb-1">
-                                <div class="input-group-prepend w-25 d-block">
-                                    <span class="input-group-text"">Uploaded by</span>
-                                </div>
-                                <div class="form-control" aria-label="Username" aria-describedby="basic-addon1"><?php echo $file_author ?></div>
-                            </div>
-
-                            <div class="input-group mb-1">
-                                <div class="input-group-prepend w-25 d-block">
-                                    <span class="input-group-text"">Upload date</span>
-                                </div>
-                                <div class="form-control" aria-label="Username" aria-describedby="basic-addon1"><?php echo $file_date ?></div>
-                            </div>
-
-                            <div class="input-group mb-1">
-                                <div class="input-group-prepend w-25 d-block">
-                                    <span class="input-group-text"">Category</span>
-                                </div>
-                                <div class="form-control" aria-label="Username" aria-describedby="basic-addon1"><?php echo $file_category ?></div>
-                            </div>
-
-                            <div class="input-group mb-1">
-                                <div class="input-group-prepend w-25 d-block">
-                                    <span class="input-group-text"">File type</span>
-                                </div>
-                                <div class="form-control" aria-label="Username" aria-describedby="basic-addon1"><?php echo $file_type ?></div>
-                            </div>
-
-                            <div class="input-group mb-1">
-                                <div class="input-group-prepend w-25 d-block">
-                                    <span class="input-group-text"">File type</span>
-                                </div>
-                                <div class="form-control" aria-label="Username" aria-describedby="basic-addon1"><?php echo $file_size.' '.$file_size_measure ?></div>
-                            </div>
-
-                            <div class="input-group mb-1">
-                                <div class="input-group-prepend w-25 d-block">
-                                    <span class="input-group-text"">Privacy</span>
-                                </div>
-                                <div class="form-control" aria-label="Username" aria-describedby="basic-addon1"><?php echo $file_privacy ?></div>
-                            </div>
+                            <?php echo $html_object_info ?>
 
                             <form action="delete_handler.php" method="post" class="mt-5">
                                 <input type="hidden">
                                 <div class="alert alert-warning" role="alert">
                                     <h4 class="alert-heading">Warning!</h4>
-                                    <p>If you delete this file, the file will be permanently gone.</p>
+                                    <p>If you delete this <?php echo $object ?>, the <?php echo $object ?> will be permanently gone.</p>
                                     <hr>
                                     <button type="submit" id="delete" name="delete" class="btn btn-dark">Delete</button>
                                 </div>

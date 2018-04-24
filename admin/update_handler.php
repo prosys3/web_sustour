@@ -18,6 +18,7 @@ if( !isset($_SESSION['login']) ){
 // Check if there is something to create:
 if (isset($_GET['object'])){
 
+
     // Check if object is post:
     if ($_GET['object'] == 'post'){
 
@@ -34,5 +35,8 @@ if (isset($_GET['object'])){
         post_update($post_id,$submit_name,$fileref,$upload_dir);
 
     }
+
+
+    // TODO: Create handler for user:
 
 }

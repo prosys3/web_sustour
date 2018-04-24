@@ -51,7 +51,7 @@
                             <div class="row">
 
                                 <div class="col"><a href="post_create.php" class="btn btn-primary"><i class="material-icons">create</i> Create new post</a></div>
-                                <div class="col">test</div>
+                                <div class="col"><a href="../news.php" class="btn btn-secondary"><i class="material-icons">chrome_reader_mode</i> Read posts</a></div>
 
                             </div>
 
@@ -65,7 +65,7 @@
                 <li class="list-group-item text-light bg-dark">All posts</li>
                 <li class="list-group-item">
 
-                    <?php populate_post_table(0, "Post_Date_Created", "DESC"); ?>
+                    <?php populate_post_table(0, "Post_ID", "DESC"); ?>
 
                 </li>
             </ul>

@@ -220,11 +220,11 @@ function populate_post_table($number_of_rows, $order_by, $asc_desc){
                                 </tbody>
                             </table>';
 
-    // Predefined queries:
-
 
     // Create SQL query i accordance with user type:
     if ( $current_user == $root || $current_user == $admin || $current_user == $mod ) {
+
+        $access_granted = true;
 
         if ( isset($number_of_rows) && $number_of_rows > 0 ) {
             $sql = "SELECT * FROM Post ORDER BY ".$order_by." ".$asc_desc." LIMIT 0,".$number_of_rows;
@@ -232,69 +232,131 @@ function populate_post_table($number_of_rows, $order_by, $asc_desc){
             $sql = "SELECT * FROM Post ORDER BY ".$order_by." ".$asc_desc;
         }
 
+    } else {
+
+        $access_granted = false;
+
     }
 
     // Get user data:
     $result = mysqli_query($con, $sql);
 
     // Check if any posts were received:
-    if ( $result == null ){
+    if ( $result !== null ){
+
+        // Populate table:
+        echo $table_start;
+
+        while ( $row = mysqli_fetch_array($result) ) {
+
+            // Get primary data:
+            $post_id = $row['Post_ID'];
+            $post_title = $row['Post_Title'];
+            $post_author_id = $row['Post_Author'];
+            $post_created = $row['Post_Date_Created'];
+
+            // Get secondary data (Author name, full):
+            $post_author_query = mysqli_query($con, "SELECT CONCAT(User_Name_First, ' ', User_Name_Last) AS User_Name FROM User_Data WHERE User_ID = ".$post_author_id);
+            while ( $row_author = mysqli_fetch_array( $post_author_query ) ){
+                $post_author = $row_author['User_Name'];
+            }
+
+            // Get secondary data (Category name:)
+            $post_category_id = $row['Post_Category'];
+            $row_category_id = mysqli_query($con, "SELECT Category_Name FROM Category WHERE Category_ID = ".$post_category_id);
+            while ( $row_category = mysqli_fetch_array( $row_category_id ) ){
+                $post_category = $row_category['Category_Name'];
+            }
+
+            // Predefined action buttons:
+            $btn_edit = '<a class="dropdown-item" href="post_edit.php?id='.$post_id.'"><i class="material-icons">create</i> Edit</a>';
+            $btn_delete = '<a class="dropdown-item" href="delete.php?object=post&id='.$post_id.'"><i class="material-icons">delete</i>Delete</a>';
+
+            // Start the the table:
+            echo $table_row_start;
+
+            // Post title:
+            echo $table_col_start;
+            echo $post_title;
+            echo $table_col_end;
+
+            // Post author:
+            echo $table_col_start;
+            echo $post_author;
+            echo $table_col_end;
+
+            // Post category:
+            echo $table_col_start;
+            echo $post_category;
+            echo $table_col_end;
+
+            // Post date created:
+            echo $table_col_start;
+            echo $post_created;
+            echo $table_col_end;
+
+            // Operation:
+            echo $table_col_start;
+            // Root and Administrator can CRUD all files:
+            if ( $current_user == $root || $current_user == $admin ) {
+
+                echo '
+                <div class="dropdown">
+                  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Manage
+                  </button>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    '.$btn_edit.'<div class="dropdown-divider"></div>'.$btn_delete.'
+                  </div>
+                </div>
+                ';
+
+            }
+            // Moderators can CRUD own files only:
+            if ( $current_user == $mod && $user_id == $post_author_id ) {
+
+                echo '
+                <div class="dropdown">
+                  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Manage
+                  </button>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    '.$btn_edit.'<div class="dropdown-divider"></div>'.$btn_delete.'
+                  </div>
+                </div>
+                ';
+
+            } elseif ( $current_user == $mod && $user_id !== $post_author_id ) {
+
+                echo '
+                <div class="dropdown">
+                  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Manage
+                  </button>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    '.$btn_edit.'
+                  </div>
+                </div>
+                ';
+
+            }
+            // Users can edit own user only:
+            if ( $current_user == $user ) {
+                echo '<span class="badge badge-secondary">Restricted</span>';
+            }
+            echo $table_col_end;
+
+            echo $table_row_end;
+
+        }
+
+        echo $table_end;
+
+    } elseif ( $result == null ) {
+
+        // No posts are available:
         alert("You have no posts", "warning");
-        exit();
     }
-
-    // Populate table:
-    echo $table_start;
-
-    while ( $row = mysqli_fetch_array($result) ) {
-
-        $post_id = $row['Post_ID'];
-        $post_title = $row['Post_Title'];
-        $post_author_id = $row['Post_Author'];
-
-        $post_author_query = mysqli_query($con, "SELECT CONCAT(User_Name_First, ' ', User_Name_Last) AS User_Name FROM User_Data WHERE User_ID = ".$post_author_id);
-        while ( $row_author = mysqli_fetch_array( $post_author_query ) ){
-            $post_author = $row_author['User_Name'];
-        }
-        $post_created = $row['Post_Date_Created'];
-        $post_category_id = $row['Post_Category'];
-        $row_category_id = mysqli_query($con, "SELECT Category_Name FROM Category WHERE Category_ID = ".$post_category_id);
-        while ( $row_category = mysqli_fetch_array( $row_category_id ) ){
-            $post_category = $row_category['Category_Name'];
-        }
-
-        echo $table_row_start;
-
-        // Post title:
-        echo $table_col_start;
-        echo $post_title;
-        echo $table_col_end;
-
-        // Post author:
-        echo $table_col_start;
-        echo $post_author;
-        echo $table_col_end;
-
-        // Post category:
-        echo $table_col_start;
-        echo $post_category;
-        echo $table_col_end;
-
-        // Post date created:
-        echo $table_col_start;
-        echo $post_created;
-        echo $table_col_end;
-
-        // Post action:
-        echo $table_col_start;
-        echo '<a class="btn btn-success" href="post_edit.php?id='.$post_id.'">Edit</a>';
-        echo $table_col_end;
-
-        echo $table_row_end;
-
-    }
-
-    echo $table_end;
 
 }
 
@@ -308,14 +370,21 @@ function populate_post_table($number_of_rows, $order_by, $asc_desc){
 
 
 // Populate the post table
-function populate_user_table($number_of_rows, $order_by, $asc_desc){
+function populate_user_table($number_of_rows, $order_by, $asc_desc)
+{
 
     global $con;
     global $_SESSION;
 
     // Preliminary data:
-    $session_user_id = $_SESSION['user_id'];
-    $session_user_type = $_SESSION['user_type'];
+    $current_user_id = $_SESSION['user_id'];
+    $current_user = $_SESSION['user_type'];
+
+    // Access levels:
+    $root = 1;
+    $admin = 2;
+    $mod = 3;
+    $user = 4;
 
     // HTML template:
     $table_start = '
@@ -341,19 +410,19 @@ function populate_user_table($number_of_rows, $order_by, $asc_desc){
 
 
     // Create SQL query i accordance with user type:
-    if ( $session_user_type <= 2 ) {
+    if ($current_user <= 2) {
         // Only Root and Administrator users can see Root users.
-        if ( isset($number_of_rows) && $number_of_rows > 0 ){
-            $sql = "SELECT * FROM User_Data ORDER BY ".$order_by." ".$asc_desc." LIMIT 0,".$number_of_rows;
+        if (isset($number_of_rows) && $number_of_rows > 0) {
+            $sql = "SELECT * FROM User_Data ORDER BY " . $order_by . " " . $asc_desc . " LIMIT 0," . $number_of_rows;
         } else {
-            $sql = "SELECT * FROM User_Data ORDER BY ".$order_by." ".$asc_desc;
+            $sql = "SELECT * FROM User_Data ORDER BY " . $order_by . " " . $asc_desc;
         }
     } else {
         // If user is Moderator or less, they cannot see Root users.
-        if ( isset($number_of_rows) && $number_of_rows > 0 ){
-            $sql = "SELECT * FROM User_Data WHERE User_Type > 1 ORDER BY".$order_by." ".$asc_desc." LIMIT 0,".$number_of_rows;
+        if (isset($number_of_rows) && $number_of_rows > 0) {
+            $sql = "SELECT * FROM User_Data WHERE User_Type > 1 ORDER BY" . $order_by . " " . $asc_desc . " LIMIT 0," . $number_of_rows;
         } else {
-            $sql = "SELECT * FROM User_Data WHERE User_Type > 1 ORDER BY".$order_by." ".$asc_desc;
+            $sql = "SELECT * FROM User_Data WHERE User_Type > 1 ORDER BY" . $order_by . " " . $asc_desc;
         }
     }
 
@@ -361,107 +430,115 @@ function populate_user_table($number_of_rows, $order_by, $asc_desc){
     $data_user = mysqli_query($con, $sql);
 
     // Check if any posts were received:
-    if ( $data_user == null ){
+    if( $data_user !== null ){
+
+        // Populate table:
+        echo $table_start;
+
+        while ( $row = mysqli_fetch_array($data_user) ) {
+
+            // The listed user's ID:
+            $user_id = $row['User_ID'];
+
+            // The listed user's full name:
+            $user_name = $row['User_Name_First'] . ' ' . $row['User_Name_Last'];
+
+            // The listed user's company affiliation:
+            $user_company_id = $row['User_Company'];
+            $user_company_query = mysqli_query($con, 'SELECT Company_Name FROM Company WHERE Company_ID = ' . $user_company_id);
+            while ( $user_company_row = mysqli_fetch_array( $user_company_query ) ){
+                $user_company = $user_company_row['Company_Name'];
+            }
+
+            // The listed user's email:
+            $user_email = $row['User_Email'];
+
+            // The listed user's phone number:
+            $user_phone = $row['User_Phone'];
+
+            // The listed user's access level:
+            $user_type_id = $row['User_Type'];
+            $user_type_query = mysqli_query($con, 'SELECT User_Type_Name FROM User_Type WHERE User_Type_ID = ' . $user_type_id);
+            while ( $user_type_row = mysqli_fetch_array( $user_type_query ) ){
+                $user_type = $user_type_row['User_Type_Name'];
+            }
+
+            // Predefined action buttons:
+            $btn_edit = '<a class="dropdown-item" href="user_edit.php?id='.$user_id.'"><i class="material-icons">create</i> Edit</a>';
+            $btn_delete = '<div class="dropdown-divider"></div><a class="dropdown-item" href="delete.php?object=user&id='.$user_id.'"><i class="material-icons">delete</i>Delete</a>';
+            $restricted = '<span class="dropdown-item badge badge-warning"><i class="material-icons">lock</i> Restricted</span>';
+
+            // Security check:
+            if ($current_user == $root && $user_type_id == $root){
+                $btn_edit = '';
+                $btn_delete = $restricted;
+            } elseif ($current_user == $admin && $user_type_id < $mod){
+                $btn_edit = '';
+                $btn_delete = $restricted;
+            } elseif ($current_user == $mod || $current_user == $user){
+
+                if ($current_user !== $user_type_id){
+                    $btn_edit = '';
+                    $btn_delete = $restricted;
+                }
+
+            }
+
+            // Predefine drop-down:
+            $dropdown = '
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Manage
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    '.$btn_edit.$btn_delete.'
+                </div>
+            </div>
+            ';
+
+            echo $table_row_start;
+
+            // User name:
+            echo $table_col_start;
+            echo $user_name;
+            echo $table_col_end;
+
+            // User company:
+            echo $table_col_start;
+            echo $user_company;
+            echo $table_col_end;
+
+            // User email:
+            echo $table_col_start;
+            echo $user_email;
+            echo $table_col_end;
+
+            // User phone:
+            echo $table_col_start;
+            echo $user_phone;
+            echo $table_col_end;
+
+            // User type:
+            echo $table_col_start;
+            echo $user_type;
+            echo $table_col_end;
+
+            // Action:
+            echo $table_col_start;
+
+            echo $dropdown;
+
+            echo $table_col_end;
+
+            echo $table_row_end;
+
+        }
+
+        echo $table_end;
+
+    } elseif ( $data_user == null ){
         alert("There are no users.", "warning");
-        exit();
     }
-
-    // Populate table:
-    echo $table_start;
-
-    while ( $row = mysqli_fetch_array($data_user) ) {
-
-        // The listed user's ID:
-        $user_id = $row['User_ID'];
-
-        // The listed user's full name:
-        $user_name = $row['User_Name_First'] . ' ' . $row['User_Name_Last'];
-
-        // The listed user's company affiliation:
-        $user_company_id = $row['User_Company'];
-        $user_company_query = mysqli_query($con, 'SELECT Company_Name FROM Company WHERE Company_ID = ' . $user_company_id);
-        while ( $user_company_row = mysqli_fetch_array( $user_company_query ) ){
-            $user_company = $user_company_row['Company_Name'];
-        }
-
-        // The listed user's email:
-        $user_email = $row['User_Email'];
-
-        // The listed user's phone number:
-        $user_phone = $row['User_Phone'];
-
-        // The listed user's access level:
-        $user_type_id = $row['User_Type'];
-        $user_type_query = mysqli_query($con, 'SELECT User_Type_Name FROM User_Type WHERE User_Type_ID = ' . $user_type_id);
-        while ( $user_type_row = mysqli_fetch_array( $user_type_query ) ){
-            $user_type = $user_type_row['User_Type_Name'];
-        }
-
-        echo $table_row_start;
-
-        // User name:
-        echo $table_col_start;
-        echo $user_name;
-        echo $table_col_end;
-
-        // User company:
-        echo $table_col_start;
-        echo $user_company;
-        echo $table_col_end;
-
-        // User email:
-        echo $table_col_start;
-        echo $user_email;
-        echo $table_col_end;
-
-        // User phone:
-        echo $table_col_start;
-        echo $user_phone;
-        echo $table_col_end;
-
-        // User type:
-        echo $table_col_start;
-        echo $user_type;
-        echo $table_col_end;
-
-        // Action:
-        echo $table_col_start;
-
-        // Root can edit and delete all except other Root:
-        if ( $session_user_type == 1 && $user_type > 1 ) {
-            echo '<a class="btn btn-success" href="user_edit.php?id='.$user_id.'">Edit</a>';
-            echo '<a class="btn btn-error" href="user_edit.php?id='.$user_id.'">Delete</a>';
-        } elseif ( $session_user_type == 1 && $user_type < 2 ) {
-            echo '<a class="btn btn-secondary" href="user_edit.php?id='.$user_id.'">Edit</a>';
-        }
-
-        // Administrators can edit and delete all except Root:
-        if ( $session_user_type == 2 && $user_type > 1 ) {
-            echo '<a class="btn btn-success" href="user_edit.php?id='.$user_id.'">Edit</a>';
-            echo '<a class="btn btn-error" href="user_edit.php?id='.$user_id.'">Delete</a>';
-        } elseif ( $session_user_type == 2 && $user_type < 2 ) {
-            echo '<span class="badge badge-secondary">Restricted</span>';
-        }
-
-        // Moderators can edit own user only:
-        if ( $session_user_type == 3 && $session_user_id == $user_id ) {
-            echo '<a class="btn btn-success" href="user_edit.php?id='.$user_id.'">Edit</a>';
-        } elseif ( $session_user_type == 3 && $session_user_id !== $user_id ) {
-            echo '<span class="badge badge-secondary">Restricted</span>';
-        }
-
-        // Users can edit own user only:
-        if ( $session_user_type == 4 ) {
-            echo '<span class="badge badge-secondary">Restricted</span>';
-        }
-
-        echo $table_col_end;
-
-        echo $table_row_end;
-
-    }
-
-    echo $table_end;
 
 }
 
@@ -605,7 +682,7 @@ function populate_file_table($number_of_rows, $order_by, $asc_desc){
 
             // Predefined action buttons:
             $btn_download = '<a class="dropdown-item" href="'.$file_URL.'"><i class="material-icons">file_download</i> Download</a>';
-            $btn_delete = '<a class="dropdown-item" href="delete.php?file='.$file_id.'"><i class="material-icons">delete</i>Delete</a>';
+            $btn_delete = '<a class="dropdown-item" href="delete.php?object=file&id='.$file_id.'"><i class="material-icons">delete</i>Delete</a>';
 
 
 
@@ -1386,5 +1463,148 @@ function populate_featured_image($post_id){
         echo $html;
 
     }
+
+}
+
+
+
+
+
+
+
+
+
+
+function format_bytes($bytes,$precision){
+
+    // Create array of units:
+    $unit = array('KB','MB','GB');
+
+    if ($bytes >= 1024 && $bytes < 1024000){
+        $index = 0;
+        $bytes /= 1024;
+    } elseif ($bytes >= 1024000 && $bytes < 1024000000){
+        $index = 1;
+        $bytes /= 1024000;
+    } elseif ($bytes >= 1024000000 && $bytes < 1024000000000){
+        $index = 2;
+        $bytes /= 1024000000;
+    }
+
+    return round($bytes,$precision).' '.$unit[$index];
+
+}
+
+
+
+
+
+
+
+
+
+
+function populate_user_type_selection($name, $user_id = 0){
+
+
+    global $con;
+
+
+    // Echo the start of the HTML string:
+    echo '<label for="'.$name.'" class="text-muted">User type:</label><select id="'.$name.'" name="'.$name.'" class="form-control">';
+
+
+    // Generate SQL for getting all user types:
+    $user_type_query = "SELECT * FROM User_Type ORDER BY User_Type_ID DESC";
+
+
+    // Run SQL:
+    $user_type_result = mysqli_query($con, $user_type_query);
+
+
+    // Check if user ID is set:
+    if ($user_id > 0){
+
+        // Get user type ID:
+        $user_query = 'SELECT User_Type FROM User_Data WHERE User_ID = '.$user_id;
+        $user_result = mysqli_query($con,$user_query);
+        $user_array = mysqli_fetch_array($user_result);
+        $user_type_id = $user_array['User_Type'];
+
+    }
+
+
+    // Output all rows:
+    while ( $row = mysqli_fetch_array($user_type_result) ){
+
+        if ( $row['User_Type_ID'] == $user_type_id ){
+            echo '<option value="' . $row['User_Type_ID'] . '" selected>' . $row['User_Type_Name'] . '</option>';
+        } else {
+            echo '<option value="' . $row['User_Type_ID'] . '">' . $row['User_Type_Name'] . '</option>';
+        }
+
+    }
+
+
+    // Echo the end of the HTML string:
+    echo '</select>';
+
+
+}
+
+
+
+
+
+
+
+
+
+
+function populate_user_company_selection($name, $user_id = 0){
+
+
+    global $con;
+
+
+    // Echo the start of the HTML string:
+    echo '<label for="'.$name.'" class="text-muted">User type:</label><select id="'.$name.'" name="'.$name.'" class="form-control">';
+
+
+    // Generate SQL for getting all user types:
+    $user_company_query = "SELECT * FROM Company ORDER BY Company_ID DESC";
+
+
+    // Run SQL:
+    $user_company_result = mysqli_query($con, $user_company_query);
+
+
+    // Check if user ID is set:
+    if ($user_id > 0){
+
+        // Get user type ID:
+        $user_query = 'SELECT User_Company FROM User_Data WHERE User_ID = '.$user_id;
+        $user_result = mysqli_query($con,$user_query);
+        $user_array = mysqli_fetch_array($user_result);
+        $user_company_id = $user_array['User_Company'];
+
+    }
+
+
+    // Output all rows:
+    while ( $row = mysqli_fetch_array($user_company_result) ){
+
+        if ( $row['Company_ID'] == $user_company_id ){
+            echo '<option value="' . $row['User_Company_ID'] . '" selected>' . $row['Company_Name'] . '</option>';
+        } else {
+            echo '<option value="' . $row['User_Company_ID'] . '">' . $row['Company_Name'] . '</option>';
+        }
+
+    }
+
+
+    // Echo the end of the HTML string:
+    echo '</select>';
+
 
 }

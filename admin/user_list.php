@@ -50,8 +50,8 @@
 
                             <div class="row">
 
-                                <div class="col">Edit your own user</div>
-                                <div class="col">Create new user</div>
+                                <div class="col"><a class="btn btn-secondary" href="user_edit.php?id=<?php echo $_SESSION['user_id'] ?>"><i class="material-icons">account_circle</i> Edit your own user</a></div>
+                                <div class="col"><a class="btn btn-primary" href="#"><i class="material-icons">create</i> Create new user (planned)</a></div>
 
                             </div>
 
