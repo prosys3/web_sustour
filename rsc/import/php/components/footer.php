@@ -11,12 +11,6 @@
                         <li><i class="material-icons">phone</i>&nbsp;&nbsp;+47 35 95 25 05</li>
                         <li><i class="material-icons">mail_outline</i>&nbsp;&nbsp;anne.g.sturod@usn.no</li>
                     </ul>
-
-                    <p class="mb-2">Tim Teimuraz Abessadze</p>
-                    <ul style="list-style-type: none; padding-left: 0;">
-                        <li><i class="material-icons">phone</i>&nbsp;&nbsp;+47 35 95 28 50</li>
-                        <li><i class="material-icons">mail_outline</i>&nbsp;&nbsp;tim.t.abessadze@usn.no</li>
-                    </ul>
                 </div>
 
                 <div class="col">
