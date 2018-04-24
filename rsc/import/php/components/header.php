@@ -30,6 +30,7 @@
                 <li class="nav-item"><a class="nav-link" href="news.php">News</a></li>
                 <li class="nav-item"><a class="nav-link" href="activities.php">Activities</a></li>
                 <li class="nav-item"><a class="nav-link" href="files.php">Files</a></li>
+                <li class="nav-item"><a class="nav-link" href="events.php">Events</a></li>
                 <li class="nav-item"><a class="nav-link" href="contact.php">Contact us</a></li>
 
             </ul>

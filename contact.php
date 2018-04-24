@@ -20,10 +20,8 @@
 
 <main>
 
-    <div class="jumbotron jumbotron-fluid">
+    <section class="jumbotron jumbotron-fluid">
         <div class="container text-center">
-
-
 
             <!-- logo navbar start -->
             <a href="#" class=""><img src="rsc/img/logo/sustour/logo_symbol_black.svg" width="150"></a>
@@ -31,62 +29,42 @@
             <h1 class="display-3">Contact us</h1>
 
         </div>
-    </div>
-    <!-- Header stop -->
-    <!-- ############################################################################## -->
+    </section>
 
+    <section class="container p-5">
+      <div class="row">
+        <div class="col-sm-6">
 
-
-
-    <!-- ############################################################################## -->
-    <!-- Avsnittene start -->
-
-            </br>
-
-    <div class="container">
-        <!-- First row -->
-        <div class="row">
-            <!-- First column -->
-            <div class="col-sm">
-
-                <h2>E-mail</h2>
-                </br>
-                <p><b>Anne Gry Sturød:</b>
-                </br>
-                anne.g.sturod@usn.no
-                </br></br>
-                <b>Tim T. Abessadze</b>
-                </br>
-                tim.t.abessadze@usn.no</p>
-
-                <!-- quick fix, må gjøre noe annet css start -->
-                </br>
-                </br>
-                <!-- quick fix, må gjøre noe annet css stop -->
-
-
-            </div>
-            <!--/.First column-->
-
-            <!-- Second column -->
-            <div class="col-sm">
-
-                <h2>Call</h2>
-                </br>
-                <p><b>Monday-Friday 10-16</b></p>
-                <p>+ 01 234 567 88</br>+ 01 234 567 88</p>
-
-                </br>
-                </br>
-
-            </div>
-            <!--/.Second column-->
-
+          <div class="card border-secondary mb-3" style="width: 18rem;">
+            <h5 class="card-header">
+            E-mail
+            </h5>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item"><b>Anne Gry Sturød:</b></li>
+              <li class="list-group-item">anne.g.sturod@usn.no</li>
+              <li class="list-group-item"><b>Tim T. Abessadze:</b></li>
+              <li class="list-group-item">tim.t.abessadze@usn.no</li>
+            </ul>
+          </div>
         </div>
 
+        <div class="col-sm-6">
+          <div class="card border-secondary mb-3" style="width: 18rem;">
+            <h5 class="card-header">
+            Call
+            </h5>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item"><b>Anne Gry Sturød:</b></li>
+              <li class="list-group-item">95888581</li>
+              <li class="list-group-item"><b>Tim T. Abessadze</b></li>
+              <li class="list-group-item"></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
 </main>
-
-
 
 
 <!--

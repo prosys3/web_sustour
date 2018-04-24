@@ -32,7 +32,7 @@
             <h1>We care about sustainable tourism</h1>
             <h2>Support our project</h2>
 
-            <a href="#" class="btn btn-dark my-3">Learn more</a>
+            <a href="about.php" class="btn btn-dark my-3">Learn more</a>
 
         </div>
 
