@@ -140,6 +140,7 @@ Event_Location 	VARCHAR(50) 		NOT NULL,
 Event_Start		Time				NOT NULL,
 Event_End 		Time				NOT NULL,
 Event_Date 		DATE 				NOT NULL,
+Event_Text		VARCHAR(255) 		NOT NULL,
 Event_Company   TINYINT(3) 			NOT NULL,
 Event_Author    TINYINT(3) 			NOT NULL,
 
