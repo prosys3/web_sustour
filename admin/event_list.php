@@ -50,8 +50,8 @@ include 'rsc/import/php/components/header_dashboard.php';
 
                             <div class="row">
 
-                                <div class="col"><a href="post_create.php" class="btn btn-primary"><i class="material-icons">create</i> Create new post</a></div>
-                                <div class="col"><a href="../news.php" class="btn btn-secondary"><i class="material-icons">chrome_reader_mode</i> Read posts</a></div>
+                                <div class="col"><a href="event_create.php" class="btn btn-primary"><i class="material-icons">create</i> Create new event</a></div>
+                                <div class="col"><a href="../events.php" class="btn btn-secondary"><i class="material-icons">chrome_reader_mode</i> View event page</a></div>
 
                             </div>
 
@@ -62,10 +62,10 @@ include 'rsc/import/php/components/header_dashboard.php';
             </div>
 
             <ul class="list-group mt-5">
-                <li class="list-group-item text-light bg-dark">All posts</li>
+                <li class="list-group-item text-light bg-dark">All events</li>
                 <li class="list-group-item">
 
-                    <?php populate_post_table(0, "Post_ID", "DESC"); ?>
+                    <?php populate_event_table(0, "Event_ID", "DESC"); ?>
 
                 </li>
             </ul>
