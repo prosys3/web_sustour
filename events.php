@@ -18,76 +18,84 @@
 <!-- ... Your code goes here ... -->
 <main>
 
-    <div class="jumbotron jumbotron-fluid">
-      <div class="container text-center">
+    <section class="jumbotron jumbotron-fluid">
 
-        <!-- logo navbar start -->
-        <a href="#" class=""><img src="rsc/img/logo/sustour/logo_symbol_black.svg" width="150"></a>
-        <!-- logo navbar stop -->
+        <div class="container text-center">
+          <!-- logo start -->
+          <a href="#" class=""><img src="rsc/img/logo/sustour/logo_symbol_black.svg" width="150"></a>
+          <!-- logo stopp -->
 
-        <!-- logo tekst start -->
-        <h1 class="display-3">Project events</h1>
-        <!-- <p class="lead">Educational project between Kyrgyzstan, Georgia and Norway 2016– 2019</p> -->
-        <!-- logo tekst stopp -->
-
-      </div>
-    </div> 
+          <!-- logo tekst start -->
+          <h1 class="display-3">Project events</h1>
+          <!-- logo tekst stopp -->
 
 
-
-<br>
-<br>
-<br>
-
-<main>
-  <div class="container">
-    <div class="row">
-      <div class="col-sm">
-        <div class="card" style="width: 18rem;">
-    <div class="card-body">
-      <h5 class="card-title">Party in Bø</h5>
-      <h6 class="card-subtitle mb-2 text-muted">Dato 25.5.2018</h6>
-      <p class="card-text">Lokasjon: Bø</p>
-      <p class="card-text">From 12.00 to 15.00</p> 
-      <p class="card-text">Big party happening here, come and have fun with us</p> 
-      <a href="#" class="card-link">Click here info</a>
-      <a href="#" class="card-link"></a>
-      </div>
-    </div>
-  </div>
-
-     
-      <div class="col-sm">
-        <div class="card" style="width: 18rem;">
-           <div class="card-body">
-      <h5 class="card-title">Party in Bø</h5>
-      <h6 class="card-subtitle mb-2 text-muted">Dato 25.5.2018</h6>
-      <p class="card-text">Lokasjon: Bø</p>
-      <p class="card-text">From 12.00 to 15.00</p> 
-      <p class="card-text">Big party happening here, come and have fun with us</p> 
-      <a href="#" class="card-link">Click here info</a>
-      <a href="#" class="card-link"></a>
-      </div>
-    </div>
-  </div>
-
-
-
-    <div class="col-sm">
-      <div class="card" style="width: 18rem;">
-         <div class="card-body">
-      <h5 class="card-title">Party in Bø</h5>
-      <h6 class="card-subtitle mb-2 text-muted">Dato 25.5.2018</h6>
-       <p class="card-text">Lokasjon: Bø</p>
-       <p class="card-text">From 12.00 to 15.00</p> 
-      <p class="card-text">Big party happening here, come and have fun with us</p> 
-      <a href="#" class="card-link">Click here info</a>
-      <a href="#" class="card-link"></a>
-          </div>
         </div>
-      </div>
-    </div>
-</div>
+
+    </section>
+
+
+    <section class="py-5">
+
+        <div class="container">
+
+            <?php
+
+            $sql = 'SELECT * FROM Event ORDER BY Event_Date ASC';
+            $result = mysqli_query($con, $sql);
+
+            $counter = 1;
+                          
+            echo '<div class="row">';
+            while ( $row = mysqli_fetch_array( $result ) ){
+                $tempQuery = "SELECT * FROM Company WHERE " . $row['Event_Company'] . " = Company_ID ";
+                $tempRes = mysqli_query($con,$tempQuery);
+                $tempRow = mysqli_fetch_array($tempRes);
+                // Gets date
+                $d = new DateTime($row['Event_Date']);
+                $date = $d->format('F jS - o');
+                
+                // Gets time
+                $sTime = new DateTime($row['Event_Start']);
+                $eTime = new DateTime($row['Event_End']);
+                $startTime = $sTime->format('H:i');
+                $endTime = $eTime->format('H:i');
+               
+
+                echo '<div class="col-sm">';
+                echo '<div class="card" style="width: 20rem; margin:10px;">';
+                echo '<div class="card-body d-flex flex-column justify-content-between" style="flex-wrap: wrap; ">';
+                echo '<h5 class="card-title" style="text-align: center;">';
+                echo $row['Event_Name'];
+                echo '</h5>';
+                echo '<h6 class="card-subtitle mb-2">' . $tempRow['Company_Name'];
+                echo '</h6>';
+                echo '<h7 class="card-subtitle mb-2 text-muted">' . $row['Event_Location'] ;
+                echo '</h7>';
+                echo '<p class="card-text">' . $date;
+                echo '</br>' . $startTime . ' - ' . $endTime;
+                echo '</p>' ;
+                echo '<div class="card-text">';
+                echo $row['Event_Text'];
+                echo '</div>';
+                echo '</div>';
+                echo '</div>';
+                echo '</div>';
+              
+                if ($counter % 3 == 0) {
+                 echo '</div>';
+                 echo '<div class="row">';
+                  }
+                  $counter++;
+
+            }
+
+            ?>
+
+        </div>
+
+    </section>
+
 </main>
 <!-- quick fix -->
 <br>
