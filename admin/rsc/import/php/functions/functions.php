@@ -969,7 +969,178 @@ function populate_file_table($number_of_rows, $order_by, $asc_desc){
 
 
 
+  // Populate the event table
+function populate_event_table($number_of_rows, $order_by, $asc_desc){
 
+    global $con;
+    global $_SESSION;
+
+    // Preliminary data:
+    $user_id = $_SESSION['user_id'];
+    $current_user = $_SESSION['user_type'];
+
+    // Access level:
+    $root = 1;
+    $admin = 2;
+    $mod = 3;
+    $user = 4;
+
+    // HTML template:
+    $table_start = '
+                            <table class="table table-striped">
+                            
+                                <thead>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Date</th>
+                                    <th scope="col">Location</th>
+                                    <th scope="col">Author</th>
+                                    <th scope="col">Operation</th>
+                                </thead>
+                                
+                                <tbody>';
+    $table_row_start = '<tr>';
+    $table_col_start = '<td>';
+    $table_col_end = '</td>';
+    $table_row_end = '</tr>';
+    $table_end = '
+                                </tbody>
+                            </table>';
+
+
+    // Create SQL query i accordance with user type:
+    if ( $current_user == $root || $current_user == $admin || $current_user == $mod ) {
+
+        $access_granted = true;
+
+        if ( isset($number_of_rows) && $number_of_rows > 0 ) {
+            $sql = "SELECT * FROM Event ORDER BY ".$order_by." ".$asc_desc." LIMIT 0,".$number_of_rows;
+        } else {
+            $sql = "SELECT * FROM Event ORDER BY ".$order_by." ".$asc_desc;
+        }
+
+    } else {
+
+        $access_granted = false;
+
+    }
+
+    // Get user data:
+    $result = mysqli_query($con, $sql);
+
+    // Check if any posts were received:
+    if ( $result !== null ){
+
+        // Populate table:
+        echo $table_start;
+
+        while ( $row = mysqli_fetch_array($result) ) {
+
+            // Get primary data:
+            $event_id = $row['Event_ID'];
+            $event_title = $row['Event_Name'];
+            $event_location = $row['Event_Location'];
+            $event_author_id = $row['Event_Author'];
+            $event_date = $row['Event_Date'];
+
+            // Get secondary data (Author name, full):
+            $event_author_query = mysqli_query($con, "SELECT CONCAT(User_Name_First, ' ', User_Name_Last) AS User_Name FROM User_Data WHERE User_ID = ".$event_author_id);
+            while ( $row_author = mysqli_fetch_array( $event_author_query ) ){
+                $event_author = $row_author['User_Name'];
+            }
+
+
+
+            // Predefined action buttons:
+            $btn_edit = '<a class="dropdown-item" href="event_edit.php?id='.$event_id.'"><i class="material-icons">create</i> Edit</a>';
+            $btn_delete = '<a class="dropdown-item" href="delete.php?object=event&id='.$event_id.'"><i class="material-icons">delete</i>Delete</a>';
+
+            // Start the the table:
+            echo $table_row_start;
+
+            // Event title:
+            echo $table_col_start;
+            echo $event_title;
+            echo $table_col_end;
+
+            // Event date:
+            echo $table_col_start;
+            echo $event_date;
+            echo $table_col_end;
+
+            // Event location:
+            echo $table_col_start;
+            echo $event_location;
+            echo $table_col_end;
+
+            // Event author:
+            echo $table_col_start;
+            echo $event_author;
+            echo $table_col_end;
+
+            // Operation:
+            echo $table_col_start;
+            // Root and Administrator can CRUD all files:
+            if ( $current_user == $root || $current_user == $admin ) {
+
+                echo '
+                <div class="dropdown">
+                  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Manage
+                  </button>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    '.$btn_edit.'<div class="dropdown-divider"></div>'.$btn_delete.'
+                  </div>
+                </div>
+                ';
+
+            }
+            // Moderators can CRUD own files only:
+            if ( $current_user == $mod && $user_id == $event_author_id ) {
+
+                echo '
+                <div class="dropdown">
+                  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Manage
+                  </button>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    '.$btn_edit.'<div class="dropdown-divider"></div>'.$btn_delete.'
+                  </div>
+                </div>
+                ';
+
+            } elseif ( $current_user == $mod && $user_id !== $event_author_id ) {
+
+                echo '
+                <div class="dropdown">
+                  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Manage
+                  </button>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    '.$btn_edit.'
+                  </div>
+                </div>
+                ';
+
+            }
+            // Users can edit own user only:
+            if ( $current_user == $user ) {
+                echo '<span class="badge badge-secondary">Restricted</span>';
+            }
+            echo $table_col_end;
+
+            echo $table_row_end;
+
+        }
+
+        echo $table_end;
+
+    } elseif ( $result == null ) {
+
+        // No posts are available:
+        alert("You have no events", "warning");
+    }
+
+}
 
 
 
