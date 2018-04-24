@@ -44,6 +44,7 @@ DROP TABLE IF EXISTS File_Type;
 DROP TABLE IF EXISTS Post;
 DROP TABLE IF EXISTS User_Data;
 DROP TABLE IF EXISTS Event;
+DROP TABLE IF EXISTS Activities;
 DROP TABLE IF EXISTS Company;
 DROP TABLE IF EXISTS User_Type;
 DROP TABLE IF EXISTS Category;
@@ -140,6 +141,7 @@ Event_Location 	VARCHAR(50) 		NOT NULL,
 Event_Start		Time				NOT NULL,
 Event_End 		Time				NOT NULL,
 Event_Date 		DATE 				NOT NULL,
+Event_Text		VARCHAR(255) 		NOT NULL,
 Event_Company   TINYINT(3) 			NOT NULL,
 Event_Author    TINYINT(3) 			NOT NULL,
 
@@ -182,13 +184,13 @@ CREATE TABLE Category (
 -- POST:
 CREATE TABLE Post (
 
-	Post_ID 				      TINYINT(4) 		AUTO_INCREMENT NOT NULL,
+	Post_ID 				    TINYINT(4) 		AUTO_INCREMENT NOT NULL,
 	Post_Title 				    VARCHAR(60) 	NOT NULL,
-	Post_Image_Featured 	VARCHAR(100),
+	Post_Image_Featured 		VARCHAR(100),
 	Post_Text 				    TEXT 			    NOT NULL,
-	Post_Date_Created 		DATE 			    NOT NULL,
+	Post_Date_Created 			DATE 			    NOT NULL,
 	Post_Author 			    TINYINT(3) 		NOT NULL,
-	Post_Category 			  TINYINT(3) 		DEFAULT 1,
+	Post_Category 			  	TINYINT(3) 		DEFAULT 1,
 	Post_Private			    TINYINT(1) 		DEFAULT 1,
 
 	CONSTRAINT PostID_PK PRIMARY KEY(Post_ID),
@@ -196,6 +198,23 @@ CREATE TABLE Post (
 	CONSTRAINT Post_CategoryID_FK FOREIGN KEY(Post_Category) REFERENCES Category(Category_ID)
 
 )	ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+
+
+-- ACTIVITIES
+
+CREATE TABLE Activities (
+
+Activities_ID 			TINYINT(4) 		AUTO_INCREMENT NOT NULL,
+Activities_Title		VARCHAR(50) 	NOT NULL,
+Activities_Text			TEXT 			NOT NULL,
+Activities_Created 		DATE 			NOT NULL,
+
+CONSTRAINT ActivitiesID_PK PRIMARY KEY (Activities_ID)
+
+
+
+) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 
 
@@ -371,3 +390,15 @@ INSERT INTO Post (Post_Title, Post_Image_Featured, Post_Text, Post_Date_Created,
 ('Example post 2', 'https://zcodeio/sites/default/files/news/boostrap_img.png', '<h1>Main title</h1><h2>Subtitle</h2><p>This is an example paragraph</p>', (CURDATE() + 1),    2, 1, 1),
 ('Example post 3', 'https://zcodeio/sites/default/files/news/boostrap_img.png', '<h1>Main title</h1><h2>Subtitle</h2><p>This is an example paragraph</p>', (CURDATE() + 2),    3, 1, 0),
 ('Example post 4', 'https://zcodeio/sites/default/files/news/boostrap_img.png', '<h1>Main title</h1><h2>Subtitle</h2><p>This is an example paragraph</p>', (CURDATE() + 3),    4, 1, 0);
+
+
+
+
+-- INSERT DEFAULT POSTS:
+INSERT INTO Activities (Activities_Title, Activities_Text, Activities_Created) VALUES
+('Student mobilities between all three countries', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', CURDATE() ),
+('Staff mobilites between all three countries', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', CURDATE() + 1),
+('Summer school in Norway 2016', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', CURDATE() + 2),
+('Summer schhol in Kyrgyzstan 2017', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', CURDATE() ),
+('Summer school in Georgia 2018', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', CURDATE() + 2),
+('Course development', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', CURDATE() );

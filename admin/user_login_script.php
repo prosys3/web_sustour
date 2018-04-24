@@ -36,7 +36,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             $myphone = $row['User_Phone'];
             $user_id = $row['User_ID'];
 
-            session_start();
+
             $_SESSION['login'] = true;
             $_SESSION['user_id'] = $user_id;
             $_SESSION['login_email'] = $myemail;
