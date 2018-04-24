@@ -44,6 +44,7 @@ DROP TABLE IF EXISTS File_Type;
 DROP TABLE IF EXISTS Post;
 DROP TABLE IF EXISTS User_Data;
 DROP TABLE IF EXISTS Event;
+DROP TABLE IF EXISTS Activities;
 DROP TABLE IF EXISTS Company;
 DROP TABLE IF EXISTS User_Type;
 DROP TABLE IF EXISTS Category;
@@ -183,13 +184,13 @@ CREATE TABLE Category (
 -- POST:
 CREATE TABLE Post (
 
-	Post_ID 				      TINYINT(4) 		AUTO_INCREMENT NOT NULL,
+	Post_ID 				    TINYINT(4) 		AUTO_INCREMENT NOT NULL,
 	Post_Title 				    VARCHAR(60) 	NOT NULL,
-	Post_Image_Featured 	VARCHAR(100),
+	Post_Image_Featured 		VARCHAR(100),
 	Post_Text 				    TEXT 			    NOT NULL,
-	Post_Date_Created 		DATE 			    NOT NULL,
+	Post_Date_Created 			DATE 			    NOT NULL,
 	Post_Author 			    TINYINT(3) 		NOT NULL,
-	Post_Category 			  TINYINT(3) 		DEFAULT 1,
+	Post_Category 			  	TINYINT(3) 		DEFAULT 1,
 	Post_Private			    TINYINT(1) 		DEFAULT 1,
 
 	CONSTRAINT PostID_PK PRIMARY KEY(Post_ID),
@@ -197,6 +198,23 @@ CREATE TABLE Post (
 	CONSTRAINT Post_CategoryID_FK FOREIGN KEY(Post_Category) REFERENCES Category(Category_ID)
 
 )	ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+
+
+-- ACTIVITIES
+
+CREATE TABLE Activities (
+
+Activities_ID 			TINYINT(4) 		AUTO_INCREMENT NOT NULL,
+Activities_Title		VARCHAR(50) 	NOT NULL,
+Activities_Text			TEXT 			NOT NULL,
+Activities_Created 		DATE 			NOT NULL,
+
+CONSTRAINT ActivitiesID_PK PRIMARY KEY (Activities_ID)
+
+
+
+) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 
 
