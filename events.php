@@ -76,7 +76,7 @@
                 echo '</br>' . $startTime . ' - ' . $endTime;
                 echo '</p>' ;
                 echo '<div class="card-text">';
-                echo $row['Event_Text'];
+                echo '<p>' . $row['Event_Text'] . '</p>';
                 echo '</div>';
                 echo '</div>';
                 echo '</div>';
