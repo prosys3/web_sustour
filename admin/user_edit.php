@@ -65,7 +65,7 @@ $user_company_id = $user_array['User_Company'];
                         <li class="list-group-item text-light bg-dark">User editor</li>
                         <li class="list-group-item">
 
-                            <form method="POST" action="update_handler.php?object=user&id=<?php echo $user_id?>&name=submit&fileref=img&dir=uploads" enctype="multipart/form-data">
+                            <form method="POST" action="update_handler.php?object=user&id=<?php echo $user_id?>&name=submit" enctype="multipart/form-data">
 
 
                                 <!-- User first name: -->
@@ -89,6 +89,13 @@ $user_company_id = $user_array['User_Company'];
                                 </div>
 
 
+                                <!-- User phone: -->
+                                <div class="form-group">
+                                    <label for="phone" class="text-muted">Phone:</label>
+                                    <input type="tel" id="phone" name="phone" class="form-control" placeholder="Phone number" required value="<?php echo $user_phone?>">
+                                </div>
+
+
                                 <!-- User password: -->
                                 <div class="form-group">
                                     <label for="password" class="text-muted">Password:</label>
@@ -104,7 +111,7 @@ $user_company_id = $user_array['User_Company'];
 
                                 <!-- User Company: -->
                                 <div class="form-group">
-                                    <?php populate_user_company_selection('type',$user_id) ?>
+                                    <?php populate_user_company_selection('company',$user_id) ?>
                                 </div>
 
 

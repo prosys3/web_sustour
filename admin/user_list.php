@@ -81,3 +81,10 @@
 -->
 
 <?php include 'rsc/import/php/components/footer_dashboard.php' ?>
+<?php
+
+include 'rsc/import/php/components/modals/dialog_updated.php';
+include 'rsc/import/php/components/modals/dialog_created.php';
+include 'rsc/import/php/components/modals/dialog_deleted.php';
+
+?>

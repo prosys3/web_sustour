@@ -190,14 +190,14 @@ function populate_post_table($number_of_rows, $order_by, $asc_desc){
     global $_SESSION;
 
     // Preliminary data:
-    $user_id = $_SESSION['user_id'];
+    $current_user_id = $_SESSION['user_id'];
     $current_user = $_SESSION['user_type'];
 
     // Access level:
-    $root = 1;
-    $admin = 2;
-    $mod = 3;
-    $user = 4;
+    $root   = 1;
+    $admin  = 2;
+    $mod    = 3;
+    $user   = 4;
 
     // HTML template:
     $table_start = '
@@ -242,7 +242,7 @@ function populate_post_table($number_of_rows, $order_by, $asc_desc){
     $result = mysqli_query($con, $sql);
 
     // Check if any posts were received:
-    if ( $result !== null ){
+    if ( $result != null ){
 
         // Populate table:
         echo $table_start;
@@ -270,7 +270,51 @@ function populate_post_table($number_of_rows, $order_by, $asc_desc){
 
             // Predefined action buttons:
             $btn_edit = '<a class="dropdown-item" href="post_edit.php?id='.$post_id.'"><i class="material-icons">create</i> Edit</a>';
-            $btn_delete = '<a class="dropdown-item" href="delete.php?object=post&id='.$post_id.'"><i class="material-icons">delete</i>Delete</a>';
+            $btn_delete = '<div class="dropdown-divider"></div><a class="dropdown-item" href="delete.php?object=post&id='.$post_id.'"><i class="material-icons">delete</i>Delete</a>';
+            $restricted = '<span class="dropdown-item badge badge-warning"><i class="material-icons">lock</i> Restricted</span>';
+
+
+            // === SECURITY CHECK === :
+            // Check if the post is yours:
+            if ($current_user_id == $post_author_id){
+
+                // You can do whatever to your own shit!
+
+
+            // Check if post is someone else's:
+            } elseif($current_user_id != $post_author_id) {
+
+                // Root administrators:
+                if ($current_user == $root){
+
+                    // Unlimited access!
+
+
+                // Administrators
+                } elseif ($current_user == $admin){
+
+                    // Unlimited access!
+
+
+                // Moderators:
+                } elseif ($current_user == $mod){
+
+                    // Moderators can not edit/delete anyone else's posts:
+                    $btn_edit = '';
+                    $btn_delete = $restricted;
+
+
+                // Regular users:
+                } elseif ($current_user == $user){
+
+                    // Regular users can not edit/delete anyone else's posts:
+                    $btn_edit = '';
+                    $btn_delete = $restricted;
+
+                }
+
+            }
+
 
             // Start the the table:
             echo $table_row_start;
@@ -297,53 +341,18 @@ function populate_post_table($number_of_rows, $order_by, $asc_desc){
 
             // Operation:
             echo $table_col_start;
-            // Root and Administrator can CRUD all files:
-            if ( $current_user == $root || $current_user == $admin ) {
 
-                echo '
-                <div class="dropdown">
-                  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            echo '
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Manage
-                  </button>
-                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    '.$btn_edit.'<div class="dropdown-divider"></div>'.$btn_delete.'
-                  </div>
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    '.$btn_edit.$btn_delete.'
                 </div>
-                ';
+            </div>
+            ';
 
-            }
-            // Moderators can CRUD own files only:
-            if ( $current_user == $mod && $user_id == $post_author_id ) {
-
-                echo '
-                <div class="dropdown">
-                  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Manage
-                  </button>
-                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    '.$btn_edit.'<div class="dropdown-divider"></div>'.$btn_delete.'
-                  </div>
-                </div>
-                ';
-
-            } elseif ( $current_user == $mod && $user_id !== $post_author_id ) {
-
-                echo '
-                <div class="dropdown">
-                  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Manage
-                  </button>
-                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    '.$btn_edit.'
-                  </div>
-                </div>
-                ';
-
-            }
-            // Users can edit own user only:
-            if ( $current_user == $user ) {
-                echo '<span class="badge badge-secondary">Restricted</span>';
-            }
             echo $table_col_end;
 
             echo $table_row_end;
@@ -370,8 +379,8 @@ function populate_post_table($number_of_rows, $order_by, $asc_desc){
 
 
 // Populate the post table
-function populate_user_table($number_of_rows, $order_by, $asc_desc)
-{
+// Usage: If $number_of_rows is set to 0, all rows will be displayed.
+function populate_user_table($number_of_rows = 0, $order_by, $asc_desc){
 
     global $con;
     global $_SESSION;
@@ -381,10 +390,10 @@ function populate_user_table($number_of_rows, $order_by, $asc_desc)
     $current_user = $_SESSION['user_type'];
 
     // Access levels:
-    $root = 1;
-    $admin = 2;
-    $mod = 3;
-    $user = 4;
+    $root   = 1;
+    $admin  = 2;
+    $mod    = 3;
+    $user   = 4;
 
     // HTML template:
     $table_start = '
@@ -410,19 +419,19 @@ function populate_user_table($number_of_rows, $order_by, $asc_desc)
 
 
     // Create SQL query i accordance with user type:
-    if ($current_user <= 2) {
+    if ($current_user == $root || $current_user == $admin) {
         // Only Root and Administrator users can see Root users.
-        if (isset($number_of_rows) && $number_of_rows > 0) {
-            $sql = "SELECT * FROM User_Data ORDER BY " . $order_by . " " . $asc_desc . " LIMIT 0," . $number_of_rows;
+        if ($number_of_rows > 0) {
+            $sql = 'SELECT * FROM User_Data ORDER BY '.$order_by .' '.$asc_desc.' LIMIT 0,'.$number_of_rows;
         } else {
-            $sql = "SELECT * FROM User_Data ORDER BY " . $order_by . " " . $asc_desc;
+            $sql = 'SELECT * FROM User_Data ORDER BY '.$order_by.' '.$asc_desc;
         }
     } else {
-        // If user is Moderator or less, they cannot see Root users.
-        if (isset($number_of_rows) && $number_of_rows > 0) {
-            $sql = "SELECT * FROM User_Data WHERE User_Type > 1 ORDER BY" . $order_by . " " . $asc_desc . " LIMIT 0," . $number_of_rows;
+        // If user is Moderator or user, they cannot see Root users.
+        if ($number_of_rows > 0) {
+            $sql = 'SELECT * FROM User_Data WHERE User_Type > 1 ORDER BY '.$order_by.' '.$asc_desc.' LIMIT 0,'.$number_of_rows;
         } else {
-            $sql = "SELECT * FROM User_Data WHERE User_Type > 1 ORDER BY" . $order_by . " " . $asc_desc;
+            $sql = 'SELECT * FROM User_Data WHERE User_Type > 1 ORDER BY '.$order_by.' '.$asc_desc;
         }
     }
 
@@ -468,18 +477,49 @@ function populate_user_table($number_of_rows, $order_by, $asc_desc)
             $btn_delete = '<div class="dropdown-divider"></div><a class="dropdown-item" href="delete.php?object=user&id='.$user_id.'"><i class="material-icons">delete</i>Delete</a>';
             $restricted = '<span class="dropdown-item badge badge-warning"><i class="material-icons">lock</i> Restricted</span>';
 
-            // Security check:
-            if ($current_user == $root && $user_type_id == $root){
-                $btn_edit = '';
-                $btn_delete = $restricted;
-            } elseif ($current_user == $admin && $user_type_id < $mod){
-                $btn_edit = '';
-                $btn_delete = $restricted;
-            } elseif ($current_user == $mod || $current_user == $user){
 
-                if ($current_user !== $user_type_id){
+            // === SECURITY CHECK === :
+            // Check if user is you:
+            if ($current_user_id == $user_id){
+
+                // You should not be able to delete yourself:
+                $btn_delete = '';
+
+
+            // Check if user is someone else:
+            } elseif($current_user_id != $user_id) {
+
+                // Root administrators:
+                if ($current_user == $root){
+
+                    // Unlimited access!
+
+
+                // Administrators
+                } elseif ($current_user == $admin){
+
+                    // Admin cannot edit or delete root, nor other admins:
+                    if ($user_type_id == $root || $user_type_id = $admin){
+                        $btn_edit = '';
+                        $btn_delete = $restricted;
+                    }
+
+
+                // Moderators:
+                } elseif ($current_user == $mod){
+
+                    // Moderators can not edit or delete anyone else:
                     $btn_edit = '';
                     $btn_delete = $restricted;
+
+
+                // Regular users:
+                } elseif ($current_user == $user){
+
+                    // Regular users can not edit or delete anyone else:
+                    $btn_edit = '';
+                    $btn_delete = $restricted;
+
                 }
 
             }
@@ -562,8 +602,8 @@ function populate_file_table($number_of_rows, $order_by, $asc_desc){
 
 
     // Preliminary data:
-    $session_user_id    = $_SESSION['user_id'];
-    $session_user_level = $_SESSION['user_type'];
+    $current_user_id    = $_SESSION['user_id'];
+    $current_user       = $_SESSION['user_type'];
     $root   = 1;
     $admin  = 2;
     $mod    = 3;
@@ -609,7 +649,7 @@ function populate_file_table($number_of_rows, $order_by, $asc_desc){
     // Create SQL query in accordance with user type:
     if ( $count > 0 ){
 
-        if ( $session_user_level == $root || $session_user_level == $admin || $session_user_level == $mod ) {
+        if ( $current_user == $root || $current_user == $admin || $current_user == $mod ) {
             // Only moderators and above can see this table.
             if ( isset($number_of_rows) && $number_of_rows > 0 ){
                 $sql = "SELECT * FROM File ORDER BY ".$order_by." ".$asc_desc." LIMIT 0,".$number_of_rows;
@@ -682,8 +722,48 @@ function populate_file_table($number_of_rows, $order_by, $asc_desc){
 
             // Predefined action buttons:
             $btn_download = '<a class="dropdown-item" href="'.$file_URL.'"><i class="material-icons">file_download</i> Download</a>';
-            $btn_delete = '<a class="dropdown-item" href="delete.php?object=file&id='.$file_id.'"><i class="material-icons">delete</i>Delete</a>';
+            $btn_delete = '<div class="dropdown-divider"></div><a class="dropdown-item" href="delete.php?object=file&id='.$file_id.'"><i class="material-icons">delete</i>Delete</a>';
+            $restricted = '<span class="dropdown-item badge badge-warning"><i class="material-icons">lock</i> Restricted</span>';
 
+
+            // === SECURITY CHECK === :
+            // Check if the file is yours:
+            if ($current_user_id == $file_author_id){
+
+                // You can do whatever to your own shit!
+
+
+            // Check if file is someone else's:
+            } elseif($current_user_id != $file_author_id) {
+
+                // Root administrators:
+                if ($current_user == $root){
+
+                    // Unlimited access!
+
+
+                // Administrators:
+                } elseif ($current_user == $admin){
+
+                    // Unlimited access!
+
+
+                // Moderators:
+                } elseif ($current_user == $mod){
+
+                    // Moderators can download other's files:
+                    $btn_delete = '';
+
+
+                    // Regular users:
+                } elseif ($current_user == $user){
+
+                    // Moderators can download other's files:
+                    $btn_delete = '';
+
+                }
+
+            }
 
 
             // === Populating the table rows ===
@@ -724,53 +804,16 @@ function populate_file_table($number_of_rows, $order_by, $asc_desc){
 
             // Operation:
             echo $table_col_start;
-            // Root and Administrator can CRUD all files:
-            if ( $session_user_level == $root || $session_user_level == $admin ) {
-
-                echo '
-                <div class="dropdown">
-                  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            echo '
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Manage
-                  </button>
-                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    '.$btn_download.'<div class="dropdown-divider"></div>'.$btn_delete.'
-                  </div>
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    '.$btn_download.$btn_delete.'
                 </div>
-                ';
-
-            }
-            // Moderators can CRUD own files only:
-            if ( $session_user_level == $mod && $session_user_id == $file_author_id ) {
-
-                echo '
-                <div class="dropdown">
-                  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Manage
-                  </button>
-                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    '.$btn_download.'<div class="dropdown-divider"></div>'.$btn_delete.'
-                  </div>
-                </div>
-                ';
-
-            } elseif ( $session_user_level == $mod && $session_user_id !== $file_author_id ) {
-
-                echo '
-                <div class="dropdown">
-                  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Manage
-                  </button>
-                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    '.$btn_download.'
-                  </div>
-                </div>
-                ';
-
-            }
-            // Users can edit own user only:
-            if ( $session_user_level == $user ) {
-                echo '<span class="badge badge-secondary">Restricted</span>';
-            }
+            </div>
+            ';
             echo $table_col_end;
 
 
@@ -1384,6 +1427,8 @@ function populate_category_selection($name, $post_id = 0){
 
 
 
+
+
 function populate_privacy_checkbox($name, $post_id = 0){
 
     global $con;
@@ -1510,19 +1555,36 @@ function populate_user_type_selection($name, $user_id = 0){
     global $con;
 
 
-    // Echo the start of the HTML string:
-    echo '<label for="'.$name.'" class="text-muted">User type:</label><select id="'.$name.'" name="'.$name.'" class="form-control">';
+    // Security wall:
+    $current_user = $_SESSION['user_type'];
+    $root = 1; $admin = 2; $mod = 3; $user = 4;
 
+    if ($current_user == $root){
 
-    // Generate SQL for getting all user types:
-    $user_type_query = "SELECT * FROM User_Type ORDER BY User_Type_ID DESC";
+        // Generate SQL for getting all user types:
+        $user_type_query = "SELECT * FROM User_Type ORDER BY User_Type_ID DESC";
+
+    } elseif ($current_user == $admin){
+
+        // Generate SQL for getting all user types:
+        $user_type_query = "SELECT * FROM User_Type WHERE User_Type_ID > 1 ORDER BY User_Type_ID DESC";
+
+    } elseif ($current_user == $mod || $current_user == $user){
+
+        $readonly = true;
+
+        // Generate SQL for getting user types ranging from Moderators to users:
+        $user_type_query = 'SELECT * FROM User_Type WHERE User_Type_ID = '.$current_user;
+
+    }
 
 
     // Run SQL:
     $user_type_result = mysqli_query($con, $user_type_query);
 
 
-    // Check if user ID is set:
+
+    // Check if user ID parameter is set:
     if ($user_id > 0){
 
         // Get user type ID:
@@ -1533,21 +1595,36 @@ function populate_user_type_selection($name, $user_id = 0){
 
     }
 
+    // Label is echoed regardless:
+    echo '<label for="'.$name.'" class="text-muted">User type:</label>';
 
-    // Output all rows:
-    while ( $row = mysqli_fetch_array($user_type_result) ){
+    // If read-only:
+    if ($readonly === true){
 
-        if ( $row['User_Type_ID'] == $user_type_id ){
-            echo '<option value="' . $row['User_Type_ID'] . '" selected>' . $row['User_Type_Name'] . '</option>';
-        } else {
-            echo '<option value="' . $row['User_Type_ID'] . '">' . $row['User_Type_Name'] . '</option>';
+        $row = mysqli_fetch_array($user_type_result);
+        echo '<input class="form-control" type="text" placeholder="User type" readonly value="'.$row['User_Type_Name'].'">';
+        echo '<input class="form-control" type="hidden" id="'.$name.'" name="'.$name.'" placeholder="User type" readonly value="'.$row['User_Type_ID'].'">';
+
+    } else {
+
+        // Echo the start of the HTML string:
+        echo '<select id="'.$name.'" name="'.$name.'" class="form-control">';
+
+        // Output all rows:
+        while ( $row = mysqli_fetch_array($user_type_result) ){
+
+            if ( $row['User_Type_ID'] == $user_type_id ){
+                echo '<option value="' . $row['User_Type_ID'] . '" selected>' . $row['User_Type_Name'] . '</option>';
+            } else {
+                echo '<option value="' . $row['User_Type_ID'] . '">' . $row['User_Type_Name'] . '</option>';
+            }
+
         }
 
+        // Echo the end of the HTML string:
+        echo '</select>';
+
     }
-
-
-    // Echo the end of the HTML string:
-    echo '</select>';
 
 
 }
@@ -1595,9 +1672,9 @@ function populate_user_company_selection($name, $user_id = 0){
     while ( $row = mysqli_fetch_array($user_company_result) ){
 
         if ( $row['Company_ID'] == $user_company_id ){
-            echo '<option value="' . $row['User_Company_ID'] . '" selected>' . $row['Company_Name'] . '</option>';
+            echo '<option value="' . $row['Company_ID'] . '" selected>' . $row['Company_Name'] . '</option>';
         } else {
-            echo '<option value="' . $row['User_Company_ID'] . '">' . $row['Company_Name'] . '</option>';
+            echo '<option value="' . $row['Company_ID'] . '">' . $row['Company_Name'] . '</option>';
         }
 
     }
@@ -1606,5 +1683,128 @@ function populate_user_company_selection($name, $user_id = 0){
     // Echo the end of the HTML string:
     echo '</select>';
 
+
+}
+
+
+
+
+
+
+
+
+
+
+function user_update($user_id,$submit_name){
+
+    global $con;
+
+    // Check if user update has been submitted:
+    if (isset($_POST[$submit_name])){
+
+
+        // Get current user's level:
+        $current_user_id = $_SESSION['user_id'];
+        $current_user = $_SESSION['user_type'];
+
+
+        // Define levels:
+        $root   = 1;
+        $admin  = 2;
+        $mod    = 3;
+        $user   = 4;
+
+
+        // Get data from submit form:
+        $user_fname     = $_POST['fname'];
+        $user_lname     = $_POST['lname'];
+        $user_password  = $_POST['password'];
+        $user_type      = $_POST['type'];
+        $user_email     = $_POST['email'];
+        $user_phone     = $_POST['phone'];
+        $user_company   = $_POST['company'];
+
+
+        // Prepare password and email:
+        if (strlen($_POST['password']) > 0){
+            echo $user_password;
+            $user_password = md5($user_password);
+        }
+        $user_email = filter_var($user_email, FILTER_SANITIZE_EMAIL);
+
+
+        // Get existing data:
+        $sql_user_update =  'UPDATE User_Data SET ';
+        $sql_user_update .= 'User_Name_First    = "'.$user_fname.'", ';
+        $sql_user_update .= 'User_Name_Last     = "'.$user_lname.'", ';
+        $sql_user_update .= 'User_Password      = "'.$user_password.'", ';
+        $sql_user_update .= 'User_Type          = '.$user_type.', ';
+        $sql_user_update .= 'User_Email         = "'.$user_email.'", ';
+        $sql_user_update .= 'User_Phone         = "'.$user_phone.'", ';
+        $sql_user_update .= 'User_Company       = '.$user_company.' ';
+        $sql_user_update .= 'WHERE User_ID      = '.$user_id.';';
+
+        echo $sql_user_update;
+
+
+        // Security wall:
+        // TODO: Fix this shitty security wall!!
+
+        // Check if user is you:
+        if ($current_user_id == $user_id){
+
+            // Update is allowed:
+            mysqli_query($con,$sql_user_update);
+
+        // Check if user is someone else:
+        } elseif ($current_user_id != $user_id){
+
+            // Root:
+            if ($current_user == $root){
+
+                // Update is allowed:
+                mysqli_query($con,$sql_user_update);
+
+            // Administrator:
+            } elseif ($current_user == $admin){
+
+                if ($user_type != $root){
+                    // Update is allowed:
+                    mysqli_query($con,$sql_user_update);
+                }
+
+            // Moderator:
+            } elseif ($current_user == $mod){
+
+                // Hell no!
+
+            } elseif ($current_user = $user){
+
+                // Hell no!
+
+            }
+
+        }
+
+
+        // Check if user was successfully updated:
+        if (mysqli_affected_rows($con) == 1){
+
+            // Injection was successful:
+            $status_db = 1;
+
+        } else {
+
+            // Injection was unsuccessful:
+            $status_db = 0;
+
+        }
+
+//        echo ' Status: '.mysqli_affected_rows($con);
+
+        // Redirect to
+        header('Refresh: 0; URL=user_list.php?updated=user&status='.$status_db);
+
+    }
 
 }

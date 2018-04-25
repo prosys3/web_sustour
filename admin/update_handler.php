@@ -38,5 +38,18 @@ if (isset($_GET['object'])){
 
 
     // TODO: Create handler for user:
+    if ($_GET['object'] == 'user'){
+
+        // The object is a user:
+        $object = 'user';
+
+        // Get variables from URL:
+        $user_id = $_GET['id'];
+        $submit_name = $_GET['name'];
+
+        // This function redirects automatically:
+        user_update($user_id,$submit_name);
+
+    }
 
 }
