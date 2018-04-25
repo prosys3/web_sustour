@@ -43,6 +43,8 @@ DROP TABLE IF EXISTS File;
 DROP TABLE IF EXISTS File_Type;
 DROP TABLE IF EXISTS Post;
 DROP TABLE IF EXISTS User_Data;
+DROP TABLE IF EXISTS Event;
+DROP TABLE IF EXISTS Activities;
 DROP TABLE IF EXISTS Company;
 DROP TABLE IF EXISTS User_Type;
 DROP TABLE IF EXISTS Category;
@@ -130,6 +132,28 @@ CREATE TABLE User_Data (
 
 
 
+-- EVENT
+CREATE TABLE Event (
+
+Event_ID		TINYINT(3) 			AUTO_INCREMENT NOT NULL,
+Event_Name		VARCHAR(30) 		NOT NULL,
+Event_Location 	VARCHAR(50) 		NOT NULL,
+Event_Start		Time				NOT NULL,
+Event_End 		Time				NOT NULL,
+Event_Date 		DATE 				NOT NULL,
+Event_Text		VARCHAR(255) 		NOT NULL,
+Event_Company   TINYINT(3) 			NOT NULL,
+Event_Author    TINYINT(3) 			NOT NULL,
+
+CONSTRAINT EventID_PK 				PRIMARY KEY (Event_ID),
+CONSTRAINT Event_EventCompany_FK 	FOREIGN KEY (Event_Company) REFERENCES Company(Company_ID),
+CONSTRAINT Event_EventAuthor_FK 	FOREIGN KEY (Event_Author) REFERENCES User_Data(User_ID)
+
+) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+
+
+
 -- FILE TYPE:
 CREATE TABLE File_Type (
 
@@ -160,13 +184,13 @@ CREATE TABLE Category (
 -- POST:
 CREATE TABLE Post (
 
-	Post_ID 				      TINYINT(4) 		AUTO_INCREMENT NOT NULL,
+	Post_ID 				    TINYINT(4) 		AUTO_INCREMENT NOT NULL,
 	Post_Title 				    VARCHAR(60) 	NOT NULL,
-	Post_Image_Featured 	VARCHAR(100),
+	Post_Image_Featured 		VARCHAR(100),
 	Post_Text 				    TEXT 			    NOT NULL,
-	Post_Date_Created 		DATE 			    NOT NULL,
+	Post_Date_Created 			DATE 			    NOT NULL,
 	Post_Author 			    TINYINT(3) 		NOT NULL,
-	Post_Category 			  TINYINT(3) 		DEFAULT 1,
+	Post_Category 			  	TINYINT(3) 		DEFAULT 1,
 	Post_Private			    TINYINT(1) 		DEFAULT 1,
 
 	CONSTRAINT PostID_PK PRIMARY KEY(Post_ID),
@@ -174,6 +198,26 @@ CREATE TABLE Post (
 	CONSTRAINT Post_CategoryID_FK FOREIGN KEY(Post_Category) REFERENCES Category(Category_ID)
 
 )	ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+
+
+-- ACTIVITIES
+
+CREATE TABLE Activities (
+
+Activities_ID 			TINYINT(4) 		AUTO_INCREMENT NOT NULL,
+Activities_Title		VARCHAR(50) 	NOT NULL,
+Activities_Text			TEXT 			NOT NULL,
+Activities_Created 		DATE 			NOT NULL,
+Activities_Author   TINYINT(3) NOT NULL,
+
+CONSTRAINT ActivitiesID_PK PRIMARY KEY (Activities_ID),
+CONSTRAINT Activities_UserID_FK FOREIGN KEY (Activities_Author) REFERENCES User_Data(User_ID)
+
+
+
+
+) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 
 
@@ -349,3 +393,24 @@ INSERT INTO Post (Post_Title, Post_Image_Featured, Post_Text, Post_Date_Created,
 ('Example post 2', 'https://zcodeio/sites/default/files/news/boostrap_img.png', '<h1>Main title</h1><h2>Subtitle</h2><p>This is an example paragraph</p>', (CURDATE() + 1),    2, 1, 1),
 ('Example post 3', 'https://zcodeio/sites/default/files/news/boostrap_img.png', '<h1>Main title</h1><h2>Subtitle</h2><p>This is an example paragraph</p>', (CURDATE() + 2),    3, 1, 0),
 ('Example post 4', 'https://zcodeio/sites/default/files/news/boostrap_img.png', '<h1>Main title</h1><h2>Subtitle</h2><p>This is an example paragraph</p>', (CURDATE() + 3),    4, 1, 0);
+
+
+
+
+-- INSERT DEFAULT POSTS:
+INSERT INTO Activities (Activities_Title, Activities_Text, Activities_Created, Activities_Author) VALUES
+('Student mobilities between all three countries', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', CURDATE(), 1 ),
+('Staff mobilites between all three countries', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', CURDATE() + 1, 1),
+('Summer school in Norway 2016', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', CURDATE() + 2, 1),
+('Summer schhol in Kyrgyzstan 2017', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', CURDATE(), 1),
+('Summer school in Georgia 2018', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', CURDATE() + 2, 1),
+('Course development', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', CURDATE(), 1);
+
+-- INSERT DEFAULT EVENTS
+INSERT INTO event(Event_ID, Event_Name, Event_Location, Event_Start, Event_End, Event_Date, Event_Company, Event_Author, Event_Text)VALUES 
+(1, 'R&aringnerydding', 'B&oslash', '14:00' , '18:00' , '2018-06-07', 1, 1, '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>'),
+(2, 'Suicide 101: Allahu Akbar', 'The Cave', '17:00' , '23:00' , '2018-07-07', 2, 2, '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit </br> Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>'),
+(3, 'Curry bonanza', 'Somewhere in curryland', '09:00' , '12:00' , '2018-08-07', 3, 3, '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>'),
+(4, 'Meme-fest', 'Urinkjole-garden', '02:00' , '08:00' , '2018-09-07', 3, 3, '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>'),
+(5, 'Mohammed - a caricature', 'Somewhere in the desert', '01:00' , '23:00' , '2018-10-07', 2, 2, '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit </br> Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>'),
+(6, 'B&aringlbrenning til minne om Naboen', 'B&oslash', '20:00' , '23:00' , '2018-11-07', 1, 1, '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>');
