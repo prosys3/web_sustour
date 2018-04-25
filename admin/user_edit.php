@@ -92,7 +92,7 @@ $user_company_id = $user_array['User_Company'];
                                 <!-- User phone: -->
                                 <div class="form-group">
                                     <label for="phone" class="text-muted">Phone:</label>
-                                    <input type="tel" id="phone" name="phone" title="Phone numner must be 8 digits (0-9)." pattern="[0-9]{8}" class="form-control" placeholder="Phone number" required value="<?php echo $user_phone?>">
+                                    <input type="tel" id="phone" name="phone" class="form-control" placeholder="Phone number" required value="<?php echo $user_phone?>">
                                 </div>
 
 

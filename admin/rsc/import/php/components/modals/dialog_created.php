@@ -196,7 +196,7 @@ if ( isset($_GET['created']) ){
 
 
     // Check if request is for a user:
-    elseif ($_GET['created'] == 'user'){
+    elseif ($_GET['deleted'] == 'user'){
 
         // A post has been deleted:
         $object = 'user';
@@ -205,27 +205,27 @@ if ( isset($_GET['created']) ){
         $status_code = $_GET['status'];
 
         // Generate status feedback in accordance with status codes:
-        if ( $status_code == '1' ){
+        if ( $status_code == 'n1' ){
 
             // post created from DB:
             $status_adjective = 'successfully';
-            $status_db_word = 'person created in database.';
+            $status_db_word = 'person deleted from database.';
             $status_db_color = 'text-success';
-            $status_file_word = 'user have no files.';
+            $status_file_word = 'there were no files to delete.';
             $status_file_color = 'text-muted';
             $title_text = 'Success';
             $title_icon = 'done';
             $title_color = 'text-success';
 
-        } elseif ( $status_code == '0' ){
+        } elseif ( $status_code == 'n0' ){
 
             // post not created from DB:
             $status_adjective = 'unsuccessfully';
-            $status_db_word = 'person not created in database.';
+            $status_db_word = 'person not deleted from database.';
             $status_db_color = 'text-danger';
-            $status_file_word = 'user have no files.';
+            $status_file_word = 'there were no files to delete.';
             $status_file_color = 'text-muted';
-            $title_text = 'Nothing created';
+            $title_text = 'Nothing deleted';
             $title_icon = 'error';
             $title_color = 'text-danger';
 

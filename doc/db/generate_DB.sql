@@ -407,7 +407,7 @@ INSERT INTO Activities (Activities_Title, Activities_Text, Activities_Created, A
 ('Course development', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', CURDATE(), 1);
 
 -- INSERT DEFAULT EVENTS
-INSERT INTO Event(Event_ID, Event_Name, Event_Location, Event_Start, Event_End, Event_Date, Event_Company, Event_Author, Event_Text)VALUES
+INSERT INTO event(Event_ID, Event_Name, Event_Location, Event_Start, Event_End, Event_Date, Event_Company, Event_Author, Event_Text)VALUES 
 (1, 'R&aringnerydding', 'B&oslash', '14:00' , '18:00' , '2018-06-07', 1, 1, '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>'),
 (2, 'Suicide 101: Allahu Akbar', 'The Cave', '17:00' , '23:00' , '2018-07-07', 2, 2, '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit </br> Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>'),
 (3, 'Curry bonanza', 'Somewhere in curryland', '09:00' , '12:00' , '2018-08-07', 3, 3, '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>'),

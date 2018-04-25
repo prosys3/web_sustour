@@ -34,18 +34,4 @@ if (isset($_GET['object'])){
 
     }
 
-    // Check if content is user:
-    if ($_GET['object'] == 'user'){
-
-        // The object to create is a user:
-        $object = 'user';
-
-        // Get variables from url:
-        $name_attribute = $_GET['name'];
-
-        // This function outputs a status code:
-        create_user($name_attribute);
-
-    }
-
 }

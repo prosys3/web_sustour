@@ -169,7 +169,7 @@ if ( isset($_GET['deleted']) ){
         $status_code = $_GET['status'];
 
         // Generate status feedback in accordance with status codes:
-        if ( $status_code == '1' ){
+        if ( $status_code == 'n1' ){
 
             // Post deleted from DB:
             $status_adjective = 'successfully';
@@ -181,7 +181,7 @@ if ( isset($_GET['deleted']) ){
             $title_icon = 'done';
             $title_color = 'text-success';
 
-        } elseif ( $status_code == '0' ){
+        } elseif ( $status_code == 'n0' ){
 
             // Post not deleted from DB:
             $status_adjective = 'unsuccessfully';
