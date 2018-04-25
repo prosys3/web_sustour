@@ -242,7 +242,7 @@ function populate_post_table($number_of_rows, $order_by, $asc_desc){
     $result = mysqli_query($con, $sql);
 
     // Check if any posts were received:
-    if ( $result != null ){
+    if ( $result->num_rows > 0 ){
 
         // Populate table:
         echo $table_start;
@@ -361,13 +361,18 @@ function populate_post_table($number_of_rows, $order_by, $asc_desc){
 
         echo $table_end;
 
-    } elseif ( $result == null ) {
+    } elseif ( $result->num_rows < 1 ) {
 
         // No posts are available:
         alert("You have no posts", "warning");
     }
 
 }
+
+
+
+
+
 
 
 
@@ -540,6 +545,9 @@ function populate_activities_table($number_of_rows, $order_by, $asc_desc){
     }
 
 }
+
+
+
 
 
 
@@ -808,16 +816,14 @@ function populate_file_table($number_of_rows, $order_by, $asc_desc){
 
 
     // Check whether there is anything to show:
-    $sql = 'SELECT COUNT(*) AS Row_Count FROM File';
+    $sql = 'SELECT * FROM File';
     $result = mysqli_query($con,$sql);
-    $row = mysqli_fetch_array($result);
-    $count = $row['Row_Count'];
 
 
 
 
     // Create SQL query in accordance with user type:
-    if ( $count > 0 ){
+    if ( $result->num_rows > 0 ){
 
         if ( $current_user == $root || $current_user == $admin || $current_user == $mod ) {
             // Only moderators and above can see this table.
@@ -1002,7 +1008,7 @@ function populate_file_table($number_of_rows, $order_by, $asc_desc){
 
 
     // There are no files in the database:
-    } else {
+    } elseif ($result->num_rows < 1) {
 
         alert('There are no files in the database.', 'info');
 
@@ -1012,7 +1018,15 @@ function populate_file_table($number_of_rows, $order_by, $asc_desc){
 
 
 
-  // Populate the event table
+
+
+
+
+
+
+
+
+// Populate the event table
 function populate_event_table($number_of_rows, $order_by, $asc_desc){
 
     global $con;
@@ -1184,6 +1198,10 @@ function populate_event_table($number_of_rows, $order_by, $asc_desc){
     }
 
 }
+
+
+
+
 
 
 
@@ -2092,8 +2110,7 @@ function user_update($user_id,$submit_name){
         echo $sql_user_update;
 
 
-        // Security wall:
-        // TODO: Fix this shitty security wall!!
+        // === SECURITY WALL === :
 
         // Check if user is you:
         if ($current_user_id == $user_id){
@@ -2123,7 +2140,7 @@ function user_update($user_id,$submit_name){
 
                 // Hell no!
 
-            } elseif ($current_user = $user){
+            } elseif ($current_user == $user){
 
                 // Hell no!
 
@@ -2149,6 +2166,70 @@ function user_update($user_id,$submit_name){
 
         // Redirect to
         header('Refresh: 0; URL=user_list.php?updated=user&status='.$status_db);
+
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+// Create user:
+function create_user($name_attribute){
+
+    global $con;
+
+    if (isset($_POST[$name_attribute])){
+
+        // Build SQL statement:
+        $sql_create =   'INSERT INTO User_Data (';
+        $sql_create .=  'User_Name_First, ';
+        $sql_create .=  'User_Name_Last, ';
+        $sql_create .=  'User_Password, ';
+        $sql_create .=  'User_Type, ';
+        $sql_create .=  'User_Email, ';
+        $sql_create .=  'User_Phone, ';
+        $sql_create .=  'User_Company) ';
+        $sql_create .=  'VALUES (';
+        $sql_create .=  '"'.mysqli_real_escape_string($con,$_POST['fname']).'", ';
+        $sql_create .=  '"'.mysqli_real_escape_string($con,$_POST['lname']).'", ';
+        $sql_create .=  '"'.md5(mysqli_real_escape_string($con,$_POST['password'])).'", ';
+        $sql_create .=  '"'.mysqli_real_escape_string($con,$_POST['type']).'", ';
+        $sql_create .=  '"'.mysqli_real_escape_string($con,filter_var($_POST['email'], FILTER_SANITIZE_EMAIL)).'", ';
+        $sql_create .=  '"'.mysqli_real_escape_string($con,$_POST['phone']).'", ';
+        $sql_create .=  '"'.mysqli_real_escape_string($con,$_POST['company']).'");';
+
+
+        // Echo statement for debug purposes:
+//        echo $sql_create;
+
+
+        // Inject data into DB:
+        mysqli_query($con,$sql_create);
+
+
+        // Check if user creation was successful:
+        if (mysqli_affected_rows($con) == 1){
+
+            // Success:
+            $status_db = 1;
+
+        } elseif (mysqli_affected_rows($con) != 1){
+
+            // Error:
+            $status_db = 0;
+
+        }
+
+
+        // Redirect to user list page:
+        header('Refresh: 0; URL=user_list.php?created=user&status='.$status_db);
 
     }
 
