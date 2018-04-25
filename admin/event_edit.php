@@ -81,29 +81,34 @@
                                  <!-- Event location: -->
                                 <div class="form-group">
                                     <label>Event location</label>
-                                    <input type="text" name="title" class="form-control form-text" placeholder="Page Title" value="<?php echo $event_title;?>">
+                                    <input type="text" name="location" class="form-control form-text" placeholder="Page Title" value="<?php echo $event_loc;?>">
                                 </div>
 
                                  <!-- Event Date: -->
                                 <div class="form-group">
                                     <label>Event Date</label>
-                                    <input type="date" name="title" class="form-control form-text" placeholder="Page Title" value="<?php echo $event_date;?>">
+                                    <input type="date" name="date" class="form-control form-text" placeholder="Page Title" value="<?php echo $event_date;?>">
                                 </div>
 
                                  <!-- Event Time: -->
                                 <div class="form-group">
                                     <label>Event Time</label>
-                                    <div class="form-inline">
-                                    <input type="time" name="title" class="form-control form-inline" placeholder="Page Title" value="<?php echo $event_start;?>">
-                                    <label> to </label>
-                                    <input type="time" name="title" class="form-control form-inline" placeholder="Page Title" value="<?php echo $event_end;?>">
-                                </div>
+                                    <div class="form-row">
+                                         <label>From:</label>
+                                        <div class="col">
+                                         <input type="time" name="starttime" class="form-control form-inline" placeholder="Page Title" value="<?php echo $event_start;?>">
+                                       </div>
+                                         <label>To:</label>
+                                       <div class="col">
+                                        <input type="time" name="endtime" class="form-control form-inline" placeholder="Page Title" value="<?php echo $event_end;?>">
+                                       </div>
+                                    </div>
                                 </div>
 
 
                                 <!-- Post text: -->
                                 <div class="form-group mt-4">
-                                    <textarea name="editor1" class="form-control" placeholder="Page Body"><?php echo $event_text;?></textarea>
+                                    <textarea name="eventtext" class="form-control" placeholder="Page Body"><?php echo $event_text;?></textarea>
                                 </div>
 
 
@@ -121,7 +126,7 @@
 
                                 
                                 <div class="form-group mt-5">
-                                    <button type="submit" class="btn btn-success" name="submit">Update post</button>
+                                    <button type="submit" class="btn btn-success" name="submit">Update event</button>
                                 </div>
 
 

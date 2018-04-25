@@ -52,4 +52,19 @@ if (isset($_GET['object'])){
 
     }
 
+        // Check if object is event:
+    if ($_GET['object'] == 'event'){
+
+        // The object to create is a event:
+        $object = 'event';
+
+        // Get variables from url:
+        $event_id = $_GET['id'];
+        $submit_name = $_GET['name'];
+
+        // This function redirects automatically:
+        event_update($event_id,$submit_name);
+
+    }
+
 }

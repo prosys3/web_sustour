@@ -2202,3 +2202,80 @@ function user_update($user_id,$submit_name){
     }
 
 }
+
+
+function event_update($event_id, $submit_name){
+
+    // Set DB connection global;
+    global $con;
+
+    // Check if a event has been submitted:
+    if (isset($_POST[$submit_name])){
+
+        // Assign event variables:
+        $event_title = $_POST['title'];
+        $event_text = $_POST['eventtext'];
+        $event_date = $_POST['date'];
+        $event_start = $_POST['starttime'];
+        $event_end = $_POST['endtime'];
+        $event_loc = $_POST['location'];
+        $event_company = $_POST['company'];
+       
+
+
+
+            $sql =      'UPDATE Event SET ';
+            $sql .=     'Event_Name = "'.$event_title.'", ';
+            $sql .=     'Event_Text = "'.$event_text.'", ';
+            $sql .=     'Event_Date = "'.$event_date.'", ';
+            $sql .=     'Event_Start = "'.$event_start.'", ';
+            $sql .=     'Event_End = "'.$event_end.'", ';
+            $sql .=     'Event_Location = "'.$event_loc.'", ';
+            $sql .=     'Event_Company = '.$event_company.' ';
+            $sql .=     'WHERE Event_ID = '.$event_id.';';
+
+            mysqli_query($con,$sql);
+
+
+
+        // Check if event was created in DB:
+        $sql_exist =    'SELECT COUNT(*) AS Existence FROM Event WHERE ';
+        $sql_exist .=   'Event_Name = "'.$event_title.'" AND ';
+        $sql_exist .=   'Event_Text = "'.$event_text.'" AND ';
+        $sql_exist .=   'Event_Date = "'.$event_date.'" AND ';
+        $sql_exist .=   'Event_Start = "'.$event_start.'" AND ';
+        $sql_exist .=   'Event_End = "'.$event_end.'" AND ';
+        $sql_exist .=   'Event_Location = "'.$event_loc.'" AND ';
+        $sql_exist .=   'Event_Company = "'.$event_company.'";';
+        $result = mysqli_query($con,$sql_exist);
+        $row = mysqli_fetch_array($result);
+        if ( $row['Existence'] == 1 ){
+
+            // event was created in DB:
+            $status_db = 1;
+
+        } elseif ( $row['Existence'] == 0 || $row['Existence'] == null ){
+
+            // event was not created in DB:
+            $status_db = 0;
+
+        }
+
+
+        // Debug:
+        $line = '<hr>';
+        echo '<h1>Receipt</h1><hr>';
+        echo $event_id.$line;
+        echo $event_title.$line;
+        echo htmlspecialchars($event_text).$line;
+        echo 'False'.$line; 
+        echo htmlspecialchars($sql_exist).$line;
+
+
+        // Redirect with status codes:
+        header('Refresh: 3; URL=event_list.php?updated=event&status='.$status_db);
+
+
+    }
+
+}
