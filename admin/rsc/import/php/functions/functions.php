@@ -1940,11 +1940,15 @@ function populate_user_type_selection($name, $user_id = 0){
     echo '<label for="'.$name.'" class="text-muted">User type:</label>';
 
     // If read-only:
-    if ($readonly === true){
+    if ($current_user == $mod || $current_user == $user){
 
-        $row = mysqli_fetch_array($user_type_result);
-        echo '<input class="form-control" type="text" placeholder="User type" readonly value="'.$row['User_Type_Name'].'">';
-        echo '<input class="form-control" type="hidden" id="'.$name.'" name="'.$name.'" placeholder="User type" readonly value="'.$row['User_Type_ID'].'">';
+        if ($readonly === true){
+
+            $row = mysqli_fetch_array($user_type_result);
+            echo '<input class="form-control" type="text" placeholder="User type" readonly value="'.$row['User_Type_Name'].'">';
+            echo '<input class="form-control" type="hidden" id="'.$name.'" name="'.$name.'" placeholder="User type" readonly value="'.$row['User_Type_ID'].'">';
+
+        }
 
     } else {
 
