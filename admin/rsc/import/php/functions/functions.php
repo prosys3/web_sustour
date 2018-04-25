@@ -2008,7 +2008,7 @@ function populate_user_company_selection($name, $user_id = 0){
 
 
     // Echo the start of the HTML string:
-    echo '<label for="'.$name.'" class="text-muted">User type:</label><select id="'.$name.'" name="'.$name.'" class="form-control">';
+    echo '<label for="'.$name.'" class="text-muted">User company:</label><select id="'.$name.'" name="'.$name.'" class="form-control">';
 
 
     // Generate SQL for getting all user types:
@@ -2035,6 +2035,55 @@ function populate_user_company_selection($name, $user_id = 0){
     while ( $row = mysqli_fetch_array($user_company_result) ){
 
         if ( $row['Company_ID'] == $user_company_id ){
+            echo '<option value="' . $row['Company_ID'] . '" selected>' . $row['Company_Name'] . '</option>';
+        } else {
+            echo '<option value="' . $row['Company_ID'] . '">' . $row['Company_Name'] . '</option>';
+        }
+
+    }
+
+
+    // Echo the end of the HTML string:
+    echo '</select>';
+
+
+}
+
+
+function populate_event_company_selection($name, $event_id = 0){
+
+
+    global $con;
+
+
+    // Echo the start of the HTML string:
+    echo '<label for="'.$name.'" class="text-muted">Event company:</label><select id="'.$name.'" name="'.$name.'" class="form-control">';
+
+
+    // Generate SQL for getting all Company:
+    $event_company_query = "SELECT * FROM Company ORDER BY Company_ID DESC";
+
+
+    // Run SQL:
+    $event_company_result = mysqli_query($con, $event_company_query);
+
+
+    // Check if event ID is set:
+    if ($event_id > 0){
+
+        // Get user type ID:
+        $event_query = 'SELECT Event_Company FROM Event WHERE Event_ID = '.$event_id;
+        $event_result = mysqli_query($con,$event_query);
+        $event_array = mysqli_fetch_array($event_result);
+        $event_company_id = $event_array['Event_Company'];
+
+    }
+
+
+    // Output all rows:
+    while ( $row = mysqli_fetch_array($event_company_result) ){
+
+        if ( $row['Company_ID'] == $event_company_id ){
             echo '<option value="' . $row['Company_ID'] . '" selected>' . $row['Company_Name'] . '</option>';
         } else {
             echo '<option value="' . $row['Company_ID'] . '">' . $row['Company_Name'] . '</option>';
