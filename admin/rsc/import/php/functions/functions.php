@@ -2470,5 +2470,72 @@ function publish_event($name_attribute)
         }
     }
 
+function activities_update($activities_id, $submit_name){
+
+    // Set DB connection global;
+    global $con;
+
+    // Check if a event has been submitted:
+    if (isset($_POST[$submit_name])){
+
+        // Assign event variables:
+        $activities_title = $_POST['title'];
+        $activities_text = $_POST['activitiestext'];
+        $activities_author = $_SESSION['user_id'];
+
+
+
+
+
+        $sql =      'UPDATE Activities SET ';
+        $sql .=     'Activities_Title = "'.$activities_title.'", ';
+        $sql .=     'Activities_Text = "'.$activities_text.'", ';
+        $sql .=     'Activities_Created = CURDATE(), ';
+        $sql .=     'Activities_Author = "'.$activities_author.'" ';
+        $sql .=     'WHERE Activities_ID = '.$activities_id.';';
+
+        mysqli_query($con,$sql);
+
+
+
+        // Check if event was created in DB:
+        $sql_exist =    'SELECT COUNT(*) AS Existence FROM Activities WHERE ';
+        $sql_exist .=   'Activities_Title = "'.$activities_title.'" AND ';
+        $sql_exist .=   'Activities_Text = "'.$activities_text.'"';
+
+        $result = mysqli_query($con,$sql_exist);
+        $row = mysqli_fetch_array($result);
+        if ( $row['Existence'] == 1 ){
+
+            // event was created in DB:
+            $status_db = 1;
+
+        } elseif ( $row['Existence'] == 0 || $row['Existence'] == null ){
+
+            // event was not created in DB:
+            $status_db = 0;
+
+        }
+
+
+        // Debug:
+        $line = '<hr>';
+        echo '<h1>Receipt</h1><hr>';
+        echo $activities_id.$line;
+        echo $activities_title.$line;
+        echo htmlspecialchars($activities_text).$line;
+        echo 'False'.$line;
+        echo htmlspecialchars($sql).$line;
+        echo htmlspecialchars($sql_exist).$line;
+
+
+        // Redirect with status codes:
+       header('Refresh: 0; URL=activities_list.php?updated=activities&status='.$status_db);
+
+
+    }
+
+}
+
 
 
