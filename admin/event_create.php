@@ -22,24 +22,6 @@
 ##################################################################################
 -->
 
-<?php
-
-    // Preliminary data:
-    $event_id = $_GET['id'];
-    $sql = "SELECT * FROM Event WHERE Event_ID = ".$event_id;
-    $result = mysqli_query($con, $sql);
-    $event_row = mysqli_fetch_array($result);
-
-    $event_title = $event_row['Event_Name'];
-    $event_text  = $event_row['Event_Text'];
-    $event_loc  = $event_row['Event_Location'];
-    $event_start  = $event_row['Event_Start'];
-    $event_end  = $event_row['Event_End'];
-    $event_date  = $event_row['Event_Date'];
-    $event_company  = $event_row['Event_Company'];
-
-?>
-
 <main>
 
     <section class="bg-dark py-5">
@@ -65,29 +47,38 @@
                         <li class="list-group-item text-light bg-dark">Event editor</li>
                         <li class="list-group-item">
 
-                            <form method="POST" action="update_handler.php?object=event&id=<?php echo $event_id?>&name=submit" enctype="multipart/form-data">
+                            <form method="POST" action="create_handler.php?object=event&name=submit" enctype="multipart/form-data">
 
                                 <!-- Event title: -->
                                 <div class="form-group">
                                     <label>Event name</label>
-                                    <input type="text" name="title" class="form-control form-text" placeholder="Page Title" value="<?php echo $event_title;?>">
+                                    <input type="text" name="title" class="form-control form-text" placeholder="What's the name of your event?">
                                 </div>
 
-                                 <!-- User Company: -->
+                                 <!-- Event Company: -->
                                 <div class="form-group">
-                                    <?php populate_event_company_selection('company',$event_id) ?>
+                                    <label for="inputCompany">Event company</label>
+                                    <select id="inputCompany" name="company" class="form-control">
+                                        <?php
+                                        $sql = "SELECT * FROM Company ORDER BY Company_ID ASC";
+                                        $result = mysqli_query($con, $sql);
+                                        while ( $row = mysqli_fetch_array($result) ){
+                                        echo '<option value="' . $row['Company_ID'] . '">' . $row['Company_Name'] . '</option>';
+                                        }
+                                        ?>
+                                    </select>
                                 </div>
 
                                  <!-- Event location: -->
                                 <div class="form-group">
                                     <label>Event location</label>
-                                    <input type="text" name="location" class="form-control form-text" placeholder="Page Title" value="<?php echo $event_loc;?>">
+                                    <input type="text" name="location" class="form-control form-text" placeholder="Where does the event take place?">
                                 </div>
 
                                  <!-- Event Date: -->
                                 <div class="form-group">
                                     <label>Event Date</label>
-                                    <input type="date" name="date" class="form-control form-text" placeholder="Page Title" value="<?php echo $event_date;?>">
+                                    <input type="date" name="date" class="form-control form-text" placeholder="What date is the event?">
                                 </div>
 
                                  <!-- Event Time: -->
@@ -96,11 +87,11 @@
                                     <div class="form-row">
                                          <label>From:</label>
                                         <div class="col">
-                                         <input type="time" name="starttime" class="form-control form-inline" placeholder="Page Title" value="<?php echo $event_start;?>">
+                                         <input type="time" name="starttime" class="form-control form-inline" placeholder="What time does the event start?">
                                        </div>
                                          <label>To:</label>
                                        <div class="col">
-                                        <input type="time" name="endtime" class="form-control form-inline" placeholder="Page Title" value="<?php echo $event_end;?>">
+                                        <input type="time" name="endtime" class="form-control form-inline" placeholder="What time does the event end?">
                                        </div>
                                     </div>
                                 </div>
@@ -109,12 +100,25 @@
                                 <!-- Post text: -->
                                 <div class="form-group mt-4">
                                     <label>Event description</label>
-                                    <textarea name="eventtext" class="form-control" placeholder="Page Body"><?php echo $event_text;?></textarea>
+                                    <textarea name="eventtext" class="form-control" placeholder="Give a short description of the event (maximum 255 characters)"></textarea>
                                 </div>
-                                                                                                  
+
+
+                                
+
+
+                               
+
+
+                               
+
+
+                                
+
+
                                 
                                 <div class="form-group mt-5">
-                                    <button type="submit" class="btn btn-success" name="submit">Update event</button>
+                                    <button type="submit" class="btn btn-success" name="submit">Create event</button>
                                 </div>
 
 

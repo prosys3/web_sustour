@@ -2283,6 +2283,7 @@ function create_user($name_attribute){
         header('Refresh: 0; URL=user_list.php?created=user&status='.$status_db);
 
     }
+}
 
 
    
@@ -2362,4 +2363,87 @@ function create_user($name_attribute){
     }
 
 }
+
+function publish_event($name_attribute){
+
+
+    // Set DB connection global;
+    global $con;
+
+
+    // Check if a event has been submitted:
+    if (isset($_POST[$name_attribute])){
+
+        // Assign event variables:
+        $event_title = $_POST['title'];
+        $event_text = $_POST['eventtext'];
+        $event_date = $_POST['date'];
+        $event_start = $_POST['starttime'];
+        $event_end = $_POST['endtime'];
+        $event_loc = $_POST['location'];
+        $event_company = $_POST['company'];
+        $event_author = $_SESSION['user_id'];
+
+
+
+            $sql =      'INSERT INTO Event (Event_Name, Event_Text, Event_Date, 
+                        Event_Start, Event_End, Event_Location, Event_Company, Event_Author)
+                        VALUES ';
+            $sql .=     '("'.$event_title.'", "';
+            $sql .=     $event_text.'", "';
+            $sql .=     $event_date.'", "';
+            $sql .=     $event_start.'", "';
+            $sql .=     $event_end.'", "';
+            $sql .=     $event_loc.'", ';
+            $sql .=     $event_company.', ';
+            $sql .=     $event_author.');';
+            mysqli_query($con,$sql);
+
+
+
+
+
+        // Check if event was created in DB:
+        $sql_exist =    'SELECT COUNT(*) AS Existence FROM Event WHERE ';
+        $sql_exist .=   'Event_Name = "'.$event_title.'" AND ';
+        $sql_exist .=   'Event_Text = "'.$event_text.'" AND ';
+        $sql_exist .=   'Event_Date = "'.$event_date.'" AND ';
+        $sql_exist .=   'Event_Start = "'.$event_start.'" AND ';
+        $sql_exist .=   'Event_End = "'.$event_end.'" AND ';
+        $sql_exist .=   'Event_Location = "'.$event_loc.'" AND ';
+        $sql_exist .=   'Event_Company = "'.$event_company.'";';
+        $result = mysqli_query($con,$sql_exist);
+        $row = mysqli_fetch_array($result);
+        if ( $row['Existence'] == 1 ){
+
+            // event was created in DB:
+            $status_db = 1;
+
+        } elseif ( $row['Existence'] == 0 || $row['Existence'] == null ){
+
+            // event was not created in DB:
+            $status_db = 0;
+
+        }
+
+         // Debug:
+        $line = '<hr>';
+        echo '<h1>Receipt</h1><hr>';
+        echo $event_id.$line;
+        echo $event_title.$line;
+        echo htmlspecialchars($event_text).$line;
+        echo 'False'.$line; 
+        echo htmlspecialchars($sql_exist).$line;
+
+
+
+
+
+        // Redirect with status codes:
+        header('Refresh: 0; URL=event_list.php?created=event&status='.$status_db);
+
+
+    }
+
 }
+
