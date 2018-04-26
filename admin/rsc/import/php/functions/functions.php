@@ -40,6 +40,12 @@ function counter ($whatToCount) {
         case "files": $input = "File_ID) FROM File";
         break;
 
+        case "activities": $input = "Activities_ID) FROM Activities";
+        break;
+
+        case "event": $input = "Event_ID) FROM Event";
+        break;
+
         default: die;
 
     }
@@ -434,10 +440,6 @@ function populate_activities_table($number_of_rows, $order_by, $asc_desc){
 
     // Get user data:
     $result = mysqli_query($con, $sql);
-    if (!$result) {
-        printf("Error: %s\n", mysqli_error($con));
-        exit();
-    }
     // Check if any posts were received:
     if ( $result !== null ){
 
