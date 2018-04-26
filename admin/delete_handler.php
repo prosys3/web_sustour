@@ -131,6 +131,23 @@ if ( isset($_POST['delete'], $_GET['object'], $_GET['id']) ){
 
 
         
+    } elseif ( $_GET['object'] == 'activities' ){
+
+        // The object is a event:
+        $object = $_GET['object'];
+
+        // Backup event id for later existence check:
+        $activities_id = $_GET['id'];
+
+
+        // Generate SQL (delete):
+        $sql_delete = 'DELETE FROM Activities WHERE Activities_ID = '.$activities_id;
+
+        // Generate SQL (existence):
+        $sql_exist = 'SELECT * FROM Activities WHERE Activities_ID = '.$activities_id;
+
+
+
     }
 
 

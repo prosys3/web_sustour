@@ -44,6 +44,21 @@ if (isset($_GET['object'])){
         // This function outputs a status code:
         publish_event($name_attribute);
 
-    } 
+    }
+
+    if ($_GET['object'] == 'activities') {
+
+       // the object to create is an activity
+        $object = 'activities';
+
+        // Get variables from url:
+        $activities_name = $_GET['name'];
+
+        // this function outputs a status code:
+        publish_activities($activities_name);
+
+    }
 
 }
+
+?>
