@@ -76,7 +76,7 @@ $activities_author  = $activities_row['Activities_Author'];
                                     <!-- Post text: -->
                                     <div class="form-group mt-4">
                                         <label>Activity description</label>
-                                        <textarea name="eventtext" class="form-control" placeholder="Page Body" style="height: 200px;"><?php echo $activities_text;?></textarea>
+                                        <textarea name="activitiestext" class="form-control" placeholder="Page Body" style="height: 200px;"><?php echo $activities_text;?></textarea>
                                     </div>
 
 

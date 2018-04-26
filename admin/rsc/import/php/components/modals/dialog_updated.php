@@ -233,6 +233,43 @@ if ( isset($_GET['updated']) ){
 
     }
 
+    elseif ($_GET['updated'] == 'activities'){
+
+        // A post has been deleted:
+        $object = 'Activity';
+
+        // Analyze the status codes:
+        $status_code = $_GET['status'];
+
+        // Generate status feedback in accordance with status codes:
+        if ( $status_code == '1' ){
+
+            // User updated:
+            $status_adjective = 'successfully';
+            $status_db_word = 'Activity updated in database.';
+            $status_db_color = 'text-success';
+            $status_file_word = 'Activity have no files.';
+            $status_file_color = 'text-muted';
+            $title_text = 'Success';
+            $title_icon = 'done';
+            $title_color = 'text-success';
+
+        } elseif ( $status_code == '0' ){
+
+            // post not updated from DB:
+            $status_adjective = 'not';
+            $status_db_word = 'Activity not updated in database.';
+            $status_db_color = 'text-danger';
+            $status_file_word = 'Activity have no files.';
+            $status_file_color = 'text-muted';
+            $title_text = 'Nothing was updated';
+            $title_icon = 'error';
+            $title_color = 'text-danger';
+
+        }
+
+    }
+
 
 
 
