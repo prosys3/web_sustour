@@ -30,7 +30,7 @@
 
     <!-- Collumn one start -->
     <div class="card border-dark">
-      <img class="card-img-top mx-auto d-block w-25" src="rsc/img/logo/sustour/logo_symbol_black.svg" alt="Card image cap">
+      <img class="card-img-top mx-auto d-block w-25" src="rsc/img/logo/sustour/logo_symbol_blacks.svg" alt="Card image cap">
         <div class="card-body d-flex flex-column">
           <h5 class="card-title text-center">Card title</h5>
           <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -41,7 +41,7 @@
 
     <!-- Collumn two start -->
     <div class="card border-dark">
-      <img class="card-img-top mx-auto d-block w-25" src="rsc/img/logo/sustour/logo_symbol_black.svg" alt="Card image cap">
+      <img class="card-img-top mx-auto d-block w-25" src="rsc/img/logo/sustour/logo_symbol_blacks.svg" alt="Card image cap">
         <div class="card-body d-flex flex-column">
           <h5 class="card-title text-center">Card title</h5>
           <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
