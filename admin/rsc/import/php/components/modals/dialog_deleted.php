@@ -197,6 +197,42 @@ if ( isset($_GET['deleted']) ){
 
     }
 
+    elseif ($_GET['deleted'] == 'activities') {
+
+        // an activity has been deleted
+        $object = 'activity';
+
+        // analyze the status codes:
+        $status_code = $_GET['status'];
+
+        if ( $status_code == '1' ) {
+
+            // activity deleted from DB:
+            $status_adjective = 'successfully';
+            $status_db_word = 'Activity deleted from database.';
+            $status_db_color = 'text-success';
+            $status_file_word = 'there were no files to delete.';
+            $status_file_color = 'text-muted';
+            $title_text = 'Success';
+            $title_icon = 'done';
+            $title_color = 'text-success';
+
+
+        } elseif ( $status_code == '0' ){
+
+            // Post not deleted from DB:
+            $status_adjective = 'unsuccessfully';
+            $status_db_word = 'Activity not deleted from database.';
+            $status_db_color = 'text-danger';
+            $status_file_word = 'there were no files to delete.';
+            $status_file_color = 'text-muted';
+            $title_text = 'Nothing deleted';
+            $title_icon = 'error';
+            $title_color = 'text-danger';
+
+        }
+    }
+
 
 
 
