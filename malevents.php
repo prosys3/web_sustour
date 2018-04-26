@@ -145,7 +145,7 @@
 				    	View completed events
 				  </a>
 				</p>
-				<div class="collapse container-fluid" id="collapseExample">
+				<div class="collapse" id="collapseExample">
           <div class="card text-white bg-dark">
   				  <div class="card card-header">
   				  COMPLETED EVENTS
