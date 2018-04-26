@@ -19,6 +19,11 @@ if( !isset($_SESSION['login']) ){
 if ( isset($_POST['delete'], $_GET['object'], $_GET['id']) ){
 
 
+    // Create empty status variables:
+    $status_db      = '';
+    $status_file    = '';
+
+
     // Check whether the request is for a file:
     if ( $_GET['object'] == 'file' ){
 
@@ -104,6 +109,44 @@ if ( isset($_POST['delete'], $_GET['object'], $_GET['id']) ){
         // Backup user ID for later existence check:
         $user_id = $_GET['id'];
 
+        //Sets all posts, events, activities and files uploaded to default user(Deleted User)
+        $sqlp            =      'SELECT * FROM Post WHERE Post_Author = ' .$user_id;
+        $sqlp_res        =      mysqli_query($con,$sqlp);
+        if (mysqli_num_rows($sqlp_res) > 0) {
+            $sql_post        =      'UPDATE Post SET Post_Author = 1 ';
+            $sql_post        .=     'WHERE Post_Author = '.$user_id.'; ';
+            $result = mysqli_query($con,$sql_post);
+            if (!$result) {
+        printf("Error: %s\n", mysqli_error($con));
+        exit();
+    }
+        }
+
+        $sqle            =      'SELECT * FROM Event WHERE Event_Author = ' .$user_id;
+        $sqle_res        =      mysqli_query($con,$sqle);
+        if (mysqli_num_rows($sqle_res) > 0) {
+            $sql_event       =      'UPDATE Event SET Event_Author = 1 ';
+            $sql_event       .=     'WHERE Event_Author = '.$user_id.'; ';
+            mysqli_query($con,$sql_event);
+        }
+
+
+        $sqla            =      'SELECT * FROM Activities WHERE Activities_Author = ' .$user_id;
+        $sqla_res        =      mysqli_query($con,$sqla);
+        if (mysqli_num_rows($sqla_res) > 0) {
+            $sql_activity    =      'UPDATE Activities SET Activities_Author = 1 ';
+            $sql_activity    .=     'WHERE Activities_Author = '.$user_id.'; ';
+            mysqli_query($con,$sql_activity);
+        }
+
+        $sqlf            =      'SELECT * FROM File WHERE File_Author = ' .$user_id;
+        $sqlf_res        =      mysqli_query($con,$sqlf);
+        if (mysqli_num_rows($sqlf_res) > 0) {
+            $sql_file        =      'UPDATE File SET File_Author = 1 ';
+            $sql_file        .=     'WHERE File_Author = '.$user_id.'; ';
+            mysqli_query($con,$sql_file);
+        }
+
         // Generate SQL (delete):
         $sql_delete = 'DELETE FROM User_Data WHERE User_ID = '.$user_id;
 
@@ -111,10 +154,7 @@ if ( isset($_POST['delete'], $_GET['object'], $_GET['id']) ){
         $sql_exist = 'SELECT * FROM User_Data WHERE User_ID = '.$user_id;
 
 
-
-
-    // Check whether the request is for a event:
-    } elseif ( $_GET['object'] == 'event' ){
+     } elseif ( $_GET['object'] == 'event' ){
 
         // The object is a event:
         $object = $_GET['object'];
@@ -130,8 +170,8 @@ if ( isset($_POST['delete'], $_GET['object'], $_GET['id']) ){
         $sql_exist = 'SELECT * FROM Event WHERE Event_ID = '.$event_id;
 
 
-        
-    } elseif ( $_GET['object'] == 'activities' ){
+
+     } elseif ( $_GET['object'] == 'activities' ){
 
         // The object is a event:
         $object = $_GET['object'];
@@ -164,8 +204,18 @@ if ( isset($_POST['delete'], $_GET['object'], $_GET['id']) ){
 
 
 
+    // For debugging:
+//    echo mysqli_error($con);
+//    echo '<hr>';
+//    print_r(mysqli_error_list($con));
+//    echo '<hr>';
+//    echo mysqli_errno($con);
+
+
+
+
     // Existence check of file:
-    if ( $object == 'file' || $has_image === true ){
+    if ($object == 'file'){
 
         // Check if file was deleted from file server:
         if ( !file_exists($file_path) ){
@@ -185,11 +235,40 @@ if ( isset($_POST['delete'], $_GET['object'], $_GET['id']) ){
 
 
 
-    // Check if post does not have featured image attached:
-    if ( $object == 'post' && $has_image === false ){
+    // If object is a post and has image:
+    if ($object == 'post'){
 
-        // File code is irrelevant:
-        $status_file = "n";
+        if ($has_image === true){
+
+            // Check if file was deleted from file server:
+            if ( !file_exists($file_path) ){
+
+                // Success: File is gone.
+                $status_file = "1";
+
+            } elseif ( file_exists($file_path) ){
+
+                // Error: File still exists:
+                $status_file = "0";
+
+            }
+
+        }
+
+    }
+
+
+
+
+    // Check if post does not have featured image attached:
+    if ($object == 'post'){
+
+        if ($has_image === false){
+
+            // File code is irrelevant:
+            $status_file = "n";
+
+        }
 
     }
 
@@ -208,18 +287,6 @@ if ( isset($_POST['delete'], $_GET['object'], $_GET['id']) ){
         $status_db = "0";
 
     }
-
-
-    echo '
-    <h1>Debug</h1>
-    <ul>
-        <li>File name: '.$file_name.'</li>
-        <li>File DIR: '.$file_dir.'</li>
-        <li>File path: '.$file_path.'</li>
-        <li>'.$sql_delete.'</li>
-    </ul>
-    
-    ';
 
 
 
