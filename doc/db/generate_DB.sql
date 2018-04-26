@@ -65,32 +65,32 @@ SET FOREIGN_KEY_CHECKS=1;
 -- USER TYPE:
 CREATE TABLE User_Type (
 
-    User_Type_ID 			              TINYINT(3) 		AUTO_INCREMENT NOT NULL,
-    User_Type_Name                  VARCHAR(30) 	NOT NULL,
-    Create_Post 			              TINYINT(1) 		NOT NULL,
-    Create_File 			              TINYINT(1) 		NOT NULL,
-    Create_User 			              TINYINT(1) 		NOT NULL,
+    User_Type_ID                          TINYINT(3)        AUTO_INCREMENT NOT NULL,
+    User_Type_Name                  VARCHAR(30)     NOT NULL,
+    Create_Post                           TINYINT(1)        NOT NULL,
+    Create_File                           TINYINT(1)        NOT NULL,
+    Create_User                           TINYINT(1)        NOT NULL,
     Create_User_Privileged          TINYINT(1)    NOT NULL,
-    Read_Public_Post 		            TINYINT(1) 		NOT NULL,
-    Read_Public_File 		            TINYINT(1) 		NOT NULL,
-    Read_Public_User 		            TINYINT(1) 		NOT NULL,
-    Update_Own_Post 		            TINYINT(1) 		NOT NULL,
-    Update_Own_File 		            TINYINT(1) 		NOT NULL,
-    Update_Others_Post 		          TINYINT(1) 		NOT NULL,
-    Update_Others_File 		          TINYINT(1) 		NOT NULL,
+    Read_Public_Post                    TINYINT(1)      NOT NULL,
+    Read_Public_File                    TINYINT(1)      NOT NULL,
+    Read_Public_User                    TINYINT(1)      NOT NULL,
+    Update_Own_Post                     TINYINT(1)      NOT NULL,
+    Update_Own_File                     TINYINT(1)      NOT NULL,
+    Update_Others_Post                TINYINT(1)        NOT NULL,
+    Update_Others_File                TINYINT(1)        NOT NULL,
     Update_Others_User              TINYINT(1)    NOT NULL,
-    Update_Others_User_Privileged   TINYINT(1) 		NOT NULL,
-    Delete_Own_Post 		            TINYINT(1) 		NOT NULL,
-    Delete_Own_File 		            TINYINT(1) 		NOT NULL,
-    Delete_Own_User 		            TINYINT(1) 		NOT NULL,
-    Delete_Others_Post 		          TINYINT(1) 		NOT NULL,
-    Delete_Others_File 		          TINYINT(1) 		NOT NULL,
+    Update_Others_User_Privileged   TINYINT(1)      NOT NULL,
+    Delete_Own_Post                     TINYINT(1)      NOT NULL,
+    Delete_Own_File                     TINYINT(1)      NOT NULL,
+    Delete_Own_User                     TINYINT(1)      NOT NULL,
+    Delete_Others_Post                TINYINT(1)        NOT NULL,
+    Delete_Others_File                TINYINT(1)        NOT NULL,
     Delete_Others_User              TINYINT(1)    NOT NULL,
-    Delete_Others_User_Privileged   TINYINT(1) 		NOT NULL,
+    Delete_Others_User_Privileged   TINYINT(1)      NOT NULL,
 
     CONSTRAINT UserType_PK PRIMARY KEY (User_Type_ID)
 
-) 	ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE utf8mb4_unicode_ci;
+)   ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 
 
@@ -114,20 +114,20 @@ CREATE TABLE Company (
 -- USER DATA:
 CREATE TABLE User_Data (
 
-    User_ID 				    TINYINT(3) 		AUTO_INCREMENT NOT NULL,
-    User_Name_First			VARCHAR(60) 	NOT NULL,
-    User_Name_Last			VARCHAR(60) 	NOT NULL,
-    User_Password			  VARCHAR(100) 	NOT NULL,
-    User_Type				    TINYINT(3) 		NOT NULL,
-    User_Email				  VARCHAR(60) 	UNIQUE NOT NULL,
-    User_Phone				  VARCHAR(8) 		NOT NULL,
-    User_Company			  TINYINT(2) 		NOT NULL,
+    User_ID                     TINYINT(3)      AUTO_INCREMENT NOT NULL,
+    User_Name_First         VARCHAR(60)     NOT NULL,
+    User_Name_Last          VARCHAR(60)     NOT NULL,
+    User_Password             VARCHAR(100)  NOT NULL,
+    User_Type                   TINYINT(3)      NOT NULL,
+    User_Email                VARCHAR(60)   UNIQUE NOT NULL,
+    User_Phone                VARCHAR(8)        NOT NULL,
+    User_Company              TINYINT(2)        NOT NULL,
 
     CONSTRAINT UserID_PK PRIMARY KEY (User_ID),
     CONSTRAINT User_Data_UserType_FK FOREIGN KEY (User_Type) REFERENCES User_Type(User_Type_ID),
     CONSTRAINT User_Data_UserCompany_FK FOREIGN KEY (User_Company) REFERENCES Company(Company_ID)
 
-)	ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE utf8mb4_unicode_ci;
+)   ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 
 
@@ -135,19 +135,19 @@ CREATE TABLE User_Data (
 -- EVENT
 CREATE TABLE Event (
 
-Event_ID		TINYINT(3) 			AUTO_INCREMENT NOT NULL,
-Event_Name		VARCHAR(30) 		NOT NULL,
-Event_Location 	VARCHAR(50) 		NOT NULL,
-Event_Start		Time				NOT NULL,
-Event_End 		Time				NOT NULL,
-Event_Date 		DATE 				NOT NULL,
-Event_Text		VARCHAR(255) 		NOT NULL,
-Event_Company   TINYINT(3) 			NOT NULL,
-Event_Author    TINYINT(3) 			NOT NULL,
+Event_ID        TINYINT(3)          AUTO_INCREMENT NOT NULL,
+Event_Name      VARCHAR(30)         NOT NULL,
+Event_Location  VARCHAR(50)         NOT NULL,
+Event_Start     Time                NOT NULL,
+Event_End       Time                NOT NULL,
+Event_Date      DATE                NOT NULL,
+Event_Text      VARCHAR(255)        NOT NULL,
+Event_Company   TINYINT(3)          NOT NULL,
+Event_Author    TINYINT(3)          NOT NULL,
 
-CONSTRAINT EventID_PK 				PRIMARY KEY (Event_ID),
-CONSTRAINT Event_EventCompany_FK 	FOREIGN KEY (Event_Company) REFERENCES Company(Company_ID),
-CONSTRAINT Event_EventAuthor_FK 	FOREIGN KEY (Event_Author) REFERENCES User_Data(User_ID)
+CONSTRAINT EventID_PK               PRIMARY KEY (Event_ID),
+CONSTRAINT Event_EventCompany_FK    FOREIGN KEY (Event_Company) REFERENCES Company(Company_ID),
+CONSTRAINT Event_EventAuthor_FK     FOREIGN KEY (Event_Author) REFERENCES User_Data(User_ID)
 
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE utf8mb4_unicode_ci;
 
@@ -157,13 +157,13 @@ CONSTRAINT Event_EventAuthor_FK 	FOREIGN KEY (Event_Author) REFERENCES User_Data
 -- FILE TYPE:
 CREATE TABLE File_Type (
 
-	File_Type_ID			    TINYINT(3) 		AUTO_INCREMENT NOT NULL,
-	File_Type_Extension		VARCHAR(6) 		NOT NULL,
-	File_Type_Name			  VARCHAR(60) 	NOT NULL,
+    File_Type_ID                TINYINT(3)      AUTO_INCREMENT NOT NULL,
+    File_Type_Extension     VARCHAR(6)      NOT NULL,
+    File_Type_Name            VARCHAR(60)   NOT NULL,
 
-	CONSTRAINT FileType_PK PRIMARY KEY (File_Type_ID)
+    CONSTRAINT FileType_PK PRIMARY KEY (File_Type_ID)
 
-)	ENGINE= InnoDB DEFAULT CHARSET=utf8mb4 COLLATE utf8mb4_unicode_ci;
+)   ENGINE= InnoDB DEFAULT CHARSET=utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 
 
@@ -171,12 +171,12 @@ CREATE TABLE File_Type (
 -- CATEGORIES:
 CREATE TABLE Category (
 
-    Category_ID				  TINYINT(3) 		AUTO_INCREMENT NOT NULL,
-    Category_Name			  VARCHAR(60) 	NOT NULL,
+    Category_ID               TINYINT(3)        AUTO_INCREMENT NOT NULL,
+    Category_Name             VARCHAR(60)   NOT NULL,
 
     CONSTRAINT CategoryID_PK PRIMARY KEY (Category_ID)
 
-)	ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE utf8mb4_unicode_ci;
+)   ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 
 
@@ -184,20 +184,20 @@ CREATE TABLE Category (
 -- POST:
 CREATE TABLE Post (
 
-	Post_ID 				    TINYINT(4) 		AUTO_INCREMENT NOT NULL,
-	Post_Title 				    VARCHAR(60) 	NOT NULL,
-	Post_Image_Featured 		VARCHAR(100),
-	Post_Text 				    TEXT 			    NOT NULL,
-	Post_Date_Created 			DATE 			    NOT NULL,
-	Post_Author 			    TINYINT(3) 		NOT NULL,
-	Post_Category 			  	TINYINT(3) 		DEFAULT 1,
-	Post_Private			    TINYINT(1) 		DEFAULT 1,
+    Post_ID                     TINYINT(4)      AUTO_INCREMENT NOT NULL,
+    Post_Title                  VARCHAR(60)     NOT NULL,
+    Post_Image_Featured         VARCHAR(100),
+    Post_Text                   TEXT                NOT NULL,
+    Post_Date_Created           DATE                NOT NULL,
+    Post_Author                 TINYINT(3)      NOT NULL,
+    Post_Category               TINYINT(3)      DEFAULT 1,
+    Post_Private                TINYINT(1)      DEFAULT 1,
 
-	CONSTRAINT PostID_PK PRIMARY KEY(Post_ID),
-	CONSTRAINT Post_UserID_FK FOREIGN KEY(Post_Author) REFERENCES User_Data(User_ID),
-	CONSTRAINT Post_CategoryID_FK FOREIGN KEY(Post_Category) REFERENCES Category(Category_ID)
+    CONSTRAINT PostID_PK PRIMARY KEY(Post_ID),
+    CONSTRAINT Post_UserID_FK FOREIGN KEY(Post_Author) REFERENCES User_Data(User_ID),
+    CONSTRAINT Post_CategoryID_FK FOREIGN KEY(Post_Category) REFERENCES Category(Category_ID)
 
-)	ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE utf8mb4_unicode_ci;
+)   ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 
 
@@ -205,10 +205,10 @@ CREATE TABLE Post (
 
 CREATE TABLE Activities (
 
-Activities_ID 			TINYINT(4) 		AUTO_INCREMENT NOT NULL,
-Activities_Title		VARCHAR(50) 	NOT NULL,
-Activities_Text			TEXT 			NOT NULL,
-Activities_Created 		DATE 			NOT NULL,
+Activities_ID           TINYINT(4)      AUTO_INCREMENT NOT NULL,
+Activities_Title        VARCHAR(50)     NOT NULL,
+Activities_Text         TEXT            NOT NULL,
+Activities_Created      DATE            NOT NULL,
 Activities_Author   TINYINT(3) NOT NULL,
 
 CONSTRAINT ActivitiesID_PK PRIMARY KEY (Activities_ID),
@@ -225,22 +225,22 @@ CONSTRAINT Activities_UserID_FK FOREIGN KEY (Activities_Author) REFERENCES User_
 -- FILE:
 CREATE TABLE File (
 
-	File_ID				        TINYINT(4) 		AUTO_INCREMENT NOT NULL,
-	File_Name			        VARCHAR(60) 	NOT NULL,
-	File_Type			        TINYINT(3) 		NOT NULL,
+    File_ID                     TINYINT(4)      AUTO_INCREMENT NOT NULL,
+    File_Name                   VARCHAR(60)     NOT NULL,
+    File_Type                   TINYINT(3)      NOT NULL,
   File_Size             INT           NOT NULL,
-	File_Author			      TINYINT(3) 		NOT NULL,
-	File_Uploaded		      DATE 			    NOT NULL,
+    File_Author               TINYINT(3)        NOT NULL,
+    File_Uploaded             DATE              NOT NULL,
   File_URL              VARCHAR(100)  NOT NULL,
-	File_Category		      TINYINT(3) 		DEFAULT 1,
-	File_Private		      TINYINT(1) 		DEFAULT 1,
+    File_Category             TINYINT(3)        DEFAULT 1,
+    File_Private              TINYINT(1)        DEFAULT 1,
 
-	CONSTRAINT FileID_PK PRIMARY KEY (File_ID),
-	CONSTRAINT File_FileTypeID_FK FOREIGN KEY (File_Type) REFERENCES File_Type(File_Type_ID),
-	CONSTRAINT File_CategoryID_FK FOREIGN KEY (File_Category) REFERENCES Category(Category_ID),
+    CONSTRAINT FileID_PK PRIMARY KEY (File_ID),
+    CONSTRAINT File_FileTypeID_FK FOREIGN KEY (File_Type) REFERENCES File_Type(File_Type_ID),
+    CONSTRAINT File_CategoryID_FK FOREIGN KEY (File_Category) REFERENCES Category(Category_ID),
   CONSTRAINT File_UserID_FK FOREIGN KEY (File_Author) REFERENCES User_Data(User_ID)
 
-)	ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE utf8mb4_unicode_ci;
+)   ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 
 
@@ -291,7 +291,8 @@ VALUES
 (   "Root",             1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 (   "Administrator",    1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0 ),
 (   "Moderator",        1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0 ),
-(   "User",             1, 1, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0 );
+(   "User",             1, 1, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0 ),
+(   "None",             0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 );
 
 
 
@@ -370,6 +371,7 @@ INSERT INTO File_Type ( File_Type_Extension, File_Type_Name ) VALUES
 
 -- INSERT DEFAULT COMPANIES:
 INSERT INTO Company (Company_Name, Company_Acronym, Company_Country, Company_Website) VALUES
+('N/A', 'N/A', 'N/A', 'N/A'),
 ('University College of Southeast Norway', 'USN', 'Norway', 'https://usn.no'),
 ('Bishkek Academy of Finance and Economics', 'ADAM', 'Kyrgyzstan', 'https://bafe.edu.kg'),
 ('Batumi Shota Rustaveli State University', 'BSU', 'Georgia', 'https://www.bsu.edu.ge');
@@ -379,20 +381,27 @@ INSERT INTO Company (Company_Name, Company_Acronym, Company_Country, Company_Web
 
 -- INSERT DEFAULT USERS:
 INSERT INTO User_Data (User_Name_First, User_Name_Last, User_Password, User_Type, User_Email, User_Phone, User_Company) VALUES
-('Lord', 'Root',        MD5('prosys3'), 1, 'root@usn.no',   '10000666', 1),
-('Prince', 'Admin',     MD5('prosys3'), 2, 'admin@usn.no',  '20000666', 1),
-('Sir', 'Moderator',    MD5('prosys3'), 3, 'mod@usn.no',    '30000666', 1),
-('Peasant', 'User',     MD5('prosys3'), 4, 'user@usn.no',   '40000666', 1);
+('Deleted', 'User',     MD5('prosys3'), 5, 'N/A',           'N/A',      1),
+('Lord', 'Root',        MD5('prosys3'), 1, 'root@usn.no',   '10000666', 2),
+('Prince', 'Admin',     MD5('prosys3'), 2, 'admin@usn.no',  '20000666', 2),
+('Sir', 'Moderator',    MD5('prosys3'), 3, 'mod@usn.no',    '30000666', 2),
+('Peasant', 'User',     MD5('prosys3'), 4, 'user@usn.no',   '40000666', 2),
+('test', 'delete',     MD5('prosys3'), 4, 'usertest@usn.no',   '50000666', 2),
+('Empty', 'User',     MD5('prosys3'), 4, 'empty@usn.no',   '60000666', 2);
+
 
 
 
 
 -- INSERT DEFAULT POSTS:
 INSERT INTO Post (Post_Title, Post_Image_Featured, Post_Text, Post_Date_Created, Post_Author, Post_Category, Post_Private) VALUES
-('Example post 1', 'https://zcodeio/sites/default/files/news/boostrap_img.png', '<h1>Main title</h1><h2>Subtitle</h2><p>This is an example paragraph</p>', CURDATE(),          1, 1, 1),
-('Example post 2', 'https://zcodeio/sites/default/files/news/boostrap_img.png', '<h1>Main title</h1><h2>Subtitle</h2><p>This is an example paragraph</p>', (CURDATE() + 1),    2, 1, 1),
-('Example post 3', 'https://zcodeio/sites/default/files/news/boostrap_img.png', '<h1>Main title</h1><h2>Subtitle</h2><p>This is an example paragraph</p>', (CURDATE() + 2),    3, 1, 0),
-('Example post 4', 'https://zcodeio/sites/default/files/news/boostrap_img.png', '<h1>Main title</h1><h2>Subtitle</h2><p>This is an example paragraph</p>', (CURDATE() + 3),    4, 1, 0);
+('Example post 1', 'https://zcodeio/sites/default/files/news/boostrap_img.png', '<h1>Main title</h1><h2>Subtitle</h2><p>This is an example paragraph</p>', CURDATE(),          2, 1, 1),
+('Example post 2', 'https://zcodeio/sites/default/files/news/boostrap_img.png', '<h1>Main title</h1><h2>Subtitle</h2><p>This is an example paragraph</p>', (CURDATE() + 1),    3, 1, 1),
+('Example post 3', 'https://zcodeio/sites/default/files/news/boostrap_img.png', '<h1>Main title</h1><h2>Subtitle</h2><p>This is an example paragraph</p>', (CURDATE() + 2),    4, 1, 0),
+('Example post 4', 'https://zcodeio/sites/default/files/news/boostrap_img.png', '<h1>Main title</h1><h2>Subtitle</h2><p>This is an example paragraph</p>', (CURDATE() + 3),    5, 1, 0),
+('Example post 4', 'https://zcodeio/sites/default/files/news/boostrap_img.png', '<h1>Main title</h1><h2>Subtitle</h2><p>This is an example paragraph</p>', (CURDATE() + 4),    5, 1, 0),
+('Testing delete', 'https://zcodeio/sites/default/files/news/boostrap_img.png', 'testing delete user',                                                     (CURDATE() + 5),    6, 1, 0);
+
 
 
 
@@ -408,9 +417,10 @@ INSERT INTO Activities (Activities_Title, Activities_Text, Activities_Created, A
 
 -- INSERT DEFAULT EVENTS
 INSERT INTO event(Event_ID, Event_Name, Event_Location, Event_Start, Event_End, Event_Date, Event_Company, Event_Author, Event_Text)VALUES 
-(1, 'R&aringnerydding', 'B&oslash', '14:00' , '18:00' , '2018-06-07', 1, 1, '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>'),
-(2, 'Suicide 101: Allahu Akbar', 'The Cave', '17:00' , '23:00' , '2018-07-07', 2, 2, '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit </br> Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>'),
-(3, 'Curry bonanza', 'Somewhere in curryland', '09:00' , '12:00' , '2018-08-07', 3, 3, '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>'),
+(1, 'R&aringnerydding', 'B&oslash', '14:00' , '18:00' , '2018-06-07', 1, 2, '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>'),
+(2, 'Suicide 101: Allahu Akbar', 'The Cave', '17:00' , '23:00' , '2018-07-07', 2, 3, '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit </br> Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>'),
+(3, 'Curry bonanza', 'Somewhere in curryland', '09:00' , '12:00' , '2018-08-07', 3, 4, '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>'),
 (4, 'Meme-fest', 'Urinkjole-garden', '02:00' , '08:00' , '2018-09-07', 3, 3, '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>'),
-(5, 'Mohammed - a caricature', 'Somewhere in the desert', '01:00' , '23:00' , '2018-10-07', 2, 2, '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit </br> Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>'),
-(6, 'B&aringlbrenning til minne om Naboen', 'B&oslash', '20:00' , '23:00' , '2018-11-07', 1, 1, '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>');
+(5, 'Mohammed - a caricature', 'Somewhere in the desert', '01:00' , '23:00' , '2018-10-07', 2, 3, '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit </br> Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>'),
+(6, 'B&aringlbrenning til minne om Naboen', 'B&oslash', '20:00' , '23:00' , '2018-11-07', 1, 2, '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>'),
+(7, 'Testing delete user', 'test', '20:00' , '23:00' , '2018-11-07', 1, 6, 'Testing Delete user with event');
