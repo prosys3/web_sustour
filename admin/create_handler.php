@@ -32,6 +32,18 @@ if (isset($_GET['object'])){
         // This function outputs a status code:
         publish_post($submit_name,$fileref,$upload_dir);
 
-    }
+    } 
+
+    if ($_GET['object'] == 'event'){
+
+        // The object to create is a event:
+        $object = 'event';
+
+        // Get variables from url:
+        $name_attribute = $_GET['name'];
+        // This function outputs a status code:
+        publish_event($name_attribute);
+
+    } 
 
 }
