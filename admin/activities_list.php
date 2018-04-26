@@ -53,8 +53,8 @@ include 'rsc/import/php/components/header_dashboard.php';
 
                             <div class="row">
 
-                                <div class="col"><a href="post_create.php" class="btn btn-primary"><i class="material-icons">create</i> Create new activity</a></div>
-                                <div class="col"><a href="../activities.php.php" class="btn btn-secondary"><i class="material-icons">chrome_reader_mode</i> Read activities</a></div>
+                                <div class="col"><a href="activities_create.php" class="btn btn-primary"><i class="material-icons">create</i> Create new activity</a></div>
+                                <div class="col"><a href="../activities.php" class="btn btn-secondary"><i class="material-icons">chrome_reader_mode</i> Read activities</a></div>
 
                             </div>
 
