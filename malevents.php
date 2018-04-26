@@ -208,6 +208,7 @@
 		</div>
 
 	</section>
+	<!-- knapp slutt -->
 
 </main>
 <!-- Main end -->
