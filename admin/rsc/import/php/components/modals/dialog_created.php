@@ -196,7 +196,7 @@ if ( isset($_GET['created']) ){
 
 
     // Check if request is for a user:
-    elseif ($_GET['deleted'] == 'user'){
+    elseif ($_GET['created'] == 'user'){
 
         // A post has been deleted:
         $object = 'user';
@@ -209,7 +209,7 @@ if ( isset($_GET['created']) ){
 
             // post created from DB:
             $status_adjective = 'successfully';
-            $status_db_word = 'person deleted from database.';
+            $status_db_word = 'User deleted from database.';
             $status_db_color = 'text-success';
             $status_file_word = 'there were no files to delete.';
             $status_file_color = 'text-muted';
@@ -224,6 +224,45 @@ if ( isset($_GET['created']) ){
             $status_db_word = 'person not deleted from database.';
             $status_db_color = 'text-danger';
             $status_file_word = 'there were no files to delete.';
+            $status_file_color = 'text-muted';
+            $title_text = 'Nothing deleted';
+            $title_icon = 'error';
+            $title_color = 'text-danger';
+
+        }
+
+    }
+
+
+
+    elseif ($_GET['created'] == 'activities'){
+
+        // A post has been deleted:
+        $object = 'activity';
+
+        // Analyze the status codes:
+        $status_code = $_GET['status'];
+
+        // Generate status feedback in accordance with status codes:
+        if ( $status_code == '1' ){
+
+            // post created from DB:
+            $status_adjective = 'successfully';
+            $status_db_word = 'Activity created in the database.';
+            $status_db_color = 'text-success';
+            $status_file_word = 'there were no files to add.';
+            $status_file_color = 'text-muted';
+            $title_text = 'Success';
+            $title_icon = 'done';
+            $title_color = 'text-success';
+
+        } elseif ( $status_code == '0' ){
+
+            // post not created from DB:
+            $status_adjective = 'unsuccessfully';
+            $status_db_word = 'Activity not created in the database.';
+            $status_db_color = 'text-danger';
+            $status_file_word = 'there were no files to add.';
             $status_file_color = 'text-muted';
             $title_text = 'Nothing deleted';
             $title_icon = 'error';
