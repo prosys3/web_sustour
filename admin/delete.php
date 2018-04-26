@@ -57,7 +57,7 @@ include 'rsc/import/php/components/header_dashboard.php';
             $object = 'activities';
 
             // get the activity id
-            $activities_id = $_GET['id'];
+            $object_id = $_GET['id'];
 
         } elseif ($_GET['object'] == 'event'){
 
@@ -65,7 +65,7 @@ include 'rsc/import/php/components/header_dashboard.php';
             $object = 'event';
 
             // Get the event id:
-            $event_id = $_GET['id'];
+            $object_id = $_GET['id'];
 
         }
 
@@ -295,7 +295,7 @@ include 'rsc/import/php/components/header_dashboard.php';
     if ($object === 'activities') {
 
         // Get post data from DB:
-        $activities_data_query = 'SELECT * FROM Activities WHERE Activities_ID = '.$activities_id;
+        $activities_data_query = 'SELECT * FROM Activities WHERE Activities_ID = '.$object_id;
         $activities_data_result = mysqli_query($con,$activities_data_query);
         $activities_data_array = mysqli_fetch_array($activities_data_result);
 
@@ -354,7 +354,7 @@ include 'rsc/import/php/components/header_dashboard.php';
     if ($object === 'event'){
 
     // Get event data from DB:
-        $event_data_query = 'SELECT * FROM Event WHERE Event_ID = '.$event_id;
+        $event_data_query = 'SELECT * FROM Event WHERE Event_ID = '.$object_id;
         $event_data_result = mysqli_query($con,$event_data_query);
         $event_data_array = mysqli_fetch_array($event_data_result);
 

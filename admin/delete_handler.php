@@ -111,6 +111,26 @@ if ( isset($_POST['delete'], $_GET['object'], $_GET['id']) ){
         $sql_exist = 'SELECT * FROM User_Data WHERE User_ID = '.$user_id;
 
 
+
+
+    // Check whether the request is for a event:
+    } elseif ( $_GET['object'] == 'event' ){
+
+        // The object is a event:
+        $object = $_GET['object'];
+
+        // Backup event id for later existence check:
+        $event_id = $_GET['id'];
+
+
+        // Generate SQL (delete):
+        $sql_delete = 'DELETE FROM Event WHERE Event_ID = '.$event_id;
+
+        // Generate SQL (existence):
+        $sql_exist = 'SELECT * FROM Event WHERE Event_ID = '.$event_id;
+
+
+        
     }
 
 
