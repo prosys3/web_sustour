@@ -272,6 +272,43 @@ if ( isset($_GET['created']) ){
 
     }
 
+    elseif ($_GET['created'] == 'event'){
+
+        // A post has been deleted:
+        $object = 'event';
+
+        // Analyze the status codes:
+        $status_code = $_GET['status'];
+
+        // Generate status feedback in accordance with status codes:
+        if ( $status_code == '1' ){
+
+            // post created from DB:
+            $status_adjective = 'successfully';
+            $status_db_word = 'Event created in the database.';
+            $status_db_color = 'text-success';
+            $status_file_word = 'No files to add in event.';
+            $status_file_color = 'text-muted';
+            $title_text = 'Success';
+            $title_icon = 'done';
+            $title_color = 'text-success';
+
+        } elseif ( $status_code == '0' ){
+
+            // post not created from DB:
+            $status_adjective = 'unsuccessfully';
+            $status_db_word = 'Event not created in the database.';
+            $status_db_color = 'text-danger';
+            $status_file_word = 'no files to add in event.';
+            $status_file_color = 'text-muted';
+            $title_text = 'Nothing deleted';
+            $title_icon = 'error';
+            $title_color = 'text-danger';
+
+        }
+
+    }
+
 
 
 
