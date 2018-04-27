@@ -729,6 +729,423 @@ function populate_user_table($number_of_rows = 0, $order_by, $asc_desc){
 
 
 
+function populate_public_file_table($number_of_rows, $order_by, $asc_desc){
+
+
+    global $con;
+    global $_SESSION;
+
+    if( !isset($_SESSION['login']) ){
+
+        // Preliminary data:
+        $current_user = 0;
+        $current_user_id = 0;
+
+        $root = 1;
+        $admin = 2;
+        $mod = 3;
+        $user = 4;
+
+
+        // HTML template:
+        $table_start = '
+                            <table class="table table-striped">
+                            
+                                <thead class="thead-dark">
+                                    <th scope="col">File name</th>
+                                    <th scope="col">Uploaded by</th>
+                                    <th scope="col">Uploaded</th>
+                                    <th scope="col">File type</th>
+                                    <th scope="col">Category</th>
+                                    <th scope="col">Operation</th>
+                                </thead>
+                                
+                                <tbody>';
+        $table_row_start = '<tr>';
+        $table_col_start = '<td>';
+        $table_col_end = '</td>';
+        $table_row_end = '</tr>';
+        $table_end = '
+                                </tbody>
+                            </table>';
+
+
+        // Check whether there is anything to show:
+        $sql = 'SELECT * FROM File WHERE File_Private = 0';
+        $result = mysqli_query($con, $sql);
+
+
+        // Create SQL query in accordance with user type:
+        if ($result->num_rows > 0) {
+
+            if ($current_user == $root || $current_user == $admin || $current_user == $mod) {
+                // Only moderators and above can see this table.
+                if (isset($number_of_rows) && $number_of_rows > 0) {
+                    $sql = "SELECT * FROM File WHERE File_Private = 0 ORDER BY " . $order_by . " " . $asc_desc . " LIMIT 0," . $number_of_rows;
+                } else {
+                    alert("There are no files suited for you to see.", "warning");
+                }
+            }
+
+
+            // Get file data:
+            $data_files = mysqli_query($con, $sql);
+
+
+            // Start table:
+            echo $table_start;
+
+
+            while ($row = mysqli_fetch_array($data_files)) {
+
+                // === Getting the data from DB ===
+
+                // The listed file's ID:
+                $file_id = $row['File_ID'];
+
+
+                // The listed user's full name:
+                $file_name = $row['File_Name'];
+
+
+                // The listed file's author:
+                $file_author_id = $row['File_Author'];
+                $file_author_query = mysqli_query($con, 'SELECT CONCAT(User_Name_First, " ", User_Name_Last) AS User_Name FROM User_Data WHERE User_ID = ' . $file_author_id);
+                while ($file_author_row = mysqli_fetch_array($file_author_query)) {
+                    $file_author = $file_author_row['User_Name'];
+                }
+
+
+                // The listed file's upload date:
+                $file_date = $row['File_Uploaded'];
+
+
+                // The listed file's URL:
+                $file_URL = $row['File_URL'];
+
+
+                // The listed file's category:
+                $file_category_id = $row['File_Category'];
+                $file_category_query = mysqli_query($con, 'SELECT Category_Name FROM Category WHERE Category_ID = ' . $file_category_id);
+                while ($file_category_row = mysqli_fetch_array($file_category_query)) {
+                    $file_category = $file_category_row['Category_Name'];
+                }
+
+
+                // The listed file's file type:
+                $file_type_id = $row['File_Type'];
+                $file_type_query = mysqli_query($con, 'SELECT File_Type_Extension FROM File_Type WHERE File_Type_ID = ' . $file_type_id);
+                while ($file_type_row = mysqli_fetch_array($file_type_query)) {
+                    $file_type = strtoupper($file_type_row['File_Type_Extension']);
+                }
+
+
+                // Predefined action buttons:
+                $btn_download = '<a class="dropdown-item" href="' . $file_URL . '"><i class="material-icons">file_download</i> Download</a>';
+
+                $restricted = '<span class="dropdown-item badge badge-warning"><i class="material-icons">lock</i> Restricted</span>';
+
+
+                // === SECURITY CHECK === :
+                // Check if the file is yours:
+                if ($current_user_id == $file_author_id) {
+
+                    // You can do whatever to your own shit!
+
+
+                    // Check if file is someone else's:
+                } elseif ($current_user_id != $file_author_id) {
+
+                    // Root administrators:
+                    if ($current_user == $root) {
+
+                        // Unlimited access!
+
+
+                        // Administrators:
+                    } elseif ($current_user == $admin) {
+
+                        // Unlimited access!
+
+
+                        // Moderators:
+                    } elseif ($current_user == $mod) {
+
+                        // Moderators can download other's files:
+
+
+                        // Regular users:
+                    } elseif ($current_user == $user) {
+
+
+                    }
+
+                }
+
+
+                // === Populating the table rows ===
+
+                // Table row start:
+                echo $table_row_start;
+
+
+                // File name:
+                echo $table_col_start;
+                echo $file_name;
+                echo $table_col_end;
+
+
+                // File author:
+                echo $table_col_start;
+                echo $file_author;
+                echo $table_col_end;
+
+
+                // File upload date:
+                echo $table_col_start;
+                echo $file_date;
+                echo $table_col_end;
+
+
+                // File Type:
+                echo $table_col_start;
+                echo $file_type;
+                echo $table_col_end;
+
+
+                // File category:
+                echo $table_col_start;
+                echo $file_category;
+                echo $table_col_end;
+
+
+                // Operation:
+                echo $table_col_start;
+                echo '
+            
+                <div >
+                    ' . $btn_download . '
+                </div>
+            </div>
+            ';
+                echo $table_col_end;
+
+
+                // Table row end:
+                echo $table_row_end;
+
+            }
+
+
+            // End table:
+            echo $table_end;
+
+
+            // There are no files in the database:
+        } elseif ($result->num_rows < 1) {
+
+            alert('There are no files in the database.', 'info');
+
+        }
+
+
+
+
+    } else {
+
+        // Preliminary data:
+        $current_user_id = $_SESSION['user_id'];
+        $current_user = $_SESSION['user_type'];
+        $root = 1;
+        $admin = 2;
+        $mod = 3;
+        $user = 4;
+
+
+        // HTML template:
+        $table_start = '
+                            <table class="table table-striped">
+                            
+                                <thead class="thead-dark">
+                                    <th scope="col">File name</th>
+                                    <th scope="col">Uploaded by</th>
+                                    <th scope="col">Uploaded</th>
+                                    <th scope="col">File type</th>
+                                    <th scope="col">Category</th>
+                                    <th scope="co1">Private?</th>
+                                    <th scope="col">Operation</th>
+                                </thead>
+                                
+                                <tbody>';
+        $table_row_start = '<tr>';
+        $table_col_start = '<td>';
+        $table_col_end = '</td>';
+        $table_row_end = '</tr>';
+        $table_end = '
+                                </tbody>
+                            </table>';
+
+
+        // Check whether there is anything to show:
+        $sql = 'SELECT * FROM File';
+        $result = mysqli_query($con, $sql);
+
+
+        // Create SQL query in accordance with user type:
+        if ($result->num_rows > 0) {
+
+            if ($current_user == $root || $current_user == $admin || $current_user == $mod) {
+                // Only moderators and above can see this table.
+                if (isset($number_of_rows) && $number_of_rows > 0) {
+                    $sql = "SELECT * FROM File ORDER BY " . $order_by . " " . $asc_desc . " LIMIT 0," . $number_of_rows;
+                } else {
+                    $sql = "SELECT * FROM File ORDER BY " . $order_by . " " . $asc_desc;
+                }
+            } else {
+                // Users cannot see this table.
+                alert("There are no files suited for you to see.", "warning");
+
+            }
+
+
+            // Get file data:
+            $data_files = mysqli_query($con, $sql);
+
+
+            // Start table:
+            echo $table_start;
+
+
+            while ($row = mysqli_fetch_array($data_files)) {
+
+                // === Getting the data from DB ===
+
+                // The listed file's ID:
+                $file_id = $row['File_ID'];
+
+                $private = $row['File_Private'];
+
+
+                // The listed user's full name:
+                $file_name = $row['File_Name'];
+
+
+                // The listed file's author:
+                $file_author_id = $row['File_Author'];
+                $file_author_query = mysqli_query($con, 'SELECT CONCAT(User_Name_First, " ", User_Name_Last) AS User_Name FROM User_Data WHERE User_ID = ' . $file_author_id);
+                while ($file_author_row = mysqli_fetch_array($file_author_query)) {
+                    $file_author = $file_author_row['User_Name'];
+                }
+
+
+                // The listed file's upload date:
+                $file_date = $row['File_Uploaded'];
+
+
+
+                // The listed file's URL:
+                $file_URL = $row['File_URL'];
+
+
+                // The listed file's category:
+                $file_category_id = $row['File_Category'];
+                $file_category_query = mysqli_query($con, 'SELECT Category_Name FROM Category WHERE Category_ID = ' . $file_category_id);
+                while ($file_category_row = mysqli_fetch_array($file_category_query)) {
+                    $file_category = $file_category_row['Category_Name'];
+                }
+
+
+                // The listed file's file type:
+                $file_type_id = $row['File_Type'];
+                $file_type_query = mysqli_query($con, 'SELECT File_Type_Extension FROM File_Type WHERE File_Type_ID = ' . $file_type_id);
+                while ($file_type_row = mysqli_fetch_array($file_type_query)) {
+                    $file_type = strtoupper($file_type_row['File_Type_Extension']);
+                    // is the Listed File Private?
+
+                }
+
+
+                // Predefined action buttons:
+                $btn_download = '<a class="dropdown-item" href="' . $file_URL . '"><i class="material-icons">file_download</i> Download</a>';
+
+
+
+                // === Populating the table rows ===
+
+                // Table row start:
+                echo $table_row_start;
+
+
+                // File name:
+                echo $table_col_start;
+                echo $file_name;
+                echo $table_col_end;
+
+
+                // File author:
+                echo $table_col_start;
+                echo $file_author;
+                echo $table_col_end;
+
+
+                // File upload date:
+                echo $table_col_start;
+                echo $file_date;
+                echo $table_col_end;
+
+
+                // File Type:
+                echo $table_col_start;
+                echo $file_type;
+                echo $table_col_end;
+
+
+                // File category:
+                echo $table_col_start;
+                echo $file_category;
+                echo $table_col_end;
+
+                // Private?
+                $yes = "Yes";
+                $no = "No";
+                echo $table_col_start;
+                if ($private == 1) {
+                    echo $yes;
+                } else  {
+                    echo $no;
+                }
+                echo $table_col_end;
+
+
+                // Operation:
+                echo $table_col_start;
+                echo '
+                <div>' . $btn_download . '</div>
+                ';
+                echo $table_col_end;
+
+
+                // Table row end:
+                echo $table_row_end;
+
+            }
+
+
+            // End table:
+            echo $table_end;
+
+
+            // There are no files in the database:
+        } elseif ($result->num_rows < 1) {
+
+            alert('There are no files in the database.', 'info');
+
+        }
+
+    }
+
+}
+
 
 
 
