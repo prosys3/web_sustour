@@ -323,9 +323,9 @@ if ( isset($_GET['created']) ){
 
             // post created from DB:
             $status_adjective = 'successfully';
-            $status_db_word = 'User created in the database.';
+            $status_db_word = 'Category created in the database.';
             $status_db_color = 'text-success';
-            $status_file_word = 'No files to add in user.';
+            $status_file_word = 'No files to add in Category.';
             $status_file_color = 'text-muted';
             $title_text = 'Success';
             $title_icon = 'done';
@@ -335,9 +335,9 @@ if ( isset($_GET['created']) ){
 
             // post not created from DB:
             $status_adjective = 'unsuccessfully';
-            $status_db_word = 'User not created in the database.';
+            $status_db_word = 'Category not created in the database.';
             $status_db_color = 'text-danger';
-            $status_file_word = 'no files to add in user.';
+            $status_file_word = 'no files to add in Category.';
             $status_file_color = 'text-muted';
             $title_text = 'Nothing added!';
             $title_icon = 'error';

@@ -2991,7 +2991,7 @@ function populate_category_table($number_of_rows, $order_by, $asc_desc){
             $category_title = $row['Category_Name'];
 
             // Predefined action buttons:
-            $btn_edit = '<a class="dropdown-item" href="cat_edit.php?id='.$category_id.'"><i class="material-icons">create</i> Edit</a>';
+            $btn_edit = '<a class="dropdown-item" href="category_edit.php?id='.$category_id.'"><i class="material-icons">create</i> Edit</a>';
             $btn_delete = '<a class="dropdown-item" href="delete.php?object=category&id='.$category_id.'"><i class="material-icons">delete</i>Delete</a>';
 
             // Start the the table:
@@ -3131,7 +3131,7 @@ function publish_category($submit_name)
 
 
        // Redirect with status codes:
-        header('Refresh: 0; URL=category_list.php?update=category&status=' . $status_db);
+        header('Refresh: 0; URL=category_list.php?updated=category&status=' . $status_db);
 
 
     }

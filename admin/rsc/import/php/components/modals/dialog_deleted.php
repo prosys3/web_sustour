@@ -269,6 +269,43 @@ if ( isset($_GET['deleted']) ){
 
     }
 
+    elseif ($_GET['deleted'] == 'category'){
+
+        // A post has been deleted:
+        $object = 'Category';
+
+        // Analyze the status codes:
+        $status_code = $_GET['status'];
+
+        // Generate status feedback in accordance with status codes:
+        if ( $status_code == '1' ){
+
+            // Post deleted from DB:
+            $status_adjective = 'successfully';
+            $status_db_word = 'Category deleted from database.';
+            $status_db_color = 'text-success';
+            $status_file_word = 'No files to delete in Category.';
+            $status_file_color = 'text-muted';
+            $title_text = 'Success';
+            $title_icon = 'done';
+            $title_color = 'text-success';
+
+        } elseif ( $status_code == '0' ){
+
+            // Post not deleted from DB:
+            $status_adjective = 'unsuccessfully';
+            $status_db_word = 'Category not deleted from database.';
+            $status_db_color = 'text-danger';
+            $status_file_word = 'There were no files to delete.';
+            $status_file_color = 'text-muted';
+            $title_text = 'Nothing deleted';
+            $title_icon = 'error';
+            $title_color = 'text-danger';
+
+        }
+
+    }
+
 
 
 

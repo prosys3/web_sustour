@@ -54,7 +54,7 @@ include 'rsc/import/php/components/header_dashboard.php';
 
                             <div class="row">
 
-                                <div class="col"><a href="cat_create.php" class="btn btn-primary"><i class="material-icons">create</i> Create new category</a></div>
+                                <div class="col"><a href="category_create.php" class="btn btn-primary"><i class="material-icons">create</i> Create new category</a></div>
 
                             </div>
 
