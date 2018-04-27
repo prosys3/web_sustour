@@ -158,22 +158,21 @@ if ( isset($_GET['deleted']) ){
 
 
 
-
     // Check if post has been deleted
     elseif ($_GET['deleted'] == 'user'){
 
         // A post has been deleted:
-        $object = 'user';
+        $object = 'User';
 
         // Analyze the status codes:
         $status_code = $_GET['status'];
 
         // Generate status feedback in accordance with status codes:
-        if ( $status_code == 'n1' ){
+        if ( $status_code == '1' ){
 
             // Post deleted from DB:
             $status_adjective = 'successfully';
-            $status_db_word = 'person deleted from database.';
+            $status_db_word = 'Person deleted from database.';
             $status_db_color = 'text-success';
             $status_file_word = 'there were no files to delete.';
             $status_file_color = 'text-muted';
@@ -181,11 +180,11 @@ if ( isset($_GET['deleted']) ){
             $title_icon = 'done';
             $title_color = 'text-success';
 
-        } elseif ( $status_code == 'n0' ){
+        } elseif ( $status_code == '0' ){
 
             // Post not deleted from DB:
             $status_adjective = 'unsuccessfully';
-            $status_db_word = 'person not deleted from database.';
+            $status_db_word = 'Person not deleted from database.';
             $status_db_color = 'text-danger';
             $status_file_word = 'there were no files to delete.';
             $status_file_color = 'text-muted';

@@ -199,7 +199,7 @@ if ( isset($_GET['updated']) ){
     elseif ($_GET['updated'] == 'user'){
 
         // A post has been deleted:
-        $object = 'user';
+        $object = 'User';
 
         // Analyze the status codes:
         $status_code = $_GET['status'];
@@ -209,7 +209,7 @@ if ( isset($_GET['updated']) ){
 
             // User updated:
             $status_adjective = 'successfully';
-            $status_db_word = 'person updated in database.';
+            $status_db_word = 'Person updated in database.';
             $status_db_color = 'text-success';
             $status_file_word = 'users have no files.';
             $status_file_color = 'text-muted';
@@ -221,7 +221,7 @@ if ( isset($_GET['updated']) ){
 
             // post not updated from DB:
             $status_adjective = 'not';
-            $status_db_word = 'person not updated in database.';
+            $status_db_word = 'Person not updated in database.';
             $status_db_color = 'text-danger';
             $status_file_word = 'users have no files.';
             $status_file_color = 'text-muted';
