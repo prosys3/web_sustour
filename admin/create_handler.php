@@ -59,6 +59,18 @@ if (isset($_GET['object'])){
 
     }
 
+    if ($_GET['object'] == 'user') {
+
+        // the object to create is an user
+        $object = 'user';
+
+        // get variables from url
+        $submit_name = $_GET['name'];
+
+        // this function creates the user:
+        create_user($submit_name);
+    }
+
 }
 
 ?>
