@@ -25,8 +25,8 @@
 <main>
 
 	<!-- Card deck one start -->
-	<section class="py-4">
-	  <div class="card-deck mx-auto w-50">
+	<section class="pt-5">
+	  <div class="container card-deck mx-auto">
 
       <!-- Column one start -->
       <div class="card border-dark">
@@ -82,7 +82,7 @@
 
   <!-- Card deck two start -->
   <section class="py-4">
-    <div class="card-deck mx-auto w-50">
+    <div class="container card-deck mx-auto">
 
       <!-- Column one start -->
       <div class="card border-dark">
@@ -137,7 +137,7 @@
 
 
   <!-- Collapse button start -->
-  <section class="container py-5">
+  <section class="container pt-2">
 	  <div class="row">
 		  <div class="col text-center">
 			  <p>
@@ -155,8 +155,8 @@
 
 
           <!-- Collapse content start -->
-          <section class="py-3">
-            <div class="card-deck mx-auto w-100">
+          <section class="py-5">
+            <div class="container card-deck mx-auto">
               <div class="card border-dark">
                 <div class="card-body d-flex flex-column">
                   <h5 class="card-title text-center">Rånerydding</h5>
