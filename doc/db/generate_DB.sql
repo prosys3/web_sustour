@@ -372,10 +372,13 @@ INSERT INTO File_Type ( File_Type_Extension, File_Type_Name ) VALUES
 -- INSERT DEFAULT COMPANIES:
 INSERT INTO Company (Company_Name, Company_Acronym, Company_Country, Company_Website) VALUES
 ('N/A', 'N/A', 'N/A', 'N/A'),
-('University College of Southeast Norway', 'USN', 'Norway', 'https://usn.no'),
-('Bishkek Academy of Finance and Economics', 'ADAM', 'Kyrgyzstan', 'https://bafe.edu.kg'),
-('Batumi Shota Rustaveli State University', 'BSU', 'Georgia', 'https://www.bsu.edu.ge');
-
+('University College of Southeast Norway', 		'USN',  'Norway', 	  'https://usn.no'),
+('Bishkek Academy of Finance and Economics', 	'ADAM', 'Kyrgyzstan', 'https://bafe.edu.kg'),
+('Issyk Kul State University', 					'IKSU', 'Kyrgyzstan', 'http://www.iksu.kg/'),
+('Kyrgyz Economic University', 					'KEU',  'Kyrgyzstan', 'http://www.keu.kg/'),
+('Batumi Shota Rustaveli State University', 	'BSU',  'Georgia', 	  'https://www.bsu.edu.ge'),
+('Akaki Tsereteli State University', 			'ATSU', 'Georgia',    'http://www.atsu.edu.ge/index.php?lang=en'),
+('Batumi State Maritime Academy', 				'BSMA', 'Georgia', 	  'http://www.bsma.edu.ge/index.html?lang=en');
 
 
 
@@ -383,11 +386,10 @@ INSERT INTO Company (Company_Name, Company_Acronym, Company_Country, Company_Web
 INSERT INTO User_Data (User_Name_First, User_Name_Last, User_Password, User_Type, User_Email, User_Phone, User_Company) VALUES
 ('Deleted', 'User',     MD5('prosys3'), 5, 'N/A',           'N/A',      1),
 ('Lord', 'Root',        MD5('prosys3'), 1, 'root@usn.no',   '10000666', 2),
-('Prince', 'Admin',     MD5('prosys3'), 2, 'admin@usn.no',  '20000666', 2),
-('Sir', 'Moderator',    MD5('prosys3'), 3, 'mod@usn.no',    '30000666', 2),
-('Peasant', 'User',     MD5('prosys3'), 4, 'user@usn.no',   '40000666', 2),
-('test', 'delete',     MD5('prosys3'), 4, 'usertest@usn.no',   '50000666', 2),
-('Empty', 'User',     MD5('prosys3'), 4, 'empty@usn.no',   '60000666', 2);
+('Lordine', 'Root', 	MD5('prosys3'), 1, 	'root2@usn.no',	'20000666',  2),
+('Prince', 'Admin',     MD5('prosys3'), 2, 'admin@usn.no',  '30000666', 2),
+('Sir', 'Moderator',    MD5('prosys3'), 3, 'mod@usn.no',    '40000666', 2),
+('Peasant', 'User',     MD5('prosys3'), 4, 'user@usn.no',   '50000666', 2);
 
 
 
@@ -395,12 +397,12 @@ INSERT INTO User_Data (User_Name_First, User_Name_Last, User_Password, User_Type
 
 -- INSERT DEFAULT POSTS:
 INSERT INTO Post (Post_Title, Post_Image_Featured, Post_Text, Post_Date_Created, Post_Author, Post_Category, Post_Private) VALUES
-('Example post 1', 'https://zcodeio/sites/default/files/news/boostrap_img.png', '<h1>Main title</h1><h2>Subtitle</h2><p>This is an example paragraph</p>', CURDATE(),          2, 1, 1),
-('Example post 2', 'https://zcodeio/sites/default/files/news/boostrap_img.png', '<h1>Main title</h1><h2>Subtitle</h2><p>This is an example paragraph</p>', (CURDATE() + 1),    3, 1, 1),
-('Example post 3', 'https://zcodeio/sites/default/files/news/boostrap_img.png', '<h1>Main title</h1><h2>Subtitle</h2><p>This is an example paragraph</p>', (CURDATE() + 2),    4, 1, 0),
-('Example post 4', 'https://zcodeio/sites/default/files/news/boostrap_img.png', '<h1>Main title</h1><h2>Subtitle</h2><p>This is an example paragraph</p>', (CURDATE() + 3),    5, 1, 0),
-('Example post 4', 'https://zcodeio/sites/default/files/news/boostrap_img.png', '<h1>Main title</h1><h2>Subtitle</h2><p>This is an example paragraph</p>', (CURDATE() + 4),    5, 1, 0),
-('Testing delete', 'https://zcodeio/sites/default/files/news/boostrap_img.png', 'testing delete user',                                                     (CURDATE() + 5),    6, 1, 0);
+('Example post 1', 'http://ibmathsworld.com/wp-content/uploads/2016/01/IB-Examples.jpg', '<h1>Main title</h1><h2>Subtitle</h2><p>This is an example paragraph</p>', CURDATE(),          2, 1, 1),
+('Example post 2', 'http://ibmathsworld.com/wp-content/uploads/2016/01/IB-Examples.jpg', '<h1>Main title</h1><h2>Subtitle</h2><p>This is an example paragraph</p>', (CURDATE() + 1),    3, 1, 1),
+('Example post 3', 'http://ibmathsworld.com/wp-content/uploads/2016/01/IB-Examples.jpg', '<h1>Main title</h1><h2>Subtitle</h2><p>This is an example paragraph</p>', (CURDATE() + 2),    4, 1, 0),
+('Example post 4', 'http://ibmathsworld.com/wp-content/uploads/2016/01/IB-Examples.jpg', '<h1>Main title</h1><h2>Subtitle</h2><p>This is an example paragraph</p>', (CURDATE() + 3),    5, 1, 0),
+('Example post 4', 'http://ibmathsworld.com/wp-content/uploads/2016/01/IB-Examples.jpg', '<h1>Main title</h1><h2>Subtitle</h2><p>This is an example paragraph</p>', (CURDATE() + 4),    5, 1, 0),
+                                                 
 
 
 
@@ -417,10 +419,6 @@ INSERT INTO Activities (Activities_Title, Activities_Text, Activities_Created, A
 
 -- INSERT DEFAULT EVENTS
 INSERT INTO event(Event_ID, Event_Name, Event_Location, Event_Start, Event_End, Event_Date, Event_Company, Event_Author, Event_Text)VALUES 
-(1, 'R&aringnerydding', 'B&oslash', '14:00' , '18:00' , '2018-06-07', 1, 2, '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>'),
-(2, 'Suicide 101: Allahu Akbar', 'The Cave', '17:00' , '23:00' , '2018-07-07', 2, 3, '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit </br> Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>'),
-(3, 'Curry bonanza', 'Somewhere in curryland', '09:00' , '12:00' , '2018-08-07', 3, 4, '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>'),
-(4, 'Meme-fest', 'Urinkjole-garden', '02:00' , '08:00' , '2018-09-07', 3, 3, '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>'),
-(5, 'Mohammed - a caricature', 'Somewhere in the desert', '01:00' , '23:00' , '2018-10-07', 2, 3, '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit </br> Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>'),
-(6, 'B&aringlbrenning til minne om Naboen', 'B&oslash', '20:00' , '23:00' , '2018-11-07', 1, 2, '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>'),
-(7, 'Testing delete user', 'test', '20:00' , '23:00' , '2018-11-07', 1, 6, 'Testing Delete user with event');
+(1, 'Opening party', 'B&oslash', '20:00' , '24:00' , '2018-06-07', 1, 2, '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>'),
+(2, 'Meeting for summer school attendees ', 'The Cave', '17:00' , '23:00' , '2018-07-07', 2, 3, '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit </br> Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>'),
+(3, 'Curry bonanza', 'Somewhere in curryland', '09:00' , '12:00' , '2018-08-07', 3, 4, '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>');
