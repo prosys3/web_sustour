@@ -12,7 +12,7 @@
         header("Location:user_list.php");
 }
 ?>
-
+<?php
     // HTML - Head and header:
     include 'rsc/import/php/components/head_dashboard.php';
     include 'rsc/import/php/components/header_dashboard.php';
@@ -32,7 +32,7 @@
         <div class="container text-center">
 
             <div style="height: 50px"></div>
-            <img src="../rsc/img/logo/sustour/logo_symbol_green.svg" width="100" alt="Logo">
+            <img src="../rsc/img/logo/sustour/logo_symbol_black.svg" width="100" alt="Logo">
             <div style="height: 50px"></div>
 
         </div>
