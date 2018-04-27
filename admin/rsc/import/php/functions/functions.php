@@ -2098,13 +2098,13 @@ function post_update($post_id, $submit_name, $fileref, $dir){
 
 
         // Debug:
-        $line = '<hr>';
-        echo '<h1>Receipt</h1><hr>';
-        echo $post_id.$line;
-        echo $post_title.$line;
-        echo htmlspecialchars($post_text).$line;
-        if ($hasimg) { echo 'True'.$line.$oldimg.$line.$oldfile.$line; } else { echo 'False'.$line; }
-        echo htmlspecialchars($sql_exist).$line;
+        //  $line = '<hr>';
+        //  echo '<h1>Receipt</h1><hr>';
+        //  echo $post_id.$line;
+        //   echo $post_title.$line;
+        //   echo htmlspecialchars($post_text).$line;
+        //   if ($hasimg) { echo 'True'.$line.$oldimg.$line.$oldfile.$line; } else { echo 'False'.$line; }
+        //   echo htmlspecialchars($sql_exist).$line;
 
 
         // Redirect with status codes:
@@ -2727,13 +2727,13 @@ function create_user($submit_name){
 
 
         // Debug:
-        $line = '<hr>';
-        echo '<h1>Receipt</h1><hr>';
-        echo $event_id.$line;
-        echo $event_title.$line;
-        echo htmlspecialchars($event_text).$line;
-        echo 'False'.$line; 
-        echo htmlspecialchars($sql_exist).$line;
+        //   $line = '<hr>';
+        //  echo '<h1>Receipt</h1><hr>';
+        //  echo $event_id.$line;
+        //   echo $event_title.$line;
+        //   echo htmlspecialchars($event_text).$line;
+        //  echo 'False'.$line;
+        //   echo htmlspecialchars($sql_exist).$line;
 
 
         // Redirect with status codes:
@@ -2804,12 +2804,12 @@ function publish_event($name_attribute)
         }
 
         // Debug:
-        $line = '<hr>';
-        echo '<h1>Receipt</h1><hr>';
-        echo $event_title . $line;
-        echo htmlspecialchars($event_text) . $line;
-        echo 'False' . $line;
-        echo htmlspecialchars($sql_exist) . $line;
+       // $line = '<hr>';
+      //  echo '<h1>Receipt</h1><hr>';
+        //  echo $event_title . $line;
+        //  echo htmlspecialchars($event_text) . $line;
+        //  echo 'False' . $line;
+        //   echo htmlspecialchars($sql_exist) . $line;
 
 
         // Redirect with status codes:
@@ -2871,13 +2871,13 @@ function publish_event($name_attribute)
             }
 
             // Debug:
-            $line = '<hr>';
-            echo '<h1>Receipt</h1><hr>';
-            echo $activities_title . $line;
-            echo htmlspecialchars($activities_text) . $line;
-            echo 'False' . $line;
-            echo htmlspecialchars($sql) . $line;
-            echo htmlspecialchars($sql_exist) . $line;
+        //    $line = '<hr>';
+        //    echo '<h1>Receipt</h1><hr>';
+        //    echo $activities_title . $line;
+        //    echo htmlspecialchars($activities_text) . $line;
+        //    echo 'False' . $line;
+         //   echo htmlspecialchars($sql) . $line;
+        //    echo htmlspecialchars($sql_exist) . $line;
 
 
             // Redirect with status codes:
@@ -2936,14 +2936,13 @@ function activities_update($activities_id, $submit_name){
 
 
         // Debug:
-        $line = '<hr>';
-        echo '<h1>Receipt</h1><hr>';
-        echo $activities_id.$line;
-        echo $activities_title.$line;
-        echo htmlspecialchars($activities_text).$line;
-        echo 'False'.$line;
-        echo htmlspecialchars($sql).$line;
-        echo htmlspecialchars($sql_exist).$line;
+       // echo '<h1>Receipt</h1><hr>';
+       // echo $activities_id.$line;
+       // echo $activities_title.$line;
+       // echo htmlspecialchars($activities_text).$line;
+       // echo 'False'.$line;
+       // echo htmlspecialchars($sql).$line;
+       // echo htmlspecialchars($sql_exist).$line;
 
 
         // Redirect with status codes:
