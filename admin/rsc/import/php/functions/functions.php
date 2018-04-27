@@ -31,7 +31,7 @@ function counter ($whatToCount) {
 
     switch ($whatToCount) {
 
-        case "users": $input = "User_ID) FROM User_Data";
+        case "users": $input = "User_ID) - 3 FROM User_Data";
         break;
 
         case "posts": $input = "Post_ID) FROM Post";
@@ -46,7 +46,7 @@ function counter ($whatToCount) {
         case "event": $input = "Event_ID) FROM Event";
         break;
 
-        case "category": $input = "Category_ID) FROM Category";
+        case "category": $input = "Category_ID) - 1 FROM Category";
         break;
 
         default: die;
@@ -568,16 +568,16 @@ function populate_user_table($number_of_rows = 0, $order_by, $asc_desc){
     if ($current_user == $root || $current_user == $admin) {
         // Only Root and Administrator users can see Root users.
         if ($number_of_rows > 0) {
-            $sql = 'SELECT * FROM User_Data ORDER BY '.$order_by .' '.$asc_desc.' LIMIT 0,'.$number_of_rows;
+            $sql = 'SELECT * FROM User_Data WHERE User_ID > 3 ORDER BY '.$order_by .' '.$asc_desc.' LIMIT 0,'.$number_of_rows;
         } else {
-            $sql = 'SELECT * FROM User_Data ORDER BY '.$order_by.' '.$asc_desc;
+            $sql = 'SELECT * FROM User_Data WHERE User_ID > 3 ORDER BY '.$order_by.' '.$asc_desc;
         }
     } else {
         // If user is Moderator or user, they cannot see Root users.
         if ($number_of_rows > 0) {
-            $sql = 'SELECT * FROM User_Data WHERE User_Type > 1 ORDER BY '.$order_by.' '.$asc_desc.' LIMIT 0,'.$number_of_rows;
+            $sql = 'SELECT * FROM User_Data WHERE User_Type > 3 ORDER BY '.$order_by.' '.$asc_desc.' LIMIT 0,'.$number_of_rows;
         } else {
-            $sql = 'SELECT * FROM User_Data WHERE User_Type > 1 ORDER BY '.$order_by.' '.$asc_desc;
+            $sql = 'SELECT * FROM User_Data WHERE User_Type > 3 ORDER BY '.$order_by.' '.$asc_desc;
         }
     }
 
