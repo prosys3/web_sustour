@@ -2607,11 +2607,11 @@ function user_update($user_id,$submit_name){
 
 
 // Create user:
-function create_user($name_attribute){
+function create_user($submit_name){
 
     global $con;
 
-    if (isset($_POST[$name_attribute])){
+    if (isset($_POST[$submit_name])){
 
         // Build SQL statement:
         $sql_create =   'INSERT INTO User_Data (';

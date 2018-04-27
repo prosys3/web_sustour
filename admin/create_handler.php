@@ -72,6 +72,17 @@ if (isset($_GET['object'])){
         publish_category($submit_name);
 
     } 
+    if ($_GET['object'] == 'user') {
+
+        // the object to create is an user
+        $object = 'user';
+
+        // get variables from url
+        $submit_name = $_GET['name'];
+
+        // this function creates the user:
+        create_user($submit_name);
+    }
 
 }
 
