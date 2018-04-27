@@ -25,18 +25,18 @@
 <main>
 
 
-    <section class="bg-light py-5">
+    <section class="jumbotron jumbotron-fluid mb-0">
+      <div class="container text-center">
 
-        <div class="container py-5">
+        <!-- logo navbar start -->
+        <a href="#" class=""><img src="rsc/img/logo/sustour/logo_symbol_black.svg" width="150"></a>
+        <!-- logo navbar stop -->
 
-            <h1>We care about sustainable tourism</h1>
-            <h2>Support our project</h2>
+        <h1 class="display-3">About Sustainable Tourism</h1>
+        <p class="lead">Educational project between Kyrgyzstan, Georgia and Norway 2016– 2019</p>
 
-            <a href="about.php" class="btn btn-dark my-3">Learn more</a>
-
-        </div>
-
-    </section>
+      </div>
+    </section> 
 
     <section class="bg-theme-1 pt-5">
 
