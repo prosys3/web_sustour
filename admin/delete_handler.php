@@ -188,6 +188,40 @@ if ( isset($_POST['delete'], $_GET['object'], $_GET['id']) ){
 
 
 
+    } elseif ( $_GET['object'] == 'category' ){
+
+        // The object a category:
+        $object = $_GET['object'];
+
+        // Backup category ID for later existence check:
+        $category_id = $_GET['id'];
+
+        //Sets all posts and files uploaded to default category(Uncategorized)
+        $sqlp            =      'SELECT * FROM Post WHERE Post_Category = ' .$category_id;
+        $sqlp_res        =      mysqli_query($con,$sqlp);
+        if (mysqli_num_rows($sqlp_res) > 0) {
+            $sql_post        =      'UPDATE Post SET Post_Category = 1 ';
+            $sql_post        .=     'WHERE Post_Category = '.$category_id.'; ';
+            $result = mysqli_query($con,$sql_post);
+
+        }
+
+
+        $sqlf            =      'SELECT * FROM File WHERE File_Category = ' .$category_id;
+        $sqlf_res        =      mysqli_query($con,$sqlf);
+        if (mysqli_num_rows($sqlf_res) > 0) {
+            $sql_file        =      'UPDATE File SET File_Category = 1 ';
+            $sql_file        .=     'WHERE File_Category = '.$category_id.'; ';
+            mysqli_query($con,$sql_file);
+        }
+
+        // Generate SQL (delete):
+        $sql_delete = 'DELETE FROM Category WHERE Category_ID = '.$category_id;
+
+        // Generate SQL (existence):
+        $sql_exist = 'SELECT * FROM Category WHERE Category_ID = '.$category_id;
+
+        
     }
 
 

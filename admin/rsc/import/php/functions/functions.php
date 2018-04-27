@@ -46,6 +46,9 @@ function counter ($whatToCount) {
         case "event": $input = "Event_ID) FROM Event";
         break;
 
+        case "category": $input = "Category_ID) FROM Category";
+        break;
+
         default: die;
 
     }
@@ -2097,18 +2100,10 @@ function post_update($post_id, $submit_name, $fileref, $dir){
         }
 
 
-        // Debug:
-        $line = '<hr>';
-        echo '<h1>Receipt</h1><hr>';
-        echo $post_id.$line;
-        echo $post_title.$line;
-        echo htmlspecialchars($post_text).$line;
-        if ($hasimg) { echo 'True'.$line.$oldimg.$line.$oldfile.$line; } else { echo 'False'.$line; }
-        echo htmlspecialchars($sql_exist).$line;
 
 
         // Redirect with status codes:
-        header('Refresh: 3; URL=post_list.php?updated=post&status='.$status_file.$status_db);
+        header('Refresh: 0; URL=post_list.php?updated=post&status='.$status_file.$status_db);
 
 
     }
@@ -2726,15 +2721,7 @@ function create_user($name_attribute){
         }
 
 
-        // Debug:
-        $line = '<hr>';
-        echo '<h1>Receipt</h1><hr>';
-        echo $event_id.$line;
-        echo $event_title.$line;
-        echo htmlspecialchars($event_text).$line;
-        echo 'False'.$line; 
-        echo htmlspecialchars($sql_exist).$line;
-
+       
 
         // Redirect with status codes:
         header('Refresh: 3; URL=event_list.php?updated=event&status='.$status_db);
@@ -2803,14 +2790,7 @@ function publish_event($name_attribute)
 
         }
 
-        // Debug:
-        $line = '<hr>';
-        echo '<h1>Receipt</h1><hr>';
-        echo $event_title . $line;
-        echo htmlspecialchars($event_text) . $line;
-        echo 'False' . $line;
-        echo htmlspecialchars($sql_exist) . $line;
-
+       
 
         // Redirect with status codes:
         header('Refresh: 0; URL=event_list.php?created=event&status=' . $status_db);
@@ -2870,14 +2850,6 @@ function publish_event($name_attribute)
 
             }
 
-            // Debug:
-            $line = '<hr>';
-            echo '<h1>Receipt</h1><hr>';
-            echo $activities_title . $line;
-            echo htmlspecialchars($activities_text) . $line;
-            echo 'False' . $line;
-            echo htmlspecialchars($sql) . $line;
-            echo htmlspecialchars($sql_exist) . $line;
 
 
             // Redirect with status codes:
@@ -2935,16 +2907,7 @@ function activities_update($activities_id, $submit_name){
         }
 
 
-        // Debug:
-        $line = '<hr>';
-        echo '<h1>Receipt</h1><hr>';
-        echo $activities_id.$line;
-        echo $activities_title.$line;
-        echo htmlspecialchars($activities_text).$line;
-        echo 'False'.$line;
-        echo htmlspecialchars($sql).$line;
-        echo htmlspecialchars($sql_exist).$line;
-
+       
 
         // Redirect with status codes:
        header('Refresh: 0; URL=activities_list.php?updated=activities&status='.$status_db);
@@ -2956,3 +2919,221 @@ function activities_update($activities_id, $submit_name){
 
 
 
+
+
+
+
+// Populate the category table
+function populate_category_table($number_of_rows, $order_by, $asc_desc){
+
+    global $con;
+    global $_SESSION;
+
+    // Preliminary data:
+    $user_id = $_SESSION['user_id'];
+    $current_user = $_SESSION['user_type'];
+
+    // Access level:
+    $root = 1;
+    $admin = 2;
+    $mod = 3;
+    $user = 4;
+
+    // HTML template:
+    $table_start = '
+                            <table class="table table-striped">
+                            
+                                <thead>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Operation</th>
+                                </thead>
+                                
+                                <tbody>';
+    $table_row_start = '<tr>';
+    $table_col_start = '<td>';
+    $table_col_end = '</td>';
+    $table_row_end = '</tr>';
+    $table_end = '
+                                </tbody>
+                            </table>';
+
+
+    // Create SQL query i accordance with user type:
+    if ( $current_user == $root || $current_user == $admin || $current_user == $mod ) {
+
+        $access_granted = true;
+
+        if ( isset($number_of_rows) && $number_of_rows > 0 ) {
+            $sql = "SELECT * FROM Category WHERE Category_ID > 1 ORDER BY ".$order_by." ".$asc_desc." LIMIT 0,".$number_of_rows;
+        } else {
+            $sql = "SELECT * FROM Category WHERE Category_ID > 1 ORDER BY ".$order_by." ".$asc_desc;
+        }
+
+    } else {
+
+        $access_granted = false;
+
+    }
+
+    // Get user data:
+    $result = mysqli_query($con, $sql);
+
+    // Check if any posts were received:
+    if ( $result !== null ){
+
+        // Populate table:
+        echo $table_start;
+
+        while ( $row = mysqli_fetch_array($result) ) {
+
+            // Get primary data:
+            $category_id = $row['Category_ID'];
+            $category_title = $row['Category_Name'];
+
+            // Predefined action buttons:
+            $btn_edit = '<a class="dropdown-item" href="cat_edit.php?id='.$category_id.'"><i class="material-icons">create</i> Edit</a>';
+            $btn_delete = '<a class="dropdown-item" href="delete.php?object=category&id='.$category_id.'"><i class="material-icons">delete</i>Delete</a>';
+
+            // Start the the table:
+            echo $table_row_start;
+
+            // Category name:
+            echo $table_col_start;
+            echo $category_title;
+            echo $table_col_end;
+
+
+
+            // Operation:
+            echo $table_col_start;
+            // Root and Administrator can CRUD all files:
+            if ( $current_user == $root || $current_user == $admin || $current_user == $mod ) {
+
+                echo '
+                <div class="dropdown">
+                  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Manage
+                  </button>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    '.$btn_edit.'<div class="dropdown-divider"></div>'.$btn_delete.'
+                  </div>
+                </div>
+                ';
+            }
+
+             // Users can edit own user only:
+            if ( $current_user == $user ) {
+                echo '<span class="badge badge-secondary">Restricted</span>';
+            }
+
+            echo $table_col_end;
+            echo $table_row_end;
+        }
+
+        echo $table_end;
+
+    } elseif ( $result == null ) {
+
+        // No posts are available:
+        alert("You have no categories", "warning");
+    }
+
+}
+
+function publish_category($submit_name)
+{
+
+
+    // Set DB connection global;
+    global $con;
+
+
+    // Check if a category has been submitted:
+    if (isset($_POST[$submit_name])) {
+
+        // Assign category variables:
+        $category_name = $_POST['title'];
+
+
+
+        $sql = 'INSERT INTO Category (Category_Name)
+                        VALUES ';
+        $sql .= '("' . $category_name . '");';
+
+        mysqli_query($con, $sql);
+
+
+        // Check if category was created in DB:
+        $sql_exist = 'SELECT COUNT(*) AS Existence FROM Category WHERE ';
+        $sql_exist .= 'Category_Name = "' . $category_name . '";';
+        $result = mysqli_query($con, $sql_exist);
+        $row = mysqli_fetch_array($result);
+        if ($row['Existence'] == 1) {
+
+            // category was created in DB:
+            $status_db = 1;
+
+        } elseif ($row['Existence'] == 0 || $row['Existence'] == null) {
+
+            // category was not created in DB:
+            $status_db = 0;
+
+        }
+
+
+
+        // Redirect with status codes:
+        header('Refresh: 0; URL=category_list.php?created=category&status=' . $status_db);
+
+
+    }
+}
+
+ // Update Event
+    function category_update($category_id, $submit_name){
+
+    // Set DB connection global;
+    global $con;
+
+    // Check if a event has been submitted:
+    if (isset($_POST[$submit_name])){
+
+         // Assign category variables:
+        $category_name = $_POST['title'];
+       
+
+
+
+            $sql =      'UPDATE Category SET ';
+            $sql .=     'Category_Name = "'. $category_name.'" ';
+            $sql .=     'WHERE Category_ID = '.$category_id.';';
+
+            mysqli_query($con,$sql);
+
+
+
+        // Check if category was created in DB:
+        $sql_exist = 'SELECT COUNT(*) AS Existence FROM Category WHERE ';
+        $sql_exist .= 'Category_Name = "' . $category_name . '";';
+        $result = mysqli_query($con, $sql_exist);
+        $row = mysqli_fetch_array($result);
+        if ($row['Existence'] == 1) {
+
+            // category was created in DB:
+            $status_db = 1;
+
+        } elseif ($row['Existence'] == 0 || $row['Existence'] == null) {
+
+            // category was not created in DB:
+            $status_db = 0;
+
+        }
+
+
+       // Redirect with status codes:
+        header('Refresh: 0; URL=category_list.php?update=category&status=' . $status_db);
+
+
+    }
+
+}

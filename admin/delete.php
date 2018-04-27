@@ -67,6 +67,14 @@ include 'rsc/import/php/components/header_dashboard.php';
             // Get the event id:
             $object_id = $_GET['id'];
 
+        } elseif ($_GET['object'] == 'category'){
+
+            // It is a category:
+            $object = 'category';
+
+            // Get the category id:
+            $object_id = $_GET['id'];
+
         }
 
     }
@@ -409,6 +417,42 @@ include 'rsc/import/php/components/header_dashboard.php';
                     <tr>
                         <td>Event location</td>
                         <td>'.$event_location.'</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        ';
+
+    }
+
+    // If object is category:
+    if ($object === 'category'){
+
+    // Get category data from DB:
+        $category_data_query = 'SELECT * FROM Category WHERE Category_ID = '.$object_id;
+        $category_data_result = mysqli_query($con,$category_data_query);
+        $category_data_array = mysqli_fetch_array($category_data_result);
+
+        // Assign primary data to variables:
+        $category_title = $category_data_array['Category_Name'];
+
+        
+        // Create HTML template:
+        $html_object_info = '
+
+            <div class="table-responsive">
+                <table class="table table-sm table-striped small text-muted table-bordered">
+                <thead>
+                    <tr>
+                        <th scope="col">Description</th>
+                        <th scope="col">Data</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>Category name</td>
+                        <td>'.$category_title.'</td>
                     </tr>
                 </tbody>
             </table>

@@ -59,6 +59,20 @@ if (isset($_GET['object'])){
 
     }
 
+    // Check if object is category:
+    if ($_GET['object'] == 'category'){
+
+        // The object to create is a category:
+        $object = 'category';
+
+        // Get variables from url:
+        $submit_name = $_GET['name'];
+
+        // This function outputs a status code:
+        publish_category($submit_name);
+
+    } 
+
 }
 
 ?>

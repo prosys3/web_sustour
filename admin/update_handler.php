@@ -81,4 +81,19 @@ if (isset($_GET['object'])){
 
     }
 
+        // Check if object is category:
+    if ($_GET['object'] == 'category'){
+
+        // The object to create is a category:
+        $object = 'category';
+
+        // Get variables from url:
+        $category_id = $_GET['id'];
+        $submit_name = $_GET['name'];
+
+        // This function outputs a status code:
+        category_update($category_id,$submit_name);
+
+    } 
+
 }

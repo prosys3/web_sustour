@@ -47,6 +47,7 @@ $html = '
     <a href="event_list.php?dashboard=4" class="list-group-item ' . activeItem(4) . '"><i class="material-icons">description</i> Events <span class="'.activeBadge(4).'">' . counter("event") . '</span></a>
     <a href="user_list.php?dashboard=5" class="list-group-item ' . activeItem(5) . '"><i class="material-icons">person</i> Users <span class="'.activeBadge(5).'">' . counter("users") . '</span></a>
     <a href="file_list.php?dashboard=6" class="list-group-item ' . activeItem(6) . '"><i class="material-icons">folder</i> Files <span class="'.activeBadge(6).'">' . counter("files") . '</span></a>
+    <a href="category_list.php?dashboard=7" class="list-group-item ' . activeItem(7) . '"><i class="material-icons">description</i> Categories <span class="'.activeBadge(7).'">' . counter("category") . '</span></a>
 </div>
 
 ';
