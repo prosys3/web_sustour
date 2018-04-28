@@ -3158,13 +3158,12 @@ function populate_user_information() {
     $row_start = '<div class="row">';
     $row_col_end = '</div>';
     $col_start = '<div class="col text-left pt-3">';
-    $col_last_start = '<div style="width: 200px" class="col text-left pt-3">';
-    $col_spec = '<div class="col ">';
+
 
     echo $row_start;
 
     echo $col_start;
-    echo '<b>Your email:</b> ';
+    echo '<i class="material-icons">mail</i> ';
     echo $_SESSION['login_email'];
     echo $row_col_end;
 
@@ -3172,7 +3171,7 @@ function populate_user_information() {
     echo $row_start;
 
     echo $col_start;
-    echo '<b>Phone:</b> ';
+    echo '<i class="material-icons">phone</i> ';
     echo $_SESSION['user_phone'];
     echo $row_col_end;
 
@@ -3180,7 +3179,7 @@ function populate_user_information() {
     echo $row_start;
 
     echo $col_start;
-    echo '<b>Your company:</b> ';
+    echo '<i class="material-icons">school</i> ';
     echo $user_company;
     echo $row_col_end;
 
@@ -3188,7 +3187,7 @@ function populate_user_information() {
     echo $row_start;
 
     echo $col_start;
-    echo '<b>Your user type:</b> ';
+    echo '<i class="material-icons">security</i> ';
     echo $user_type;
     echo $row_col_end;
 
