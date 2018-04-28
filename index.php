@@ -68,11 +68,11 @@
             <div class="row">
 
                 <div class="col text-center">
-                    <img src="rsc/img/icons/analysis_white.svg" width="100" alt="">
+                    <img src="rsc/img/icons/conference_white.svg" width="100" alt="">
                 </div>
 
                 <div class="col">
-                    <h3>Research</h3>
+                    <h3>Summer schools</h3>
                     <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
                 </div>
 

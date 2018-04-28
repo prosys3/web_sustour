@@ -1455,9 +1455,15 @@ function populate_event_table($number_of_rows, $order_by, $asc_desc){
         $access_granted = true;
 
         if ( isset($number_of_rows) && $number_of_rows > 0 ) {
-            $sql = "SELECT * FROM Event ORDER BY ".$order_by." ".$asc_desc.", Event_Start"." LIMIT 0,".$number_of_rows;
+            $sql  = "SELECT * FROM Event ORDER BY CASE WHEN Event_Date > CURDATE() THEN 1
+                                                       WHEN Event_Date < CURDATE() THEN 2
+                                                       END ".$asc_desc." ".$order_by.", Event_Start"." LIMIT 0,".$number_of_rows;
+            
         } else {
-            $sql = "SELECT * FROM Event ORDER BY ".$order_by." ".$asc_desc.", Event_Start";
+            $sql  = "SELECT * FROM Event ORDER BY CASE WHEN Event_Date > CURDATE() THEN 1
+                                                       WHEN Event_Date < CURDATE() THEN 2
+                                                       END ".$asc_desc.", ".$order_by.", Event_Start";
+           
         }
 
     } else {
@@ -3136,3 +3142,4 @@ function publish_category($submit_name)
     }
 
 }
+
