@@ -56,7 +56,7 @@
                             <div class="row">
 
                                 <div class="col"><a href="file_upload.php" class="btn btn-primary"><i class="material-icons">file_upload</i> Upload new file</a></div>
-                                <div class="col"><a href="#" class="btn btn-secondary"><i class="material-icons">delete_sweep</i> Delete multiple files (planned)</a></div>
+                                
 
                             </div>
 

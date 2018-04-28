@@ -54,12 +54,15 @@
 
                             <div class="row">
 
-                                <div class="col"><a class="btn btn-secondary" href="user_edit_own.php?id=<?php echo $_SESSION['user_id'] ?>"><i class="material-icons">account_circle</i> Edit your own user</a></div>
                                 <?php
                                 if ($_SESSION['user_type'] < 3) {
                                     echo '<div class="col"><a class="btn btn-primary" href="user_create.php"><i class="material-icons">create</i> Create new user </a></div>';
-                                }
+                                } else
+                                    echo '<div class="col"><a class="btn btn-primary" href="user_create.php" hidden><i class="material-icons">create</i> Create new user </a></div>';
                                 ?>
+
+                                <div class="col"><a class="btn btn-secondary" href="user_edit_own.php?id=<?php echo $_SESSION['user_id'] ?>"><i class="material-icons">account_circle</i> Edit your own user</a></div>
+                                
 
 
                             </div>
