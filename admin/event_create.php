@@ -100,7 +100,7 @@
                                 <!-- Post text: -->
                                 <div class="form-group mt-4">
                                     <label>Event description</label>
-                                    <textarea name="eventtext" class="form-control" placeholder="Give a short description of the event (maximum 255 characters)"></textarea>
+                                    <textarea name="eventtext" class="form-control" placeholder="Give a short description of the event (maximum 255 characters)" maxlength="255"></textarea>
                                 </div>
 
 

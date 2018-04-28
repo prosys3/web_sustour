@@ -34,7 +34,7 @@
   </style>
 
 	<section class="container pt-2">
-    <div class="row mt-5 justify-content-center">
+    <div class="row mt-5 ">
 
       <!-- Column one start -->
       <div class="card card-custom mx-2 mb-3 border-dark">
@@ -156,7 +156,7 @@
 
           <!-- Collapse content start -->
           <section class="container">
-            <div class="row my-4 justify-content-center">
+            <div class="row my-4 ">
 
               <div class="card card-collapse mx-2 mb-3 border-dark">
                 <div class="card-body d-flex flex-column">

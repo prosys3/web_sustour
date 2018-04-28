@@ -17,6 +17,12 @@
 
 <!-- ... Your code goes here ... -->
 <main>
+    <style>
+    .card-custom {
+      max-width: 350px;
+      min-width: 350px;
+    }
+  </style>
 
     <section class="jumbotron jumbotron-fluid">
 
@@ -44,8 +50,8 @@
             $result = mysqli_query($con, $sql);
             $numrow = mysqli_num_rows($result);
             $counter = 1;
-            echo '<section class="container py-4">';              
-            echo '<div class="row">';
+            echo '<section class="container pt-2">';              
+            echo '<div class="row mt-5 ">';
             while ( $row = mysqli_fetch_array( $result ) ){
                 $tempQuery = "SELECT * FROM Company WHERE " . $row['Event_Company'] . " = Company_ID";
                 $tempRes = mysqli_query($con,$tempQuery);
@@ -60,9 +66,7 @@
                 $startTime = $sTime->format('H:i');
                 $endTime = $eTime->format('H:i');
                
-                echo '<div class="col-sm-4">';
-                echo '<div class="card">';
-                echo '<div class="card border-dark">';
+                echo '<div class="card card-custom mx-2 mb-3 border-dark">';
                 echo '<div class="card-body d-flex flex-column">';
                 echo '<h5 class="card-title text-center">';
                 echo $row['Event_Name'];
@@ -86,18 +90,15 @@
                 echo '</p>';
                 echo '</div>';
                 echo '</div>';
-                echo '</div>';
-                echo '</div>';
+                
               
                 if ($counter % 3 == 0) {
-                 echo '</div>';
-                 echo '</section>';
+                 
                   if ($counter == $numrow) {
-
+                        echo '</div>';
+                        echo '</section>';
                     } else {
-                        echo '<section class="container py-4">';
-                        echo '<div class="row">';
-
+                        
                     }
 
                }
@@ -128,12 +129,12 @@
    <!-- Collapse content start -->
           <?php
 
-            $sql_old = 'SELECT * FROM Event WHERE Event_Date < CURDATE() ORDER BY Event_Date ASC, Event_Start ASC';
+            $sql_old = 'SELECT * FROM Event WHERE Event_Date < CURDATE() ORDER BY Event_Date DESC, Event_Start ASC';
             $result_old = mysqli_query($con, $sql_old);
             $numrow_old = mysqli_num_rows($result_old);
             $counter_old = 1;
-            echo '<section class="container py-4">';              
-            echo '<div class="row">';
+            echo '<section class="container pt-2">';              
+            echo '<div class="row mt-5 ">';;
             while ( $row_old = mysqli_fetch_array( $result_old ) ){
                 $tempQuery = "SELECT * FROM Company WHERE " . $row_old['Event_Company'] . " = Company_ID";
                 $tempRes = mysqli_query($con,$tempQuery);
@@ -149,20 +150,18 @@
                 $endTime = $eTime->format('H:i');
                
 
-                echo '<div class="col-sm-4">';
-                echo '<div class="card">';
-                echo '<div class="card border-dark">';
+                echo '<div class="card card-custom mx-2 mb-3 border-dark">';
                 echo '<div class="card-body d-flex flex-column">';
                 echo '<h5 class="card-title text-center">';
                 echo $row_old['Event_Name'];
                 echo '</h5>';
-                echo '<h6 class="card-subtitle">'; 
+                echo '<h6 class="card-subtitle text-left">'; 
                 echo $tempRow['Company_Name'];
                 echo '</h6>';
-                echo '<h6 class="card-subtitle my-2 text-muted">';
+                echo '<h6 class="card-subtitle my-2 text-muted text-left">';
                 echo $row_old['Event_Location'];
                 echo '</h6>';
-                echo '<ul class="list-group list-group-flush">';
+                echo '<ul class="list-group list-group-flush text-left">';
                 echo '<li class="list-group-item">';
                 echo $date;
                 echo '</li>';
@@ -170,22 +169,20 @@
                 echo $startTime . ' - ' . $endTime;
                 echo '</li>' ;
                 echo '</ul>' ;
+                echo '<div class="text-left">';
                 echo '<p class="card-text">';
                 echo $row_old['Event_Text'];
                 echo '</p>';
                 echo '</div>';
                 echo '</div>';
                 echo '</div>';
-                echo '</div>';
+                
               
                 if ($counter_old % 3 == 0) {
-                 echo '</div>';
-                 echo '</section>';
+                 
                   if ($counter_old == $numrow_old) {
-
-                    } else {
-                        echo '<section class="container py-4">';
-                        echo '<div class="row">';
+                        echo '</div>';
+                        echo '</section>';
 
                     }
 
@@ -195,17 +192,7 @@
 
             ?>
 </main>
-<!-- quick fix -->
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<!-- quick fix -->
+
 
 <!--
 ##################################################################################

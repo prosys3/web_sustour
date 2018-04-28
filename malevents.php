@@ -46,19 +46,7 @@
 
 
       <!-- Column two start -->
-      <div class="card border-dark">
-        <div class="card-body d-flex flex-column">
-          <h5 class="card-title text-center">Suicide 101: Allahu Akbar</h5>
-          <h6 class="card-subtitle">Bishkek Academy of Finance and Economics</h6>
-          <h6 class="card-subtitle my-2 text-muted">The Cave</h6>
-        	<ul class="list-group list-group-flush">
-      			<li class="list-group-item">July 7th - 2018</li>
-      			<li class="list-group-item">17:00-23:00</li>
-    			</ul>
-        	<p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        	<button type="button" class="btn btn-dark mt-auto">Go somewhere</button>
-        </div>
-      </div>
+
       <!-- Column two end -->
 
       <!-- Column three start -->
@@ -71,7 +59,7 @@
       			<li class="list-group-item">August 7th - 2018</li>
       			<li class="list-group-item">09:00-12:00</li>
     			</ul>
-          <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+          <p class="card-text">Thist.</p>
           <button type="button" class="btn btn-dark mt-auto">Go somewhere</button>
         </div>
       </div>
@@ -92,7 +80,7 @@
             <li class="list-group-item">June 7th 2018</li>
             <li class="list-group-item">14:00-18:00</li>
           </ul>
-          <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longerThis is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longerThis is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longerThis is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longerThis is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longerThis is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
           <button type="button" class="btn btn-dark mt-auto">Go somewhere</button>
         </div>
       </div>
