@@ -386,7 +386,7 @@ INSERT INTO Company (Company_Name, Company_Acronym, Company_Country, Company_Web
 INSERT INTO User_Data (User_Name_First, User_Name_Last, User_Password, User_Type, User_Email, User_Phone, User_Company) VALUES
 ('Deleted', 'User',     MD5('prosys3'), 5, 'N/A',           'N/A',      1),
 ('Lord', 'Root',        MD5('prosys3'), 1, 'root@usn.no',   '10000666', 2),
-('Lordine', 'Root', 	MD5('prosys3'), 1, 	'root2@usn.no',	'20000666',  2),
+('Sustainable', 'Tourism', 	MD5('sustour'), 1, 	'Sustainable@Tourism.no',	'20000666',  1),
 ('Prince', 'Admin',     MD5('prosys3'), 2, 'admin@usn.no',  '30000666', 2),
 ('Sir', 'Moderator',    MD5('prosys3'), 3, 'mod@usn.no',    '40000666', 2),
 ('Peasant', 'User',     MD5('prosys3'), 4, 'user@usn.no',   '50000666', 2);
