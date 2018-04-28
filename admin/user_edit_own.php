@@ -5,11 +5,11 @@ include '../dbconfig.php';
 include 'rsc/import/php/functions/functions.php';
 
 // Security - Check whether user is logged in:
-
+$user_id = $_GET['id'];
 if( !isset($_SESSION['login']) ){
     header("Location:../login.php");
     exit();
-} elseif ( $_SESSION['user_type'] > 2 ) {
+} elseif ( $_SESSION['user_id'] != $user_id ) {
     header("Location:user_list.php");
     exit();
 }
@@ -31,7 +31,7 @@ include 'rsc/import/php/components/header_dashboard.php';
 
 
 // Get primary data:
-$user_id = $_GET['id'];
+
 $user_query = 'SELECT * FROM User_Data WHERE User_ID = '.$user_id;
 $user_result = mysqli_query($con,$user_query);
 $user_array = mysqli_fetch_array($user_result);

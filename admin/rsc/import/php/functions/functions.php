@@ -2516,7 +2516,6 @@ function user_update($user_id,$submit_name){
 
         // Prepare password and email:
         if (strlen($_POST['password']) > 0){
-            echo $user_password;
             $user_password = md5($user_password);
         }
         $user_email = filter_var($user_email, FILTER_SANITIZE_EMAIL);
@@ -2533,7 +2532,7 @@ function user_update($user_id,$submit_name){
         $sql_user_update .= 'User_Company       = '.$user_company.' ';
         $sql_user_update .= 'WHERE User_ID      = '.$user_id.';';
 
-        echo $sql_user_update;
+        // echo $sql_user_update;
 
 
         // === SECURITY WALL === :
