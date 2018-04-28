@@ -387,9 +387,9 @@ INSERT INTO User_Data (User_Name_First, User_Name_Last, User_Password, User_Type
 ('Deleted', 'User',     MD5('prosys3'), 5, 'N/A',           'N/A',      1),
 ('Lord', 'Root',        MD5('prosys3'), 1, 'root@usn.no',   '10000666', 2),
 ('Sustainable', 'Tourism', 	MD5('sustour'), 1, 	'Sustainable@Tourism.no',	'20000666',  1),
-('Prince', 'Admin',     MD5('prosys3'), 2, 'admin@usn.no',  '30000666', 2),
-('Sir', 'Moderator',    MD5('prosys3'), 3, 'mod@usn.no',    '40000666', 2),
-('Peasant', 'User',     MD5('prosys3'), 4, 'user@usn.no',   '50000666', 2);
+('Prince', 'Admin',     MD5('prosys3'), 2, 'admin@usn.no',  '30000666', 3),
+('Sir', 'Moderator',    MD5('prosys3'), 3, 'mod@usn.no',    '40000666', 4),
+('Peasant', 'User',     MD5('prosys3'), 4, 'user@usn.no',   '50000666', 7);
 
 
 
@@ -398,10 +398,10 @@ INSERT INTO User_Data (User_Name_First, User_Name_Last, User_Password, User_Type
 -- INSERT DEFAULT POSTS:
 INSERT INTO Post (Post_Title, Post_Image_Featured, Post_Text, Post_Date_Created, Post_Author, Post_Category, Post_Private) VALUES
 ('Example post 1', 'http://ibmathsworld.com/wp-content/uploads/2016/01/IB-Examples.jpg', '<h1>Main title</h1><h2>Subtitle</h2><p>This is an example paragraph</p>', CURDATE(),          2, 1, 1),
-('Example post 2', 'http://ibmathsworld.com/wp-content/uploads/2016/01/IB-Examples.jpg', '<h1>Main title</h1><h2>Subtitle</h2><p>This is an example paragraph</p>', (CURDATE() + 1),    3, 1, 1),
+('Example post 2', 'http://ibmathsworld.com/wp-content/uploads/2016/01/IB-Examples.jpg', '<h1>Main title</h1><h2>Subtitle</h2><p>This is an example paragraph</p>', (CURDATE() + 1),    2, 1, 1),
 ('Example post 3', 'http://ibmathsworld.com/wp-content/uploads/2016/01/IB-Examples.jpg', '<h1>Main title</h1><h2>Subtitle</h2><p>This is an example paragraph</p>', (CURDATE() + 2),    4, 1, 0),
 ('Example post 4', 'http://ibmathsworld.com/wp-content/uploads/2016/01/IB-Examples.jpg', '<h1>Main title</h1><h2>Subtitle</h2><p>This is an example paragraph</p>', (CURDATE() + 3),    5, 1, 0),
-('Example post 4', 'http://ibmathsworld.com/wp-content/uploads/2016/01/IB-Examples.jpg', '<h1>Main title</h1><h2>Subtitle</h2><p>This is an example paragraph</p>', (CURDATE() + 4),    5, 1, 0);
+('Example post 5', 'http://ibmathsworld.com/wp-content/uploads/2016/01/IB-Examples.jpg', '<h1>Main title</h1><h2>Subtitle</h2><p>This is an example paragraph</p>', (CURDATE() + 4),    5, 1, 0);
                                                  
 
 
@@ -420,14 +420,14 @@ INSERT INTO Activities (Activities_Title, Activities_Text, Activities_Created, A
 -- INSERT DEFAULT EVENTS
 INSERT INTO event(Event_ID, Event_Name, Event_Location, Event_Start, Event_End, Event_Date, Event_Company, Event_Author, Event_Text)VALUES 
 (1, 'Opening party', 'B&oslash', '20:00' , '24:00' , '2018-08-04', 1, 2, '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>'),
-(2, 'Meeting for summer school attendees at ATSU', 'Akaki Tsereteli State University', '17:00' , '18:00' , '2018-07-07', 2, 3, '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit </br> Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>'),
-(3, 'Open school ', 'Kyrgyz Economic University', '18:00' , '21:00' , '2018-08-20', 2, 3, '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit </br> Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>'),
-(4, 'Meeting for summer school attendees at USN', 'University College of Southeast Norway', '17:00' , '18:00' , '2018-07-07', 2, 3, '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit </br> Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>'),
-(5, 'Meeting for summer school attendees at BSMA', 'Batumi State Maritime Academy', '17:00' , '18:00' , '2018-07-07', 2, 3, '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit </br> Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>'),
+(2, 'Meeting for summer school attendees at ATSU', 'Akaki Tsereteli State University', '17:00' , '18:00' , '2018-07-07', 2, 2, '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit </br> Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>'),
+(3, 'Open school ', 'Kyrgyz Economic University', '18:00' , '21:00' , '2018-08-20', 2, 5, '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit </br> Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>'),
+(4, 'Meeting for summer school attendees at USN', 'University College of Southeast Norway', '17:00' , '18:00' , '2018-07-07', 2, 4, '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit </br> Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>'),
+(5, 'Meeting for summer school attendees at BSMA', 'Batumi State Maritime Academy', '17:00' , '18:00' , '2018-07-07', 2, 4, '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit </br> Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>'),
 (6, 'Curry bonanza', 'Issyk Kul State University', '15:00' , '17:00' , '2018-08-08', 3, 4, '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>'),
 (7, 'Opening party', 'B&oslash', '20:00' , '24:00' , '2018-01-04', 1, 2, '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>'),
-(8, 'Meeting for summer school attendees at ATSU', 'Akaki Tsereteli State University', '17:00' , '18:00' , '2018-02-07', 2, 3, '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit </br> Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>'),
-(9, 'Open school ', 'Kyrgyz Economic University', '18:00' , '21:00' , '2018-01-20', 2, 3, '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit </br> Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>'),
-(10, 'Meeting for summer school attendees at USN', 'University College of Southeast Norway', '17:00' , '18:00' , '2018-02-07', 2, 3, '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit </br> Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>'),
-(11, 'Meeting for summer school attendees at BSMA', 'Batumi State Maritime Academy', '17:00' , '18:00' , '2018-02-07', 2, 3, '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit </br> Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>'),
-(12, 'Curry bonanza', 'Issyk Kul State University', '15:00' , '17:00' , '2018-01-08', 3, 4, '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>');
+(8, 'Meeting for summer school attendees at ATSU', 'Akaki Tsereteli State University', '17:00' , '18:00' , '2018-02-07', 2, 4, '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit </br> Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>'),
+(9, 'Open school ', 'Kyrgyz Economic University', '18:00' , '21:00' , '2018-01-20', 2, 2, '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit </br> Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>'),
+(10, 'Meeting for summer school attendees at USN', 'University College of Southeast Norway', '17:00' , '18:00' , '2018-02-07', 2, 4, '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit </br> Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>'),
+(11, 'Meeting for summer school attendees at BSMA', 'Batumi State Maritime Academy', '17:00' , '18:00' , '2018-02-07', 2, 2, '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit </br> Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>'),
+(12, 'Curry bonanza', 'Issyk Kul State University', '15:00' , '17:00' , '2018-01-08', 3, 2, '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>');
