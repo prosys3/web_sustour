@@ -2877,9 +2877,7 @@ function activities_update($activities_id, $submit_name){
 
         $sql =      'UPDATE Activities SET ';
         $sql .=     'Activities_Title = "'.$activities_title.'", ';
-        $sql .=     'Activities_Text = "'.$activities_text.'", ';
-        $sql .=     'Activities_Created = CURDATE(), ';
-        $sql .=     'Activities_Author = "'.$activities_author.'" ';
+        $sql .=     'Activities_Text = "'.$activities_text.'" ';
         $sql .=     'WHERE Activities_ID = '.$activities_id.';';
 
         mysqli_query($con,$sql);
@@ -2909,7 +2907,7 @@ function activities_update($activities_id, $submit_name){
        
 
         // Redirect with status codes:
-       header('Refresh: 0; URL=activities_list.php?updated=activities&status='.$status_db);
+      header('Refresh: 0; URL=activities_list.php?updated=activities&status='.$status_db);
 
 
     }
