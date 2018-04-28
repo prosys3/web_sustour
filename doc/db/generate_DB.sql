@@ -397,10 +397,10 @@ INSERT INTO User_Data (User_Name_First, User_Name_Last, User_Password, User_Type
 
 -- INSERT DEFAULT POSTS:
 INSERT INTO Post (Post_Title, Post_Image_Featured, Post_Text, Post_Date_Created, Post_Author, Post_Category, Post_Private) VALUES
-('Example post 1', 'http://ibmathsworld.com/wp-content/uploads/2016/01/IB-Examples.jpg', '<h1>Main title</h1><h2>Subtitle</h2><p>This is an example paragraph</p>', CURDATE(),          2, 1, 1),
-('Example post 2', 'http://ibmathsworld.com/wp-content/uploads/2016/01/IB-Examples.jpg', '<h1>Main title</h1><h2>Subtitle</h2><p>This is an example paragraph</p>', (CURDATE() + 1),    2, 1, 1),
-('Example post 3', 'http://ibmathsworld.com/wp-content/uploads/2016/01/IB-Examples.jpg', '<h1>Main title</h1><h2>Subtitle</h2><p>This is an example paragraph</p>', (CURDATE() + 2),    4, 1, 0),
-('Example post 4', 'http://ibmathsworld.com/wp-content/uploads/2016/01/IB-Examples.jpg', '<h1>Main title</h1><h2>Subtitle</h2><p>This is an example paragraph</p>', (CURDATE() + 3),    5, 1, 0),
+('Example post 1', 'http://ibmathsworld.com/wp-content/uploads/2016/01/IB-Examples.jpg', '<h1>Main title</h1><h2>Subtitle</h2><p>This is an example paragraph with a bit more text</p>', CURDATE(),          2, 1, 1),
+('Example post 2', 'http://ibmathsworld.com/wp-content/uploads/2016/01/IB-Examples.jpg', '<h1>Main title</h1><h2>Subtitle</h2><p>This is an example paragraph who are much longer than the other paragraph\'s. This is to show how a long news post will be shown</p>', (CURDATE() + 1),    2, 1, 1),
+('Example post 3', 'http://ibmathsworld.com/wp-content/uploads/2016/01/IB-Examples.jpg', '<h1>Main title</h1><h2>Subtitle</h2><p>This a small paragraph</p>', (CURDATE() + 2),    4, 1, 0),
+('Example post 4', 'http://ibmathsworld.com/wp-content/uploads/2016/01/IB-Examples.jpg', '<h1>Main title</h1><h2>Subtitle</h2><p>This is an example paragraph with a bit more text, but not longer than the loongest one</p>', (CURDATE() + 3),    5, 1, 0),
 ('Example post 5', 'http://ibmathsworld.com/wp-content/uploads/2016/01/IB-Examples.jpg', '<h1>Main title</h1><h2>Subtitle</h2><p>This is an example paragraph</p>', (CURDATE() + 4),    5, 1, 0);
                                                  
 
