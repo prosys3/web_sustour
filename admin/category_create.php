@@ -8,8 +8,10 @@
     if( !isset($_SESSION['login']) ){
         header("Location:../login.php")
         ;exit();
+    } elseif ($_SESSION['user_type'] > 3) {
+        header("Location:../index.php");
+        ;exit();
     }
-
     // HTML - Head and header:
     include 'rsc/import/php/components/head_dashboard.php';
     include 'rsc/import/php/components/header_dashboard.php';

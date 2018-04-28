@@ -36,6 +36,7 @@
 
             <div>
                 <?php
+
                     include 'rsc/import/php/components/buttons/btn_admin.php';
                     include 'rsc/import/php/components/buttons/btn_login_logout.php';
                 ?>

@@ -3136,3 +3136,57 @@ function publish_category($submit_name)
     }
 
 }
+
+function populate_user_information() {
+
+    global $con;
+
+    $sql = "SELECT * FROM User_Type WHERE User_Type_ID = ".$_SESSION['user_type'];
+    $result = mysqli_query($con, $sql);
+    $row = mysqli_fetch_array($result);
+    $user_type = $row['User_Type_Name'];
+
+    $sql = "SELECT * FROM Company WHERE Company_ID = ". $_SESSION['user_company'];
+    $result = mysqli_query($con, $sql);
+    $row = mysqli_fetch_array($result);
+    $user_company = $row['Company_Name'];
+
+    $row_start = '<div class="row">';
+    $row_col_end = '</div>';
+    $col_start = '<div class="col text-left pt-3">';
+    $col_last_start = '<div style="width: 200px" class="col text-left pt-3">';
+    $col_spec = '<div class="col ">';
+
+    echo $row_start;
+
+    echo $col_start;
+    echo '<b>Your email:</b> ';
+    echo $_SESSION['login_email'];
+    echo $row_col_end;
+
+    echo $row_col_end;
+    echo $row_start;
+
+    echo $col_start;
+    echo '<b>Phone:</b> ';
+    echo $_SESSION['user_phone'];
+    echo $row_col_end;
+
+    echo $row_col_end;
+    echo $row_start;
+
+    echo $col_start;
+    echo '<b>Your company:</b> ';
+    echo $user_company;
+    echo $row_col_end;
+
+    echo $row_col_end;
+    echo $row_start;
+
+    echo $col_start;
+    echo '<b>Your user type:</b> ';
+    echo $user_type;
+    echo $row_col_end;
+
+
+}

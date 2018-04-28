@@ -10,6 +10,7 @@
         ;exit();
     } elseif ($_SESSION['user_type'] > 2) {
         header("Location:user_list.php");
+        ;exit();
 }
 ?>
 <?php

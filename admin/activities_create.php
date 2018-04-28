@@ -8,6 +8,9 @@ include 'rsc/import/php/functions/functions.php';
 if( !isset($_SESSION['login']) ){
     header("Location:../login.php")
     ;exit();
+} elseif ($_SESSION['user_type'] > 3) {
+    header("Location:activities_list.php");
+    ;exit();
 }
 
 // HTML - Head and header:
