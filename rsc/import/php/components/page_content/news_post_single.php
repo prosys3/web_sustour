@@ -4,23 +4,20 @@
 
         <div class="container">
 
-            <?php
+            <div class="mb-5">
 
-                $sql = 'SELECT * FROM Post WHERE Post_ID = ' . $_GET['post'];
-                $result = mysqli_query($con, $sql);
+                <img src="http://ibmathsworld.com/wp-content/uploads/2016/01/IB-Examples.jpg" style="max-width: 600px;">
 
-                while ( $row = mysqli_fetch_array( $result ) ){
+            </div>
 
-                    if ( $row['Post_Image_Featured'] !== 0 ){
-                        echo '<div class="mb-5">';
-                        echo '<img src="'.$row['Post_Image_Featured'].'" style="max-width: 100%;">';
-                        echo '</div>';
-                    }
-                    echo $row['Post_Text'];
+            <div class="" style="max-width: 700px;">
 
-                }
+                <h1> This is the title of the post </h1>
+                <p> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. </p>
 
-            ?>
+                <p> It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like). </p>
+
+            </div>
 
         </div>
 
