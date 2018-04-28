@@ -199,9 +199,9 @@ function populate_post_table($number_of_rows, $order_by, $asc_desc){
         $access_granted = true;
 
         if ( isset($number_of_rows) && $number_of_rows > 0 ) {
-            $sql = "SELECT * FROM Post ORDER BY ".$order_by." ".$asc_desc." LIMIT 0,".$number_of_rows;
+            $sql = "SELECT * FROM Post ORDER BY ".$order_by." ".$asc_desc.", Post_ID DESC "." LIMIT 0,".$number_of_rows;
         } else {
-            $sql = "SELECT * FROM Post ORDER BY ".$order_by." ".$asc_desc;
+            $sql = "SELECT * FROM Post ORDER BY ".$order_by." ".$asc_desc.", Post_ID DESC ";
         }
 
     } else {
@@ -393,9 +393,9 @@ function populate_activities_table($number_of_rows, $order_by, $asc_desc){
         $access_granted = true;
 
         if ( isset($number_of_rows) && $number_of_rows > 0 ) {
-            $sql = "SELECT * FROM Activities ORDER BY ".$order_by." ".$asc_desc." LIMIT 0,".$number_of_rows;
+            $sql = "SELECT * FROM Activities ORDER BY ".$order_by." ".$asc_desc.", Activities_ID DESC "." LIMIT 0,".$number_of_rows;
         } else {
-            $sql = "SELECT * FROM Activities ORDER BY ".$order_by." ".$asc_desc;
+            $sql = "SELECT * FROM Activities ORDER BY ".$order_by." ".$asc_desc.", Activities_ID DESC ";
         }
 
     } else {
@@ -575,9 +575,9 @@ function populate_user_table($number_of_rows = 0, $order_by, $asc_desc){
     } else {
         // If user is Moderator or user, they cannot see Root users.
         if ($number_of_rows > 0) {
-            $sql = 'SELECT * FROM User_Data WHERE User_Type > 3 ORDER BY '.$order_by.' '.$asc_desc.' LIMIT 0,'.$number_of_rows;
+            $sql = 'SELECT * FROM User_Data WHERE User_Type > 1 AND User_Type != 5 ORDER BY '.$order_by.' '.$asc_desc.' LIMIT 0,'.$number_of_rows;
         } else {
-            $sql = 'SELECT * FROM User_Data WHERE User_Type > 3 ORDER BY '.$order_by.' '.$asc_desc;
+            $sql = 'SELECT * FROM User_Data WHERE User_Type > 1 AND User_Type != 5 ORDER BY '.$order_by.' '.$asc_desc;
         }
     }
 
@@ -784,7 +784,7 @@ function populate_public_file_table($number_of_rows, $order_by, $asc_desc){
             if ($current_user == $root || $current_user == $admin || $current_user == $mod) {
                 // Only moderators and above can see this table.
                 if (isset($number_of_rows) && $number_of_rows > 0) {
-                    $sql = "SELECT * FROM File WHERE File_Private = 0 ORDER BY " . $order_by . " " . $asc_desc . " LIMIT 0," . $number_of_rows;
+                    $sql = "SELECT * FROM File WHERE File_Private = 0 ORDER BY " . $order_by.", File_ID DESC " . " " . $asc_desc . " LIMIT 0," . $number_of_rows;
                 } else {
                     alert("There are no files suited for you to see.", "warning");
                 }
@@ -1000,9 +1000,9 @@ function populate_public_file_table($number_of_rows, $order_by, $asc_desc){
             if ($current_user == $root || $current_user == $admin || $current_user == $mod) {
                 // Only moderators and above can see this table.
                 if (isset($number_of_rows) && $number_of_rows > 0) {
-                    $sql = "SELECT * FROM File ORDER BY " . $order_by . " " . $asc_desc . " LIMIT 0," . $number_of_rows;
+                    $sql = "SELECT * FROM File ORDER BY " . $order_by.", File_ID DESC " . " " . $asc_desc . " LIMIT 0," . $number_of_rows;
                 } else {
-                    $sql = "SELECT * FROM File ORDER BY " . $order_by . " " . $asc_desc;
+                    $sql = "SELECT * FROM File ORDER BY " . $order_by.", File_ID DESC " . " " . $asc_desc;
                 }
             } else {
                 // Users cannot see this table.
@@ -1213,9 +1213,9 @@ function populate_file_table($number_of_rows, $order_by, $asc_desc){
         if ( $current_user == $root || $current_user == $admin || $current_user == $mod ) {
             // Only moderators and above can see this table.
             if ( isset($number_of_rows) && $number_of_rows > 0 ){
-                $sql = "SELECT * FROM File ORDER BY ".$order_by." ".$asc_desc." LIMIT 0,".$number_of_rows;
+                $sql = "SELECT * FROM File ORDER BY ".$order_by.", File_ID DESC "." ".$asc_desc." LIMIT 0,".$number_of_rows;
             } else {
-                $sql = "SELECT * FROM File ORDER BY ".$order_by." ".$asc_desc;
+                $sql = "SELECT * FROM File ORDER BY ".$order_by.", File_ID DESC "." ".$asc_desc;
             }
         } else {
             // Users cannot see this table.
@@ -1455,9 +1455,9 @@ function populate_event_table($number_of_rows, $order_by, $asc_desc){
         $access_granted = true;
 
         if ( isset($number_of_rows) && $number_of_rows > 0 ) {
-            $sql = "SELECT * FROM Event ORDER BY ".$order_by." ".$asc_desc." LIMIT 0,".$number_of_rows;
+            $sql = "SELECT * FROM Event ORDER BY ".$order_by." ".$asc_desc.", Event_Start"." LIMIT 0,".$number_of_rows;
         } else {
-            $sql = "SELECT * FROM Event ORDER BY ".$order_by." ".$asc_desc;
+            $sql = "SELECT * FROM Event ORDER BY ".$order_by." ".$asc_desc.", Event_Start";
         }
 
     } else {

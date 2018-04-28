@@ -19,7 +19,7 @@
 
         <div class="row">
             <?php
-            $query = "SELECT * FROM Activities;";
+            $query = "SELECT * FROM Activities ORDER BY Activities_Created DESC, Activities_ID DESC;";
             $result = mysqli_query($con, $query);
             $count = 1;
             $numrow = mysqli_num_rows($result);

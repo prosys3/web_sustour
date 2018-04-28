@@ -68,7 +68,7 @@ include 'rsc/import/php/components/header_dashboard.php';
                 <li class="list-group-item text-light bg-dark">All activities</li>
                 <li class="list-group-item">
 
-                    <?php populate_activities_table(0, "Activities_ID", "DESC"); ?>
+                    <?php populate_activities_table(0, "Activities_Created", "DESC"); ?>
 
                 </li>
             </ul>

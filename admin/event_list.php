@@ -69,7 +69,7 @@ include 'rsc/import/php/components/header_dashboard.php';
                 <li class="list-group-item text-light bg-dark">All events</li>
                 <li class="list-group-item">
 
-                    <?php populate_event_table(0, "Event_ID", "DESC"); ?>
+                    <?php populate_event_table(0, "Event_Date", "ASC"); ?>
 
                 </li>
             </ul>
