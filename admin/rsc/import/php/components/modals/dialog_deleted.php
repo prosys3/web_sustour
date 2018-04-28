@@ -162,7 +162,7 @@ if ( isset($_GET['deleted']) ){
     elseif ($_GET['deleted'] == 'user'){
 
         // A post has been deleted:
-        $object = 'User';
+        $object = 'user';
 
         // Analyze the status codes:
         $status_code = $_GET['status'];
@@ -198,15 +198,15 @@ if ( isset($_GET['deleted']) ){
 
     elseif ($_GET['deleted'] == 'activities') {
 
-        // an activity has been deleted
-        $object = 'activity';
+        // an activities has been deleted
+        $object = 'activities';
 
         // analyze the status codes:
         $status_code = $_GET['status'];
 
         if ( $status_code == '1' ) {
 
-            // activity deleted from DB:
+            // activities deleted from DB:
             $status_adjective = 'successfully';
             $status_db_word = 'Activity deleted from database.';
             $status_db_color = 'text-success';
@@ -235,7 +235,7 @@ if ( isset($_GET['deleted']) ){
     elseif ($_GET['deleted'] == 'event'){
 
         // A post has been deleted:
-        $object = 'Event';
+        $object = 'event';
 
         // Analyze the status codes:
         $status_code = $_GET['status'];
@@ -245,7 +245,7 @@ if ( isset($_GET['deleted']) ){
 
             // Post deleted from DB:
             $status_adjective = 'successfully';
-            $status_db_word = 'Event deleted from database.';
+            $status_db_word = 'event deleted from database.';
             $status_db_color = 'text-success';
             $status_file_word = 'No files to delete in events.';
             $status_file_color = 'text-muted';
@@ -257,7 +257,7 @@ if ( isset($_GET['deleted']) ){
 
             // Post not deleted from DB:
             $status_adjective = 'unsuccessfully';
-            $status_db_word = 'Event not deleted from database.';
+            $status_db_word = 'event not deleted from database.';
             $status_db_color = 'text-danger';
             $status_file_word = 'There were no files to delete.';
             $status_file_color = 'text-muted';
@@ -272,7 +272,7 @@ if ( isset($_GET['deleted']) ){
     elseif ($_GET['deleted'] == 'category'){
 
         // A post has been deleted:
-        $object = 'Category';
+        $object = 'category';
 
         // Analyze the status codes:
         $status_code = $_GET['status'];
@@ -282,9 +282,9 @@ if ( isset($_GET['deleted']) ){
 
             // Post deleted from DB:
             $status_adjective = 'successfully';
-            $status_db_word = 'Category deleted from database.';
+            $status_db_word = 'category deleted from database.';
             $status_db_color = 'text-success';
-            $status_file_word = 'No files to delete in Category.';
+            $status_file_word = 'No files to delete in category.';
             $status_file_color = 'text-muted';
             $title_text = 'Success';
             $title_icon = 'done';
@@ -294,7 +294,7 @@ if ( isset($_GET['deleted']) ){
 
             // Post not deleted from DB:
             $status_adjective = 'unsuccessfully';
-            $status_db_word = 'Category not deleted from database.';
+            $status_db_word = 'category not deleted from database.';
             $status_db_color = 'text-danger';
             $status_file_word = 'There were no files to delete.';
             $status_file_color = 'text-muted';
@@ -351,6 +351,9 @@ if ( isset($_GET['deleted']) ){
             </div>
         </div>
     </div>
+
+
+
     
     <!-- Click executable link on page load: -->
     <script>
@@ -359,6 +362,10 @@ if ( isset($_GET['deleted']) ){
                 document.getElementById(\'modal-run\').click();
             }
         }
+    <!-- Redirect page on modal close: -->
+    $(".modal").on("hidden.bs.modal", function () {
+    window.location = "'.$object.'_list.php";
+    });
     </script>
     ';
 

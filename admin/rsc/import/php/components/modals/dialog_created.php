@@ -198,7 +198,7 @@ if ( isset($_GET['created']) ){
     elseif ($_GET['created'] == 'activities'){
 
         // A post has been deleted:
-        $object = 'activity';
+        $object = 'activities';
 
         // Analyze the status codes:
         $status_code = $_GET['status'];
@@ -313,7 +313,7 @@ if ( isset($_GET['created']) ){
     elseif ($_GET['created'] == 'category'){
 
         // A post has been deleted:
-        $object = 'Category';
+        $object = 'category';
 
         // Analyze the status codes:
         $status_code = $_GET['status'];
@@ -323,9 +323,9 @@ if ( isset($_GET['created']) ){
 
             // post created from DB:
             $status_adjective = 'successfully';
-            $status_db_word = 'Category created in the database.';
+            $status_db_word = 'category created in the database.';
             $status_db_color = 'text-success';
-            $status_file_word = 'No files to add in Category.';
+            $status_file_word = 'No files to add in category.';
             $status_file_color = 'text-muted';
             $title_text = 'Success';
             $title_icon = 'done';
@@ -335,9 +335,9 @@ if ( isset($_GET['created']) ){
 
             // post not created from DB:
             $status_adjective = 'unsuccessfully';
-            $status_db_word = 'Category not created in the database.';
+            $status_db_word = 'category not created in the database.';
             $status_db_color = 'text-danger';
-            $status_file_word = 'no files to add in Category.';
+            $status_file_word = 'no files to add in category.';
             $status_file_color = 'text-muted';
             $title_text = 'Nothing added!';
             $title_icon = 'error';
@@ -400,6 +400,10 @@ if ( isset($_GET['created']) ){
                 document.getElementById(\'modal-run\').click();
             }
         }
+    <!-- Redirect page on modal close: -->
+    $(".modal").on("hidden.bs.modal", function () {
+    window.location = "'.$object.'_list.php";
+    });
     </script>
     ';
 

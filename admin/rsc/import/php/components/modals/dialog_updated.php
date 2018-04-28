@@ -199,7 +199,7 @@ if ( isset($_GET['updated']) ){
     elseif ($_GET['updated'] == 'user'){
 
         // A post has been deleted:
-        $object = 'User';
+        $object = 'user';
 
         // Analyze the status codes:
         $status_code = $_GET['status'];
@@ -207,7 +207,7 @@ if ( isset($_GET['updated']) ){
         // Generate status feedback in accordance with status codes:
         if ( $status_code == '1' ){
 
-            // User updated:
+            // user updated:
             $status_adjective = 'successfully';
             $status_db_word = 'Person updated in database.';
             $status_db_color = 'text-success';
@@ -236,7 +236,7 @@ if ( isset($_GET['updated']) ){
     elseif ($_GET['updated'] == 'activities'){
 
         // A post has been deleted:
-        $object = 'Activity';
+        $object = 'activities';
 
         // Analyze the status codes:
         $status_code = $_GET['status'];
@@ -244,11 +244,11 @@ if ( isset($_GET['updated']) ){
         // Generate status feedback in accordance with status codes:
         if ( $status_code == '1' ){
 
-            // User updated:
+            // user updated:
             $status_adjective = 'successfully';
-            $status_db_word = 'Activity updated in database.';
+            $status_db_word = 'activities updated in database.';
             $status_db_color = 'text-success';
-            $status_file_word = 'Activity have no files.';
+            $status_file_word = 'activities have no files.';
             $status_file_color = 'text-muted';
             $title_text = 'Success';
             $title_icon = 'done';
@@ -258,9 +258,9 @@ if ( isset($_GET['updated']) ){
 
             // post not updated from DB:
             $status_adjective = 'not';
-            $status_db_word = 'Activity not updated in database.';
+            $status_db_word = 'activities not updated in database.';
             $status_db_color = 'text-danger';
-            $status_file_word = 'Activity have no files.';
+            $status_file_word = 'activities have no files.';
             $status_file_color = 'text-muted';
             $title_text = 'Nothing was updated';
             $title_icon = 'error';
@@ -273,7 +273,7 @@ if ( isset($_GET['updated']) ){
     elseif ($_GET['updated'] == 'event'){
 
         // A post has been deleted:
-        $object = 'Event';
+        $object = 'event';
 
         // Analyze the status codes:
         $status_code = $_GET['status'];
@@ -281,11 +281,11 @@ if ( isset($_GET['updated']) ){
         // Generate status feedback in accordance with status codes:
         if ( $status_code == '1' ){
 
-            // User updated:
+            // user updated:
             $status_adjective = 'successfully';
-            $status_db_word = 'Event updated in database.';
+            $status_db_word = 'event updated in database.';
             $status_db_color = 'text-success';
-            $status_file_word = 'Event have no files.';
+            $status_file_word = 'event have no files.';
             $status_file_color = 'text-muted';
             $title_text = 'Success';
             $title_icon = 'done';
@@ -295,9 +295,9 @@ if ( isset($_GET['updated']) ){
 
             // post not updated from DB:
             $status_adjective = 'not';
-            $status_db_word = 'Event not updated in database.';
+            $status_db_word = 'event not updated in database.';
             $status_db_color = 'text-danger';
-            $status_file_word = 'Event have no files.';
+            $status_file_word = 'event have no files.';
             $status_file_color = 'text-muted';
             $title_text = 'Nothing was updated';
             $title_icon = 'error';
@@ -310,7 +310,7 @@ if ( isset($_GET['updated']) ){
     elseif ($_GET['updated'] == 'category'){
 
         // A post has been deleted:
-        $object = 'Category';
+        $object = 'category';
 
         // Analyze the status codes:
         $status_code = $_GET['status'];
@@ -318,11 +318,11 @@ if ( isset($_GET['updated']) ){
         // Generate status feedback in accordance with status codes:
         if ( $status_code == '1' ){
 
-            // User updated:
+            // user updated:
             $status_adjective = 'successfully';
             $status_db_word = 'category updated in database.';
             $status_db_color = 'text-success';
-            $status_file_word = 'Category have no files.';
+            $status_file_word = 'category have no files.';
             $status_file_color = 'text-muted';
             $title_text = 'Success';
             $title_icon = 'done';
@@ -332,9 +332,9 @@ if ( isset($_GET['updated']) ){
 
             // post not updated from DB:
             $status_adjective = 'not';
-            $status_db_word = 'Category not updated in database.';
+            $status_db_word = 'category not updated in database.';
             $status_db_color = 'text-danger';
-            $status_file_word = 'Category have no files.';
+            $status_file_word = 'category have no files.';
             $status_file_color = 'text-muted';
             $title_text = 'Nothing was updated';
             $title_icon = 'error';
@@ -397,6 +397,10 @@ if ( isset($_GET['updated']) ){
                 document.getElementById(\'modal-run\').click();
             }
         }
+    <!-- Redirect page on modal close: -->
+    $(".modal").on("hidden.bs.modal", function () {
+    window.location = "'.$object.'_list.php";
+    });
     </script>
     ';
 
