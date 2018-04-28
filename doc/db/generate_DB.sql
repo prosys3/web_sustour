@@ -136,7 +136,7 @@ CREATE TABLE User_Data (
 CREATE TABLE Event (
 
 Event_ID        TINYINT(3)          AUTO_INCREMENT NOT NULL,
-Event_Name      VARCHAR(30)         NOT NULL,
+Event_Name      VARCHAR(40)         NOT NULL,
 Event_Location  VARCHAR(50)         NOT NULL,
 Event_Start     Time                NOT NULL,
 Event_End       Time                NOT NULL,
@@ -387,9 +387,9 @@ INSERT INTO User_Data (User_Name_First, User_Name_Last, User_Password, User_Type
 ('Deleted', 'User',     MD5('prosys3'), 5, 'N/A',           'N/A',      1),
 ('Lord', 'Root',        MD5('prosys3'), 1, 'root@usn.no',   '10000666', 2),
 ('Sustainable', 'Tourism', 	MD5('sustour'), 1, 	'Sustainable@Tourism.no',	'20000666',  1),
-('Prince', 'Admin',     MD5('prosys3'), 2, 'admin@usn.no',  '30000666', 2),
-('Sir', 'Moderator',    MD5('prosys3'), 3, 'mod@usn.no',    '40000666', 2),
-('Peasant', 'User',     MD5('prosys3'), 4, 'user@usn.no',   '50000666', 2);
+('Prince', 'Admin',     MD5('prosys3'), 2, 'admin@usn.no',  '30000666', 3),
+('Sir', 'Moderator',    MD5('prosys3'), 3, 'mod@usn.no',    '40000666', 4),
+('Peasant', 'User',     MD5('prosys3'), 4, 'user@usn.no',   '50000666', 7);
 
 
 
@@ -398,10 +398,10 @@ INSERT INTO User_Data (User_Name_First, User_Name_Last, User_Password, User_Type
 -- INSERT DEFAULT POSTS:
 INSERT INTO Post (Post_Title, Post_Image_Featured, Post_Text, Post_Date_Created, Post_Author, Post_Category, Post_Private) VALUES
 ('Example post 1', 'http://ibmathsworld.com/wp-content/uploads/2016/01/IB-Examples.jpg', '<h1>Main title</h1><h2>Subtitle</h2><p>This is an example paragraph</p>', CURDATE(),          2, 1, 1),
-('Example post 2', 'http://ibmathsworld.com/wp-content/uploads/2016/01/IB-Examples.jpg', '<h1>Main title</h1><h2>Subtitle</h2><p>This is an example paragraph</p>', (CURDATE() + 1),    3, 1, 1),
+('Example post 2', 'http://ibmathsworld.com/wp-content/uploads/2016/01/IB-Examples.jpg', '<h1>Main title</h1><h2>Subtitle</h2><p>This is an example paragraph</p>', (CURDATE() + 1),    2, 1, 1),
 ('Example post 3', 'http://ibmathsworld.com/wp-content/uploads/2016/01/IB-Examples.jpg', '<h1>Main title</h1><h2>Subtitle</h2><p>This is an example paragraph</p>', (CURDATE() + 2),    4, 1, 0),
 ('Example post 4', 'http://ibmathsworld.com/wp-content/uploads/2016/01/IB-Examples.jpg', '<h1>Main title</h1><h2>Subtitle</h2><p>This is an example paragraph</p>', (CURDATE() + 3),    5, 1, 0),
-('Example post 4', 'http://ibmathsworld.com/wp-content/uploads/2016/01/IB-Examples.jpg', '<h1>Main title</h1><h2>Subtitle</h2><p>This is an example paragraph</p>', (CURDATE() + 4),    5, 1, 0);
+('Example post 5', 'http://ibmathsworld.com/wp-content/uploads/2016/01/IB-Examples.jpg', '<h1>Main title</h1><h2>Subtitle</h2><p>This is an example paragraph</p>', (CURDATE() + 4),    5, 1, 0);
                                                  
 
 
@@ -410,15 +410,24 @@ INSERT INTO Post (Post_Title, Post_Image_Featured, Post_Text, Post_Date_Created,
 
 -- INSERT DEFAULT POSTS:
 INSERT INTO Activities (Activities_Title, Activities_Text, Activities_Created, Activities_Author) VALUES
-('Student mobilities between all three countries', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', CURDATE(), 1 ),
-('Staff mobilites between all three countries', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', CURDATE() + 1, 1),
-('Summer school in Norway 2016', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', CURDATE() + 2, 1),
-('Summer schhol in Kyrgyzstan 2017', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', CURDATE(), 1),
-('Summer school in Georgia 2018', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', CURDATE() + 2, 1),
-('Course development', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', CURDATE(), 1);
+('Student mobilities between all three countries', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', CURDATE(), 2 ),
+('Staff mobilites between all three countries', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', CURDATE() + 1, 2),
+('Summer school in Norway 2016', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', CURDATE() + 2, 2),
+('Summer schhol in Kyrgyzstan 2017', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', CURDATE(), 2),
+('Summer school in Georgia 2018', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', CURDATE() + 2, 2),
+('Course development', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', CURDATE(), 2);
 
 -- INSERT DEFAULT EVENTS
-INSERT INTO event(Event_ID, Event_Name, Event_Location, Event_Start, Event_End, Event_Date, Event_Company, Event_Author, Event_Text)VALUES 
-(1, 'Opening party', 'B&oslash', '20:00' , '24:00' , '2018-06-07', 1, 2, '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>'),
-(2, 'Meeting for summer school attendees ', 'The Cave', '17:00' , '23:00' , '2018-07-07', 2, 3, '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit </br> Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>'),
-(3, 'Curry bonanza', 'Somewhere in curryland', '09:00' , '12:00' , '2018-08-07', 3, 4, '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>');
+INSERT INTO event(Event_ID, Event_Name, Event_Location, Event_Start, Event_End, Event_Date, Event_Company, Event_Author, Event_Text) VALUES
+(1, 'Opening party', 'B&oslash', '20:00' , '24:00' , '2018-08-04', 2, 2, '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>'),
+(2, 'Meeting for summer school attendees', 'Blue city', '17:00' , '18:00' , '2018-07-07', 7, 2, '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit </br> Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>'),
+(3, 'Open school ', 'B&oslash', '18:00' , '21:00' , '2018-08-20', 2, 5, '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit </br> Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>'),
+(4, 'Meeting for summer school attendees', 'B&oslash', '17:00' , '18:00' , '2018-07-07', 2, 4, '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit </br> Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>'),
+(5, 'Meeting for summer school attendees', 'Greentown', '17:00' , '18:00' , '2018-07-07', 6, 4, '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit </br> Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>'),
+(6, 'Curry bonanza', 'Green road', '15:00' , '17:00' , '2018-08-08', 4, 4, '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>'),
+(7, 'Opening party', 'B&oslash', '20:00' , '24:00' , '2018-01-04', 2, 2, '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>'),
+(8, 'Meeting for summer school attendees', 'B&oslash', '17:00' , '18:00' , '2018-02-07', 2, 4, '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit </br> Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>'),
+(9, 'Open school ', 'Whole school', '18:00' , '21:00' , '2018-01-20', 5, 2, '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit </br> Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>'),
+(10, 'Meeting for summer school attendees', 'B&oslash', '17:00' , '18:00' , '2018-02-07', 2, 4, '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit </br> Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>'),
+(11, 'Meeting for summer school attendees', 'Greentown', '17:00' , '18:00' , '2018-02-07', 6, 2, '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit </br> Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>'),
+(12, 'Curry bonanza', 'Green road', '15:00' , '17:00' , '2018-01-08', 4, 2, '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>');
