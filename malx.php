@@ -24,12 +24,20 @@
 <!-- Main er obligatorisk -->
 <main>
 
-	<!-- Card deck one start -->
-	<section class="pt-5">
-	  <div class="container card-deck mx-auto">
+  <style>
+    .card-custom {
+      max-width: 350px;
+    }
+    .card-collapse {
+      max-width: 340px;
+    }
+  </style>
+
+	<section class="container pt-2">
+    <div class="row mt-5 justify-content-center">
 
       <!-- Column one start -->
-      <div class="card border-dark">
+      <div class="card card-custom mx-2 mb-3 border-dark">
         <div class="card-body d-flex flex-column">
           <h5 class="card-title text-center">Rånerydding</h5>
           <h6 class="card-subtitle">University College of Southeast Norway</h6>
@@ -46,7 +54,7 @@
 
 
       <!-- Column two start -->
-      <div class="card border-dark">
+      <div class="card card-custom mx-2 mb-3 border-dark">
         <div class="card-body d-flex flex-column">
           <h5 class="card-title text-center">Suicide 101: Allahu Akbar</h5>
           <h6 class="card-subtitle">Bishkek Academy of Finance and Economics</h6>
@@ -62,7 +70,7 @@
       <!-- Column two end -->
 
       <!-- Column three start -->
-      <div class="card border-dark">
+      <div class="card card-custom mx-2 mb-3 border-dark">
        	<div class="card-body d-flex flex-column">
         	<h5 class="card-title text-center">Curry bonanza</h5>
         	<h6 class="card-subtitle">Batumi Shota Rustaveli State University</h6>
@@ -75,15 +83,11 @@
           <button type="button" class="btn btn-dark mt-auto">Go somewhere</button>
         </div>
       </div>
-    </div>
       <!-- Column three end -->
 
-  <!-- Card deck one end -->
 
-  <!-- Card deck two start -->
-    <div class="container card-deck mx-auto py-4">
       <!-- Column one start -->
-      <div class="card border-dark">
+      <div class="card card-custom mx-2 mb-3 border-dark">
         <div class="card-body d-flex flex-column">
           <h5 class="card-title text-center">Rånerydding</h5>
           <h6 class="card-subtitle">University College of Southeast Norway</h6>
@@ -99,7 +103,7 @@
       <!-- Column one end -->
 
       <!-- Column two start  -->
-      <div class="card border-dark">
+      <div class="card card-custom mx-2 mb-3 border-dark">
         <div class="card-body d-flex flex-column">
           <h5 class="card-title text-center">Suicide 101: Allahu Akbar</h5>
           <h6 class="card-subtitle">Bishkek Academy of Finance and Economics</h6>
@@ -115,7 +119,7 @@
       <!-- Column two end -->
 
       <!-- Column three start -->
-      <div class="card border-dark">
+      <div class="card card-custom mx-2 mb-3 border-dark">
         <div class="card-body d-flex flex-column">
           <h5 class="card-title text-center">Curry bonanza</h5>
           <h6 class="card-subtitle">Batumi Shota Rustaveli State University</h6>
@@ -130,7 +134,6 @@
       </div>
       <!-- Column three end -->
     </div>
-  <!-- Card deck two end -->
 
 
   <!-- Collapse button start -->
@@ -152,9 +155,10 @@
 
 
           <!-- Collapse content start -->
-          <section class="py-5">
-            <div class="container card-deck mx-auto">
-              <div class="card border-dark">
+          <section class="container">
+            <div class="row my-4 justify-content-center">
+
+              <div class="card card-collapse mx-2 mb-3 border-dark">
                 <div class="card-body d-flex flex-column">
                   <h5 class="card-title text-center">Rånerydding</h5>
                   <h6 class="card-subtitle">University College of Southeast Norway</h6>
@@ -168,7 +172,7 @@
                 </div>
               </div>
 
-              <div class="card border-dark">
+              <div class="card card-collapse mx-2 mb-3 border-dark">
                 <div class="card-body d-flex flex-column">
                   <h5 class="card-title text-center">Suicide 101: Allahu Akbar</h5>
                   <h6 class="card-subtitle">Bishkek Academy of Finance and Economics</h6>
@@ -182,7 +186,7 @@
                 </div>
               </div>
 
-              <div class="card border-dark">
+              <div class="card card-collapse mx-2 mb-3 border-dark">
                 <div class="card-body d-flex flex-column">
                   <h5 class="card-title text-center">Curry bonanza</h5>
                   <h6 class="card-subtitle">Batumi Shota Rustaveli State University</h6>
