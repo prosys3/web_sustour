@@ -25,13 +25,13 @@
             $numrow = mysqli_num_rows($result);
 
             while ($row = mysqli_fetch_array($result)) {
-
+                $activity_text = substr($row['Activities_Text'], 0, 450).'...';
 
                 echo  '<div class="col-sm">';
 
                 echo   '<br>';
                 echo   '<h2>' . $row['Activities_Title'] . '</h2>';
-                echo   '<p class="text-justify">' . $row['Activities_Text'] . '</p>';
+                echo   '<p class="text-justify">' . $activity_text . '</p>';
                 echo    '<div style="text-align: center">';
                 echo   '<a href="activities.php?post='.$row['Activities_ID'].'" class="btn btn-primary" style="align-items: center">Read more</a>';
                 echo    '</div>';
