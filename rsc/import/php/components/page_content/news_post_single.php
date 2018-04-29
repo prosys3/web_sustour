@@ -30,7 +30,7 @@
 
         <section>
 
-        <button class="btn btn-dark float-right" href="" role="button>" type="submit"><i class="material-icons">exit_to_app</i>Back to posts</button>
+        <a class="btn btn-dark float-right" href="news.php"><i class="material-icons">exit_to_app</i>Back to posts</a>
 
         </section>  
   

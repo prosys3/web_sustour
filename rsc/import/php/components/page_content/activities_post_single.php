@@ -25,7 +25,7 @@
 
         <section>
 
-        <button class="btn btn-dark float-right" href="" role="button>" type="submit"><i class="material-icons">exit_to_app</i>Back to Activities</button>
+        <a class="btn btn-dark float-right" href="activities.php"><i class="material-icons">exit_to_app</i>Back to Activities</a>
 
         </section>  
 

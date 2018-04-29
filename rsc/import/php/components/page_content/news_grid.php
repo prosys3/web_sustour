@@ -1,4 +1,9 @@
 <main>
+  <style type="text/css">
+    .card-custom{
+      max-width: 540px;
+    }
+  </style>
 
     <section class="jumbotron jumbotron-fluid">
 
@@ -24,14 +29,14 @@
             $result = mysqli_query($con, $sql);
             $numrow = mysqli_num_rows($result);
             $counter = 1;
-            echo '<section class="pt-5">';
+            echo '<section class="mb-5">';
             echo '<div class="container d-flex flex-row" style="flex-wrap:wrap;">';
             echo '<div class="card-deck">';
 
             while ( $row = mysqli_fetch_array( $result ) ){ 
               $post_text = substr($row['Post_Text'], 0, 700).'...'; 
 
-                echo '<div class="card border-dark">';
+                echo '<div class="card border-dark card-custom">';
                 if ($row['Post_Image_Featured'] != null){
                     echo '<img class="card-img-top" src="'.$row['Post_Image_Featured'].'" alt="Card image cap" style="max-height:180px; object-fit: cover">';
                 }
@@ -59,7 +64,7 @@
                  if ($counter == $numrow) {
 
                     } else {
-                 echo '<section class="pt-5">';
+                 echo '<section class="mb-5">';
                  echo '<div class="container d-flex flex-row" style="flex-wrap:wrap;">';
                  echo '<div class="card-deck">';
                   }
