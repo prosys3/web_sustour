@@ -16,14 +16,14 @@ Some of the affected tables will aslo be populated with preliminary data.
 -- CREATE DEFAULT DATABASE
 -- ###########################################################################
 
--- DROP DATABASE IF IT EXISTS:
-DROP DATABASE IF EXISTS prosys3;
+ -- DROP DATABASE IF IT EXISTS:
+ DROP DATABASE IF EXISTS prosys3;
 
 
 
 
 -- CREATE DATABASE:
-CREATE DATABASE prosys3 CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+ CREATE DATABASE prosys3 CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 
 
