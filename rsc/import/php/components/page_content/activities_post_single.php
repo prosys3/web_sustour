@@ -2,7 +2,7 @@
 
     <section class="py-5">
 
-        <div class="container">
+        <div class="container" style="600px" >
 
             <?php
 
@@ -23,13 +23,15 @@
 
             ?>
 
-        </div>
-
         <section>
 
         <button class="btn btn-dark float-right" href="" role="button>" type="submit"><i class="material-icons">exit_to_app</i>Back to Activities</button>
 
         </section>  
+
+        </div>
+
+
 
     </section>
 
