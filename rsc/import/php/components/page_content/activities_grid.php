@@ -33,7 +33,7 @@
                 echo   '<h2>' . $row['Activities_Title'] . '</h2>';
                 echo   '<p class="text-justify">' . $activity_text . '</p>';
                 echo    '<div style="text-align: center">';
-                echo   '<a href="activities.php?post='.$row['Activities_ID'].'" class="btn btn-primary" style="align-items: center">Read more</a>';
+                echo   '<a href="activities.php?post='.$row['Activities_ID'].'" class="btn btn-dark" style="align-items: center">Read more</a>';
                 echo    '</div>';
                 echo   '<br>';
                 echo   '</div>';
