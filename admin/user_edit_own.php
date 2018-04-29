@@ -123,7 +123,7 @@ $user_company_id = $user_array['User_Company'];
 
                                 <!-- Submit updated user: -->
                                 <div class="form-group mt-5">
-                                    <button type="submit" class="btn btn-success" name="submit">Update post</button>
+                                    <button type="submit" class="btn btn-success" name="submit">Update user</button>
                                 </div>
 
 
