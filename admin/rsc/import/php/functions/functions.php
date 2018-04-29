@@ -1000,9 +1000,9 @@ function populate_public_file_table($number_of_rows, $order_by, $asc_desc){
             if ($current_user == $root || $current_user == $admin || $current_user == $mod) {
                 // Only moderators and above can see this table.
                 if (isset($number_of_rows) && $number_of_rows > 0) {
-                    $sql = "SELECT * FROM File ORDER BY " . $order_by.", File_ID DESC " . " " . $asc_desc . " LIMIT 0," . $number_of_rows;
+                    $sql = "SELECT * FROM File ORDER BY " . $order_by.", File_ID DESC  LIMIT 0," . $number_of_rows;
                 } else {
-                    $sql = "SELECT * FROM File ORDER BY " . $order_by.", File_ID DESC " . " " . $asc_desc;
+                    $sql = "SELECT * FROM File ORDER BY " . $order_by.", File_ID DESC;";
                 }
             } else {
                 // Users cannot see this table.
@@ -1213,15 +1213,16 @@ function populate_file_table($number_of_rows, $order_by, $asc_desc){
         if ( $current_user == $root || $current_user == $admin || $current_user == $mod ) {
             // Only moderators and above can see this table.
             if ( isset($number_of_rows) && $number_of_rows > 0 ){
-                $sql = "SELECT * FROM File ORDER BY ".$order_by.", File_ID DESC "." ".$asc_desc." LIMIT 0,".$number_of_rows;
+                $sql = "SELECT * FROM File ORDER BY ".$order_by.", File_ID "." DESC LIMIT 0,".$number_of_rows;
             } else {
-                $sql = "SELECT * FROM File ORDER BY ".$order_by.", File_ID DESC "." ".$asc_desc;
+                $sql = "SELECT * FROM File ORDER BY ".$order_by.", File_ID "."DESC";
             }
         } else {
             // Users cannot see this table.
             alert("There are no files suited for you to see.", "warning");
 
         }
+
 
 
 
