@@ -33,7 +33,7 @@
     <!-- Copyright-->
     <section class="footer-copyright">
         <div class="container text-center">
-            Created by ProSys3
+            <small>&copy; Copyright 2018, ProSys3</small>
         </div>
     </section>
     <!--/.Copyright -->
