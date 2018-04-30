@@ -1,12 +1,13 @@
 <footer>
 
-    <section class="py-5 bg-dark">
-
-        <div class="container text-center text-light">
-
-            Created by ProSys3
-
+    <section class="pt-5 bg-dark">
+    	<!-- Copyright-->
+    	<div class="footer-copyright">
+        	<div class="container text-center text-light">
+            	<small>&copy; Copyright 2018, ProSys3</small>
+        	</div>
         </div>
+        <!--/.Copyright -->
 
     </section>
 
