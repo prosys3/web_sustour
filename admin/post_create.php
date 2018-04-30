@@ -25,6 +25,11 @@ include 'rsc/import/php/components/header_dashboard.php';
 -->
 
 <main>
+    <style type="text/css">
+        #cke_25, #cke_31, #cke_24 {
+                display: none;
+        }
+    </style>
 
     <section class="bg-dark py-5">
 
