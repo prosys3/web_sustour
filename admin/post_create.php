@@ -31,8 +31,6 @@ include 'rsc/import/php/components/header_dashboard.php';
         <div class="container text-center text-light">
 
             <h1>Admin dashboard</h1>
-            <h2>Create new post</h2>
-
         </div>
 
     </section>
@@ -47,7 +45,7 @@ include 'rsc/import/php/components/header_dashboard.php';
 
                 <div class="col-9">
                     <ul class="list-group">
-                        <li class="list-group-item text-light bg-dark">Post editor</li>
+                        <li class="list-group-item text-light bg-dark">Post create</li>
                         <li class="list-group-item">
 
                             <form method="POST" action="create_handler.php?object=post&name=submit&fileref=img&dir=uploads" enctype="multipart/form-data">

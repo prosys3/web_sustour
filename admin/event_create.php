@@ -44,7 +44,7 @@
 
                 <div class="col-9">
                     <ul class="list-group">
-                        <li class="list-group-item text-light bg-dark">Event editor</li>
+                        <li class="list-group-item text-light bg-dark">Event create</li>
                         <li class="list-group-item">
 
                             <form method="POST" action="create_handler.php?object=event&name=submit" enctype="multipart/form-data">
@@ -100,22 +100,8 @@
                                 <!-- Post text: -->
                                 <div class="form-group mt-4">
                                     <label>Event description</label>
-                                    <textarea name="eventtext" class="form-control" placeholder="Give a short description of the event (maximum 255 characters)" maxlength="255"></textarea>
+                                    <textarea name="eventtext" class="form-control" placeholder="Give a short description of the event (maximum 255 characters)" maxlength="255" style="height: 200px"></textarea>
                                 </div>
-
-
-                                
-
-
-                               
-
-
-                               
-
-
-                                
-
-
                                 
                                 <div class="form-group mt-5">
                                     <button type="submit" class="btn btn-success" name="submit">Create event</button>

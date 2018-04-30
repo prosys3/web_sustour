@@ -2730,7 +2730,7 @@ function create_user($submit_name){
        
 
         // Redirect with status codes:
-        header('Refresh: 3; URL=event_list.php?updated=event&status='.$status_db);
+        header('Refresh: 0; URL=event_list.php?updated=event&status='.$status_db);
 
 
     }

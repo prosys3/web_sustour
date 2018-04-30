@@ -109,7 +109,7 @@
                                 <!-- Post text: -->
                                 <div class="form-group mt-4">
                                     <label>Event description</label>
-                                    <textarea name="eventtext" class="form-control" placeholder="Page Body" maxlength="255"><?php echo $event_text;?></textarea>
+                                    <textarea name="eventtext" class="form-control" placeholder="Give a short description of the event (maximum 255 characters)" maxlength="255" style="height: 200px"><?php echo $event_text;?></textarea>
                                 </div>
                                                                                                   
                                 

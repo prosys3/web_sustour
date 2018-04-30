@@ -27,24 +27,28 @@
 -->
 
 <main>
+    <section class="bg-dark py-5">
 
-    <section class="bg-primary">
+        <div class="container text-center text-light">
 
-        <div class="container text-center">
-
-            <div style="height: 50px"></div>
-            <img src="../rsc/img/logo/sustour/logo_symbol_black.svg" width="100" alt="Logo">
-            <div style="height: 50px"></div>
+            <h1>Admin dashboard</h1>
 
         </div>
 
     </section>
 
-    <hr>
-
-    <section>
-
+   <section class="bg-light py-5">
         <div class="container">
+
+            <div class="row">
+                <div class="col-3">
+                    <?php include 'rsc/import/php/components/dashboard/dashboard_nav.php' ?>
+                </div>
+
+                <div class="col-9">
+                    <ul class="list-group">
+                        <li class="list-group-item text-light bg-dark">User create</li>
+                        <li class="list-group-item">
 
             <form action="create_handler.php?object=user&name=submit-user" method="post">
 
@@ -90,15 +94,19 @@
                    <?php populate_user_company_selection('company', $user_id = 0) ?>
                 </div>
 
-                <button type="submit" name="submit-user" class="btn btn-primary">Submit</button>
+                <button type="submit" name="submit-user" class="btn btn-primary">Create User</button>
+
 
             </form>
 
-        </div>
+           </li>
+        </ul>
+      </div>
+     </div>
+    </div>
+  </section>
 
-    </section>
-
-</main>
+</main
 
 
 <!--
